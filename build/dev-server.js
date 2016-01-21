@@ -11,7 +11,7 @@ app.use(require('connect-history-api-fallback')())
 
 // serve webpack bundle output
 app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
+  noInfo: false,
   publicPath: config.output.publicPath
 }))
 

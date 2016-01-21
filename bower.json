@@ -24,7 +24,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery.stellar": "~0.6.2",
     "jquery": "~2.2.0"
   }
 }
