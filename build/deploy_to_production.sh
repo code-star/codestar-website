@@ -1,7 +1,7 @@
 #!/bin/bash
 npm run deploy
 git checkout gh-pages
-git pull
+git pull origin gh-pages
 git rm ./app.*
 cp dist/static/app.* ./
 cp dist/static/index.html ./
