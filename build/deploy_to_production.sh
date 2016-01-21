@@ -6,7 +6,7 @@ git rm ./app.*
 cp dist/static/app.* ./
 cp dist/static/index.html ./
 git add ./app.* ./index.html
-local GIT_STATUS=$(git status 2> /dev/null)
+GIT_STATUS=$(git status 2> /dev/null)
 echo $GIT_STATUS | grep "nothing to commit" > /dev/null 2>&1
 if [ "$?" -ne 0 ]
 then
