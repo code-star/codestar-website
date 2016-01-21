@@ -6,7 +6,7 @@ git rm ./app.*
 mkdir tmp
 cp -R ./dist/static/. ./tmp
 git add ./tmp
-git mv /tmp ./
+git mv -f ./tmp/* ./
 rm -rf tmp
 GIT_STATUS=$(git status 2> /dev/null)
 echo $GIT_STATUS | grep "nothing to commit" > /dev/null 2>&1
