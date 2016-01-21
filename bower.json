@@ -1,0 +1,30 @@
+{
+  "name": "codestar-website",
+  "description": "The website for code.star",
+  "main": "app/main.js",
+  "authors": [
+    "Ordina"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "code",
+    "star",
+    "codestar",
+    "responsive",
+    "ordina"
+  ],
+  "homepage": "https://github.com/OrdinaNederland/codestar-website",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.stellar": "~0.6.2",
+    "jquery": "~2.2.0"
+  }
+}
