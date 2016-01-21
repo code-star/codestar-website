@@ -10,12 +10,12 @@ let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
 
 $(document).ready(function(){
-  window.scrollTo(($(document).width()-$(window).width())/2,0);
-  $('body').css('background-size', Math.max($(document).width(), $(window).width()) + 'px');
+  var offset = $('#neutral').position().left;
+  window.scrollTo(offset, 0);
 });
 
 $(window).resize(function(e) {
-    parallax.reload();
+  parallax.reload();
 });
 
 $('html, body').mousewheel(function(event) {
