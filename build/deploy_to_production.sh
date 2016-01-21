@@ -2,7 +2,7 @@
 git pull
 npm run deploy
 git checkout gh-pages
-git rm app.*
+git rm ./app.*
 cp dist/static/app.* ./
 cp dist/static/index.html ./
 git add app.* index.html
