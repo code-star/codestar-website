@@ -38,8 +38,16 @@ config.plugins = (config.plugins || []).concat([
   // you can customize output by editing /build/index.template.html
   // see https://github.com/ampedandwired/html-webpack-plugin
   new HtmlWebpackPlugin({
-    filename: '../index.html',
-    template: 'app/index.html'
+    filename: 'index.html',
+    template: 'app/index.html',
+    inject: true
+  }),
+  new BowerWebpackPlugin({
+    excludes: /.*\.less/
+  }),
+  new webpack.ProvidePlugin({
+    $:      "jquery",
+    jQuery: "jquery"
   })
 ])
 
