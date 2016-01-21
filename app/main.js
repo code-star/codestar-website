@@ -1,5 +1,6 @@
 require('./stylesheets/main.scss');
 require('./img/logo.svg');
+require('./img/logo-simple.svg');
 require('./fonts/ConduitITCStd.otf');
 require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
@@ -10,7 +11,7 @@ let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
 
 $(document).ready(function(){
-  var offset = $('#neutral').position().left;
+  var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
 });
 
