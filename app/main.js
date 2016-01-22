@@ -18,15 +18,15 @@ $(document).ready(function(){
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
   appendSunburst('#sunburst');
-  console.log($('#logo').find('#paren1').attr('d'));
+  console.log($('#logo').find('#parent1').attr('d'));
   console.log($('#paren1').attr('d'));
 });
 
-$(window).resize(function(e) {
-  parallax.reload();
-});
+$(window).resize(e => parallax.reload());
 
-$('html, body').mousewheel(function(event) {
+$('html, body').mousewheel(event => {
   $('html, body').stop(true,true).animate({scrollLeft: '-='+event.deltaY},50);
   event.preventDefault();
 });
+
+$('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
