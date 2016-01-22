@@ -76,3 +76,15 @@ $(document).ready(function() {
         }, 1000);
         event.preventDefault();
     });
+
+    $('.job_list_items li a').click(() => {
+        let element = $('.profile');
+        let elementVisibility = element.css('visibility');
+
+        if(elementVisibility === 'visible') {
+           element.css('visibility','hidden');
+        }
+        else {
+           element.css('visibility', 'visible');
+        }
+    });

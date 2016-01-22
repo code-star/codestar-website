@@ -1,6 +1,5 @@
 @import "partials/settings";
 @import "~foundation-sites/scss/foundation";
-@include foundation-flex-grid;
 @import "partials/base";
 @include foundation-everything($flex: true);
 
@@ -33,7 +32,9 @@ html,
 body {
   height: 100%;
 }
-
+.row {
+  max-width: 100%;
+}
 body {
   font-family: Conduit;
   color: white;
@@ -206,4 +207,43 @@ section {
 
 .asterisk:hover {
   cursor: pointer;
+}
+
+// Jobs
+ul.key_skills li:before {
+   content: "*";
+   font-size: 1.5em;
+   font-weight: bold;
+   vertical-align: top;
+   position: relative;
+   top: -2px;
+}
+
+ul.job_list_items {
+  width: 200px;
+  margin-top: 50%;
+  float: right;
+}
+  ul.job_list_items li{
+    height: 40px;
+    background: #ccc;
+    margin-bottom: 1px;
+  }
+
+#join .columns{
+  white-space: normal;
+}
+#join .profile {
+  background: #fff;
+  color: blue;
+  height: 1000px;
+  overflow-y: scroll;
+  visibility: hidden;
+}
+
+#join .job_openings {
+  padding-right: 0;
+}
+#join .description {
+  margin-top: 10%
 }
