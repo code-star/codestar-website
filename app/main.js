@@ -82,18 +82,27 @@ $(document).ready(function() {
   console.log($('#paren1').attr('d'));
 });
 
-    $(window).resize(e => parallax.reload());
+function closeMenuIfOpen() {
+  if ($('.fixed-menu .menu').css('display') !== 'none') {
+    $('.fixed-menu .menu').hide(350)
+  }
+}
 
-    $('html, body').mousewheel(event => {
-      $('html, body').stop(true,true).animate({scrollLeft: '-='+event.deltaY},50);
-      event.preventDefault();
-    });
+$(window).resize(e => parallax.reload());
 
-    $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+$('html, body').mousewheel(event => {
+  var delta = event.deltaY - event.deltaX
+  $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
+  closeMenuIfOpen();
+  event.preventDefault();
+});
 
-    $('.fixed-menu .menu li a').on('click', (event) => {
-        $('html, body').stop().animate({
-            scrollLeft: $(event.currentTarget.hash).offset().left
-        }, 1000);
-        event.preventDefault();
-    });
+$('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+
+$('.scroll-button').on('click', (event) => {
+    event.preventDefault();
+    closeMenuIfOpen();
+    $('html, body').stop().animate({
+        scrollLeft: $(event.currentTarget.hash).offset().left
+    }, 1000);
+});

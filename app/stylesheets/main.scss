@@ -207,3 +207,11 @@ section {
 .asterisk:hover {
   cursor: pointer;
 }
+
+.codestar-button {
+  border: 1px solid white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 0.6em;
+}
