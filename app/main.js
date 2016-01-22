@@ -15,6 +15,8 @@ let mouseWheel = require('jquery-mousewheel');
 $(document).ready(function(){
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
+  console.log($('#logo').find('#paren1').attr('d'));
+  console.log($('#paren1').attr('d'));
 });
 
 $(window).resize(function(e) {
