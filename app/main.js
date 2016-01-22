@@ -1,16 +1,18 @@
 require('./stylesheets/main.scss');
+require('./img/logo-simple.svg');
 require('./img/logo.svg');
 require('./fonts/ConduitITCStd.otf');
 require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
+
 import $ from 'jquery';
 let Scrollax = require('scrollax');
 let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
 
 $(document).ready(function(){
-  var offset = $('#neutral').position().left;
+  var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
 });
 
