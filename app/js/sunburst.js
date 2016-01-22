@@ -756,11 +756,13 @@ var tree = {
   }]
 };
 
-export function appendSunburst(id) {
+export function appendSunburst(id, alternative) {
   var sunburst = d3.select(id);
 
-  var width = 800,
-    height = 800,
+  var s = alternative ? 1600 : 800;
+
+  var width = s,
+    height = s,
     radius = Math.min(width, height) / 2;
 
   var x = d3.scale.linear()
@@ -773,6 +775,16 @@ export function appendSunburst(id) {
   var color = d3.scale.ordinal()
     .domain([0])
     .range(['rgba(255, 255, 255, 0.0)']);
+
+  if (alternative) {
+    color = d3.scale.ordinal()
+      .domain([0, 1, 2, 3, 4])
+      .range(['rgba(255, 255, 255, 0.0',
+              'rgba(255, 255, 255, 1.0',
+              'rgba(255, 255, 255, 1.0',
+              'rgba(255, 255, 255, 0.0',
+              'rgba(255, 255, 255, 1.0'])
+  }
 
   var svg = sunburst.append('svg')
     .attr('width', width)
@@ -808,17 +820,20 @@ export function appendSunburst(id) {
     .data(partition.nodes)
     .enter().append('path')
     .attr('d', arc)
-    .style('fill', 'rgba(255, 255, 255, 0.0)')
+    .style('fill', function(d) { return color((d.children ? d : d.parent).name); })
     .on('click', click)
-    .on('mouseenter', function(d) {
+
+  if (!alternative) {
+    path.on('mouseenter', function(d) {
           d3.select(this)
           .style('fill', 'rgba(255, 255, 255, 0.2)');
     })
     .on('mouseleave', function() {
         d3.select(this)
           .style('fill', 'rgba(255, 255, 255, 0.0)');
-    })
-    .each(stash);
+    });
+  }
+  path.each(stash);
 
   function click(d) {
     node = d;
