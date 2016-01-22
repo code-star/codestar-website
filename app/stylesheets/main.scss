@@ -42,6 +42,7 @@ body {
   background-repeat: no-repeat;
   // 100 * n_sections
   background-size: 900vw;
+  overflow: hidden;
 }
 
 p {
@@ -81,7 +82,6 @@ path {
 
 .decorations {
   width: 100%;
-  height: 100%;
 }
 
 #logo {
@@ -105,6 +105,13 @@ path {
   position: absolute;
   bottom: 0;
   right: 0;
+  opacity: 0.0;
+}
+
+#sun {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   opacity: 0.0;
 }
 
