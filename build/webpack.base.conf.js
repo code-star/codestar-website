@@ -40,6 +40,10 @@ module.exports = {
         }
       },
       {
+            test:   /jquery\..*\.js/,
+            loader: "imports?$=jquery,jQuery=jquery,this=>window"
+      },
+      {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!sass')
       }

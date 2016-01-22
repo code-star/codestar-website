@@ -31,7 +31,6 @@ config.plugins = (config.plugins || []).concat([
     inject: true
   }),
   new BowerWebpackPlugin({
-    excludes: /.*\.less/
   }),
   new webpack.ProvidePlugin({
     $:      "jquery",

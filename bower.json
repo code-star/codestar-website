@@ -25,5 +25,8 @@
   ],
   "dependencies": {
     "jquery": "~2.2.0"
+  },
+  "devDependencies": {
+    "Scrollify": "https://github.com/lukehaas/Scrollify.git#~0.1.11",
   }
 }
