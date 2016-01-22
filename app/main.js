@@ -32,11 +32,12 @@ $(document).ready(function() {
   style.type = 'text/css';
   style.appendChild(document.createTextNode('path{stroke: rgba(255, 255, 255, 1.0); fill-rule: evenodd;}'));
   svg.insertBefore(style, svg.childNodes[0]);
-  console.log(svg);
-//  svg = '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">;' + svg.outerHTML;
-//  svg = '<?xml version="1.0" standalone="no"?>' + svg;
+//  var svgText = '<?xml version="1.0" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">;\n' + svg.outerHTML;
+//  console.log(svgText);
 
-  var src = 'data:image/svg+xml;base64,' + window.btoa(svg.outerHTML);
+  $('body').append('<div id="tempSunburst">');
+  $('#tempSunburst').append(svg);
+  var src = 'data:image/svg+xml;base64,' + window.btoa($('#tempSunburst').html());
   var img = new Image();
   img.src = src;
   img.width = 1600;
