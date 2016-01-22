@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/OrdinaNederland/codestar-website#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.1",
     "babel-core": "^6.4.5",
     "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.1",
@@ -52,6 +53,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.0.0",
     "node-sass": "^3.4.2",
+    "postcss-loader": "^0.8.0",
     "sass-loader": "^3.1.2",
     "scrollax": "^1.0.0",
     "style-loader": "^0.13.0",
