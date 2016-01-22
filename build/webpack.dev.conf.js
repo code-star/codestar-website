@@ -15,7 +15,7 @@ config.entry.app = [
 
 // necessary for the html plugin to work properly
 // when serving the html from in-memory
-config.output.publicPath = './'
+config.output.publicPath = '/'
 
 config.plugins = (config.plugins || []).concat([
   new webpack.optimize.OccurenceOrderPlugin(),

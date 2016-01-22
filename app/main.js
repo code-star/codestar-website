@@ -1,10 +1,12 @@
 require('./stylesheets/main.scss');
+require('./img/logo-simple.svg');
 require('./img/logo.svg');
 require('./img/logo-simple.svg');
 require('./fonts/ConduitITCStd.otf');
 require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
+
 import $ from 'jquery';
 let Scrollax = require('scrollax');
 let parallax = new Scrollax(window, {'horizontal': true}).init();
