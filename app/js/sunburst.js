@@ -756,8 +756,8 @@ var tree = {
   }]
 };
 
-export function appendSunburst(id, alternative) {
-  var sunburst = d3.select(id);
+export function getSunburst(alternative) {
+  var svg = d3.select('body').append('svg').remove();
 
   var s = alternative ? 1600 : 800;
 
@@ -786,7 +786,7 @@ export function appendSunburst(id, alternative) {
               'rgba(255, 255, 255, 1.0'])
   }
 
-  var svg = sunburst.append('svg')
+  var innerNode = svg
     .attr('width', width)
     .attr('height', height)
     .append('g')
@@ -816,7 +816,7 @@ export function appendSunburst(id, alternative) {
   var node;
 
   node = tree;
-  var path = svg.datum(tree).selectAll('path')
+  var path = innerNode.datum(tree).selectAll('path')
     .data(partition.nodes)
     .enter().append('path')
     .attr('d', arc)
@@ -891,5 +891,7 @@ export function appendSunburst(id, alternative) {
       };
     };
   }
+
+  return svg.node();
 }
 

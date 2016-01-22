@@ -104,10 +104,10 @@ section {
   margin-left: -800px;
   z-index: -1;
   transform-origin: 50% 50%;
-  -webkit-animation: orbitSpin 300s infinite linear;
+  -animation: orbitSpin 300s infinite linear;
 }
 
-@-webkit-keyframes orbitSpin {
+@-keyframes orbitSpin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
 }

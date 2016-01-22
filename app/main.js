@@ -10,8 +10,9 @@ require('./fonts/ConduitITCStd-Italic.otf');
 
 import $ from 'jquery';
 import d3 from 'd3';
-import { appendSunburst } from './js/sunburst';
+import { getSunburst } from './js/sunburst';
 import { getMoon } from './js/moon';
+import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
 let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
@@ -21,8 +22,27 @@ $(document).ready(function() {
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
 
-  appendSunburst('#sunburst');
-  appendSunburst('#sunburst2', true);
+  $('#sunburst').append(getSunburst());
+  var rc = retinaCanvas(1600, 1600);
+  var svg = getSunburst(true);
+  svg.setAttribute('version', '1.1');
+  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svg.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
+  var style = document.createElement('style');
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode('path{stroke: rgba(255, 255, 255, 1.0); fill-rule: evenodd;}'));
+  svg.insertBefore(style, svg.childNodes[0]);
+  console.log(svg);
+//  svg = '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">;' + svg.outerHTML;
+//  svg = '<?xml version="1.0" standalone="no"?>' + svg;
+
+  var src = 'data:image/svg+xml;base64,' + window.btoa(svg.outerHTML);
+  var img = new Image();
+  img.src = src;
+  img.width = 1600;
+  img.height = 1600;
+  img.onload = () => rc.ctx.drawImage(img, 0, 0);
+  $('#sunburst2').append(rc.canvas);
 
   var moon = getMoon(50);
   var sun = $('<img id="sun" src="sun.svg" width="200"/>');
