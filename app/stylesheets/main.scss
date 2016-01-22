@@ -68,11 +68,6 @@ section {
   vertical-align: top;
 }
 
-path {
-  stroke: rgba(255, 255, 255, 0.18);
-  fill-rule: evenodd;
-}
-
 .content {
   z-index: 1;
   width: 100%;
@@ -99,6 +94,36 @@ path {
   left: 50%;
   margin-left: -400px;
   z-index: 2;
+}
+
+#sunburst2 {
+  position: absolute;
+  top: 50%;
+  margin-top: -800px;
+  left: 50%;
+  margin-left: -800px;
+  z-index: -1;
+  transform-origin: 50% 50%;
+  -webkit-animation: orbitSpin 300s infinite linear;
+}
+
+@-webkit-keyframes orbitSpin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+#sunburst path {
+  stroke: rgba(255, 255, 255, 0.1);
+  fill-rule: evenodd;
+}
+
+#sunburst2 path {
+  stroke: rgba(255, 255, 255, 1.0);
+  fill-rule: evenodd;
+}
+
+#sunburst2 {
+  opacity: 0.05;
 }
 
 #moon {

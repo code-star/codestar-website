@@ -22,6 +22,7 @@ $(document).ready(function() {
   window.scrollTo(offset, 0);
 
   appendSunburst('#sunburst');
+  appendSunburst('#sunburst2', true);
 
   var moon = getMoon(50);
   var sun = $('<img id="sun" src="sun.svg" width="200"/>');
