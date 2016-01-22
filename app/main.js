@@ -9,8 +9,9 @@ require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
 
 import d3 from 'd3';
-import { appendSunburst } from './js/sunburst';
+import { getSunburst } from './js/sunburst';
 import { getMoon } from './js/moon';
+import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
 let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
@@ -21,8 +22,28 @@ $(document).ready(function() {
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
 
-  appendSunburst('#sunburst');
-  appendSunburst('#sunburst2', true);
+  $('#sunburst').append(getSunburst());
+  var rc = retinaCanvas(1600, 1600);
+  var svg = getSunburst(true);
+  svg.setAttribute('version', '1.1');
+  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  svg.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
+  var style = document.createElement('style');
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode('path{stroke: rgba(255, 255, 255, 1.0); fill-rule: evenodd;}'));
+  svg.insertBefore(style, svg.childNodes[0]);
+//  var svgText = '<?xml version="1.0" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">;\n' + svg.outerHTML;
+//  console.log(svgText);
+
+  $('body').append('<div id="tempSunburst">');
+  $('#tempSunburst').append(svg);
+  var src = 'data:image/svg+xml;base64,' + window.btoa($('#tempSunburst').html());
+  var img = new Image();
+  img.src = src;
+  img.width = 1600;
+  img.height = 1600;
+  img.onload = () => rc.ctx.drawImage(img, 0, 0);
+  $('#sunburst2').append(rc.canvas);
 
   var moon = getMoon(50);
   var sun = $('<img id="sun" src="sun.svg" width="200"/>');
@@ -61,30 +82,45 @@ $(document).ready(function() {
   console.log($('#paren1').attr('d'));
 });
 
-    $(window).resize(e => parallax.reload());
+function closeMenuIfOpen() {
+  if ($('.fixed-menu .menu').css('display') !== 'none') {
+    $('.fixed-menu .menu').hide(350)
+  }
+}
 
-    $('html, body').mousewheel(event => {
-      $('html, body').stop(true,true).animate({scrollLeft: '-='+event.deltaY},50);
-      event.preventDefault();
-    });
+$(window).resize(e => parallax.reload());
 
-    $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+$('html, body').mousewheel(event => {
+  var delta = event.deltaY - event.deltaX
+  $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
+  closeMenuIfOpen();
+  event.preventDefault();
+});
+$('.fixed-menu .menu li a').on('click', (event) => {
+    $('html, body').stop().animate({
+        scrollLeft: $(event.currentTarget.hash).offset().left
+    }, 1000);
+    event.preventDefault();
+});
 
-    $('.fixed-menu .menu li a').on('click', (event) => {
-        $('html, body').stop().animate({
-            scrollLeft: $(event.currentTarget.hash).offset().left
-        }, 1000);
-        event.preventDefault();
-    });
+$('.job_list_items li a').click(() => {
+    let element = $('.profile');
+    let elementVisibility = element.css('visibility');
 
-    $('.job_list_items li a').click(() => {
-        let element = $('.profile');
-        let elementVisibility = element.css('visibility');
+    if(elementVisibility === 'visible') {
+       element.css('visibility','hidden');
+    }
+    else {
+       element.css('visibility', 'visible');
+    }
+});
 
-        if(elementVisibility === 'visible') {
-           element.css('visibility','hidden');
-        }
-        else {
-           element.css('visibility', 'visible');
-        }
-    });
+$('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+
+$('.scroll-button').on('click', (event) => {
+    event.preventDefault();
+    closeMenuIfOpen();
+    $('html, body').stop().animate({
+        scrollLeft: $(event.currentTarget.hash).offset().left
+    }, 1000);
+});

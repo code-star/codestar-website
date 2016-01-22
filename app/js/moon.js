@@ -16,9 +16,9 @@ export function getMoon(radius) {
     'radius': radius,
     'phase': (p < 0 ? p + 1 : p - 1) + 0.001,
     'angle': 0.2,
-    'col1': p >= 0 ? '#ccc' : '#555',
-    'col2': p >= 0 ? '#555' : '#ccc',
-    'col3': 'rgba(0, 0, 0, 0.3)'
+    'col1': p >= 0 ? '#ebebeb' : '#00224b',
+    'col2': p >= 0 ? '#00224b' : '#ebebeb',
+    'col3': 'rgba(0, 84, 173, 0.25)'
   }
 
   function drawMoon(ctx, s) {

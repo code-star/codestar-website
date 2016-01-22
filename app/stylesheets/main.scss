@@ -105,10 +105,10 @@ section {
   margin-left: -800px;
   z-index: -1;
   transform-origin: 50% 50%;
-  -webkit-animation: orbitSpin 300s infinite linear;
+  -animation: orbitSpin 300s infinite linear;
 }
 
-@-webkit-keyframes orbitSpin {
+@-keyframes orbitSpin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
 }
@@ -246,4 +246,11 @@ ul.job_list_items {
 }
 #join .description {
   margin-top: 10%
+}
+.codestar-button {
+  border: 1px solid white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-bottom: 0.6em;
 }
