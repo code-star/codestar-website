@@ -8,7 +8,6 @@ require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
 
-import $ from 'jquery';
 import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
 import { getMoon } from './js/moon';
@@ -16,6 +15,7 @@ import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
 let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
+let smoothscroll = require('jquery-smooth-scroll');
 
 $(document).ready(function() {
 
@@ -81,11 +81,18 @@ $(document).ready(function() {
   console.log($('#paren1').attr('d'));
 });
 
-$(window).resize(e => parallax.reload());
+    $(window).resize(e => parallax.reload());
 
-$('html, body').mousewheel(event => {
-  $('html, body').stop(true,true).animate({scrollLeft: '-='+event.deltaY},50);
-  event.preventDefault();
-});
+    $('html, body').mousewheel(event => {
+      $('html, body').stop(true,true).animate({scrollLeft: '-='+event.deltaY},50);
+      event.preventDefault();
+    });
 
-$('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+    $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+
+    $('.fixed-menu .menu li a').on('click', (event) => {
+        $('html, body').stop().animate({
+            scrollLeft: $(event.currentTarget.hash).offset().left
+        }, 1000);
+        event.preventDefault();
+    });

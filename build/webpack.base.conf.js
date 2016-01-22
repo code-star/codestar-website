@@ -1,5 +1,6 @@
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
@@ -40,11 +41,16 @@ module.exports = {
         }
       },
       {
+            test:   /jquery\..*\.js/,
+            loader: "imports?$=jquery,jQuery=jquery,this=>window"
+      },
+      {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!sass')
+        loader: ExtractTextPlugin.extract('css!postcss-loader!sass')
       }
     ]
   },
+  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   eslint: {
     formatter: require('eslint-friendly-formatter')
   }
