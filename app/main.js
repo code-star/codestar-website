@@ -6,7 +6,6 @@ require('./fonts/ConduitITCStd.otf');
 require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
-require('Scrollify');
 
 import d3 from 'd3';
 import { appendSunburst } from './js/sunburst';
@@ -19,20 +18,6 @@ $(document).ready(function(){
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
   appendSunburst('#sunburst');
-  console.log($('#logo').find('#parent1').attr('d'));
-  console.log($('#paren1').attr('d'));
-
-    // $.scrollify({
-    //     section : 'section',
-    //     sectionName : 'section-name',
-    //     easing: 'easeOutExpo',
-    //     scrollSpeed: 1100,
-    //     offset : 0,
-    //     scrollbars: true,
-    //     before:function() {},
-    //     after:function() {},
-    //     afterResize:function() {}
-    // });
 
     $(window).resize(e => parallax.reload());
 
