@@ -17,6 +17,7 @@ import { getTeamTree } from './js/team';
 import { getCasesTree } from './js/cases';
 import { getMoon } from './js/moon';
 import { getSun } from './js/sun';
+import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
@@ -31,6 +32,8 @@ $(document).ready(function() {
 
   var features = getFeatures();
   $('#featureList').append(features);
+
+  $('#solararray').append(getArray(7));
 
   $('#teamTree').append(getTeamTree());
   $('#casesTree').append(getCasesTree());

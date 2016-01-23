@@ -100,11 +100,8 @@ dt {
 }
 
 #logo {
-  position: absolute;
-  top: 50%;
-  margin-top: -50px;
-  left: 50%;
-  margin-left: -150px;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 
 #sunburst {
@@ -171,7 +168,6 @@ dt {
   .fixed-menu .menu {
     float: left;
     margin-left: 20px;
-    display: none;
   }
 
   .fixed-menu .menu li {
@@ -456,4 +452,30 @@ ul.why li {
 
 .featureIcon:hover, .featureTitle:hover {
   cursor: pointer;
+}
+
+.solar {
+  border-spacing: 0;
+  border-collapse: collapse;
+  opacity: 0.1;
+}
+
+.array {
+  padding: 0;
+  perspective: 1000px;
+}
+
+.panel {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  margin: 25px 25px 45px 25px;
+}
+
+#solararrayContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
 }
