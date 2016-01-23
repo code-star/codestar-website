@@ -73,6 +73,22 @@ section {
   vertical-align: top;
 }
 
+li, dd {
+  white-space: normal;
+}
+
+dt {
+  display: inline-block;
+  color: rgba(0, 0, 0, 1);
+  background-color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.3em 1em 0.2em 0.4em;
+  margin: 0.75em 0em 1em 0em;
+  vertical-align: middle;
+
+}
+
 .content {
   z-index: 1;
   width: 100%;
@@ -268,4 +284,18 @@ ul.job_list_items {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+ul.why li:before {
+  content: '+';
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-right: 0.5em;
+  margin-left: -1em;
+}
+
+ul.why li {
+  list-style: none;
+  line-height: normal;
+  margin-bottom: 1.1em;
 }
