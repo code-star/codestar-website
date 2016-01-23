@@ -106,6 +106,14 @@ dt {
   pointer-events: none;
 }
 
+#mouseIcon {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+
 #logo {
   margin-top: 60px;
   margin-bottom: 20px;

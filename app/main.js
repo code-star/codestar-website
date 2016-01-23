@@ -2,7 +2,7 @@ require('./stylesheets/main.scss');
 require('./img/logo-simple.svg');
 require('./img/logo.svg');
 require('./img/logo-simple.svg');
-require('./img/sun.svg');
+require('./img/Mouse.svg');
 require('./img/Features/Features_Curved_Lines.svg');
 require('./img/Features/Features_SmallLines.svg');
 require('./img/Features/Features_BigLines.svg');
