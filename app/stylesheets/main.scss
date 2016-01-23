@@ -72,17 +72,19 @@ section {
   vertical-align: top;
 }
 
-li, dd {
+.work-arguments li, dd {
   white-space: normal;
+  margin-top: 0.4em;
+  margin-bottom: 1em;
 }
 
 dt {
   display: inline-block;
-  color: rgba(0, 0, 0, 1);
+  color: rgba(5, 55, 100, 1);
   background-color: $white;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 0.3em 1em 0.2em 0.4em;
+  padding: 0.4em 0.8em 0.1em 0.65em;
   margin: 0.75em 0em 1em 0em;
   vertical-align: middle;
 
@@ -357,6 +359,10 @@ ul.job_list_items {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.why {
+  white-space: normal;
 }
 
 ul.why li:before {
