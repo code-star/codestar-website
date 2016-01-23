@@ -1,0 +1,49 @@
+{
+  "nodes":[
+    {
+      "name": "Hamza Haiken",
+      "job": "Scala developer",
+      "bio": "The best."
+    },
+    {
+      "name": "Maik Diepenbroek",
+      "job": "Frontend developer",
+      "bio": "The second best."
+    },
+    {
+      "name": "Pim Verkerk",
+      "job": "Scala developer",
+      "bio": "He's careful around drones."
+    },
+    {
+      "name": "Jan Ouwens",
+      "job": "Scala developer",
+      "bio": "Has a pretty Bash prompt."
+    },
+    {
+      "name": "Joost de Vries",
+      "job": "Scala consultant",
+      "bio": "Likes Klieslies."
+    },
+    {
+      "name": "Martin Weidner",
+      "job": "Business Unit Manager",
+      "bio": "He's German."
+    },
+    {
+      "name": "Remko de Jong",
+      "job": "Scala developer",
+      "bio": "Let's do a LAN party sometime."
+    },
+    {
+      "name": "Ishan Sital",
+      "job": "Scala developer",
+      "bio": "The new guy."
+    },
+    {
+      "name": "Martijn Blankestijn",
+      "job": "Scala consultant",
+      "bio": ""
+    }
+  ]
+}

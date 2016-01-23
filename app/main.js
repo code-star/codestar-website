@@ -10,6 +10,7 @@ require('./fonts/ConduitITCStd-Italic.otf');
 
 import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
+import { getTeamTree } from './js/team';
 import { getMoon } from './js/moon';
 import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
@@ -21,6 +22,8 @@ $(document).ready(function() {
 
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
+
+  $('#teamTree').append(getTeamTree());
 
   $('#sunburst').append(getSunburst());
   var rc = retinaCanvas(1600, 1600);
