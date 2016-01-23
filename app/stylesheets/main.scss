@@ -113,13 +113,16 @@ dt {
   z-index: 2;
 }
 
-#sunburst2 {
+#sunburst3 {
   position: absolute;
   top: 50%;
   margin-top: -800px;
   left: 50%;
   margin-left: -800px;
   z-index: -1;
+}
+
+#sunburst2 {
   transform-origin: 50% 50%;
   animation: orbitSpin 300s infinite linear;
 }
