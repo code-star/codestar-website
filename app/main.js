@@ -3,6 +3,9 @@ require('./img/logo-simple.svg');
 require('./img/logo.svg');
 require('./img/logo-simple.svg');
 require('./img/sun.svg');
+require('./img/Features/Features_Curved_Lines.svg');
+require('./img/Features/Features_SmallLines.svg');
+require('./img/Features/Features_BigLines.svg');
 require('./fonts/ConduitITCStd.otf');
 require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
@@ -12,6 +15,7 @@ import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
 import { getMoon } from './js/moon';
+import { getFeatures } from './js/features';
 import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
 let parallax = new Scrollax(window, {'horizontal': true}).init();
@@ -22,6 +26,9 @@ $(document).ready(function() {
 
   var offset = $('#center').position().left;
   window.scrollTo(offset, 0);
+
+  var features = getFeatures();
+  $('#featureList').append(features);
 
   $('#teamTree').append(getTeamTree());
 
@@ -45,7 +52,10 @@ $(document).ready(function() {
   img.src = src;
   img.width = 1600;
   img.height = 1600;
-  img.onload = () => rc.ctx.drawImage(img, 0, 0);
+  img.onload = () => {
+    rc.ctx.drawImage(img, 0, 0);
+    $('#tempSunburst').remove();
+  }
   $('#sunburst2').append(rc.canvas);
 
   var moon = getMoon(50);

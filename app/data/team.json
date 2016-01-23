@@ -44,6 +44,26 @@
       "name": "Martijn Blankestijn",
       "job": "Scala consultant",
       "bio": ""
+    },
+    {
+      "name": "Adil Akhter",
+      "job": "Scala developer",
+      "bio": ""
+    },
+    {
+      "name": "Pieter van der Meer",
+      "job": "Big data specialist",
+      "bio": ""
+    },
+    {
+      "name": "Casper Koning",
+      "job": "Machine learning specialist",
+      "bio": ""
+    },
+    {
+      "name": "David Hoepelman",
+      "job": "Scala developer",
+      "bio": ""
     }
   ]
 }

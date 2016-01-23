@@ -1,0 +1,12 @@
+
+{
+  "features": [
+    {"img": "Features_HorizontallyScalable.svg", "name": "Horizontally scalable", "text": "More data than you can handle coming at you? But just for a short time, for instance between 18:00 and 20:00? No problem, just add a couple of extra services temporarily when load is high. At peak hours or peak days."},
+    {"img": "Features_FastTimeMarket.svg", "name": "Fast time to market", "text": "We can get you to production on day 1, complete with Continuous Integration and Continuous Delivery. By using the cloud or modern container technologies."},
+    {"img": "Features_Integrating.svg", "name": "Integrating", "text": "We integrate with your current JVM ecosystem. Reuse your libraries, code in your new platform and integrate with your current REST service architecture."},
+    {"img": "Features_TheRightPeople.svg", "name": "Get the right people", "text": "We are able to get the best developers for you, because we embrace a technology that attracts top developers. This technology takes friction and boilerplate out of the programming."},
+    {"img": "Features_ReduceCode.svg", "name": "Reduce code", "text": "We were able to reduce the code by 75% at one of our clients. That's 75% less room for errors."},
+    {"img": "Features_Partner.svg", "name": "Partners", "text": "We partner with the leading platform on modern platforms named Typesafe."},
+    {"img": "Features_Aftercare.svg", "name": "Aftercare", "text": "Lorem ipsum dolor sit amet nihil agere delectat. Ubi est mea annaticula cumminosa."}
+  ]
+}

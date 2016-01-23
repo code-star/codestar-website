@@ -342,3 +342,40 @@ ul.why li {
   right: 15px;
   padding-top: 10%;
 }
+
+.decorations2 {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+}
+
+#curved-lines {
+    position: absolute;
+    max-width: none;
+    height: 300vh;
+    top: -100vh;
+    left: -181.21vh;
+    transform: translateX(50vw);
+}
+#big-lines {
+    position: absolute;
+    max-width: none;
+    height: 100vh;
+    top: 0;
+    left: -6.866vh;
+    transform: translateX(50vw);
+}
+#small-lines {
+    position: absolute;
+    max-width: none;
+    height: 100vh;
+    top: 0;
+    left: -6.866vh;
+    transform: translateX(50vw);
+}
+
+.featureTitle {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 120%;
+}
