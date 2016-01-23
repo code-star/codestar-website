@@ -379,3 +379,7 @@ ul.why li {
   font-weight: bold;
   font-size: 120%;
 }
+
+.featureIcon:hover, .featureTitle:hover {
+  cursor: pointer;
+}
