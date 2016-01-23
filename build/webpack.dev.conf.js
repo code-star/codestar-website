@@ -9,7 +9,8 @@ config.devtool = 'eval-source-map'
 
 // add hot-reload related code to entry chunk
 config.entry.app = [
-  'webpack-hot-middleware/client?quiet=false',
+  'webpack-hot-middleware/client',
+ 'webpack/hot/dev-server',
   config.entry.app
 ]
 
