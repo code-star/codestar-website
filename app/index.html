@@ -285,38 +285,41 @@
 </section>
 <section class="special" data-scrollax-parent="true" id="contact">
   <div class="content row" data-scrollax="properties: { 'translateX': '-20%' }">
-    <div class="large-2 columns"></div>
+    <div class="large-3 columns"></div>
 
     <div class="large-4 columns contact_form_container" style="height: 100%">
       <div class="vertical-center">
         <header>
           <h2>Contact</h2>
         </header>
-        <p>Are you in desperate need of top-notch coding?</p>
+        <p>Are you in desperate need of top-notch coding? Or just looking for a chat and a big bucket of coder's coffee? Now you know where to find it!</p>
         <form id="contact_form">
           <div class="row">
             <div class="medium-6 columns">
-              <input type="text" placeholder="Voornaam">
-              <input type="text" placeholder="Bedrijfsnaam">
+              <input class="form-input" type="text" placeholder="Voornaam">
+              <input class="form-input" type="text" placeholder="Bedrijfsnaam">
             </div>
             <div class="medium-6 columns">
-              <input type="text" placeholder="Achternaam">
-              <input type="text" placeholder="Telefoonnummer">
+              <input class="form-input" type="text" placeholder="Achternaam">
+              <input class="form-input" type="text" placeholder="Telefoonnummer">
             </div>
-            <div class="medium-12 columns">
-              <input type="text" placeholder="E-mailadres">
+            <div class="medium-12 columns columns-space">
+              <input class="form-input" type="text" placeholder="E-mailadres">
             </div>
-            <div class="medium-12 columns">
-              <input type="text" placeholder="Onderwerp">
-              <textarea placeholder="Bericht"></textarea>
+            <div class="medium-12 columns columns-space">
+              <input class="form-input" type="text" placeholder="Onderwerp">
+              <textarea id="bericht" class="form-input" placeholder="Bericht"></textarea>
             </div>
           </div>
-          <a href="#" class="button codestar-button">Alles Wissen</a>
-          <input type="submit" class="button codestar-button" value="Verstuur Bericht">
+          <div id="form-buttons">
+            <a href="#" class="button codestar-button">Alles Wissen</a>
+            <input type="submit" class="button codestar-button" value="Verstuur Bericht">
+          </div>
         </form>
       </div>
     </div>
-    <div class="large columns map_container">
+    <div class="large-1 columns"></div>
+    <div class="large-4 columns map_container">
       <div id="map"></div>
       <div class="contact_data_container row">
         <div class="medium-6 columns">
