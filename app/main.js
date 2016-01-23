@@ -15,6 +15,7 @@ import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
 import { getMoon } from './js/moon';
+import { getSun } from './js/sun';
 import { getFeatures } from './js/features';
 import { retinaCanvas } from './js/retinaCanvas';
 let Scrollax = require('scrollax');
@@ -59,7 +60,7 @@ $(document).ready(function() {
   $('#sunburst2').append(rc.canvas);
 
   var moon = getMoon(50);
-  var sun = $('<img id="sun" src="sun.svg" width="200"/>');
+  var sun = getSun(55);
   $('#center .decorations').append(moon);
   $('#center .decorations').append(sun);
 
