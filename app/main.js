@@ -111,6 +111,7 @@ $('body').mousewheel(event => {
     return;
   }
   if($('body').scrollLeft() > 100) {
+    $('.job_list_items li').removeAttr('style');
     $('.profile').removeClass('is-visible');
   }
 
