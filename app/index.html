@@ -231,17 +231,87 @@ and a real teamplayer.</span>
 </section>
 <section class="special" data-scrollax-parent="true" id="contact">
   <div class="content row" data-scrollax="properties: { 'translateX': '-20%' }">
-    <div class="large-4 columns"></div>
-    <div class="large-4 columns">
+    <div class="large-2 columns"></div>
+
+    <div class="large-4 columns contact_form_container" style="height: 100%">
       <div class="vertical-center">
         <header>
           <h2>Contact</h2>
         </header>
         <p>Are you in desperate need of top-notch coding?</p>
+        <form id="contact_form">
+          <div class="row">
+            <div class="medium-6 columns">
+              <input type="text" placeholder="Voornaam">
+              <input type="text" placeholder="Bedrijfsnaam">
+            </div>
+            <div class="medium-6 columns">
+              <input type="text" placeholder="Achternaam">
+              <input type="text" placeholder="Telefoonnummer">
+            </div>
+            <div class="medium-12 columns">
+              <input type="text" placeholder="E-mailadres">
+            </div>
+            <div class="medium-12 columns">
+              <input type="text" placeholder="Onderwerp">
+              <textarea placeholder="Bericht"></textarea>
+            </div>
+          </div>
+          <a href="#" class="button codestar-button">Alles Wissen</a>
+          <input type="submit" class="button codestar-button" value="Verstuur Bericht">
+        </form>
       </div>
     </div>
-    <div class="large-4 columns"></div>
+    <div class="large columns map_container">
+      <div id="map"></div>
+      <div class="contact_data_container row">
+        <div class="medium-6 columns">
+          <ul class="menu vertical">
+            <li>
+              <span>
+                <a href="mailto:info@codestar.nl">INFO@CODE.STAR</a>
+              </span>
+            </li>
+            <li>
+              <span>030 663 7000</span>
+            </li>
+            <li>
+              <span>Ringwade 1, 3439 LM Nieuwegein</span>
+            </li>
+          </ul>
+        </div>
+        <div class="medium-6 columns">
+          <ul class="menu vertical">
+            <li>
+              <a href="#" class="button codestar-button">Sla gegevens op</a>
+            </li>
+            <li>
+            <a href="#" class="button codestar-button">Bel direct</a>
+            </li>
+            <li>
+              <a href="#" class="button codestar-button">Bepaal route</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+
 </section>
+<script>
+    function initMap() {
+      var latLng = {lat: 52.0577984, lng: 5.1111};
+      var mapDiv = document.getElementById('map');
+      var map = new google.maps.Map(mapDiv, {
+        center: latLng,
+        zoom: 17
+      });
+      new google.maps.Marker({
+    position: latLng,
+    map: map
+  });
+    }
+  </script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 </body>
 </html>
