@@ -772,19 +772,17 @@ export function getSunburst(alternative) {
     .range([0, radius]);
 
 
-  var color = d3.scale.ordinal()
-    .domain([0])
-    .range(['rgba(255, 255, 255, 0.0)']);
-
-  if (alternative) {
-    color = d3.scale.ordinal()
+  var color = alternative ?
+    d3.scale.ordinal()
       .domain([0, 1, 2, 3, 4])
-      .range(['rgba(255, 255, 255, 0.0',
-              'rgba(255, 255, 255, 1.0',
-              'rgba(255, 255, 255, 1.0',
-              'rgba(255, 255, 255, 0.0',
-              'rgba(255, 255, 255, 1.0'])
-  }
+      .range(['transparent',
+              'white',
+              'white',
+              'transparent',
+              'white'])
+    : d3.scale.ordinal()
+        .domain([0])
+        .range(['rgba(255, 255, 255, 0.0)']);
 
   var innerNode = svg
     .attr('width', width)
