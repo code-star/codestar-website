@@ -103,12 +103,21 @@ function closeMenuIfOpen() {
 
 $(window).resize(e => parallax.reload());
 
-$('html, body').mousewheel(event => {
+$('body').mousewheel(event => {
+  if(event.target.closest('.profile') !== null) {
+    return;
+  }
+  if($('body').scrollLeft() > 100) {
+    $('.profile').removeClass('is-visible');
+  }
+  
   var delta = event.deltaY - event.deltaX
   $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
   closeMenuIfOpen();
   event.preventDefault();
 });
+
+
 $('.fixed-menu .menu li a').on('click', (event) => {
     $('html, body').stop().animate({
         scrollLeft: $(event.currentTarget.hash).offset().left
@@ -116,16 +125,35 @@ $('.fixed-menu .menu li a').on('click', (event) => {
     event.preventDefault();
 });
 
-$('.job_list_items li a').click(() => {
+$('.job_list_items li a').click((event) => {
     let element = $('.profile');
     let elementVisibility = element.css('visibility');
+    let arrow = $('.arrow-left');
+    let parentOfClickedElement = $(event.currentTarget).parent();
+    let positionOfClickedElement = $(event.currentTarget).position().top;
+    let job_list_items = $('.job_list_items');
 
-    if(elementVisibility === 'visible') {
-       element.css('visibility','hidden');
+    if(job_list_items.find('.active').length > 0) {
+      job_list_items.find('li').removeClass('active');
+    }
+
+    arrow.css('top', positionOfClickedElement + 5)
+
+    if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
+       element.removeClass('is-visible');
+       $('.job_list_items li').removeAttr('style');
     }
     else {
-       element.css('visibility', 'visible');
+       element.addClass('is-visible');
+       parentOfClickedElement.addClass('active');
+       $('.job_list_items li').removeAttr('style');
+       parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
     }
+});
+
+$('.close-button').click(() => {
+  $('.profile').removeClass('is-visible');
+  $('.job_list_items li').removeAttr('style');
 });
 
 $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
