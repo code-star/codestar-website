@@ -14,6 +14,7 @@ require('./fonts/ConduitITCStd-Italic.otf');
 import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
+import { getCasesTree } from './js/cases';
 import { getMoon } from './js/moon';
 import { getSun } from './js/sun';
 import { getFeatures } from './js/features';
@@ -32,6 +33,7 @@ $(document).ready(function() {
   $('#featureList').append(features);
 
   $('#teamTree').append(getTeamTree());
+  $('#casesTree').append(getCasesTree());
 
   $('#sunburst').append(getSunburst());
   var rc = retinaCanvas(1600, 1600);
@@ -111,7 +113,7 @@ $('body').mousewheel(event => {
   if($('body').scrollLeft() > 100) {
     $('.profile').removeClass('is-visible');
   }
-  
+
   var delta = event.deltaY - event.deltaX
   $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
   closeMenuIfOpen();
