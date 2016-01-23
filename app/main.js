@@ -110,7 +110,7 @@ function closeMenuIfOpen() {
 $(window).resize(e => parallax.reload());
 
 $('body').mousewheel(event => {
-  if(event.target.closest('.profile') !== null) {
+  if(event.target && event.target.closest && event.target.closest('.profile') !== null) {
     return;
   }
   if($('body').scrollLeft() > 100) {
