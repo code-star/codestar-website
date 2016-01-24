@@ -89,12 +89,14 @@ $(document).ready(function() {
 
   $(window).Scrollax({horizontal: true}, {
     scroll: function () {
+      var scroll = $(window).scrollLeft();
       // move moon
       // x position from 0 to 1
-      var base = $('#center').position().left + $(window).width();
-      var x_moon= $('body').scrollLeft() / $('#center').position().left;
-      var x_sun = 1 - ($('body').scrollLeft() + $(window).width() - base) / ($(document).width() - base);
+      var base = $('#center').offset().left + $(window).width();
+      var x_moon = scroll / $('#center').offset().left;
+      var x_sun = 1 - (scroll + $(window).width() - base) / ($(document).width() - base);
 
+      console.log(x_moon);
       movePlanet(moon, x_moon, 'right');
       movePlanet(sun, x_sun, 'left');
     }
