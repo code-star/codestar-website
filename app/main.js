@@ -28,6 +28,9 @@ let parallax = new Scrollax(window, {'horizontal': true}).init();
 let mouseWheel = require('jquery-mousewheel');
 let smoothscroll = require('jquery-smooth-scroll');
 
+require('./js/jquery.scroll_to.js');
+require('./js/jquery.snapscroll.js');
+
 $(document).ready(function() {
 
   var offset = $('#center').position().left;
@@ -96,7 +99,6 @@ $(document).ready(function() {
       var x_moon = scroll / $('#center').offset().left;
       var x_sun = 1 - (scroll + $(window).width() - base) / ($(document).width() - base);
 
-      console.log(x_moon);
       movePlanet(moon, x_moon, 'right');
       movePlanet(sun, x_sun, 'left');
     }
@@ -104,6 +106,8 @@ $(document).ready(function() {
 
   console.log($('#logo').find('#paren1').attr('d'));
   console.log($('#paren1').attr('d'));
+
+  $('body').snapscroll();
 });
 
 function closeMenuIfOpen() {
@@ -123,7 +127,7 @@ $('body').mousewheel(event => {
     $('.profile').removeClass('is-visible');
   }
 
-  var delta = event.deltaY - event.deltaX
+  var delta = event.deltaY - event.deltaX;
   $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
   closeMenuIfOpen();
   event.preventDefault();
