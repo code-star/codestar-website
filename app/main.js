@@ -128,6 +128,7 @@ $('body').mousewheel(event => {
   }
 
   var delta = event.deltaY - event.deltaX;
+  if (Math.abs(delta) < 12) delta = delta < 0 ? -12 : 12;
   $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
   closeMenuIfOpen();
   event.preventDefault();
