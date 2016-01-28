@@ -19,13 +19,13 @@ require('./fonts/ConduitITCStd-Italic.otf');
 import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
-import { getCasesTree } from './js/cases';
+//import { getCasesTree } from './js/cases';
 import { getMoon } from './js/moon';
 import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { getBackgrounds } from './js/backgrounds';
-import { retinaCanvas } from './js/retinaCanvas';
+//import { retinaCanvas } from './js/retinaCanvas';
 // let Scrollax = require('scrollax');
 // let parallax = new Scrollax(window, {'horizontal': true}).init();
 // let mouseWheel = require('jquery-mousewheel');
@@ -44,7 +44,7 @@ $(document).ready(function() {
   $('#solararray').append(getArray(7));
 
   $('#teamTree').append(getTeamTree());
-  $('#casesTree').append(getCasesTree());
+//  $('#casesTree').append(getCasesTree());
 
   $('#sunburst').append(getSunburst());
 //  var rc = retinaCanvas(1600, 1600);
@@ -72,10 +72,10 @@ $(document).ready(function() {
 //  }
 //  $('#sunburst2').append(rc.canvas);
 
-  // var moon = getMoon(50);
-  // var sun = getSun(55);
-  // $('#center .decorations').append(moon);
-  // $('#center .decorations').append(sun);
+   var moon = getMoon(50);
+   var sun = getSun(55);
+   $('#center .decorations').append(moon);
+   $('#center .decorations').append(sun);
 
   // function movePlanet(planet, x, property) {
   //   if (x < 1.5) {
