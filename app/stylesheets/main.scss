@@ -28,15 +28,9 @@
   font-style: italic;
 }
 
-html,
-body {
-  height: 100vh;
-  max-height: 100vh;
-}
-
 @media #{$small-only} {
   body,html {
-    font-size: 5vw;
+    font-size: 4vmin;
   }
 
   ul.job_list_items li a {
@@ -46,7 +40,7 @@ body {
 
 @media #{$medium-only} {
   body,html {
-    font-size: 2vw;
+    font-size: 4vmin;
   }
 }
 
@@ -62,13 +56,10 @@ body {
 body {
   font-family: Conduit;
   color: white;
-  white-space: nowrap;
+  white-space: normal;
   background-repeat: no-repeat;
   // 100 * n_sections
   overflow: hidden;
-}
-p {
-  white-space: normal;
 }
 
 h1, h2 {
