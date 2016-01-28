@@ -109,6 +109,13 @@ $(document).ready(function() {
   console.log($('#logo').find('#paren1').attr('d'));
   console.log($('#paren1').attr('d'));
 
+
+  function closeMenuIfOpen() {
+    if ($('.fixed-menu .menu').css('display') !== 'none') {
+      $('.fixed-menu .menu').hide(350)
+    }
+  }
+
   // $('body').snapscroll();
   $('#fullpage').fullpage({
         menu: '.fixed-menu',
@@ -120,15 +127,13 @@ $(document).ready(function() {
         showActiveTooltip: false,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
+        scrollingSpeed: 1000,
+        loopTop: true,
+        loopBottom: true,
+        onLeave: function(index, nextIndex, direction) { closeMenuIfOpen(); }
   });
 
 });
-
-function closeMenuIfOpen() {
-  if ($('.fixed-menu .menu').css('display') !== 'none') {
-    $('.fixed-menu .menu').hide(350)
-  }
-}
 
 // $(window).resize(e => parallax.reload());
 
