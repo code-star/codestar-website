@@ -24,6 +24,7 @@ import { getMoon } from './js/moon';
 import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
+import { getBackgrounds } from './js/backgrounds';
 import { retinaCanvas } from './js/retinaCanvas';
 // let Scrollax = require('scrollax');
 // let parallax = new Scrollax(window, {'horizontal': true}).init();
@@ -47,30 +48,30 @@ $(document).ready(function() {
   $('#casesTree').append(getCasesTree());
 
   $('#sunburst').append(getSunburst());
-  var rc = retinaCanvas(1600, 1600);
-  var svg = getSunburst(true);
-  svg.setAttribute('version', '1.1');
-  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-  svg.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
-  var style = document.createElement('style');
-  style.type = 'text/css';
-  style.appendChild(document.createTextNode('path{stroke: rgba(255, 255, 255, 1.0); fill-rule: evenodd;}'));
-  svg.insertBefore(style, svg.childNodes[0]);
+//  var rc = retinaCanvas(1600, 1600);
+//  var svg = getSunburst(true);
+//  svg.setAttribute('version', '1.1');
+//  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+//  svg.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
+//  var style = document.createElement('style');
+//  style.type = 'text/css';
+//  style.appendChild(document.createTextNode('path{stroke: rgba(255, 255, 255, 1.0); fill-rule: evenodd;}'));
+//  svg.insertBefore(style, svg.childNodes[0]);
 //  var svgText = '<?xml version="1.0" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">;\n' + svg.outerHTML;
 //  console.log(svgText);
 
-  $('body').append('<div id="tempSunburst">');
-  $('#tempSunburst').append(svg);
-  var src = 'data:image/svg+xml;base64,' + window.btoa($('#tempSunburst').html());
-  var img = new Image();
-  img.src = src;
-  img.width = 1600;
-  img.height = 1600;
-  img.onload = () => {
-    rc.ctx.drawImage(img, 0, 0);
-    $('#tempSunburst').remove();
-  }
-  $('#sunburst2').append(rc.canvas);
+//  $('body').append('<div id="tempSunburst">');
+//  $('#tempSunburst').append(svg);
+//  var src = 'data:image/svg+xml;base64,' + window.btoa($('#tempSunburst').html());
+//  var img = new Image();
+//  img.src = src;
+//  img.width = 1600;
+//  img.height = 1600;
+//  img.onload = () => {
+//    rc.ctx.drawImage(img, 0, 0);
+//    $('#tempSunburst').remove();
+//  }
+//  $('#sunburst2').append(rc.canvas);
 
   var moon = getMoon(50);
   var sun = getSun(55);
@@ -115,6 +116,9 @@ $(document).ready(function() {
       $('.fixed-menu .menu').hide(350)
     }
   }
+
+  var backgrounds = getBackgrounds();
+  console.log(backgrounds[0]);
 
   // $('body').snapscroll();
   $('#fullpage').fullpage({
