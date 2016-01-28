@@ -114,7 +114,9 @@ $(document).ready(function() {
 
   var backgrounds = getBackgrounds();
   $('.special').each((i, element) => {
-    $(element).css('background-image', backgrounds[i]);
+    for (var j = 0; j < 6; ++j) {
+      $(element).css('background', backgrounds[i][j]);
+    }
   });
 
   // $('body').snapscroll();

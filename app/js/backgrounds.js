@@ -1,4 +1,4 @@
-export function getBackgrounds() {
+export function getBackgroundsSVG() {
 
   const svg_part1 = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">\n'
                 + '<defs><linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">\n';
@@ -17,4 +17,25 @@ export function getBackgrounds() {
   }
 
   return backgrounds;
+}
+
+export function getBackgrounds() {
+
+  let backgrounds = [];
+  let colors = ['#030815','#041b36','#052d57','#073b72','#0c4d90','#1464af','#2b7ec5','#4e9bd5','#7bb9e5','#aad6f4'];
+
+  for (var i = 0; i < 9; ++i) {
+    let css = [];
+    css.push('-moz-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
+    css.push('-webkit-gradient(linear, left top, left bottom, color-stop(0%,' + colors[i] + '), color-stop(100%,' + colors[i+1] + '))');
+    css.push('-webkit-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
+    css.push('-o-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
+    css.push('-ms-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
+    css.push('linear-gradient(to bottom, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
+
+    backgrounds.push(css);
+  }
+
+  return backgrounds;
+
 }
