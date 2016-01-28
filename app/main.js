@@ -25,8 +25,8 @@ import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { retinaCanvas } from './js/retinaCanvas';
-// let Scrollax = require('scrollax');
-// let parallax = new Scrollax(window, {'horizontal': true}).init();
+ let Scrollax = require('scrollax');
+ let parallax = new Scrollax(window, {}).init();
 // let mouseWheel = require('jquery-mousewheel');
 let smoothscroll = require('jquery-smooth-scroll');
 
@@ -113,6 +113,7 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
         menu: '.fixed-menu',
         lockAnchors: false,
+        scrollBar: true,
         anchors:['home', 'secondPage'],
         navigation: false,
         navigationPosition: 'right',
@@ -122,6 +123,8 @@ $(document).ready(function() {
         slidesNavPosition: 'bottom',
   });
 
+  parallax.reload();
+
 });
 
 function closeMenuIfOpen() {
@@ -130,7 +133,7 @@ function closeMenuIfOpen() {
   }
 }
 
-// $(window).resize(e => parallax.reload());
+$(window).resize(e => parallax.reload());
 
 // $('body').mousewheel(event => {
 //   if(event.target && event.target.closest && event.target.closest('.profile') !== null) {

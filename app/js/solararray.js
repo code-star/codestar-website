@@ -4,7 +4,7 @@ export function getArray(k) {
   for (var i = 0; i < k; ++i) {
   	var td = $('<td class="array">');
     for (var j = 0; j < k; ++j) {
-    	td.append($('<div class="panel" data-scrollax="properties: { \'rotateY\': \'90deg\'}">'));
+    	td.append($('<div class="panel" data-scrollax="properties: { \'rotateX\': \'-90deg\', \'translateY\': \'200vh\'}">'));
     }
     tr.append(td);
   }
