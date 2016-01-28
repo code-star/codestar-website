@@ -118,7 +118,9 @@ $(document).ready(function() {
   }
 
   var backgrounds = getBackgrounds();
-  console.log(backgrounds[0]);
+  $('.special').each((i, element) => {
+    $(element).css('background-image', backgrounds[i]);
+  });
 
   // $('body').snapscroll();
   $('#fullpage').fullpage({
