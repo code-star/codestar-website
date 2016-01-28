@@ -33,6 +33,29 @@ body {
   height: 100vh;
   max-height: 100vh;
 }
+
+@media #{$small-only} {
+  body,html {
+    font-size: 5vw;
+  }
+
+  ul.job_list_items li a {
+    font-size: 1.3em;
+  }
+}
+
+@media #{$medium-only} {
+  body,html {
+    font-size: 2vw;
+  }
+}
+
+@media #{$large-only} {
+  ul.job_list_items li a {
+    font-size: 1.3em;
+  }
+}
+
 .row {
   max-width: 100%;
 }
@@ -44,7 +67,6 @@ body {
   // 100 * n_sections
   overflow: hidden;
 }
-
 p {
   white-space: normal;
 }
@@ -250,9 +272,7 @@ ul.key_skills li:before {
 }
 
 ul.job_list_items {
-  width: 300px;
   margin-top: 40vh;
-  float: right;
 }
   ul.job_list_items li{
     height: 50px;
@@ -260,11 +280,10 @@ ul.job_list_items {
     margin-bottom: 1px;
   }
   ul.job_list_items li a {
-    height: 50px;
-    line-height: 1.3 !important;
+    // height: 50px;
     color: #fff;
+    line-height: 1.3 !important;
     font-weight: 400;
-    font-size: 1.5em;
   }
 
 #firstPage .columns{
