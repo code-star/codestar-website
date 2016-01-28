@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Code.Star</title>
-<link href="./app.c28cb0c0cb14910a88a2263704cf1fd0.css" rel="stylesheet"></head>
+<link href="./app.c84f4d0447117d97126cf29265e97601.css" rel="stylesheet"></head>
 <body>
 <div id="fullpage">
   <section class="special section" data-scrollax-parent="true" id="firstPage">
@@ -268,7 +268,7 @@
   </section>
   <section class="special section" data-scrollax-parent="true" id="eightPage">
     <div class="content row" data-scrollax="properties: { 'translateX': '-20%' }">
-      <div class="large-3 columns"></div>
+      <div class="large-3 show-for-large columns"></div>
       <div class="large-6 columns">
         <div class="vertical-center">
           <center>
@@ -281,11 +281,12 @@
           </center>
         </div>
       </div>
-      <div class="large-3 columns"></div>
+      <div class="large-3 show-for-large columns"></div>
     </div>
   </section>
+  <section class="special section" data-scrollax-parent="true" id="ninthPage">
     <div class="content row" data-scrollax="properties: { 'translateX': '-20%' }">
-      <div class="large-3 columns"></div>
+      <div class="large-3 show-for-large columns"></div>
       <div class="large-4 columns contact_form_container" style="height: 100%">
         <div class="vertical-center">
           <header>
@@ -317,8 +318,8 @@
           </form>
         </div>
       </div>
-      <div class="large-1 columns"></div>
-      <div class="large-4 columns map_container">
+      <div class="large-1 show-for-large columns"></div>
+      <div class="large-4 show-for-medium columns map_container">
         <div id="map"></div>
         <table class="contact_data_table">
           <colgroup>
@@ -346,13 +347,13 @@
         </table>
       </div>
     </div>
-
   </section>
 </div>
 <script>
     function initMap() {
       var latLng = {lat: 52.0577984, lng: 5.1111};
       var mapDiv = document.getElementById('map');
+
       var map = new google.maps.Map(mapDiv, {
         center: latLng,
         zoom: 17
@@ -364,5 +365,5 @@
     }
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-<script src="./app.41c7d88fdef7986a25ec.js"></script></body>
+<script src="./app.a32bafb02a8ef86269e3.js"></script></body>
 </html>
