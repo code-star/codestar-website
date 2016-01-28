@@ -29,7 +29,6 @@ import { retinaCanvas } from './js/retinaCanvas';
 // let Scrollax = require('scrollax');
 // let parallax = new Scrollax(window, {'horizontal': true}).init();
 // let mouseWheel = require('jquery-mousewheel');
-let smoothscroll = require('jquery-smooth-scroll');
 
 // require('./js/jquery.scroll_to.js');
 // require('./js/jquery.snapscroll.js');
@@ -73,25 +72,25 @@ $(document).ready(function() {
 //  }
 //  $('#sunburst2').append(rc.canvas);
 
-  var moon = getMoon(50);
-  var sun = getSun(55);
-  $('#center .decorations').append(moon);
-  $('#center .decorations').append(sun);
+  // var moon = getMoon(50);
+  // var sun = getSun(55);
+  // $('#center .decorations').append(moon);
+  // $('#center .decorations').append(sun);
 
-  function movePlanet(planet, x, property) {
-    if (x < 1.5) {
-      // y is an inverted parabola
-      // http://www.wolframalpha.com/input/?i=-%28x+-+0.5%29%5E2+*+400+%2B+100
-      var y = 100 - 400 * (x - 0.5) * (x - 0.5);
-      // opacity is a triangle function peaking at a=1.0 when x=0.5
-      var a = x > 0.5 ? 2 - 2*x : 2*x;
-      if (y > 0) {
-        planet.css('opacity', a);
-        planet.css('top', 10 +  0.9 * (100 - y) + '%');
-        planet.css(property, ((1 - x) * 480) + '%');
-      }
-    }
-  }
+  // function movePlanet(planet, x, property) {
+  //   if (x < 1.5) {
+  //     // y is an inverted parabola
+  //     // http://www.wolframalpha.com/input/?i=-%28x+-+0.5%29%5E2+*+400+%2B+100
+  //     var y = 100 - 400 * (x - 0.5) * (x - 0.5);
+  //     // opacity is a triangle function peaking at a=1.0 when x=0.5
+  //     var a = x > 0.5 ? 2 - 2*x : 2*x;
+  //     if (y > 0) {
+  //       planet.css('opacity', a);
+  //       planet.css('top', 10 +  0.9 * (100 - y) + '%');
+  //       planet.css(property, ((1 - x) * 480) + '%');
+  //     }
+  //   }
+  // }
 
   // $(window).Scrollax({horizontal: true}, {
   //   scroll: function () {
@@ -107,10 +106,6 @@ $(document).ready(function() {
   //   }
   // }).init();
 
-  console.log($('#logo').find('#paren1').attr('d'));
-  console.log($('#paren1').attr('d'));
-
-
   function closeMenuIfOpen() {
     if ($('.fixed-menu .menu').css('display') !== 'none') {
       $('.fixed-menu .menu').hide(350)
@@ -125,17 +120,9 @@ $(document).ready(function() {
   // $('body').snapscroll();
   $('#fullpage').fullpage({
         menu: '.fixed-menu',
-        lockAnchors: false,
-        anchors:['home', 'secondPage'],
-        navigation: false,
-        navigationPosition: 'right',
-        navigationTooltips: ['firstSlide', 'secondSlide'],
-        showActiveTooltip: false,
-        slidesNavigation: true,
-        slidesNavPosition: 'bottom',
-        scrollingSpeed: 1000,
-        loopTop: true,
-        loopBottom: true,
+        anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
+        scrollingSpeed: 1100,
+
         onLeave: function(index, nextIndex, direction) { closeMenuIfOpen(); }
   });
 
@@ -160,12 +147,12 @@ $(document).ready(function() {
 // });
 
 
-$('.fixed-menu .menu li a').on('click', (event) => {
-    $('html, body').stop().animate({
-        scrollLeft: $(event.currentTarget.hash).offset().left
-    }, 1000);
-    event.preventDefault();
-});
+// $('.fixed-menu .menu li a').on('click', (event) => {
+//     $('html, body').stop().animate({
+//         scrollLeft: $(event.currentTarget.hash).offset().left
+//     }, 1000);
+//     event.preventDefault();
+// });
 
 $('.job_list_items li a').click((event) => {
     let element = $('.profile');
