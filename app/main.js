@@ -1,4 +1,6 @@
 require('./stylesheets/main.scss');
+require('fullpage.js/jquery.fullPage.scss');
+require('fullpage.js/jquery.fullPage');
 require('./img/logo-simple.svg');
 require('./img/logo.svg');
 require('./img/logo-simple.svg');
@@ -23,18 +25,18 @@ import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { retinaCanvas } from './js/retinaCanvas';
-let Scrollax = require('scrollax');
-let parallax = new Scrollax(window, {'horizontal': true}).init();
-let mouseWheel = require('jquery-mousewheel');
+// let Scrollax = require('scrollax');
+// let parallax = new Scrollax(window, {'horizontal': true}).init();
+// let mouseWheel = require('jquery-mousewheel');
 let smoothscroll = require('jquery-smooth-scroll');
 
-require('./js/jquery.scroll_to.js');
-require('./js/jquery.snapscroll.js');
+// require('./js/jquery.scroll_to.js');
+// require('./js/jquery.snapscroll.js');
 
 $(document).ready(function() {
 
-  var offset = $('#center').position().left;
-  window.scrollTo(offset, 0);
+  // var offset = $('#center').position().left;
+  // window.scrollTo(offset, 0);
 
   var features = getFeatures();
   $('#featureList').append(features);
@@ -90,24 +92,36 @@ $(document).ready(function() {
     }
   }
 
-  $(window).Scrollax({horizontal: true}, {
-    scroll: function () {
-      var scroll = $(window).scrollLeft();
-      // move moon
-      // x position from 0 to 1
-      var base = $('#center').offset().left + $(window).width();
-      var x_moon = scroll / $('#center').offset().left;
-      var x_sun = 1 - (scroll + $(window).width() - base) / ($(document).width() - base);
-
-      movePlanet(moon, x_moon, 'right');
-      movePlanet(sun, x_sun, 'left');
-    }
-  }).init();
+  // $(window).Scrollax({horizontal: true}, {
+  //   scroll: function () {
+  //     var scroll = $(window).scrollLeft();
+  //     // move moon
+  //     // x position from 0 to 1
+  //     var base = $('#center').offset().left + $(window).width();
+  //     var x_moon = scroll / $('#center').offset().left;
+  //     var x_sun = 1 - (scroll + $(window).width() - base) / ($(document).width() - base);
+  //
+  //     movePlanet(moon, x_moon, 'right');
+  //     movePlanet(sun, x_sun, 'left');
+  //   }
+  // }).init();
 
   console.log($('#logo').find('#paren1').attr('d'));
   console.log($('#paren1').attr('d'));
 
-  $('body').snapscroll();
+  // $('body').snapscroll();
+  $('#fullpage').fullpage({
+        menu: '.fixed-menu',
+        lockAnchors: false,
+        anchors:['home', 'secondPage'],
+        navigation: false,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide'],
+        showActiveTooltip: false,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
+  });
+
 });
 
 function closeMenuIfOpen() {
@@ -116,23 +130,23 @@ function closeMenuIfOpen() {
   }
 }
 
-$(window).resize(e => parallax.reload());
+// $(window).resize(e => parallax.reload());
 
-$('body').mousewheel(event => {
-  if(event.target && event.target.closest && event.target.closest('.profile') !== null) {
-    return;
-  }
-  if($('body').scrollLeft() > 100) {
-    $('.job_list_items li').removeAttr('style');
-    $('.profile').removeClass('is-visible');
-  }
-
-  var delta = event.deltaY - event.deltaX;
-  if (Math.abs(delta) < 12) delta = delta < 0 ? -12 : 12;
-  $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
-  closeMenuIfOpen();
-  event.preventDefault();
-});
+// $('body').mousewheel(event => {
+//   if(event.target && event.target.closest && event.target.closest('.profile') !== null) {
+//     return;
+//   }
+//   // if($('body').scrollBottom() > 100) {
+//   //   $('.job_list_items li').removeAttr('style');
+//   //   $('.profile').removeClass('is-visible');
+//   // }
+//
+//   // var delta = event.deltaY - event.deltaX;
+//   // if (Math.abs(delta) < 12) delta = delta < 0 ? -12 : 12;
+//   // $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
+//   closeMenuIfOpen();
+//   event.preventDefault();
+// });
 
 
 $('.fixed-menu .menu li a').on('click', (event) => {
@@ -175,10 +189,10 @@ $('.close-button').click(() => {
 
 $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
 
-$('.scroll-button').on('click', (event) => {
-    event.preventDefault();
-    closeMenuIfOpen();
-    $('html, body').stop().animate({
-        scrollLeft: $(event.currentTarget.hash).offset().left
-    }, 1000);
-});
+// $('.scroll-button').on('click', (event) => {
+//     event.preventDefault();
+//     closeMenuIfOpen();
+//     $('html, body').stop().animate({
+//         scrollLeft: $(event.currentTarget.hash).offset().left
+//     }, 1000);
+// });
