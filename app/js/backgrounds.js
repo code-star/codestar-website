@@ -1,9 +1,9 @@
 export function getBackgrounds() {
 
   const svg_part1 = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1" preserveAspectRatio="none">\n'
-                + '<linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">\n';
+                + '<defs><linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="0%" y2="100%">\n';
 
-  const svg_part2 = '</linearGradient>\n<rect x="0" y="0" width="1" height="1" fill="url(#gradient)" />\n</svg>';
+  const svg_part2 = '</linearGradient></defs>\n<rect x="0" y="0" width="1" height="1" fill="url(#gradient)" />\n</svg>';
 
   let backgrounds = [];
   let colors = ['#030815','#041b36','#052d57','#073b72','#0c4d90','#1464af','#2b7ec5','#4e9bd5','#7bb9e5','#aad6f4'];
