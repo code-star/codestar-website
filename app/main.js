@@ -114,7 +114,7 @@ $(document).ready(function() {
 
   var backgrounds = getBackgrounds();
   $('.special').each((i, element) => {
-    for (var j = 0; j < 6; ++j) {
+    for (var j = 0; j < backgrounds.length; ++j) {
       $(element).css('background', backgrounds[i][j]);
     }
   });
