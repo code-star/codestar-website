@@ -4,4 +4,8 @@
 
 ---
 
+#Howto
+npm install
+npm run dev
+
 # Website

@@ -1,4 +1,5 @@
 require('./stylesheets/main.scss');
+require('jquery');
 require('fullpage.js/jquery.fullPage.scss');
 require('fullpage.js/jquery.fullPage');
 require('./img/logo-simple.svg');
@@ -139,12 +140,36 @@ $(document).ready(function() {
       let parentOfClickedElement = $(event.currentTarget).parent();
       let positionOfClickedElement = $(event.currentTarget).position().top;
       let job_list_items = $('.job_list_items');
-
+      let jobName = $(event.currentTarget).attr('name');
       if(job_list_items.find('.active').length > 0) {
         job_list_items.find('li').removeClass('active');
       }
 
-      arrow.css('top', positionOfClickedElement + 5)
+      arrow.css('top', positionOfClickedElement + 5);
+      let json = require('./data/'+jobName+'.json');
+
+      let profile = [];
+      let offer = [];
+
+      $.each( json.profile, function( key, val ) {
+        profile.push( "<li id='profile_" + key + "'>" + val + "</li>" );
+      });
+
+      $.each( json.offer, function( key, val ) {
+        offer.push( "<li id='offer_" + key + "'>" + val + "</li>" );
+      });
+
+      let profileList = $( '<ul/>', {
+        'class': 'simple vertical',
+        html: profile.join( '' )
+      });
+      let offerList = $( '<ul/>', {
+        'class': 'simple vertical',
+        html: '<p>'+json.offer_intro+'</p>'+ offer.join('')
+      });
+
+      $('.profile-list').html(profileList);
+      $('.offer-list').html(offerList);
 
       if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
          element.removeClass('is-visible');
