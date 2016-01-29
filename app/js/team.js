@@ -1,4 +1,5 @@
 var team = require('../data/team.json');
+var pacman = require('file!img!../img/Team/pacman.jpeg');
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -37,22 +38,37 @@ export function getTeamTree() {
       .links(links)
       .start();
 
+  svg
+  .append('defs')
+	  .append('pattern')
+	  .attr('id', 'image')
+	  .attr('x', '0%')
+	  .attr('y', '0%')
+	  .attr('height', '100%')
+	  .attr('width',' 100%')
+	  .attr('viewBox', '0 0 20 20')
+		  .append('image')
+		  .attr('xlink:href', pacman)
+		  .attr('y', 0)
+		  .attr('x', 0)
+		  .attr('width', 20)
+		  .attr('height', 20);
+  
   var link = svg.selectAll('.link')
       .data(links)
       .enter().append('line')
       .attr('class', 'team-link');
-
-
 
   var node = svg.selectAll('.node')
       .data(team.nodes)
       .enter().append('circle')
       .attr('class', 'team-node')
       .attr('r', () => getRandomInt(10, 40))
-      .style('fill', 'white')
+      .style('fill', 'url(#image)')
+      .style('stroke', 'black')     
+      .style('stroke-width', 0.25)
       .call(force.drag);
-
-
+  
   node.append('title')
       .text(function(d) { return d.name; });
 
