@@ -16,4 +16,4 @@ then
   git commit -m "Updated website on: $now"
   git push origin gh-pages
 fi
-git checkout master
+git checkout vertical
