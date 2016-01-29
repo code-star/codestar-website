@@ -39,8 +39,8 @@ config.plugins = (config.plugins || []).concat([
   // see https://github.com/ampedandwired/html-webpack-plugin
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.html',
-    inject: true
+    template: 'app/index.jade',
+    inject: 'body'
   }),
   new BowerWebpackPlugin({
     excludes: /.*\.less/

@@ -34,7 +34,6 @@ import { getBackgrounds } from './js/backgrounds';
 // require('./js/jquery.snapscroll.js');
 
 $(document).ready(function() {
-
   // var offset = $('#center').position().left;
   // window.scrollTo(offset, 0);
 
@@ -124,9 +123,45 @@ $(document).ready(function() {
         menu: '.fixed-menu',
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
+        loopTop: false,
+        loopBottom: false,
+        scrollBar: true,
 
         onLeave: function(index, nextIndex, direction) { closeMenuIfOpen(); }
   });
+
+  $('.job_list_items li a').click((event) => {
+      let element = $('.profile');
+      let elementVisibility = element.css('visibility');
+      let arrow = $('.arrow-left');
+      let parentOfClickedElement = $(event.currentTarget).parent();
+      let positionOfClickedElement = $(event.currentTarget).position().top;
+      let job_list_items = $('.job_list_items');
+
+      if(job_list_items.find('.active').length > 0) {
+        job_list_items.find('li').removeClass('active');
+      }
+
+      arrow.css('top', positionOfClickedElement + 5)
+
+      if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
+         element.removeClass('is-visible');
+         $('.job_list_items li').removeAttr('style');
+      }
+      else {
+         element.addClass('is-visible');
+         parentOfClickedElement.addClass('active');
+         $('.job_list_items li').removeAttr('style');
+         parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
+      }
+  });
+
+  $('.close-button').click(() => {
+    $('.profile').removeClass('is-visible');
+    $('.job_list_items li').removeAttr('style');
+  });
+
+  $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
 
 });
 
@@ -155,39 +190,6 @@ $(document).ready(function() {
 //     }, 1000);
 //     event.preventDefault();
 // });
-
-$('.job_list_items li a').click((event) => {
-    let element = $('.profile');
-    let elementVisibility = element.css('visibility');
-    let arrow = $('.arrow-left');
-    let parentOfClickedElement = $(event.currentTarget).parent();
-    let positionOfClickedElement = $(event.currentTarget).position().top;
-    let job_list_items = $('.job_list_items');
-
-    if(job_list_items.find('.active').length > 0) {
-      job_list_items.find('li').removeClass('active');
-    }
-
-    arrow.css('top', positionOfClickedElement + 5)
-
-    if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
-       element.removeClass('is-visible');
-       $('.job_list_items li').removeAttr('style');
-    }
-    else {
-       element.addClass('is-visible');
-       parentOfClickedElement.addClass('active');
-       $('.job_list_items li').removeAttr('style');
-       parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
-    }
-});
-
-$('.close-button').click(() => {
-  $('.profile').removeClass('is-visible');
-  $('.job_list_items li').removeAttr('style');
-});
-
-$('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
 
 // $('.scroll-button').on('click', (event) => {
 //     event.preventDefault();

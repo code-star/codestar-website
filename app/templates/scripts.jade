@@ -1,0 +1,14 @@
+script.
+      function initMap() {
+      var latLng = {lat: 52.0577984, lng: 5.1111};
+      var mapDiv = document.getElementById('map');
+      var map = new google.maps.Map(mapDiv, {
+      center: latLng,
+      zoom: 17
+      });
+      new google.maps.Marker({
+      position: latLng,
+      map: map
+      });
+      }
+script(src='https://maps.googleapis.com/maps/api/js?callback=initMap', async='', defer='')

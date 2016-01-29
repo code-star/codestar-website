@@ -28,10 +28,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      {
-        test: /\.json$/,
-        loader: 'json'
-      },
+      { test: /\.jade$/, loader: "jade" },
+      { test: /\.json$/, loader: 'json' },
       {
         test: /\.(png|jpg|gif|svg|otf)$/,
         loader: 'url',

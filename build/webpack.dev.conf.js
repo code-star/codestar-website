@@ -28,8 +28,8 @@ config.plugins = (config.plugins || []).concat([
    }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.html',
-    inject: true
+    template: 'app/index.jade',
+    inject: 'body'
   }),
   new BowerWebpackPlugin({
   }),
