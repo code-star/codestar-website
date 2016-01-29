@@ -1,5 +1,5 @@
 var team = require('../data/team.json');
-var pacman = require('file!img!../img/Team/pacman.jpeg');
+var pacman = require('../img/Team/pacman.jpeg');
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
