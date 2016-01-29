@@ -264,17 +264,23 @@ ul.key_skills li:before {
 
 ul.job_list_items {
   margin-top: 40vh;
+  text-align: right;
 }
   ul.job_list_items li{
+    width: 300px;
     height: 50px;
     background: #3B4E6E;
     margin-bottom: 1px;
+    text-align: left;
   }
   ul.job_list_items li a {
     // height: 50px;
+    height: 100%;
     color: #fff;
     line-height: 1.3 !important;
     font-weight: 400;
+    font-size: 1.5em;
+    padding: 0.7rem 1rem !important;/* !important because this gets overwritten by .menu.simple a*/
   }
 
 #firstPage .columns{
