@@ -4,7 +4,6 @@ require('fullpage.js/jquery.fullPage.scss');
 require('fullpage.js/jquery.fullPage');
 require('./img/logo-simple.svg');
 require('./img/logo.svg');
-require('./img/logo-simple.svg');
 require('./img/Mouse.svg');
 require('./img/Features/Features_Curved_Lines.svg');
 require('./img/Features/Features_SmallLines.svg');
@@ -129,7 +128,7 @@ $(document).ready(function() {
         menu: '.fixed-menu',
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
-        responsiveWidth: 640,
+        responsiveWidth: 900,
 
         onLeave: function(index, nextIndex, direction) {
 //            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');

@@ -759,6 +759,8 @@ var tree = {
 export function getSunburst(alternative) {
   var svg = d3.select('body').append('svg').remove();
 
+  svg.attr('class', 'sunburst-svg');
+
   var s = alternative ? 1600 : 800;
 
   var width = s,
@@ -785,8 +787,8 @@ export function getSunburst(alternative) {
         .range(['rgba(255, 255, 255, 0.0)']);
 
   var innerNode = svg
-    .attr('width', width)
-    .attr('height', height)
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 " + width + " " + height)
     .append('g')
     .attr('transform', 'translate(' + width / 2 + ',' + (height / 2 + 10) + ')');
 
