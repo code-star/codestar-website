@@ -177,10 +177,12 @@ $(document).ready(function() {
 
       if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
          element.removeClass('is-visible');
+        $('.job_openings').removeClass('hide-on-mobile');
          $('.job_list_items li').removeAttr('style');
       }
       else {
          element.addClass('is-visible');
+        $('.job_openings').addClass('hide-on-mobile');
          parentOfClickedElement.addClass('active');
          $('.job_list_items li').removeAttr('style');
          parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
@@ -189,6 +191,7 @@ $(document).ready(function() {
 
   $('.close-button').click(() => {
     $('.profile').removeClass('is-visible');
+    $('.job_openings').removeClass('hide-on-mobile');
     $('.job_list_items li').removeAttr('style');
   });
 
