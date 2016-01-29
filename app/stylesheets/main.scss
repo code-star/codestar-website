@@ -60,7 +60,6 @@ body {
   white-space: normal;
   background-repeat: no-repeat;
   // 100 * n_sections
-  overflow: hidden;
 }
 
 h1, h2 {
@@ -489,16 +488,15 @@ ul.why li {
 #curved-lines {
     position: absolute;
     max-width: none;
-    height: 300vh;
-    top: -100vh;
-    left: -181.21vh;
-    transform: translateX(50vw);
+    width: 100vw;
+    top: -100vw;
+    transform: translateY(-50vh);
 }
 #big-lines {
     position: absolute;
     max-width: none;
     height: 100vh;
-    top: 0;
+    top: -100vh;
     left: -6.866vh;
     transform: translateX(50vw);
 }
@@ -506,7 +504,7 @@ ul.why li {
     position: absolute;
     max-width: none;
     height: 100vh;
-    top: 0;
+    top: -100vh;
     left: -6.866vh;
     transform: translateX(50vw);
 }

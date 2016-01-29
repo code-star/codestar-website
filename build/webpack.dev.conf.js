@@ -5,18 +5,16 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var BowerWebpackPlugin = require('bower-webpack-plugin');
 
 // eval-source-map is faster for development
-config.devtool = 'eval-source-map'
-
+config.devtool = 'cheap-module-eval-source-map'
 // add hot-reload related code to entry chunk
 config.entry.app = [
-  'webpack-hot-middleware/client',
- 'webpack/hot/dev-server',
-  config.entry.app
+  config.entry.app,
+  'webpack-hot-middleware/client'
 ]
 
 // necessary for the html plugin to work properly
 // when serving the html from in-memory
-config.output.publicPath = '/'
+config.output.publicPath = '/';
 
 config.plugins = (config.plugins || []).concat([
   new webpack.optimize.OccurenceOrderPlugin(),
@@ -30,8 +28,6 @@ config.plugins = (config.plugins || []).concat([
     filename: 'index.html',
     template: 'app/index.jade',
     inject: 'body'
-  }),
-  new BowerWebpackPlugin({
   }),
   new webpack.ProvidePlugin({
     $:      "jquery",
