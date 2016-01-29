@@ -1,29 +1,28 @@
 section#firstPage.special.section(data-scrollax-parent='true')
-  .content.row(data-scrollax="properties: { 'translateX': '-20%' }")
+  .content.row.align-middle(data-scrollax="properties: { 'translateX': '-20%' }")
     .large-1.show-for-large.columns
-    .large-4.columns.description
-      .vertical-center
-        header
-          h2 Like what you see? Join us!
-        h3 We are looking for developers that:
-        ul.menu.vertical.key_skills
-          li  
-            span
-              | Have the social skills to make a difference: passionate,
-              | continously learning, proactive, resultdriven, communicative
-              | and a real teamplayer.
-          li
-            span
-              | Have the hands-on experience to become an expert full
-              | stack reactive developer.
-          li
-            span
-              | Fluent in frontend (JavaScript) or backend (Scala) reactive
-              | application stack
-          li
-            span
-              | Fluent in functional programming principles
-    .large-3.columns.job_openings
+    .small-12.large-4.columns.description.vertical-center-container
+      header
+        h2 Like what you see? Join us!
+      h3 We are looking for developers that:
+      ul.menu.vertical.key_skills
+        li
+          span
+            | Have the social skills to make a difference: passionate,
+            | continously learning, proactive, resultdriven, communicative
+            | and a real teamplayer.
+        li
+          span
+            | Have the hands-on experience to become an expert full
+            | stack reactive developer.
+        li
+          span
+            | Fluent in frontend (JavaScript) or backend (Scala) reactive
+            | application stack
+        li
+          span
+            | Fluent in functional programming principles
+    .small-5.large-3.columns.job_openings
       ul.menu.simple.vertical.job_list_items
         li
           a(href='#', name='job_1') Backend Developer Scala
@@ -31,7 +30,7 @@ section#firstPage.special.section(data-scrollax-parent='true')
           a(href='#', name='job_2') Frontend Developer Scala
         li
           a(href='#', name='job_3') Java Animation Designer
-    .large-4.columns.profile.slide-in
+    .small-7.large-4.columns.profile.slide-in
       .panel-container
         .close-button x
         .arrow-left

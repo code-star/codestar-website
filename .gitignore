@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 node_modules
 bower_components
 dist
@@ -6,8 +5,8 @@ dist
 *.idea
 npm-debug.log
 .DS_STORE
+.project
 =======
 dist
 node_modules/
 bower_components
->>>>>>> 133ab7617b2862cc2479038fe9f931f69e19f383
