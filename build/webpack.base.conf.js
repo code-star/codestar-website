@@ -4,16 +4,15 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
-    app: './app/main.js'
+    app: './app/main.js',
   },
   output: {
-    path: path.resolve(__dirname, '../dist/static'),
-    publicPath: './',
+    path: '/',
+    publicPath: '/',
     filename: '[name].js'
   },
   resolve: {
     extensions: ['', '.js',],
-    root: [path.join(__dirname, "bower_components")],
     alias: {
       'app': path.resolve(__dirname, '../app')
     }
@@ -28,7 +27,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
-      { test: /\.jade$/, loader: "jade" },
+      { test: /\.jade$/, loader: 'jade' },
       { test: /\.json$/, loader: 'json' },
       {
         test: /\.(png|jpg|jpeg|gif|svg|otf|woff(2)?|eot|ttf)$/,

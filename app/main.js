@@ -25,7 +25,7 @@ import { getMoon } from './js/moon';
 import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
-import { getBackgrounds } from './js/backgrounds';
+import { getGradients } from './js/backgrounds';
 //import { retinaCanvas } from './js/retinaCanvas';
 // let Scrollax = require('scrollax');
 // let parallax = new Scrollax(window, {'horizontal': true}).init();
@@ -112,12 +112,16 @@ $(document).ready(function() {
     }
   }
 
-  var backgrounds = getBackgrounds();
+  var gradients = getGradients();
+  var backgrounds = gradients.backgrounds;
+  var filters = gradients.filters;
   $('.special').each((i, element) => {
     for (var j = 0; j < backgrounds.length; ++j) {
       $(element).css('background', backgrounds[i][j]);
       $(element).css('-webkit-transform', 'translate3d(0, 0, 0)'); // Safari fix for scrolling disappearances
     }
+    // IE 9- doesn't support the background-gradients, but a DirectX filter can be used instead
+    //$(element).css('filter', filters[i])
   });
 
   // $('body').snapscroll();

@@ -19,23 +19,28 @@ export function getBackgroundsSVG() {
   return backgrounds;
 }
 
-export function getBackgrounds() {
+export function getGradients() {
 
   let backgrounds = [];
+  let filters = [];
   let colors = ['#030815','#041b36','#052d57','#073b72','#0c4d90','#1464af','#2b7ec5','#4e9bd5','#7bb9e5','#aad6f4'];
 
   for (var i = 0; i < 9; ++i) {
     let css = [];
+    css.push(colors[i]); // Solid color fallback for very old browsers that don't support any of the following
     css.push('-moz-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
     css.push('-webkit-gradient(linear, left top, left bottom, color-stop(0%,' + colors[i] + '), color-stop(100%,' + colors[i+1] + '))');
     css.push('-webkit-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
     css.push('-o-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
     css.push('-ms-linear-gradient(top, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
     css.push('linear-gradient(to bottom, ' + colors[i] + ' 0%, ' + colors[i+1] + ' 100%)');
-
     backgrounds.push(css);
+
+    // IE < 10
+    // TODO: For some reason the gradient is horizontal, even though GradientType=0.
+    filters.push('filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=\'' + colors[i] + '\, endColorstr=\'' + colors[i+1] + '\',GradientType=0 )');
   }
 
-  return backgrounds;
+  return { 'backgrounds': backgrounds, 'filters' : filters};
 
 }
