@@ -31,7 +31,7 @@ module.exports = {
       { test: /\.jade$/, loader: "jade" },
       { test: /\.json$/, loader: 'json' },
       {
-        test: /\.(png|jpg|gif|svg|otf)$/,
+        test: /\.(png|jpg|gif|svg|otf|woff(2)?|eot|ttf)$/,
         loader: 'url',
         query: {
           limit: 100,

@@ -5,25 +5,26 @@
 
 @font-face {
   font-family: Conduit;
-  src: url("../fonts/ConduitITCStd.otf") format("opentype");
+  /* Don't use line-breaks here, SASS doesn't like them */
+  src: url("../fonts/ConduitITCStd.otf") format("opentype"), url("../fonts/ConduitITCStd.woff") format("woff");;
   font-style: normal;
 }
 
 @font-face {
   font-family: Conduit;
-  src: url("../fonts/ConduitITCStd-Bold.otf") format("opentype");
+  src: url("../fonts/ConduitITCStd-Bold.otf") format("opentype"), url("../fonts/ConduitITCStd-Bold.woff") format("woff");;
   font-weight: bold;
 }
 
 @font-face {
   font-family: Conduit;
-  src: url("../fonts/ConduitITCStd-Italic.otf") format("opentype");
+  src: url("../fonts/ConduitITCStd-Italic.otf") format("opentype"), url("../fonts/ConduitITCStd-Italic.woff") format("woff");
   font-style: italic;
 }
 
 @font-face {
   font-family: Conduit;
-  src: url("../fonts/ConduitITCStd-BoldItalic.otf") format("opentype");
+  src: url("../fonts/ConduitITCStd-BoldItalic.otf") format("opentype"), url("../fonts/ConduitITCStd-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic;
 }
@@ -263,18 +264,23 @@ ul.key_skills li:before {
 }
 
 ul.job_list_items {
-  margin-top: 40vh;
+  text-align: right;
 }
   ul.job_list_items li{
+    width: 300px;
     height: 50px;
     background: #3B4E6E;
     margin-bottom: 1px;
+    text-align: left;
   }
   ul.job_list_items li a {
     // height: 50px;
+    height: 100%;
     color: #fff;
     line-height: 1.3 !important;
     font-weight: 400;
+    font-size: 1.5em;
+    padding: 0.7rem 1rem !important;/* !important because this gets overwritten by .menu.simple a*/
   }
 
 #firstPage .columns{
@@ -384,17 +390,6 @@ ul.job_list_items {
 
 .codestar-button:visited {
   background-color: transparent;
-}
-
-.columns {
-  height: 100%;
-}
-
-.vertical-center {
-  display: block;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .why {
@@ -595,4 +590,11 @@ input:-moz-placeholder {
   text-align: right;
   margin-top: 1em;
   margin-right: 1em;
+}
+
+.vertical-center {
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
