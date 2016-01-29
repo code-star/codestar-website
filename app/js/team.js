@@ -46,7 +46,7 @@ export function getTeamTree() {
 	  .attr('x', '0%')
 	  .attr('y', '0%')
 	  .attr('height', '100%')
-	  .attr('width',' 100%')
+	  .attr('width','100%')
 	  .attr('viewBox', '0 0 20 20')
 		  .append('image')
 		  .attr('xlink:href', function(d) {return require('../img/Team/' + d.image)})
