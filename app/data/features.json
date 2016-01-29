@@ -1,8 +1,8 @@
 
 {
   "features": [
-    {"img": "Features_HorizontallyScalable.svg", "name": "Horizontally scalable", "text": "More data than you can handle coming at you? But just for a short time, for instance between 18:00 and 20:00? No problem, just add a couple of extra services temporarily when load is high. At peak hours or peak days."},
-    {"img": "Features_FastTimeMarket.svg", "name": "Fast time to market", "text": "We can get you to production on day 1, complete with Continuous Integration and Continuous Delivery. By using the cloud or modern container technologies."},
+    {"img": "Features_TheRightPeople.svg", "name": "De juiste mensen", "text": "We geven je de allerbeste programmeurs. Mensen met passie voor hun vak die resultaten boeken. Geen wollig verhaal, maar werkende en eenvoudig te onderhouden code."},
+    {"img": "Features_FastTimeMarket.svg", "name": "De juiste werkwijze", "text": "We werken Agile, DevOps en Full Stack, van Backend tot Frontend. Met moderne methodologieën als Continuous Integration en Continuous Delivery volg je vanaf dag één zelf live de resultaten."},
     {"img": "Features_Integrating.svg", "name": "Integrating", "text": "We integrate with your current JVM ecosystem. Reuse your libraries, code in your new platform and integrate with your current REST service architecture."},
     {"img": "Features_TheRightPeople.svg", "name": "Get the right people", "text": "We are able to get the best developers for you, because we embrace a technology that attracts top developers. This technology takes friction and boilerplate out of the programming."},
     {"img": "Features_ReduceCode.svg", "name": "Reduce code", "text": "We were able to reduce the code by 75% at one of our clients. That's 75% less room for errors."},

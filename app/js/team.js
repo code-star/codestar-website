@@ -89,6 +89,7 @@ export function getTeamTree() {
       n.attr('r', 60);
 
       $('#teamName').html(d.name + '<span style="font-weight: normal"> - ' + d.job + '</span>');
+      $('#teamTagline').html(d.tagline);
       $('#teamDesc').text(d.bio);
   });
 
