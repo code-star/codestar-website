@@ -1,26 +1,5 @@
 section#fifthPage.special.section.active(data-scrollax-parent='true')
-  .fixed-menu
-    span.asterisk *
-    ul.menu.vertical
-      li(data-menuanchor='firstPage')
-        a.scroll-button(href='#center') Home
-      li
-        a.scroll-button(href='#difference') What sets us apart
-      li
-        a.scroll-button(href='#features') Our skills
-      li
-        a.scroll-button(href='#cases') Cases
-      li.menu_divider
-      li
-        a.scroll-button(href='#attract') Our focus
-      li
-        a.scroll-button(href='#why-work') Why you want to work here
-      li
-        a.scroll-button(href='#team') Our team
-      li
-        a.scroll-button(href='#join') Jobs
-      li
-        a.scroll-button(href='#contact') Contact
+  include menu.jade
   .content.row.align-middle.noMouse(data-scrollax="properties: { 'translateX': '-20%' }")
     #mouseIcon.show-for-large
       center
