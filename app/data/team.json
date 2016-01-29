@@ -3,67 +3,80 @@
     {
       "name": "Hamza Haiken",
       "job": "Scala developer",
-      "bio": "The best."
+      "bio": "The best.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Maik Diepenbroek",
       "job": "Frontend developer",
-      "bio": "The second best."
+      "bio": "The second best.",
+      "image": "ghost.jpeg"
     },
     {
       "name": "Pim Verkerk",
       "job": "Scala developer",
-      "bio": "He's careful around drones."
+      "bio": "He's careful around drones.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Jan Ouwens",
       "job": "Scala developer",
-      "bio": "Has a pretty Bash prompt."
+      "bio": "Has a pretty Bash prompt.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Joost de Vries",
       "job": "Scala consultant",
-      "bio": "Likes Klieslies."
+      "bio": "Likes Klieslies.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Martin Weidner",
       "job": "Business Unit Manager",
-      "bio": "He's German."
+      "bio": "He's German.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Remko de Jong",
       "job": "Scala developer",
-      "bio": "Let's do a LAN party sometime."
+      "bio": "Let's do a LAN party sometime.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Ishan Sital",
       "job": "Scala developer",
-      "bio": "The new guy."
+      "bio": "The new guy.",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Martijn Blankestijn",
       "job": "Scala consultant",
-      "bio": ""
+      "bio": "",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Adil Akhter",
       "job": "Scala developer",
-      "bio": ""
+      "bio": "",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Pieter van der Meer",
       "job": "Big data specialist",
-      "bio": ""
+      "bio": "",
+      "image": "pacman.jpeg"
     },
     {
       "name": "Casper Koning",
       "job": "Machine learning specialist",
-      "bio": ""
+      "bio": "",
+      "image": "pacman.jpeg"
     },
     {
       "name": "David Hoepelman",
       "job": "Scala developer",
-      "bio": ""
+      "bio": "",
+      "image": "pacman.jpeg"
     }
   ]
 }
