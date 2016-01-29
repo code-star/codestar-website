@@ -197,17 +197,32 @@ dt {
   opacity: 0.0;
 }
 
+#fullpage > section {
+  @include breakpoint(medium down) {
+    padding-top: 2em;
+  }
+}
 .fixed-menu {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 250px;
+  top: 0px;
+  left: 0px;
+  padding: 20px;
   height: auto;
   z-index: 3;
+  @include breakpoint(medium down) {
+    width: 100%;
+  }
 }
   .fixed-menu .menu {
     float: left;
     margin-left: 20px;
+  }
+
+
+  .fixed-menu ul {
+    @include breakpoint(medium down) {
+      background-color: #0c4d78;
+    }
   }
 
   .fixed-menu .menu li {
@@ -229,6 +244,9 @@ dt {
       padding: 0.3rem 0;
       padding-bottom: 0;
       margin-bottom: 0;
+      @include breakpoint(medium down) {
+        font-size: 1.8em;
+      }
     }
     .fixed-menu .menu li:first-child {
       border-bottom: none;
@@ -246,7 +264,6 @@ dt {
 .fixed-menu .menu li::after{
   content: "";
   position: absolute;
-
   height: 1px;
   width: 100%;
   background: #444;
@@ -258,6 +275,10 @@ dt {
   font-weight: bold;
   float: left;
   line-height: 1;
+  height: 32px;
+  @include breakpoint(medium down) {
+    text-shadow: 0px 0px 26px rgba(12, 77, 120, 0.6);
+  }
 }
 
 .asterisk:hover {
