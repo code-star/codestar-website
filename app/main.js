@@ -19,7 +19,7 @@ require('./fonts/ConduitITCStd-Italic.otf');
 import d3 from 'd3';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
-//import { getCasesTree } from './js/cases';
+import { getCasesTree } from './js/cases';
 import { getMoon } from './js/moon';
 import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
@@ -43,7 +43,7 @@ $(document).ready(function() {
   $('#solararray').append(getArray(7));
 
   $('#teamTree').append(getTeamTree());
-//  $('#casesTree').append(getCasesTree());
+  $('#casesTree').append(getCasesTree());
 
   $('#sunburst').append(getSunburst());
 //  var rc = retinaCanvas(1600, 1600);
@@ -124,9 +124,6 @@ $(document).ready(function() {
         menu: '.fixed-menu',
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
-        loopTop: false,
-        loopBottom: false,
-        scrollBar: true,
 
         onLeave: function(index, nextIndex, direction) {
 //            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');
