@@ -345,6 +345,12 @@ ul.job_list_items {
 	transition: top 0.3s 0s;
 }
 
+@media #{$medium-only} {
+  .slide-in {
+    display: none;
+  }
+}
+
 .is-visible .slide-in-header {
 	top: 0;
 	transition: top 0.3s 0.3s;
