@@ -1,7 +1,7 @@
 section#ninthPage.special.section(data-scrollax-parent='true')
-  .content.row(data-scrollax="properties: { 'translateX': '-20%' }")
+  .content.row.align-middle(data-scrollax="properties: { 'translateX': '-20%' }")
     .large-3.show-for-large.columns
-    .small-12.large-4.columns.contact_form_container(style='height: 100%')
+    .small-12.large-4.columns.contact_form_container
       header
         h2 Contact
       p
@@ -25,27 +25,28 @@ section#ninthPage.special.section(data-scrollax-parent='true')
     .large-1.show-for-large.columns
     .small-12.large-4.columns.map_container
       #map
-      table.contact_data_table
-        colgroup
-          col(style='width:13%')
-          col(style='width:50%')
-          col(style='width:37%')
-        tbody
-          tr
-            td.contact_icon
-              img(src='Contact_MailIcon.svg', width='35')
-            td.contact_info INFO@CODESTAR.NL
-            td.contact_button
-              a.button.codestar-button(href='#') Sla gegevens op
-          tr
-            td.contact_icon
-              img(src='Contact_PhoneIcon.svg', width='35')
-            td.contact_info +31 30 6637000
-            td.contact_button
-              a.button.codestar-button(href='#') Bel direct
-          tr
-            td.contact_icon
-              img(src='Contact_LocationIcon.svg', width='30')
-            td.contact_info RINGWADE 1, 3439 LM NIEUWEGEIN
-            td.contact_button
-              a.button.codestar-button(href='#') Bepaal route
+      .contact_data_table
+        table
+          colgroup
+            col(style='width:13%')
+            col(style='width:47%')
+            col(style='width:40%; text-align:right')
+          tbody
+            tr
+              td.contact_icon
+                img(src='Contact_MailIcon.svg', width='35')
+              td.contact_info INFO@CODESTAR.NL
+              td.contact_button
+                a.button.codestar-button(href='#') Sla gegevens op
+            tr
+              td.contact_icon
+                img(src='Contact_PhoneIcon.svg', width='35')
+              td.contact_info +31 30 6637000
+              td.contact_button
+                a.button.codestar-button(href='#') Bel direct
+            tr
+              td.contact_icon
+                img(src='Contact_LocationIcon.svg', width='30')
+              td.contact_info RINGWADE 1, 3439 LM NIEUWEGEIN
+              td.contact_button
+                a.button.codestar-button(href='#') Bepaal route
