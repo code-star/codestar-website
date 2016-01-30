@@ -22,7 +22,8 @@ export function getTeamTree() {
   var size = team.nodes.length;
   var links = [];
   for (var i = 0; i < size; ++i) {
-    var n_links = getRandomInt(1, 3);
+    var n_links = getRandomInt(1, 2);
+    if (getRandomInt(0, 1) === 1) ++n_links;
     for (var j = 0; j < n_links; ++j) {
       var target = getRandomInt(0, size);
       while (target === i) {
@@ -71,7 +72,7 @@ export function getTeamTree() {
       .data(team.nodes)
       .enter().append('circle')
       .attr('class', 'team-node')
-      .attr('r', () => getRandomInt(10, 40))
+      .attr('r', () => getRandomInt(17, 35))
       .style('fill', function(d) {return 'url(#image' + d.image + ')'})
       .call(force.drag);
 
