@@ -16,9 +16,9 @@
     },
     {
       "name": "Pim Verkerk",
-      "job": "Scala developer",
-      "tagline": "“”",
-      "bio": "He's careful around drones.",
+      "job": "Developer",
+      "tagline": "“I love to learn new stuff”",
+      "bio": "Mijn hele leven heb ik al van puzzels gehouden, van kruiswoord puzzels tot schaak opgaven. Toen ik voor het eerst met programmeren in aanraking kwam was het dan ook liefde op het eerste gezicht. Ik hou er van om in een team te werken waar iedereen het beste uit zichzelf kan halen en ben altijd bereid om iemand te helpen.",
       "image": "picture.jpg"
     },
     {
@@ -39,8 +39,8 @@
       "name": "Martin Weidner",
       "job": "Chief Motivator",
       "tagline": "“Kapitän van die Mannschaft”",
-      "bio": "Mijn passie voor programmeren gebruik ik iedere dag om te gekke projecten tot een succes te maken. De energie die dat geeft, neem ik mee naar huis. Ik ben trots om mee te mogen bouwen aan Codestar en er een plek van te maken waar de allerbeste programmeurs zich thuis voelen.",
-      "image": "picture.jpg"
+      "bio": "Ik zie programmeren als kunst. En net zoals een kunstenaar moet een programmeur passie hebben om uitstekende resultaten te bereiken. Ik heb deze passie nodig in mijn omgeving. Daarom ben ik blij om met codestar een plek te creëren, waar programmeurs met passie zich thuis kunnen voelen.",
+      "image": "martin.png"
     },
     {
       "name": "Remko de Jong",
