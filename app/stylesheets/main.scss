@@ -661,3 +661,62 @@ input:-moz-placeholder {
 .no-padding {
   padding: 0;
 }
+
+@media #{$small-only} {
+  .cloud {
+    opacity: 0.5;
+  }
+}
+
+@media #{$medium-only} {
+  .cloud {
+    opacity: 0.5;
+  }
+}
+
+.cloud1 {
+  position: absolute;
+  max-height: 100vh;
+  width: auto;
+  z-index: 50;
+  right: 0;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+.cloud2 {
+  position: absolute;
+  max-height: 60vh;
+  width: auto;
+  z-index: 50;
+  left: -30vh;
+  top: -25vh;
+}
+
+.cloud3 {
+  position: absolute;
+  max-height: 70vh;
+  width: auto;
+  z-index: 50;
+  right: 0;
+  bottom: -10vh;
+}
+
+.cloud4 {
+  position: absolute;
+  max-height: 100vh;
+  width: auto;
+  z-index: 50;
+  left: 0;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+.cloud5 {
+  position: absolute;
+  max-height: 50vh;
+  width: auto;
+  z-index: 50;
+  right: 5vw;
+  bottom: 0;
+}
