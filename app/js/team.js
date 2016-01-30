@@ -37,23 +37,30 @@ export function getTeamTree() {
       .links(links)
       .start();
 
+    svg.append('filter')
+      .attr('id','desaturate')
+      .append('feColorMatrix')
+      .attr('type','matrix')
+      .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0");
+
   svg
   .append('defs')
       .selectAll('.node')
       .data(team.nodes).enter()
-	  .append('pattern')
-	  .attr('id', function(d) {return 'image' + d.image})
-	  .attr('x', '0%')
-	  .attr('y', '0%')
-	  .attr('height', '100%')
-	  .attr('width','100%')
-	  .attr('viewBox', '0 0 20 20')
-		  .append('image')
-		  .attr('xlink:href', function(d) {return require('../img/Team/' + d.image)})
-		  .attr('y', 0)
-		  .attr('x', 0)
-		  .attr('width', 20)
-		  .attr('height', 20);
+      .append('pattern')
+      .attr('id', function(d) {return 'image' + d.image})
+      .attr('x', '0%')
+      .attr('y', '0%')
+      .attr('height', '100%')
+      .attr('width','100%')
+      .attr('viewBox', '1 1 8 8')
+          .append('image')
+          .attr('xlink:href', function(d) {return require('../img/Team/' + d.image)})
+          .attr('x', 0)
+          .attr('y', 0)
+          .attr('width', 10)
+          .attr('height', 10)
+          .style('filter', 'url(#desaturate)');
   
   var link = svg.selectAll('.link')
       .data(links)
@@ -66,10 +73,8 @@ export function getTeamTree() {
       .attr('class', 'team-node')
       .attr('r', () => getRandomInt(10, 40))
       .style('fill', function(d) {return 'url(#image' + d.image + ')'})
-      .style('stroke', 'black')     
-      .style('stroke-width', 0.25)
       .call(force.drag);
-  
+
   node.append('title')
       .text(function(d) { return d.name; });
 
