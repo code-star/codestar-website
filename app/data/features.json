@@ -1,12 +1,10 @@
 
 {
   "features": [
-    {"img": "Features_TheRightPeople.svg", "name": "De juiste mensen", "text": "We geven je de allerbeste programmeurs. Mensen met passie voor hun vak die resultaten boeken. Geen wollig verhaal, maar werkende en eenvoudig te onderhouden code."},
-    {"img": "Features_FastTimeMarket.svg", "name": "De juiste werkwijze", "text": "We werken Agile, DevOps en Full Stack, van Backend tot Frontend. Met moderne methodologieën als Continuous Integration en Continuous Delivery volg je vanaf dag één zelf live de resultaten."},
-    {"img": "Features_Integrating.svg", "name": "Integrating", "text": "We integrate with your current JVM ecosystem. Reuse your libraries, code in your new platform and integrate with your current REST service architecture."},
-    {"img": "Features_TheRightPeople.svg", "name": "Get the right people", "text": "We are able to get the best developers for you, because we embrace a technology that attracts top developers. This technology takes friction and boilerplate out of the programming."},
-    {"img": "Features_ReduceCode.svg", "name": "Reduce code", "text": "We were able to reduce the code by 75% at one of our clients. That's 75% less room for errors."},
-    {"img": "Features_Partner.svg", "name": "Partners", "text": "We partner with the leading platform on modern platforms named Typesafe."},
-    {"img": "Features_Aftercare.svg", "name": "Aftercare", "text": "Lorem ipsum dolor sit amet nihil agere delectat. Ubi est mea annaticula cumminosa."}
+    {"img": "Features_TheRightPeople.svg", "name": "De juiste mensen", "text": "<b>We geven je de allerbeste programmeurs</b>. Mensen met passie voor hun vak die resultaten boeken. Geen wollig verhaal, maar werkende en eenvoudig te onderhouden code."},
+    {"img": "Features_FastTimeMarket.svg", "name": "De juiste werkwijze", "text": "<b>We werken Agile, DevOps en Full Stack, van Backend tot Frontend</b>. Met moderne methodologieën als Continuous Integration en Continuous Delivery volg je vanaf dag één zelf live de resultaten."},
+    {"img": "Features_ReduceCode.svg", "name": "De juiste technieken", "text": "<b>We kiezen voor responsiveness, schaalbaarheid en resilience</b>. Daarom kiezen wij voor moderne technieken als Scala, Akka, React, Docker, Typescript, Spark, Kafka en Samza. En deze technieken werken. Het is ons gelukt om de bestaande code bij een klant met 75% te verminderen. Dat is 75% minder kans op fouten."},
+    {"img": "Features_Partner.svg", "name": "De juiste partners", "text": "<b>We zijn Typesafe gecertificeerd</b> en gebruiken hét platform onder de moderne platforms: het <a href=\"http://www.typesafe.com/products/typesafe-reactive-platform\" target=\"_blank\">Typesafe Reactive Platform</a>. Dit is ontworpen om te schalen. Ook wanneer je alleen piekuren of piekdagen hebt."},
+    {"img": "Features_Integrating.svg", "name": "De juiste integratie", "text": "<b>We integreren naadloos met je huidige Java landschap, want Scala spreekt Java</b>. Niet alles hoeft dus opnieuw, wij hergebruiken je oude Java software waar nodig. En onze hulp houdt niet op bij het afronden van een project. Wij zijn er voor de lange termijn, dus ook voor het beheer."}
   ]
 }

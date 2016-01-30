@@ -20,7 +20,7 @@ export function getFeatures() {
     imgTitle.append(img);
     imgTitle.append(title);
 
-    var description = $('<p class="featureDescription">').text(feature.text);
+    var description = $('<p class="featureDescription">').html(feature.text);
     description.hide();
 
     imgTitle.click(() => {

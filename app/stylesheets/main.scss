@@ -611,7 +611,7 @@ ul.why li {
 }
 
 .featureIcon {
-  width: 3em;
+  height: 3em;
 }
 
 .featureIcon:hover, .featureTitle:hover {
@@ -787,4 +787,20 @@ input:-moz-placeholder {
 
 .codestar-button[type="reset"] {
   margin-right: 3px;
+}
+
+p a:link {
+    color: #F08300;
+}
+
+p a:visited {
+    color: #F08300;
+}
+
+p a:hover {
+    color: #FCC077;
+}
+
+p a:active {
+    color: #F5DABA;
 }
