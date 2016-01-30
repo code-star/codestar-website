@@ -15,7 +15,7 @@ export function getFeatures() {
     var featureDiv = $('<div>');
 
     var imgTitle = $('<div>');
-    var img = $('<img class="featureIcon" src="' + feature.img + '" width="50">');
+    var img = $('<img class="featureIcon" src="' + feature.img + '">');
     var title = $('<p class="featureTitle">').text(feature.name);
     imgTitle.append(img);
     imgTitle.append(title);
