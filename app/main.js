@@ -126,6 +126,8 @@ $(document).ready(function() {
     for (var j = 0; j < backgrounds.length; ++j) {
       $(element).css('background', backgrounds[i][j]);
       $(element).css('-webkit-transform', 'translate3d(0, 0, 0)'); // Safari fix for scrolling disappearances
+      $(element).css('-webkit-padding-before', '2px'); // Webkit fix for the safari fix above adding a white line...
+      $(element).css('-webkit-margin-after', '-2px'); // Webkit fix for the safari fix above adding a white line...
     }
     // IE 9- doesn't support the background-gradients, but a DirectX filter can be used instead
     //$(element).css('filter', filters[i])
