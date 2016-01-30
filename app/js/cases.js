@@ -8,7 +8,7 @@ export function getCasesTree() {
   var svg = d3.select('body').append('svg').remove();
 
   var width = 800,
-      height = 400;
+      height = 300;
 
   var force = d3.layout.force()
     .charge(-1000)
@@ -68,8 +68,8 @@ export function getCasesTree() {
       if (!n.attr('old_r')) n.attr('old_r', n.attr('r'));
       n.attr('r', 60);
 
-      $('#caseName').html(d.company + '<span style="font-weight: normal"> - ' + d.project + '</span>');
-      $('#caseDesc').text(d.description);
+      $('#caseName').html(d.company + '<br><span style="font-weight: normal">' + d.project + '</span>');
+      $('#caseDesc').html(d.description);
   });
 
   force.on('tick', function() {

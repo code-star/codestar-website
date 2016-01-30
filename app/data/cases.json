@@ -2,22 +2,29 @@
   "nodes":[
     {
       "company": "42 Education",
-      "project": "Universitaire startup",
-      "description": "Maecenas quis porta erat. Praesent pulvinar ultricies bibendum. Pellentesque at libero sollicitudin dolor condimentum varius. Suspendisse lorem lorem, volutpat ut luctus eget, luctus sit amet metus. Duis sem enim, cursus sit amet augue vitae, laoreet varius felis. Vestibulum placerat vel dui id gravida.",
+      "project": "Met code een lean startup een kickstart geven",
+      "description": "Een startup als klant. Dat betekent een grote tijdsdruk, enorme flexibiliteit en supersnel schakelen in een informele sfeer. Door voor moderne Continuous Delivery en Cloud technieken te kiezen waren we vanaf dag één productief.<br><br>Het doel was kinderen te laten leren door te gamen met vrienden. Realtime met grote hoeveelheden events. De bijbehorende software architectuur zetten wij daarom geheel reactive op. We maakten gebruik van real-time event notificatie op basis van reactive streams, en horizontaal schalende event persistentie op basis van event sourcing met Cassandra.<br><br><a class=\"scroll-button button codestar-button\" href=\"http://42education.com\" target=\"_blank\">Reference</a>",
       "icon": "",
       "background": ""
     },
     {
       "company": "Rabobank",
-      "project": "Hypotheek Berekening",
-      "description": "Morbi accumsan eros vitae diam vehicula suscipit. Aenean fermentum aliquet enim euismod convallis. Nulla eros quam, volutpat sit amet fermentum nec, condimentum vel odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla a dui convallis, imperdiet tortor a, tristique nisi.",
+      "project": "Ontwikkelaars en bankiers weer dezelfde taal laten spreken",
+      "description": "Voor het Rabobank Hypotheekdossier hebben we de wijze van het berekenen van de hypotheken aangepakt. De bestaande Java-code was in de loop der tijd dermate complex geworden, dat deze zowel moeilijk te begrijpen als te testen was. Ontwikkelaars en bankiers spraken niet meer dezelfde taal.<br><br>Door een DSL te ontwikkelen in Scala hebben we de code eenvoudig, leesbaar en testbaar gemaakt. Niet alleen voor programmeurs, maar ook voor de business. En dat in een fractie van de hoeveelheid code die nodig was voor de oude implementatie in Java. Uiteindelijk was de business niet alleen in staat om de code te lezen, maar hebben ze zelfs berekeningen zelf geïmplementeerd. De business die de taal van de programmeur spreekt. Doel gehaald.",
       "icon": "",
       "background": ""
     },
     {
-      "company": "Lorem",
-      "project": "Ipsum",
-      "description": "Phasellus nec fermentum nunc. Aliquam fermentum lobortis dui vel interdum. Vivamus risus nibh, ornare a lobortis a, porttitor tincidunt dolor. Curabitur metus eros, feugiat at justo et, aliquet blandit arcu.",
+      "company": "SKG",
+      "project": "Niet optimaliseren, maar compleet vernieuwen",
+      "description": "Een klassiek voorbeeld van een klant met een applicatie die niet meer voldoet aan de moderne eisen. De klant zoekt een nieuw betaalplatform dat apps en moderne devices ondersteunt, snelle live gang van features mogelijk maakt en minder beheerlast met zich meebrengt. Het huidige verouderde platform is geheel, inclusief hosting en fysieke servers, in house en volledig op maat gemaakt voor SKG. Wij bouwen een nieuw reactive platform dat schaalt, onderhoudbaar is, gebruikmakend van moderne technieken en methodologieën als Microservices, Platform as a Service en Continuous Delivery.",
+      "icon": "",
+      "background": ""
+    },
+    {
+      "company": "Havenbedrijf Rotterdam",
+      "project": "Samen de haven herontdekken",
+      "description": "Innovatief project met als doel de realisatie van een pilot applicatie ter verificatie van een nieuw veelbelovend business-concept voor de gehele haven. En de gehele haven betekent ook de gehele haven. Dus veel stakeholders en het bijbehorende overleg.<br><br>Korte feedback-loops waren essentieel om de richting te bepalen voor de pilot. Het gebruik van een volledig cloud-gebaseerde ontwikkelstraat maakte het mogelijk om vanaf week één al functionaliteit in de productie-omgeving te tonen en zo inhoud te geven aan die korte feedback-loops. Dus geen vergaderingen over abstracte software diagrammen, maar over werkende software. Agile zoals agile bedoeld is.",
       "icon": "",
       "background": ""
     }
