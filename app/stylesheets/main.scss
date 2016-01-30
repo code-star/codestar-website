@@ -682,7 +682,6 @@ input:-moz-placeholder {
   padding: 0;
 }
 
-<<<<<<< Updated upstream
 @media #{$small-only} {
   .cloud {
     opacity: 0.5;
@@ -740,7 +739,8 @@ input:-moz-placeholder {
   z-index: 50;
   right: 5vw;
   bottom: 0;
-=======
+}
+
 .email-success {
   color: #fff;
   background-color: rgba(225, 250, 234, 0.6) !important;
@@ -756,5 +756,4 @@ input:-moz-placeholder {
 
 .codestar-button[type="reset"] {
   margin-right: 3px;
->>>>>>> Stashed changes
 }
