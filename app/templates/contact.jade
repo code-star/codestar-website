@@ -1,26 +1,55 @@
 section#ninthPage.special.section(data-scrollax-parent='true')
   .content.row.align-middle(data-scrollax="properties: { 'translateX': '-20%' }")
     .large-3.show-for-large.columns
+<<<<<<< Updated upstream
     .small-12.large-4.columns.contact_form_container
+=======
+    .small-12.large-4.columns.contact_form_container(style='height: 100%')
+      .success.callout.email-success(data-closable='slide-out-right')
+        h5 Your email has succesfully been sent!
+        p Thank you for contacting us, we will respond within 72 hours.
+        button.close-button(aria-label='Dismiss alert', type='button', data-close='')
+          span(aria-hidden='true') ×
+      .alert.callout.email-fail(data-closable='slide-out-right')
+        h5 Something went wrong while sending your e-mail
+        p Please check the values and try again.
+        button.close-button(aria-label='Dismiss alert', type='button', data-close='')
+          span(aria-hidden='true') ×
+>>>>>>> Stashed changes
       header
         h2 Contact
       p
         | Are you in desperate need of top-notch coding? Or just looking for a chat and a big bucket of coder's coffee? Now you know where to find it!
-      form#contact_form
+      form#contact_form(data-abide, novalidate, method="POST", action="#")
         .row
           .medium-6.columns
-            input.form-input(type='text', placeholder='Voornaam')
-            input.form-input(type='text', placeholder='Bedrijfsnaam')
+            span
+              input.form-input(type='text', placeholder='Voornaam', name='Voornaam', required='', pattern='[a-zA-Z]+')
+              span.form-error
+                | Please fill in your name.
           .medium-6.columns
-            input.form-input(type='text', placeholder='Achternaam')
-            input.form-input(type='text', placeholder='Telefoonnummer')
+            span
+              input.form-input(type='text', placeholder='Achternaam', name='Achternaam', required='', pattern='[a-zA-Z]+')
+              span.form-error
+                | Please fill in your last name.
+          .medium-6.columns
+            span
+              input.form-input(type='text', placeholder='Bedrijfsnaam', name='Bedrijfsnaam')
+          .medium-6.columns
+            span
+              input.form-input(type='text', placeholder='Telefoonnummer', name='Telefoonnummer', pattern='number')
+              span.form-error
+                | Please fill in a valid phone number.
+          .medium-12.columns.columns-space              
+            input.form-input(type='email', placeholder='E-mailadres', required='', name='E-mailadres', pattern='email')
+            span.form-error
+              | Please fill in a valid email address.
           .medium-12.columns.columns-space
-            input.form-input(type='text', placeholder='E-mailadres')
-          .medium-12.columns.columns-space
-            input.form-input(type='text', placeholder='Onderwerp')
-            textarea#bericht.form-input(placeholder='Bericht')
+            textarea#bericht.form-input(placeholder='Bericht', required='', name='Bericht')
+            span.form-error
+              | Please fill in a message.
         #form-buttons
-          a.button.codestar-button(href='#') Alles Wissen
+          button.button.codestar-button(type='reset', value='Alles Wissen') Alles Wissen
           input.button.codestar-button(type='submit', value='Verstuur Bericht')
     .large-1.show-for-large.columns
     .small-12.large-4.columns.map_container

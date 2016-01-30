@@ -30,6 +30,8 @@ import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
+import Foundation from './libs/foundation';
+
 //import { retinaCanvas } from './js/retinaCanvas';
 // let Scrollax = require('scrollax');
 // let parallax = new Scrollax(window, {'horizontal': true}).init();
@@ -38,10 +40,11 @@ import { getGradients } from './js/backgrounds';
 // require('./js/jquery.scroll_to.js');
 // require('./js/jquery.snapscroll.js');
 
+const CONTACT_EMAIL_ADDRESS = 'martin.weidner@ordina.nl';
+
 $(document).ready(function() {
   // var offset = $('#center').position().left;
   // window.scrollTo(offset, 0);
-
   var features = getFeatures();
   $('#featureList').append(features);
 
@@ -207,7 +210,38 @@ $(document).ready(function() {
   });
 
   $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+  $('#contact_form').foundation();
 
+  $('#contact_form')
+  .bind("submit", function(e) {
+    e.preventDefault();
+  })
+  .bind("formvalid.zf.abide", function(e,$form) {
+    let serializedForm = $form.serializeArray();
+    let messageData = {};
+    serializedForm.map(field => {
+      messageData[field.name] = field.value;
+    });
+
+    $.ajax({
+      url: "//formspree.io/"+CONTACT_EMAIL_ADDRESS,
+      method: "POST",
+      data: messageData,
+      dataType: "json"
+    }).done(() => {
+      $('#contact_form').get(0).reset();
+      $('.email-success').toggle('slow');
+    }).fail(() => {
+      $('.email-fail').toggle('slow');
+    });
+  });
+
+  $('.email-success .close-button').click(() => {
+    $('.email-success').toggle('slow');
+  });
+  $('.email-fail .close-button').click(() => {
+    $('.email-fail').toggle('slow');
+  });
 });
 
 // $(window).resize(e => parallax.reload());

@@ -11,6 +11,10 @@ module.exports = {
     publicPath: './',
     filename: '[name].js'
   },
+  externals: {
+    jQuery: 'jQuery',
+    foundation: 'Foundation'
+  },
   resolve: {
     extensions: ['', '.js',],
     alias: {

@@ -308,6 +308,7 @@ ul.job_list_items {
     /*margin-bottom: 1px;*/
     margin-bottom: 0.1em;
     text-align: left;
+    margin-right: 0 !important;
   }
   ul.job_list_items li a {
     // height: 50px;
@@ -339,7 +340,7 @@ ul.job_list_items {
   z-index: 10;
   max-width: 100vw;
 }
-.close-button {
+.panel-container .close-button {
   position: absolute;
   left: -3rem;
   background: #757C87;
@@ -644,11 +645,16 @@ input:-moz-placeholder {
 .form-input {
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.5);
-  border: none;
+  // border: none;
   color: rgb(0, 75, 145);
   padding-left: 0.7em;
   padding-top: 0.85em;
   margin-bottom: 2px;
+}
+
+.form-error.is-visible {
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .columns-space {
@@ -676,6 +682,7 @@ input:-moz-placeholder {
   padding: 0;
 }
 
+<<<<<<< Updated upstream
 @media #{$small-only} {
   .cloud {
     opacity: 0.5;
@@ -733,4 +740,21 @@ input:-moz-placeholder {
   z-index: 50;
   right: 5vw;
   bottom: 0;
+=======
+.email-success {
+  color: #fff;
+  background-color: rgba(225, 250, 234, 0.6) !important;
+  display: none;
+  margin-top: 20px;
+}
+.email-fail {
+  color: #fff;
+  background-color: rgba(236, 38, 38, 0.8) !important;
+  display: none;
+  margin-top: 20px;
+}
+
+.codestar-button[type="reset"] {
+  margin-right: 3px;
+>>>>>>> Stashed changes
 }
