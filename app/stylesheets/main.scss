@@ -372,6 +372,21 @@ ul.job_list_items {
   top: 0;
 }
 
+.panel-container .close-button-mobile {
+  position: absolute;
+  right: 0;
+  background: #757C87;
+  width: 2rem;
+  height: 1.75rem;
+  text-align: center;
+  line-height: 1.75rem;
+  font-weight: bold;
+  color: #fff;
+  font-size: 2rem;
+  top: 0;
+  display: none;
+}
+
 @media #{$medium-only} {
   .profile {
     margin-left: 3rem;
@@ -398,6 +413,10 @@ ul.job_list_items {
 	width: 90%;
 	height: 50px;
 	transition: top 0.3s 0s;
+}
+
+.hide-on-mobile.is-visible {
+  margin-left: 0;
 }
 
 @media #{$small-only} {

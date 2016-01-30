@@ -22,6 +22,7 @@ require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
 
 import d3 from 'd3';
+import isMobile from './js/mobileChecker';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
 import { getCasesTree } from './js/cases';
@@ -154,6 +155,7 @@ $(document).ready(function() {
   });
 
   $('.job_list_items li a').click((event) => {
+      event.preventDefault();
       let element = $('.profile');
       let elementVisibility = element.css('visibility');
       let arrow = $('.arrow-left');
@@ -161,6 +163,7 @@ $(document).ready(function() {
       let positionOfClickedElement = $(event.currentTarget).position().top;
       let job_list_items = $('.job_list_items');
       let jobName = $(event.currentTarget).attr('name');
+
       if(job_list_items.find('.active').length > 0) {
         job_list_items.find('li').removeClass('active');
       }
@@ -191,21 +194,23 @@ $(document).ready(function() {
       $('.profile-list').html(profileList);
       $('.offer-list').html(offerList);
 
+
+
       if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
-         element.removeClass('is-visible');
+        element.removeClass('is-visible');
         $('.job_openings').removeClass('hide-on-mobile');
-         $('.job_list_items li').removeAttr('style');
+        $('.job_list_items li').removeAttr('style');
       }
       else {
-         element.addClass('is-visible');
+        element.addClass('is-visible');
         $('.job_openings').addClass('hide-on-mobile');
-         parentOfClickedElement.addClass('active');
-         $('.job_list_items li').removeAttr('style');
-         parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
+        parentOfClickedElement.addClass('active');
+        $('.job_list_items li').removeAttr('style');
+        parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
       }
   });
 
-  $('.close-button').click(() => {
+  $('.close-button, .close-button-mobile').click(() => {
     $('.profile').removeClass('is-visible');
     $('.job_openings').removeClass('hide-on-mobile');
     $('.job_list_items li').removeAttr('style');
@@ -244,6 +249,9 @@ $(document).ready(function() {
   $('.email-fail .close-button').click(() => {
     $('.email-fail').toggle('slow');
   });
+  if(Foundation.MediaQuery.current === 'small' || isMobile.any()) {
+    $('.close-button-mobile').show();
+  }
 });
 
 // $(window).resize(e => parallax.reload());
