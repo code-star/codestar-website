@@ -656,11 +656,10 @@ input:-moz-placeholder {
 }
 .form-input:focus {
   border: 2px solid rgb(0, 75, 145);
-  padding-left: 0.57em;
-  padding-top: 0.75em;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .form-input {
+  border: 2px solid rgba(255, 255, 255, 0.0);
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.5);
   // border: none;
