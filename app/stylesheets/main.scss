@@ -765,13 +765,22 @@ input:-moz-placeholder {
 
 .email-success {
   color: #fff;
-  background-color: rgba(225, 250, 234, 0.6) !important;
+  border: none;
+  padding-bottom: 0.1em;
+  background-color: rgba(225, 255, 255, 0.2) !important;
   display: none;
   margin-top: 20px;
 }
+
+.close-button {
+  color: white;
+}
+
 .email-fail {
   color: #fff;
   background-color: rgba(236, 38, 38, 0.8) !important;
+  padding-bottom: 0.1em;
+  border: none;
   display: none;
   margin-top: 20px;
 }
