@@ -18,29 +18,29 @@ section#ninthPage.special.section(data-scrollax-parent='true')
         | Are you in desperate need of top-notch coding? Or just looking for a chat and a big bucket of coder's coffee? Now you know where to find it!
       form#contact_form(data-abide, novalidate, method="POST", action="#")
         .row
-          .medium-6.columns
+          .small-6.medium-6.columns
             span
               input.form-input(type='text', placeholder='Voornaam', name='Voornaam', required='', pattern='[a-zA-Z]+')
               span.form-error
                 | Please fill in your name.
-          .medium-6.columns
+          .small-6.medium-6.columns
             span
               input.form-input(type='text', placeholder='Achternaam', name='Achternaam', required='', pattern='[a-zA-Z]+')
               span.form-error
                 | Please fill in your last name.
-          .medium-6.columns
+          .small-6.medium-6.columns
             span
               input.form-input(type='text', placeholder='Bedrijfsnaam', name='Bedrijfsnaam')
-          .medium-6.columns
+          .small-6.medium-6.columns
             span
               input.form-input(type='text', placeholder='Telefoonnummer', name='Telefoonnummer', pattern='number')
               span.form-error
                 | Please fill in a valid phone number.
-          .medium-12.columns.columns-space              
+          .small-12.medium-12.columns.columns-space
             input.form-input(type='email', placeholder='E-mailadres', required='', name='E-mailadres', pattern='email')
             span.form-error
               | Please fill in a valid email address.
-          .medium-12.columns.columns-space
+          .small-12.medium-12.columns.columns-space
             textarea#bericht.form-input(placeholder='Bericht', required='', name='Bericht')
             span.form-error
               | Please fill in a message.
