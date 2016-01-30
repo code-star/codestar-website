@@ -31,7 +31,7 @@
 
 @media #{$small-only} {
   body,html {
-    font-size: 4vmin;
+    font-size: 5vmin;
   }
 
   ul.job_list_items li a {
@@ -50,7 +50,7 @@
 
 @media #{$medium-only} {
   body,html {
-    font-size: 4vmin;
+    font-size: 5vmin;
   }
   #logo {
     width: 70vmin;
@@ -302,7 +302,7 @@ ul.job_list_items {
   text-align: right;
 }
   ul.job_list_items li{
-    width: 19em;
+    width: 18em;
     height: 3em;
     background: #3B4E6E;
     /*margin-bottom: 1px;*/
@@ -318,6 +318,10 @@ ul.job_list_items {
     font-size: 1.5em;
     padding: 0.7rem 1rem !important;/* !important because this gets overwritten by .menu.simple a*/
   }
+
+.menu.simple li {
+  margin-right: 0;
+}
 
 #firstPage .columns{
   white-space: normal;
