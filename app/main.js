@@ -128,6 +128,8 @@ $(document).ready(function() {
     //$(element).css('filter', filters[i])
   });
 
+  var shown = false;
+
   // $('body').snapscroll();
   $('#fullpage').fullpage({
         menu: '.fixed-menu',
@@ -138,6 +140,10 @@ $(document).ready(function() {
         onLeave: function(index, nextIndex, direction) {
 //            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');
 //            $('.special:eq(' + (index - 1) + ')').css('-webkit-transform', 'none');
+            if (!shown && nextIndex == 7) {
+                shown = true;
+                setTimeout(() => $('.featureIcon:first').trigger('click'), 1000);
+            }
             closeMenuIfOpen();
         }
   });
