@@ -224,7 +224,17 @@ dt {
 
   .fixed-menu ul {
     @include breakpoint(medium down) {
-      background-color: #0c4d78;
+      left: 0;
+      top: 0;
+      z-index: -10;
+      width: 100%;
+      padding-top: 2.1em;
+      padding-bottom: 0.8em;
+      position: absolute;
+      margin-left: 0 !important;
+      padding-left: 1em;
+      padding-right: 1em;
+      background-color: rgba(0, 0, 0, 0.8);
     }
   }
 
@@ -236,8 +246,10 @@ dt {
   }
     .fixed-menu .menu li.menu_divider {
       border-bottom: none;
-      margin: 10px 0;
-      height: 20px;
+      height: 1em;
+      @include breakpoint(medium down) {
+        height: 1.5em;
+      }
     }
     .fixed-menu .menu li.menu_divider::after {
       background: none;
@@ -248,7 +260,7 @@ dt {
       padding-bottom: 0;
       margin-bottom: 0;
       @include breakpoint(medium down) {
-        font-size: 1.8em;
+        font-size: 1.4em;
       }
     }
     .fixed-menu .menu li:first-child {
@@ -257,7 +269,10 @@ dt {
     }
     .fixed-menu .menu li:last-child {
       border-bottom: none;
-      margin-top: 20px;
+      margin-top: 1em;
+      @include breakpoint(medium down) {
+        margin-top: 1.5em;
+      }
     }
     .fixed-menu .menu li:first-child::after,
     .fixed-menu .menu li:last-child::after {
@@ -271,6 +286,9 @@ dt {
   width: 100%;
   background: #444;
   background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  @include breakpoint(medium down) {
+    height: 2px;
+  }
  }
 
 .asterisk {

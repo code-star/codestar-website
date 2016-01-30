@@ -115,7 +115,7 @@ $(document).ready(function() {
 
   function closeMenuIfOpen() {
     if ($('.fixed-menu .menu').css('display') !== 'none') {
-      $('.fixed-menu .menu').hide(350)
+      $('.fixed-menu .menu').fadeOut(350);
     }
   }
 
@@ -209,7 +209,7 @@ $(document).ready(function() {
     $('.job_list_items li').removeAttr('style');
   });
 
-  $('.asterisk').click(() => $('.fixed-menu .menu').toggle(350));
+  $('.asterisk').click(() => $('.fixed-menu .menu').fadeToggle(350));
   $('#contact_form').foundation();
 
   $('#contact_form')
