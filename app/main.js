@@ -253,8 +253,8 @@ $(document).ready(function() {
     $('.close-button-mobile').show();
   }
   if(isMobile.any()) {
-    closeMenuIfOpen();
-    $.fn.fullpage.moveTo('center');
+      $.fn.fullpage.silentMoveTo('center');
+      closeMenuIfOpen();
   }
 });
 
