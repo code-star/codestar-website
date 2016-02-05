@@ -185,6 +185,9 @@ $(document).ready(function() {
   $('.email-fail .close-button').click(() => {
     $('.email-fail').toggle('slow');
   });
+  if(Foundation.MediaQuery.atLeast('medium') && !isMobile.any()) {
+    $('.close-button-mobile').hide();
+  }
   if(Foundation.MediaQuery.current === 'small' || isMobile.any()) {
     $('.close-button-mobile').show();
   }

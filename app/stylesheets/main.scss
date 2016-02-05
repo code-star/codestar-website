@@ -74,6 +74,9 @@
   ul.job_list_items li a {
     font-size: 1.3em;
   }
+  .close-button-mobile {
+    display: hidden;
+  }
 }
 
 .row {
@@ -388,7 +391,7 @@ ul.job_list_items {
   color: #fff;
   font-size: 2rem;
   top: 0;
-  display: none;
+  display: block;
 }
 
 @media #{$medium-only} {
