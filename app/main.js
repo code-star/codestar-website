@@ -254,6 +254,7 @@ $(document).ready(function() {
   }
   if(isMobile.any()) {
     closeMenuIfOpen();
+    $.fn.fullpage.moveTo('center');
   }
 });
 
