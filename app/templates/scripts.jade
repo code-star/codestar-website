@@ -11,5 +11,13 @@ script.
       position: latLng,
       map: map
       });
+      map.addListener('tilesloaded', function() {
+      // No (for)each
+      var links = document.querySelectorAll('#map a');
+      var i
+      for (i = 0; i < links.length; ++i) {
+      links[i].tabIndex = -1
+      }
+      })
       }
 script(src='https://maps.googleapis.com/maps/api/js?callback=initMap', async='', defer='')

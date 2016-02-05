@@ -81,14 +81,25 @@ $(document).ready(function() {
                 shown = true;
                 setTimeout(() => $('.featureIcon:first').trigger('click'), 1000);
             }
+
             if (nextIndex === 5) {
                 $('.navigate-arrows').fadeIn(350);
             } else {
                 $('.navigate-arrows').fadeOut(350);
             }
+
+            // Disable tabs when not on contact page because of fullpage.js bug: https://github.com/alvarotrigo/fullPage.js/issues/1237
+            if (nextIndex === 9) {
+              $('#contact_form input, #contact_form select, #contact_form textarea, #contact_form button').removeAttr('tabindex')
+            } else if(index === 9) {
+              $('#contact_form input, #contact_form select, #contact_form textarea, #contact_form button').prop('tabIndex', -1);
+            }
+            
             closeMenuIfOpen();
         }
   });
+
+  $('input, select, textarea, button, a').prop('tabIndex', -1);
 
   $('.job_list_items li a').click((event) => {
       event.preventDefault();
@@ -197,4 +208,7 @@ $(document).ready(function() {
     }, 100);
   }
 
+
+
 });
+
