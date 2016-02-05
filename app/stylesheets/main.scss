@@ -52,7 +52,7 @@
      h2 {
        font-size: 1.4rem;
      }
-     
+
      h3 {
        font-size: 1.2rem;
      }
@@ -320,21 +320,11 @@ dt {
   cursor: pointer;
 }
 
-// Jobs
-ul.key_skills li:before {
-   content: "*";
-   font-size: 1.5em;
-   font-weight: bold;
-   vertical-align: top;
-   position: relative;
-   top: -2px;
-}
-
 ul.job_list_items {
   text-align: right;
 }
   ul.job_list_items li{
-    width: 18em;
+    width: 21em;
     height: 3em;
     background: #3B4E6E;
     /*margin-bottom: 1px;*/
@@ -513,7 +503,8 @@ ul.job_list_items {
   white-space: normal;
 }
 
-ul.why li:before {
+ul.why li:before,
+ul.key_skills li:before {
   content: '+';
   font-size: 1.5em;
   font-weight: bold;
@@ -521,7 +512,13 @@ ul.why li:before {
   margin-left: -1em;
 }
 
-ul.why li {
+ul.key_skills li:before {
+  margin-left: 0;
+  padding-right: 0.2em;
+}
+
+ul.why li,
+ul.key_skills li {
   list-style: none;
   line-height: normal;
   margin-bottom: 1.1em;
