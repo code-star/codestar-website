@@ -33,86 +33,15 @@ import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
 import Foundation from './libs/foundation';
 
-//import { retinaCanvas } from './js/retinaCanvas';
-// let Scrollax = require('scrollax');
-// let parallax = new Scrollax(window, {'horizontal': true}).init();
-// let mouseWheel = require('jquery-mousewheel');
-
-// require('./js/jquery.scroll_to.js');
-// require('./js/jquery.snapscroll.js');
-
 const CONTACT_EMAIL_ADDRESS = 'martin.weidner@ordina.nl';
 
 $(document).ready(function() {
-  // var offset = $('#center').position().left;
-  // window.scrollTo(offset, 0);
-  var features = getFeatures();
+  let features = getFeatures();
   $('#featureList').append(features);
-
   $('#solararray').append(getArray(7));
-
   $('#teamTree').append(getTeamTree());
   $('#casesTree').append(getCasesTree());
-
   $('#sunburst').append(getSunburst());
-//  var rc = retinaCanvas(1600, 1600);
-//  var svg = getSunburst(true);
-//  svg.setAttribute('version', '1.1');
-//  svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-//  svg.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
-//  var style = document.createElement('style');
-//  style.type = 'text/css';
-//  style.appendChild(document.createTextNode('path{stroke: rgba(255, 255, 255, 1.0); fill-rule: evenodd;}'));
-//  svg.insertBefore(style, svg.childNodes[0]);
-//  var svgText = '<?xml version="1.0" standalone="no"?>\n<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">;\n' + svg.outerHTML;
-//  console.log(svgText);
-
-//  $('body').append('<div id="tempSunburst">');
-//  $('#tempSunburst').append(svg);
-//  var src = 'data:image/svg+xml;base64,' + window.btoa($('#tempSunburst').html());
-//  var img = new Image();
-//  img.src = src;
-//  img.width = 1600;
-//  img.height = 1600;
-//  img.onload = () => {
-//    rc.ctx.drawImage(img, 0, 0);
-//    $('#tempSunburst').remove();
-//  }
-//  $('#sunburst2').append(rc.canvas);
-
-   var moon = getMoon(50);
-   var sun = getSun(55);
-   $('#center .decorations').append(moon);
-   $('#center .decorations').append(sun);
-
-  // function movePlanet(planet, x, property) {
-  //   if (x < 1.5) {
-  //     // y is an inverted parabola
-  //     // http://www.wolframalpha.com/input/?i=-%28x+-+0.5%29%5E2+*+400+%2B+100
-  //     var y = 100 - 400 * (x - 0.5) * (x - 0.5);
-  //     // opacity is a triangle function peaking at a=1.0 when x=0.5
-  //     var a = x > 0.5 ? 2 - 2*x : 2*x;
-  //     if (y > 0) {
-  //       planet.css('opacity', a);
-  //       planet.css('top', 10 +  0.9 * (100 - y) + '%');
-  //       planet.css(property, ((1 - x) * 480) + '%');
-  //     }
-  //   }
-  // }
-
-  // $(window).Scrollax({horizontal: true}, {
-  //   scroll: function () {
-  //     var scroll = $(window).scrollLeft();
-  //     // move moon
-  //     // x position from 0 to 1
-  //     var base = $('#center').offset().left + $(window).width();
-  //     var x_moon = scroll / $('#center').offset().left;
-  //     var x_sun = 1 - (scroll + $(window).width() - base) / ($(document).width() - base);
-  //
-  //     movePlanet(moon, x_moon, 'right');
-  //     movePlanet(sun, x_sun, 'left');
-  //   }
-  // }).init();
 
   function closeMenuIfOpen() {
     if ($('.fixed-menu .menu').css('display') !== 'none') {
@@ -120,9 +49,9 @@ $(document).ready(function() {
     }
   }
 
-  var gradients = getGradients();
-  var backgrounds = gradients.backgrounds;
-  var filters = gradients.filters;
+  let gradients = getGradients();
+  let backgrounds = gradients.backgrounds;
+  let filters = gradients.filters;
   $('.special').each((i, element) => {
     for (var j = 0; j < backgrounds.length; ++j) {
       $(element).css('background', backgrounds[i][j]);
@@ -134,7 +63,7 @@ $(document).ready(function() {
     //$(element).css('filter', filters[i])
   });
 
-  var shown = false;
+  let shown = false;
 
   // $('body').snapscroll();
   $('#fullpage').fullpage({
@@ -260,41 +189,12 @@ $(document).ready(function() {
     $('.close-button-mobile').show();
   }
   if(isMobile.any()) {
-      $.fn.fullpage.silentMoveTo('center');
       closeMenuIfOpen();
   }
+  if(isMobile.iOS()) {
+    $(document.body).animate({
+      'scrollTop':   $('#fifthPage').offset().top
+    }, 100);
+  }
+
 });
-
-// $(window).resize(e => parallax.reload());
-
-// $('body').mousewheel(event => {
-//   if(event.target && event.target.closest && event.target.closest('.profile') !== null) {
-//     return;
-//   }
-//   // if($('body').scrollBottom() > 100) {
-//   //   $('.job_list_items li').removeAttr('style');
-//   //   $('.profile').removeClass('is-visible');
-//   // }
-//
-//   // var delta = event.deltaY - event.deltaX;
-//   // if (Math.abs(delta) < 12) delta = delta < 0 ? -12 : 12;
-//   // $('html, body').stop(true,true).animate({scrollLeft: '-='+delta},50);
-//   closeMenuIfOpen();
-//   event.preventDefault();
-// });
-
-
-// $('.fixed-menu .menu li a').on('click', (event) => {
-//     $('html, body').stop().animate({
-//         scrollLeft: $(event.currentTarget.hash).offset().left
-//     }, 1000);
-//     event.preventDefault();
-// });
-
-// $('.scroll-button').on('click', (event) => {
-//     event.preventDefault();
-//     closeMenuIfOpen();
-//     $('html, body').stop().animate({
-//         scrollLeft: $(event.currentTarget.hash).offset().left
-//     }, 1000);
-// });

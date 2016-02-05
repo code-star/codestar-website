@@ -685,12 +685,35 @@ ul.why li {
   padding-left: 0.7em;
   padding-top: 0.85em;
 }
+
 .form-input::-webkit-input-placeholder{
   color: white;
 }
-input:-moz-placeholder {
+.form-input::-moz-placeholder {
+  color: white;
+  text-transform: uppercase;
+  opacity: 1.0;
+  padding-left: 0.7em;
+  padding-top: 0.85em;
+}
+.form-input::-ms-input-placeholder {
+  color: white;
+  text-transform: uppercase;
+  opacity: 1.0;
+  padding-left: 0.7em;
+  padding-top: 0.85em;
+}
+.form-input:-ms-input-placeholder {
+  color: white;
+  text-transform: uppercase;
+  opacity: 1.0;
+  padding-left: 0.7em;
+  padding-top: 0.45em;
+}
+.form-input::placeholder {
   color: white;
 }
+
 .form-input:focus {
   border: 2px solid rgb(0, 75, 145);
   background-color: rgba(255, 255, 255, 0.5);
@@ -702,7 +725,7 @@ input:-moz-placeholder {
   // border: none;
   color: rgb(0, 75, 145);
   padding-left: 0.7em;
-  padding-top: 0.85em;
+  padding-top: 0.85rem;
   margin-bottom: 2px;
 }
 
