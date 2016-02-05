@@ -52,7 +52,7 @@
      h2 {
        font-size: 1.4rem;
      }
-     
+
      h3 {
        font-size: 1.2rem;
      }
@@ -73,6 +73,9 @@
 @media #{$large-only} {
   ul.job_list_items li a {
     font-size: 1.3em;
+  }
+  .close-button-mobile {
+    display: hidden;
   }
 }
 
@@ -320,21 +323,11 @@ dt {
   cursor: pointer;
 }
 
-// Jobs
-ul.key_skills li:before {
-   content: "*";
-   font-size: 1.5em;
-   font-weight: bold;
-   vertical-align: top;
-   position: relative;
-   top: -2px;
-}
-
 ul.job_list_items {
   text-align: right;
 }
   ul.job_list_items li{
-    width: 18em;
+    width: 21em;
     height: 3em;
     background: #3B4E6E;
     /*margin-bottom: 1px;*/
@@ -398,7 +391,7 @@ ul.job_list_items {
   color: #fff;
   font-size: 2rem;
   top: 0;
-  display: none;
+  display: block;
 }
 
 @media #{$medium-only} {
@@ -513,7 +506,8 @@ ul.job_list_items {
   white-space: normal;
 }
 
-ul.why li:before {
+ul.why li:before,
+ul.key_skills li:before {
   content: '+';
   font-size: 1.5em;
   font-weight: bold;
@@ -521,7 +515,13 @@ ul.why li:before {
   margin-left: -1em;
 }
 
-ul.why li {
+ul.key_skills li:before {
+  margin-left: 0;
+  padding-right: 0.2em;
+}
+
+ul.why li,
+ul.key_skills li {
   list-style: none;
   line-height: normal;
   margin-bottom: 1.1em;
@@ -729,8 +729,14 @@ ul.why li {
   // border: none;
   color: rgb(0, 75, 145);
   padding-left: 0.7em;
-  padding-top: 0.85rem;
+  padding-top: 0.85em;
   margin-bottom: 2px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .form-input {
+    padding-top: 0.4em;
+  }
 }
 
 .form-error.is-visible {
@@ -779,7 +785,7 @@ ul.why li {
   position: absolute;
   max-height: 100vh;
   width: auto;
-  z-index: 50;
+  z-index: -50;
   right: 0;
   top: 50vh;
   transform: translateY(-50%);
@@ -789,7 +795,7 @@ ul.why li {
   position: absolute;
   max-height: 60vh;
   width: auto;
-  z-index: 50;
+  z-index: -50;
   left: -30vh;
   top: -25vh;
 }
@@ -798,7 +804,7 @@ ul.why li {
   position: absolute;
   max-height: 70vh;
   width: auto;
-  z-index: 50;
+  z-index: -50;
   right: 0;
   bottom: -10vh;
 }
@@ -807,7 +813,7 @@ ul.why li {
   position: absolute;
   max-height: 100vh;
   width: auto;
-  z-index: 50;
+  z-index: -50;
   left: 0;
   top: 50vh;
   transform: translateY(-50%);
@@ -817,7 +823,7 @@ ul.why li {
   position: absolute;
   max-height: 50vh;
   width: auto;
-  z-index: 50;
+  z-index: -50;
   right: 5vw;
   bottom: 0;
 }

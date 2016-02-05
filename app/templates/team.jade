@@ -1,13 +1,15 @@
 section#secondPage.special.section(data-scrollax-parent='true')
   .content.row.align-middle(data-scrollax="properties: { 'translateX': '-20%' }")
-    .large-3.show-for-large.columns
-    .large-6.columns
+    .small-12.large-12.columns
       center
         header
           h2 Wij
         #teamTree
-        h3#teamName
-        p#teamTagline
-        p#teamDesc
+        .row
+          .large-3.show-for-large
+          .small-12.large-6
+            h3#teamName
+            p#teamTagline
+            p#teamDesc
+          .large-3.show-for-large
         a.scroll-button.button.codestar-button(href='#join') Iets voor jou?
-    .large-3.show-for-large.columns

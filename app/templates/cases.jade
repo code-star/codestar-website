@@ -1,14 +1,16 @@
 section#eightPage.special.section(data-scrollax-parent='true')
   .content.row.align-middle(data-scrollax="properties: { 'translateX': '-20%' }")
-    .large-3.show-for-large.columns
-    .small-12.large-6.columns
+    .small-12.large-12.columns
       center
         header
           h2 Cases
         #casesTree
-        h3#caseName
-        #caseDesc
-    .large-3.show-for-large.columns
+        .row
+          .large-3.show-for-large
+          .small-12.large-6
+            h3#caseName
+            #caseDesc
+          .large-3.show-for-large
   .decorations2.noMouse
     img#curved-lines(src='Features_Curved_Lines.svg')
     img#big-lines(src='Features_BigLines.svg')
