@@ -37,6 +37,25 @@ export function getCasesTree() {
       .links(links)
       .start();
 
+  svg
+  .append('defs')
+      .selectAll('.node')
+      .data(cases.nodes).enter()
+      .append('pattern')
+      .attr('id', function(c) {return 'icon' + c.icon})
+      .attr('x', '0%')
+      .attr('y', '0%')
+      .attr('height', '100%')
+      .attr('width','100%')
+      .attr('viewBox', '1 1 8 8')
+          .append('image')
+          .attr('xlink:href', function(c) {return require('../img/Cases/' + c.icon)})
+          .attr('x', 0)
+          .attr('y', 0)
+          .attr('width', 10)
+          .attr('height', 10)
+          .style('filter', 'url(#desaturate)');
+
   var link = svg.selectAll('.link')
       .data(links)
       .enter().append('line')
@@ -47,7 +66,7 @@ export function getCasesTree() {
       .enter().append('circle')
       .attr('class', 'case-node')
       .attr('r', () => getRandomInt(10, 40))
-      .style('fill', 'white')
+      .style('fill', function(c) {return 'url(#icon' + c.icon + ')'})
       .call(force.drag);
 
   node.append('title')
