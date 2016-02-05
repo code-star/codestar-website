@@ -142,7 +142,7 @@ $(document).ready(function() {
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
         responsiveWidth: 900,
-
+        normalScrollElements: '.panel-container',
         onLeave: function(index, nextIndex, direction) {
 //            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');
 //            $('.special:eq(' + (index - 1) + ')').css('-webkit-transform', 'none');
