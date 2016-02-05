@@ -142,6 +142,7 @@ $(document).ready(function() {
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
         responsiveWidth: 900,
+        recordHistory: false,
         normalScrollElements: '.panel-container',
         onLeave: function(index, nextIndex, direction) {
 //            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');
@@ -253,8 +254,8 @@ $(document).ready(function() {
     $('.close-button-mobile').show();
   }
   if(isMobile.any()) {
-    closeMenuIfOpen();
-    $.fn.fullpage.moveTo('center');
+      $.fn.fullpage.silentMoveTo('center');
+      closeMenuIfOpen();
   }
 });
 
