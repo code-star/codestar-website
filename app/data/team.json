@@ -1,94 +1,94 @@
 {
   "nodes":[
     {
-      "name": "Hamza Haiken",
+      "name": "Hamza",
       "job": "Developer",
       "tagline": "“Programming motherf*cker”",
       "bio": "Do you speak it.",
       "image": "hamza.png"
     },
     {
-      "name": "Maik Diepenbroek",
+      "name": "Maik",
       "job": "Developer",
       "tagline": "“Move fast, break nothing”",
       "bio": "De frontend wereld is continue in beweging. In deze dynamische omgeving voel ik me op mijn best en haal ik energie uit het onderzoeken en toepassen van bleeding edge technologieen. De opgedane kennis overdragen en mensen versteld doen staan van de mogelijkheden maken dat ik nooit uitgekeken raak op deze geweldige wereld.",
       "image": "maik.jpg"
     },
     {
-      "name": "Pim Verkerk",
+      "name": "Pim",
       "job": "Developer",
       "tagline": "“I love to learn new stuff”",
       "bio": "Mijn hele leven heb ik al van puzzels gehouden, van kruiswoord puzzels tot schaak opgaven. Toen ik voor het eerst met programmeren in aanraking kwam was het dan ook liefde op het eerste gezicht. Ik hou er van om in een team te werken waar iedereen het beste uit zichzelf kan halen en ben altijd bereid om iemand te helpen.",
       "image": "picture.jpg"
     },
     {
-      "name": "Jan Ouwens",
+      "name": "Jan",
       "job": "Developer",
       "tagline": "“heeft programmeren geleerd van zijn oma”",
       "bio": "Programmeren combineert drie van mijn favoriete dingen: puzzels oplossen, creatief bezig zijn, en mensen helpen om dingen voor elkaar te krijgen. Dat laatste kun je, volgens mij, het beste doen door te streven naar kwaliteit en door oog te hebben voor detail.",
       "image": "jan.jpg"
     },
     {
-      "name": "Joost de Vries",
+      "name": "Joost",
       "job": "Scala consultant",
       "tagline": "“”",
-      "bio": "Likes Klieslies.",
+      "bio": "Likes Kleislies.",
       "image": "picture.jpg"
     },
     {
-      "name": "Martin Weidner",
+      "name": "Martin",
       "job": "Chief Motivator",
       "tagline": "“Kapitän van die Mannschaft”",
       "bio": "Ik zie programmeren als kunst. En net zoals een kunstenaar moet een programmeur passie hebben om uitstekende resultaten te bereiken. Ik heb deze passie nodig in mijn omgeving. Daarom ben ik blij om met codestar een plek te creëren, waar programmeurs met passie zich thuis kunnen voelen.",
       "image": "martin.png"
     },
     {
-      "name": "Remko de Jong",
-      "job": "Scala developer",
-      "tagline": "“”",
-      "bio": "Let's do a LAN party sometime.",
-      "image": "picture.jpg"
+      "name": "Remko",
+      "job": "Computer Programmeur",
+      "tagline": "“10: PRINT \"HI!\"<br/> 20: GOTO 10”",
+      "bio": "",
+      "image": "remko.jpg"
     },
     {
-      "name": "Ishan Sital",
+      "name": "Ishan",
       "job": "Scala developer",
       "tagline": "“”",
       "bio": "The new guy.",
       "image": "picture.jpg"
     },
     {
-      "name": "Martijn Blankestijn",
+      "name": "Martijn",
       "job": "Developer",
       "tagline": "“The serious guy”",
       "bio": "Mooie dingen maken die ook werken als het moeilijk wordt, dat geeft een kick. Wanneer je dit samen doet met een team programmeurs met dezelfde passie, voelt het eigenlijk niet als werk :-)",
       "image": "martijn.jpg"
     },
     {
-      "name": "Adil Akhter",
+      "name": "Adil",
       "job": "Scala developer",
       "tagline": "“”",
       "bio": "",
       "image": "picture.jpg"
     },
     {
-      "name": "Pieter van der Meer",
+      "name": "Pieter",
       "job": "Big data specialist",
       "tagline": "“”",
       "bio": "",
       "image": "pieter.jpg"
     },
     {
-      "name": "Casper Koning",
+      "name": "Casper",
       "job": "Developer",
       "tagline": "“That’s Numberwang!”",
       "bio": "Getallen zijn niets meer dan een concept in de menselijke gedachte. Toch vormen zij de basis voor de eindeloze stroom aan data die ons leven dagelijks beïnvloedt. Het is fascinered wat je kunt bereiken met het analyseren van deze stroom van menselijke gedachten.",
       "image": "picture.jpg"
     },
     {
-      "name": "David Hoepelman",
+      "name": "David",
       "job": "Scala developer",
       "tagline": "“”",
-      "bio": "Niets is voor mij mooier dan software die goed in elkaar zit en waar gebruikers volledig tevreden over zijn. Bij Codestars kan ik ervoor zorgen dat elk stukje software dit doel bereikt.",
+      "bio": "Niets is voor mij mooier dan software die goed in elkaar zit en waar gebruikers volledig tevreden over zijn. Bij Codestar kan ik ervoor zorgen dat elk stukje software dit doel bereikt.",
       "image": "david.jpg"
     }
   ]

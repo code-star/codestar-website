@@ -3,14 +3,14 @@ section#ninthPage.special.section(data-scrollax-parent='true')
     .large-3.show-for-large.columns
     .small-12.large-4.columns.contact_form_container
       .success.callout.email-success(data-closable='slide-out-right')
-        h5 Your email has succesfully been sent!
-        p Thank you for contacting us, we will respond within 72 hours.
+        h5 Je e-mail is succesvol verstuurd!
+        p We proberen je zo snel mogelijk te antwoorden, maar geef ons even de tijd om er ook een nuttig antwoord van te maken.
         button.close-button(aria-label='Dismiss alert', type='button', data-close='')
           span(aria-hidden='true') ×
       .alert.callout.email-fail(data-closable='slide-out-right')
-        h5 Something went wrong while sending your e-mail
-        p Please check the values and try again.
-        button.close-button(aria-label='Dismiss alert', type='button', data-close='')
+        h5 Er is iets misgegaan bij het versturen van je e-mail.
+        p Soms heeft het universum gewoon een nare bui, maar misschien zijn er bepaalde velden niet goed ingevuld?
+        button.close-button(aria-label='Sluiten', type='button', data-close='')
           span(aria-hidden='true') ×
       header
         h2 Contact
@@ -22,12 +22,12 @@ section#ninthPage.special.section(data-scrollax-parent='true')
             span
               input.form-input(type='text', placeholder='Voornaam', name='Voornaam', required='', pattern='[a-zA-Z]+')
               span.form-error
-                | Please fill in your name.
+                | Vul je voornaam in.
           .small-6.medium-6.columns
             span
               input.form-input(type='text', placeholder='Achternaam', name='Achternaam', required='', pattern='[a-zA-Z]+')
               span.form-error
-                | Please fill in your last name.
+                | Vul je achternaam in.
           .small-6.medium-6.columns
             span
               input.form-input(type='text', placeholder='Bedrijfsnaam', name='Bedrijfsnaam')
@@ -35,15 +35,15 @@ section#ninthPage.special.section(data-scrollax-parent='true')
             span
               input.form-input(type='text', placeholder='Telefoonnummer', name='Telefoonnummer', pattern='number')
               span.form-error
-                | Please fill in a valid phone number.
+                | Vul een geldig telefoonnummer in. Liefst eentje waarop jij bereikbaar bent.
           .small-12.medium-12.columns.columns-space
             input.form-input(type='email', placeholder='E-mailadres', required='', name='E-mailadres', pattern='email')
             span.form-error
-              | Please fill in a valid email address.
+              | Vul een geldig e-mailadres in. Liefst eentje via welke jij bereikbaar bent.
           .small-12.medium-12.columns.columns-space
             textarea#bericht.form-input(placeholder='Bericht', required='', name='Bericht')
             span.form-error
-              | Please fill in a message.
+              | We waarderen het dat je de moeite neemt om al je gegevens in te vullen, maar we nemen aan dat je ons ook iets wilt vertellen of vragen?
         #form-buttons
           button.button.codestar-button(type='reset', value='Alles Wissen') Alles Wissen
           input.button.codestar-button(type='submit', value='Verstuur Bericht')
@@ -62,7 +62,7 @@ section#ninthPage.special.section(data-scrollax-parent='true')
                 img(src='Contact_MailIcon.svg', width='35')
               td.contact_info INFO@CODESTAR.NL
               td.contact_button
-                a.button.codestar-button(href='mailto:infos@codestar.nl') Stuur mailtje
+                a.button.codestar-button(href='mailto:infos@codestar.nl') Stuur een mail
             tr
               td.contact_icon
                 img(src='Contact_PhoneIcon.svg', width='35')
