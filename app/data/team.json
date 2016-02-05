@@ -51,10 +51,10 @@
     },
     {
       "name": "Ishan",
-      "job": "Scala developer",
-      "tagline": "“”",
-      "bio": "The new guy.",
-      "image": "picture.jpg"
+      "job": "Programmeur",
+      "tagline": "“Talk is cheap, show me the code”",
+      "bio": "Hoewel alles rondom technologie mij fascineert, haal ik meeste genot uit het maken van technologie. Voor elk probleem dat opgelost moet worden is mijn standaard vraag: “Where is the code, Ishan?”. Let’s go!",
+      "image": "ishan.jpg"
     },
     {
       "name": "Martijn",
