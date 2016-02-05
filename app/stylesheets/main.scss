@@ -259,8 +259,10 @@ dt {
   }
 }
   .fixed-menu .menu {
+    margin-top: 0.2em;
+    clear: both;
     float: left;
-    margin-left: 20px;
+    margin-left: 1.7em;
   }
 
   .fixed-menu .menu li {
@@ -878,7 +880,7 @@ p a:active {
 }
 
 .navigate-arrows {
-  margin: 2rem;
+  margin: 1rem;
   opacity: 0.5;
   position: absolute;
   right: 0;
@@ -906,4 +908,12 @@ p a:active {
 #fp-nav ul li a span {
   background-color: white !important;
   opacity: 0.5;
+}
+
+#menu-logo {
+  display: none;
+  height: 100%;
+  margin-left: 0.1em;
+  margin-top: -0.4em;
+  @extend .menu-shadow;
 }

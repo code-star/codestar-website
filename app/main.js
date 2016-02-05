@@ -85,8 +85,10 @@ $(document).ready(function() {
 
             if (nextIndex === 5) {
                 $('.navigate-arrows').fadeIn(350);
+                $('#menu-logo').fadeOut(350);
             } else {
                 $('.navigate-arrows').fadeOut(350);
+                $('#menu-logo').fadeIn(350);
             }
 
             // Disable tabs when not on contact page because of fullpage.js bug: https://github.com/alvarotrigo/fullPage.js/issues/1237
