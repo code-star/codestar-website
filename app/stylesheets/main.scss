@@ -164,6 +164,7 @@ dt {
 
 .sunburst-svg {
   width: 100vmin;
+  height: 100vmin;
 }
 
 #sunburst3 {
@@ -616,6 +617,7 @@ ul.why li {
     position: absolute;
     max-width: none;
     width: 100vw;
+    height: 200vw;
     top: -100vw;
     transform: translateY(-50vh);
 }
@@ -623,6 +625,7 @@ ul.why li {
     position: absolute;
     max-width: none;
     height: 100vh;
+    width: 13.73vh;
     top: -100vh;
     left: -6.866vh;
     transform: translateX(50vw);
@@ -631,6 +634,7 @@ ul.why li {
     position: absolute;
     max-width: none;
     height: 100vh;
+    width: 13.73vh;
     top: -100vh;
     left: -6.866vh;
     transform: translateX(50vw);
