@@ -821,18 +821,25 @@ input:-moz-placeholder {
   margin-right: 3px;
 }
 
+p a {
+  padding: 4px 4px 2px 4px;
+  border-radius: 0.25em;
+  background-color: white;
+}
+
 p a:link {
-    color: #F08300;
+    color: #2199e8;
 }
 
 p a:visited {
-    color: #F08300;
+    color: #2199e8;
 }
 
 p a:hover {
-    color: #FCC077;
+    color: #2199e8;
+    opacity: 0.8;
 }
 
 p a:active {
-    color: #F5DABA;
+    color: #2199e8;
 }
