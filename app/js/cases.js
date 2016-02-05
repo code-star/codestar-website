@@ -12,7 +12,7 @@ export function getCasesTree() {
 
   var force = d3.layout.force()
     .charge(-1000)
-    .linkDistance(() => getRandomInt(100, 200))
+    .linkDistance(() => getRandomInt(200, 300))
     .size([width, height]);
 
   svg
@@ -22,7 +22,7 @@ export function getCasesTree() {
   var size = cases.nodes.length;
   var links = [];
   for (var i = 0; i < size; ++i) {
-    var n_links = getRandomInt(1, 3);
+    var n_links = getRandomInt(1, 2);
     for (var j = 0; j < n_links; ++j) {
       var target = getRandomInt(0, size);
       while (target === i) {
@@ -65,7 +65,7 @@ export function getCasesTree() {
       .data(cases.nodes)
       .enter().append('circle')
       .attr('class', 'case-node')
-      .attr('r', () => getRandomInt(10, 40))
+      .attr('r', () => getRandomInt(40, 45))
       .style('fill', function(c) {return 'url(#icon' + c.icon + ')'})
       .call(force.drag);
 
