@@ -112,6 +112,10 @@ section {
   vertical-align: top;
 }
 
+section {
+    min-height: 650px;
+  }
+
 .work-arguments li, dd {
   white-space: normal;
   margin-top: 0.4em;

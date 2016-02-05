@@ -71,6 +71,7 @@ $(document).ready(function() {
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
         responsiveWidth: 900,
+        responsiveHeight: 650,
         recordHistory: false,
         navigation: true,
         normalScrollElements: '.panel-container',
