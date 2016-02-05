@@ -252,6 +252,10 @@ $(document).ready(function() {
   if(Foundation.MediaQuery.current === 'small' || isMobile.any()) {
     $('.close-button-mobile').show();
   }
+  if(isMobile.any()) {
+    closeMenuIfOpen();
+    $.fn.fullpage.moveTo('center');
+  }
 });
 
 // $(window).resize(e => parallax.reload());
