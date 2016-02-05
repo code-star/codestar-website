@@ -726,8 +726,14 @@ ul.key_skills li {
   // border: none;
   color: rgb(0, 75, 145);
   padding-left: 0.7em;
-  padding-top: 0.85rem;
+  padding-top: 0.85em;
   margin-bottom: 2px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .form-input {
+    padding-top: 0.4em;
+  }
 }
 
 .form-error.is-visible {
