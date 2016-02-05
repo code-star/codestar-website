@@ -843,3 +843,34 @@ p a:hover {
 p a:active {
     color: #2199e8;
 }
+
+.navigate-arrows {
+  margin: 1rem;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+}
+
+.navigate-up {
+  top: 0;
+}
+
+.navigate-up::after {
+  content: "▲";
+  margin-left: 0.4em;
+}
+
+.navigate-down {
+  bottom: 0;
+}
+
+.navigate-down::after {
+  content: "▼";
+  margin-left: 0.4em;
+}
+
+#fp-nav ul li a span {
+  background-color: white !important;
+  opacity: 0.5;
+}

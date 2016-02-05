@@ -143,6 +143,7 @@ $(document).ready(function() {
         scrollingSpeed: 1100,
         responsiveWidth: 900,
         recordHistory: false,
+        navigation: true,
         normalScrollElements: '.panel-container',
         onLeave: function(index, nextIndex, direction) {
 //            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');
@@ -150,6 +151,11 @@ $(document).ready(function() {
             if (!shown && nextIndex == 7) {
                 shown = true;
                 setTimeout(() => $('.featureIcon:first').trigger('click'), 1000);
+            }
+            if (nextIndex === 5) {
+                $('.navigate-arrows').fadeIn(350);
+            } else {
+                $('.navigate-arrows').fadeOut(350);
             }
             closeMenuIfOpen();
         }
