@@ -314,7 +314,8 @@ dt {
   font-weight: bold;
   float: left;
   line-height: 1;
-  height: 0.5em;
+  height: 100%;
+  width: 2.5em;
   @include breakpoint(medium down) {
     display: block;
     width: 100%;
@@ -323,6 +324,15 @@ dt {
 
 .asterisk:hover {
   cursor: pointer;
+}
+
+#menu-logo {
+  display: none;
+  height: 0.5em;
+  width: 1.837em;
+  margin-left: 0.1em;
+  margin-top: -0.4em;
+  @extend .menu-shadow;
 }
 
 ul.job_list_items {
@@ -910,10 +920,4 @@ p a:active {
   opacity: 0.5;
 }
 
-#menu-logo {
-  display: none;
-  height: 100%;
-  margin-left: 0.1em;
-  margin-top: -0.4em;
-  @extend .menu-shadow;
-}
+
