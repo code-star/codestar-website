@@ -119,32 +119,9 @@ $(document).ready(function() {
       }
 
       arrow.css('top', positionOfClickedElement + 5);
-      let json = require('./data/'+jobName+'.json');
 
-      let profile = [];
-      let offer = [];
-
-      $.each( json.profile, function( key, val ) {
-        profile.push( "<li id='profile_" + key + "'>" + val + "</li>" );
-      });
-
-      $.each( json.offer, function( key, val ) {
-        offer.push( "<li id='offer_" + key + "'>" + val + "</li>" );
-      });
-
-      let profileList = $( '<ul/>', {
-        'class': 'simple vertical',
-        html: profile.join( '' )
-      });
-      let offerList = $( '<ul/>', {
-        'class': 'simple vertical',
-        html: '<p>'+json.offer_intro+'</p>'+ offer.join('')
-      });
-
-      $('.profile-list').html(profileList);
-      $('.offer-list').html(offerList);
-
-
+      $('.job_content').hide()
+      $('#' + jobName + '_content').show()
 
       if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
         element.removeClass('is-visible');
