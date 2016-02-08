@@ -54,13 +54,13 @@ export function getTeamTree() {
       .attr('y', '0%')
       .attr('height', '100%')
       .attr('width','100%')
-      .attr('viewBox', '0 0 10 10')
+      .attr('viewBox', '0 0 120 120')
           .append('image')
           .attr('xlink:href', function(d) {return require('../img/Team/' + d.image)})
           .attr('x', 0)
           .attr('y', 0)
-          .attr('width', 10)
-          .attr('height', 10)
+          .attr('width', 120)
+          .attr('height', 120)
           .style('filter', 'url(#desaturate)');
   
   var link = svg.selectAll('.link')
