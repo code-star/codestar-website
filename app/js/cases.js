@@ -54,7 +54,8 @@ export function getCasesTree() {
           .attr('y', 0)
           .attr('width', 120)
           .attr('height', 120)
-          .style('filter', 'url(#desaturate)');
+          /* IE 10 Doesn't support SVG filters and breaks the graphic if used. Curiously this doesn't happen in IE9 */
+          .style('filter', (navigator.appVersion.indexOf("MSIE 10") === -1)?'url(#desaturate)':'');
 
   var link = svg.selectAll('.link')
       .data(links)
