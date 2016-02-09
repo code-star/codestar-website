@@ -73,12 +73,33 @@ export function getCasesTree() {
   node.append('title')
       .text(function(d) { return d.company; });
 
+  node.on('mousedown', function(d) {
+    var n = d3.select(this);
+    // Capture starting position
+    n.attr('data-startcx', n.attr('cx'))
+    n.attr('data-startcy', n.attr('cy'))
+  })
+
   node.on('click', function(d) {
       var n = d3.select(this);
 
-      if (!n.attr('old_r')) {
-        // open
+      // Check if the user is clicking or moving the node
+      let tolerance = 20
+      if(Math.abs(n.attr('cx')- n.attr('data-startcx')) > tolerance ||
+        Math.abs(n.attr('cy')- n.attr('data-startcy')) > tolerance) {
+        // User is probably moving, do nothing
+        return;
+      }
 
+      // Prevent double-clicking from executing this function twice
+      if(n.attr('data-clickedon')) return;
+      n.attr('data-clickedon', 'true')
+      setTimeout(function() {
+        n.attr('data-clickedon', null)
+      }, 200)
+
+      // Toggle the node
+      if (!n.attr('old_r')) {
         node.each(function (d, i) {
           var m = d3.select(this);
 
@@ -95,7 +116,6 @@ export function getCasesTree() {
 
         $('#caseInfo').slideDown(400)
       } else {
-        // close
         n.attr('r', n.attr('old_r'));
         n.attr('old_r', null);
 
