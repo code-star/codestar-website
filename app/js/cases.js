@@ -67,6 +67,7 @@ export function getCasesTree() {
       .enter().append('circle')
       .attr('class', 'case-node')
       .attr('r', () => getRandomInt(40, 45))
+      .attr('id', function(c) {return c.id })
       .style('fill', function(c) {return 'url(#icon' + c.icon + ')'})
       .call(force.drag);
 

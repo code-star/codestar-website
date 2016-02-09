@@ -191,6 +191,10 @@ $(document).ready(function() {
     }, 100);
   }
 
+  // Expand rabobank case
+  d3.select('#caserabobank').each(function(d,i) {
+    d3.select(this).on("click").apply(this, [d,i])
+  })
 
 
 });
