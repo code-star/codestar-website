@@ -554,6 +554,10 @@ ul.key_skills li {
   stroke: white;
 }
 
+.team-node, .case-node {
+  cursor: pointer;
+}
+
 #teamTagline {
   font-style: italic;
 }
