@@ -325,7 +325,7 @@ dt {
   font-weight: bold;
   //float: left;
   line-height: 0.7em;
-  verticaly-align: text-bottom;
+  //vertical-align: bottom;
   //height: 100%;
   width: 2.5em;
   @include breakpoint(medium down) {
@@ -338,13 +338,18 @@ dt {
 
 .asterisk div {
   float: left;
-  vertical-algin: bottom;
   height: 0.4em;
 }
 
 .asterisk-symbol {
   height: 0.4em;
+  vertical-align: bottom;
   padding-top: 0.15em;
+}
+
+// Interstingly, IE actually does the sensible thing here
+_:-ms-lang(x), .asterisk-symbol {
+  padding-top: 0;
 }
 
 .asterisk:hover {
