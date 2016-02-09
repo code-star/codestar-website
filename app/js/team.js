@@ -83,21 +83,33 @@ export function getTeamTree() {
   node.on('click', function(d) {
       var n = d3.select(this);
 
-      node.each(function (d, i) {
-        var m = d3.select(this);
-        if (m != n) {
+      if (!n.attr('old_r')) {
+        // open
+
+        node.each(function (d, i) {
+          var m = d3.select(this);
+
           var old_r = m.attr('old_r');
           if (old_r) m.attr('r', old_r);
           m.attr('old_r', null);
-        }
-      });
+        });
 
-      if (!n.attr('old_r')) n.attr('old_r', n.attr('r'));
-      n.attr('r', 60);
+        n.attr('old_r', n.attr('r'));
+        n.attr('r', 60);
 
-      $('#teamName').html(d.name + '<span style="font-weight: normal"> - ' + d.job + '</span>');
-      $('#teamTagline').html(d.tagline);
-      $('#teamDesc').text(d.bio);
+        $('#teamName').html(d.name + '<span style="font-weight: normal"> - ' + d.job + '</span>');
+        $('#teamTagline').html(d.tagline);
+        $('#teamDesc').text(d.bio);
+
+        $('#teamInfo').slideDown(400)
+
+      } else {
+        // close
+        n.attr('r', n.attr('old_r'));
+        n.attr('old_r', null);
+
+        $('#teamInfo').slideUp(400)
+      }
   });
 
   force.on('tick', function() {

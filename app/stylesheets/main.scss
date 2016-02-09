@@ -453,23 +453,18 @@ ul.job_list_items li a {
   margin-left: 0;
 }
 
-@media #{$small-only} {
-  .hide-on-mobile {
+.hide-on-mobile {
+  @include breakpoint(medium down) {
     display: none;
   }
-  .content {
+
+}
+.content {
+  @include breakpoint(medium down) {
     height: 100%;
   }
 }
 
-@media #{$medium-only} {
-  .hide-on-mobile {
-    display: none;
-  }
-  .content {
-    height: 100%;
-  }
-}
 
 .is-visible .slide-in-header {
 	top: 0;
@@ -934,5 +929,26 @@ p a:active {
   background-color: white !important;
   opacity: 0.5;
 }
+
+#caseInfo {
+  display: none;
+}
+
+@media #{$large-up} {
+  #caseInfo {
+    height: 320px;
+  }
+}
+
+#teamInfo {
+  display: none;
+}
+
+@media #{$large-up} {
+  #teamInfo {
+    height: 200px;
+  }
+}
+
 
 
