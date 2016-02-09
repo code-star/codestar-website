@@ -1,4 +1,7 @@
 #!/bin/bash
+# Abort on error
+set -e
+
 npm run deploy
 git checkout gh-pages
 git pull origin gh-pages
