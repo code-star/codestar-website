@@ -72,14 +72,15 @@
 
 @media #{$medium-only} {
   body,html {
-    font-size: 4.5vmin;
+    // previously 4vmin, but that got too large
+    font-size: 26px;
   }
   #logo {
     width: 70vmin;
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   ul.job_list_items li a {
     font-size: 1.3em;
   }
@@ -348,6 +349,7 @@ dt {
 }
 
 // Interstingly, IE actually does the sensible thing here
+// IE10+ and Edge css hack
 _:-ms-lang(x), .asterisk-symbol {
   padding-top: 0;
 }
@@ -974,5 +976,47 @@ p a:active {
   }
 }
 
+.debug {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+}
 
+#debugsize {
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  border: 2px solid red;
+  text-align: center;
+  vertical-align: middle;
+}
 
+#debugsize div {
+  display: none;
+}
+
+@media #{$small-only} {
+  #debugsmall {
+    display: block !important;
+  }
+}
+
+@media #{$medium-only} {
+  #debugmed {
+    display: block !important;
+  }
+}
+
+@media #{$large-only} {
+  #debuglarge {
+    display: block !important;
+  }
+}
+
+@media #{$xlarge-up} {
+  #debugxlarge {
+    display: block !important;
+  }
+}

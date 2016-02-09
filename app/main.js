@@ -196,6 +196,8 @@ $(document).ready(function() {
     d3.select(this).on("click").apply(this, [d,i])
   })
 
-
+  if(document.location.hostname == "localhost") {
+    $('.debug').show()
+  }
 });
 
