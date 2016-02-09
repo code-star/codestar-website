@@ -11,6 +11,9 @@ cp -R ./dist/static/. ./tmp
 git add ./tmp
 git mv -f ./tmp/* ./
 rm -rf tmp
+
+set +e
+
 GIT_STATUS=$(git status 2> /dev/null)
 echo $GIT_STATUS | grep "nothing to commit" > /dev/null 2>&1
 if [ "$?" -ne 0 ]
