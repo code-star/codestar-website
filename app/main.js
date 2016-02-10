@@ -4,6 +4,7 @@ require('fullpage.js/jquery.fullPage.scss');
 require('fullpage.js/jquery.fullPage');
 require('./img/logo-simple.svg');
 require('./img/logo-simple-menu.svg');
+require('./img/logo-zwart-notext.png')
 require('./img/asterisk.png')
 require('./img/logo.svg');
 require('./img/Mouse.svg');
