@@ -244,8 +244,51 @@ $(document).ready(function() {
 
   var moon = getMoon(50);
   var sun = getSun(55);
-  //$('#decorationsSunMoon').append(moon);
-  //$('#decorationsSunMoon').append(sun);
+  $('body').append(moon);
+  $('body').append(sun);
+
+  let sunPositions = {
+    5: {"left": "calc(0% - 155px)", "top": "calc(-6% - 3 * 55px)"},
+    6: {"left": "calc(10% - 155px)", "top" : "calc(20% - 3 * 55px)"},
+    7: {"left": "calc(16.6% - 155px)", "top": "calc(46.6% - 155px)"},
+    8: {"left": "calc(23.3% - 155px)", "top": "calc(73.3% - 155px)"},
+    9: {"left": "calc(30% - 155px)", "top": "calc(100% - 155px)"}
+  }
+
+  let moonPositions = {
+    5: {"right": "calc(0% - 155px)", "bottom" : "calc(5% - 155px)"},
+    4: {"right": "calc(10% - 155px)", "bottom" : "calc(25% - 155px)"},
+    3: {"right": "calc(20% - 155px)", "bottom": "calc(45% - 155px)"},
+    2: {"right": "calc(30% - 155px)", "bottom": "calc(65% - 155px)"},
+    1: {"right": "calc(40% - 155px)", "bottom": "calc(85% - 155px)"}
+  }
+
+  // Sun and moon control
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    var sun = $('#sun')
+    var moon = $('#moon')
+    if(nextIndex > 5) {
+      sun.fadeIn(350)
+      $.each(sunPositions[nextIndex], function(k, v) {
+        sun.css(k, v)
+      })
+
+    } else {
+      sun.css("left", sunPositions[5].left)
+      sun.css("top", sunPositions[5].top)
+      sun.fadeOut(350)
+    }
+    if(nextIndex < 5) {
+      moon.fadeIn(350)
+      $.each(moonPositions[nextIndex], function(k, v) {
+        moon.css(k, v)
+      })
+    } else {
+      moon.css("right", moonPositions[5].right)
+      moon.css("bottom", moonPositions[5].bottom)
+      moon.fadeOut(350)
+    }
+  })
 
 
   /*function movePlanet(planet, x, property) {

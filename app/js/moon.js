@@ -2,6 +2,9 @@ import { retinaCanvas } from './retinaCanvas';
 
 export function getMoon(radius) {
 
+  let factor = 3.3
+  let center = radius * factor/2
+
   function lunarPhase() {
     var lp = 2551443;
     var now = new Date();
@@ -11,7 +14,8 @@ export function getMoon(radius) {
     return (4 * day / 30) % 4 - 2;
   }
 
-  var p = lunarPhase();
+  //var p = lunarPhase();
+  var p = 0
   var moonSettings = {
     'radius': radius,
     'phase': (p < 0 ? p + 1 : p - 1) + 0.001,
@@ -23,6 +27,9 @@ export function getMoon(radius) {
 
   function drawMoon(ctx, s) {
     function drawBody(ctx, x, y, r, p, col1, col2) {
+      ctx.shadowColor = '#ffffff';
+
+      ctx.shadowBlur = 0.8*r;
       ctx.fillStyle = col1;
 
       ctx.beginPath();
@@ -63,20 +70,20 @@ export function getMoon(radius) {
 
     ctx.clearRect(0, 0, 2 * r, 2 * r);
 
-    drawBody(ctx, r, r, r, p, col1, col2);
+    drawBody(ctx, center, center, r, p, col1, col2);
 
-    drawCraterFlat(ctx, 0.7 * r, 0.5 * r, 0.3 * r, col3);
-    drawCraterFlat(ctx, 0.4 * r, 1.0 * r, 0.27 * r, col3);
-    drawCraterFlat(ctx, 1.2 * r, 0.6 * r, 0.2 * r, col3);
-    drawCraterFlat(ctx, 1.5 * r, 0.9 * r, 0.18 * r, col3);
-    drawCraterFlat(ctx, 1.75 * r, 1.1 * r, 0.12 * r, col3);
-    drawCraterFlat(ctx, 1.5 * r, 1.2 * r, 0.07 * r, col3);
-    drawCraterFlat(ctx, 1.7 * r, 0.65 * r, 0.09 * r, col3);
+    drawCraterFlat(ctx, center - .3 * r, center - .5 * r, 0.3 * r, col3);
+    drawCraterFlat(ctx, center - .6 * r, center, 0.27 * r, col3);
+    drawCraterFlat(ctx, center + .2 * r, center - 0.4 * r, 0.2 * r, col3);
+    drawCraterFlat(ctx, center + .5 * r, center - 0.1 * r, 0.18 * r, col3);
+    drawCraterFlat(ctx, center + .75 * r, center + .1 * r, 0.12 * r, col3);
+    drawCraterFlat(ctx, center + .5 * r, center + .2 * r, 0.07 * r, col3);
+    drawCraterFlat(ctx, center + .7 * r, center - 0.35 * r, 0.09 * r, col3);
 
     ctx.restore();
   }
 
-  var rcMoon = retinaCanvas(2 * moonSettings.radius, 2 * moonSettings.radius);
+  var rcMoon = retinaCanvas(factor * moonSettings.radius, factor * moonSettings.radius);
   drawMoon(rcMoon.ctx, moonSettings);
 
   var moonDiv = $('<div id="moon"/>');

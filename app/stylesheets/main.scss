@@ -217,22 +217,40 @@ dt {
   opacity: 0.05;
 }
 
-#decorationsSunMoon {
+/*#decorationsSunMoon {
+  position: fixed;
+  height: 100%;
+  width: 100%;
   z-index: 1;
-}
+  @include breakpoint(medium down) {
+    display: none !important;
+  }
+}*/
 
 #moon {
+  display: none;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: calc(5% - 155px);
+  right: calc(0% - 155px);
   opacity: 1.0;
+  z-index: 1;
+  transition: right 1100ms ease, bottom 1100ms ease;
+  @include breakpoint(medium down) {
+    display: none !important;
+  }
 }
 
 #sun {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: none;
+  position: fixed;
+  top: calc(-6% - 3 * 55px);
+  left: calc(0% - 155px);
   opacity: 1.0;
+  z-index: 1;
+  transition: left 1100ms ease, top 1100ms ease;
+  @include breakpoint(medium down) {
+    display: none !important;
+  }
 }
 
 #fullpage > section {

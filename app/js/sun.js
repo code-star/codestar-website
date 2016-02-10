@@ -1,19 +1,19 @@
 import { retinaCanvas } from './retinaCanvas';
 
 export function getSun(r) {
-  let factor = 3
+  let factor = 3;
   var rc = retinaCanvas(r*factor, r*factor);
   var ctx = rc.ctx;
 
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
 
-  ctx.shadowColor = '#ffffff'
+  ctx.shadowColor = '#ffffff';
   ctx.shadowBlur = r;
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
 
-  let center = r * factor/2
+  let center = r * factor/2;
 
   ctx.beginPath();
   ctx.arc(center, center, 0.83*r, 0, 2 * Math.PI);
