@@ -3,6 +3,8 @@ require('jquery');
 require('fullpage.js/jquery.fullPage.scss');
 require('fullpage.js/jquery.fullPage');
 require('./img/logo-simple.svg');
+require('./img/logo-simple-menu.svg');
+require('./img/asterisk.png')
 require('./img/logo.svg');
 require('./img/Mouse.svg');
 require('./img/Features/Features_Curved_Lines.svg');

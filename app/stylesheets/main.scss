@@ -252,7 +252,7 @@ dt {
   top: 0px;
   left: 0px;
   padding: 20px;
-  //height: auto;
+  height: auto;
   z-index: 3;
   @include breakpoint(medium down) {
     width: 100%;
@@ -330,10 +330,7 @@ dt {
 .asterisk {
   font-size: 3.2rem;
   font-weight: bold;
-  //float: left;
-  line-height: 0.7em;
-  //vertical-align: bottom;
-  //height: 100%;
+  line-height: 0.5em;
   width: 2.5em;
   @include breakpoint(medium down) {
     display: block;
@@ -343,37 +340,24 @@ dt {
   overflow: hidden;
 }
 
-.asterisk div {
-  float: left;
+#asterisk-image {
   height: 0.4em;
-}
-
-.asterisk-symbol {
-  height: 0.4em;
-  vertical-align: bottom;
-  padding-top: 0.15em;
-}
-
-// Interstingly, IE actually does the sensible thing here
-// IE10+ and Edge css hack
-_:-ms-lang(x), .asterisk-symbol {
-  padding-top: 0;
-}
-
-.asterisk:hover {
-  cursor: pointer;
+  width: 0.4em;
 }
 
 #menu-logo {
-  float: left;
   display: none;
-  height: 0.5em;
-  width: 1.837em;
+  height: 0.4em;
+  width: 2em;
   margin-left: 0.1em;
   //margin-top: -0.4em;
   @extend .menu-shadow;
 }
 
+
+.asterisk:hover {
+  cursor: pointer;
+}
 
 ul.job_list_items {
   text-align: right;
