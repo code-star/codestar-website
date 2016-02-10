@@ -67,7 +67,9 @@ $(document).ready(function() {
 
   let shown = false;
 
-  // $('body').snapscroll();
+  var fpOnLeave = []
+
+  // Initiate fullpage.js
   $('#fullpage').fullpage({
         menu: '.fixed-menu',
         anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
@@ -78,31 +80,42 @@ $(document).ready(function() {
         navigation: true,
         normalScrollElements: '.panel-container',
         onLeave: function(index, nextIndex, direction) {
-//            $('.special:eq(' + (nextIndex - 1) + ')').css('-webkit-transform', 'translate3d(0, 0, 0)');
-//            $('.special:eq(' + (index - 1) + ')').css('-webkit-transform', 'none');
-            if (!shown && nextIndex == 7) {
-                shown = true;
-                setTimeout(() => $('.featureIcon:first').trigger('click'), 1000);
-            }
-
-            if (nextIndex === 5) {
-                $('.navigate-arrows').fadeIn(350);
-                $('#menu-logo').fadeOut(350);
-            } else {
-                $('.navigate-arrows').fadeOut(350);
-                $('#menu-logo').fadeIn(350);
-            }
-
-            // Disable tabs when not on contact page because of fullpage.js bug: https://github.com/alvarotrigo/fullPage.js/issues/1237
-            if (nextIndex === 9) {
-              $('#contact_form input, #contact_form select, #contact_form textarea, #contact_form button').removeAttr('tabindex')
-            } else if(index === 9) {
-              $('#contact_form input, #contact_form select, #contact_form textarea, #contact_form button').prop('tabIndex', -1);
-            }
-            
-            closeMenuIfOpen();
+            // Call all listeners
+            fpOnLeave.forEach((f) => f(index,nextIndex,direction))
         }
   });
+
+  // Close menu on slide transition
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    closeMenuIfOpen();
+  })
+
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if (!shown && nextIndex == 7) {
+      shown = true;
+      setTimeout(() => $('.featureIcon:first').trigger('click'), 1000);
+    }
+  })
+
+  // Hide menu logo on center page
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if (nextIndex === 5) {
+      $('.navigate-arrows').fadeIn(350);
+      $('#menu-logo').fadeOut(350);
+    } else {
+      $('.navigate-arrows').fadeOut(350);
+      $('#menu-logo').fadeIn(350);
+    }
+  })
+
+  // Disable tabs when not on contact page because of fullpage.js bug: https://github.com/alvarotrigo/fullPage.js/issues/1237
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if (nextIndex === 9) {
+      $('#contact_form input, #contact_form select, #contact_form textarea, #contact_form button').removeAttr('tabindex')
+    } else if (index === 9) {
+      $('#contact_form input, #contact_form select, #contact_form textarea, #contact_form button').prop('tabIndex', -1);
+    }
+  })
 
   $('input, select, textarea, button, a').prop('tabIndex', -1);
 
@@ -200,6 +213,30 @@ $(document).ready(function() {
 
   if(document.location.hostname == "localhost") {
     $('.debug').show()
+  }
+
+  var moon = getMoon(50);
+  var sun = getSun(55);
+  $('#decorationsSunMoon').append(moon);
+  $('#decorationsSunMoon').append(sun);
+
+
+  function movePlanet(planet, x, property) {
+    if (x < 1.5) {
+      // y is an inverted parabola
+      // http://www.wolframalpha.com/input/?i=-%28x+-+0.5%29%5E2+*+400+%2B+100
+      var y = 100 - 400 * (x - 0.5) * (x - 0.5);
+      // opacity is a triangle function peaking at a=1.0 when x=0.5
+      var a = x > 0.5 ? 2 - 2*x : 2*x;
+      if (y > 0) {
+        planet.css('opacity', a);
+        planet.css('top', 10 +  0.9 * (100 - y) + '%');
+        planet.css(property, ((1 - x) * 480) + '%');
+      }
+    }
+
+    movePlanet(moon, 0.5, 'right');
+    movePlanet(sun, 0.5, 'left');
   }
 });
 

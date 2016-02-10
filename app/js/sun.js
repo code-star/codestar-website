@@ -1,21 +1,29 @@
 import { retinaCanvas } from './retinaCanvas';
 
 export function getSun(r) {
-  var rc = retinaCanvas(r*2, r*2);
+  let factor = 3
+  var rc = retinaCanvas(r*factor, r*factor);
   var ctx = rc.ctx;
 
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'white';
 
+  ctx.shadowColor = '#ffffff'
+  ctx.shadowBlur = r;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+
+  let center = r * factor/2
+
   ctx.beginPath();
-  ctx.arc(r, r, 0.83*r, 0, 2 * Math.PI);
+  ctx.arc(center, center, 0.83*r, 0, 2 * Math.PI);
   ctx.fill();
 
   var a0 = 1.29;
   var d = (2 * Math.PI * r) / (29 * 2);
   ctx.setLineDash([d]);
   ctx.beginPath();
-  ctx.arc(r, r, 0.89*r, Math.PI * a0, Math.PI * (a0 + 2));
+  ctx.arc(center, center, 0.89*r, Math.PI * a0, Math.PI * (a0 + 2));
   ctx.stroke();
 
   ctx.setLineDash([]);
@@ -24,8 +32,8 @@ export function getSun(r) {
   	var a = i * da;
   	ctx.beginPath();
     var l = i % 2 == 0 ? 0.99 : 1.2;
-    ctx.moveTo(r + 0.92*r*Math.cos(a), r + 0.92*r*Math.sin(a));
-    ctx.lineTo(r + l*r*Math.cos(a), r + l*r*Math.sin(a));
+    ctx.moveTo(center + 0.92*r*Math.cos(a), center + 0.92*r*Math.sin(a));
+    ctx.lineTo(center + l*r*Math.cos(a), center + l*r*Math.sin(a));
   	ctx.stroke();
   }
 
