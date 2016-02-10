@@ -41,8 +41,10 @@ $(document).ready(function() {
   let features = getFeatures();
   $('#featureList').append(features);
   $('#solararray').append(getArray(7));
-  $('#teamTree').append(getTeamTree());
-  $('#casesTree').append(getCasesTree());
+  let teamtree = getTeamTree()
+  $('#teamTree').append(teamtree.svg);
+  let casestree = getCasesTree();
+  $('#casesTree').append(casestree.svg);
   $('#sunburst').append(getSunburst());
 
   function closeMenuIfOpen() {
@@ -105,6 +107,30 @@ $(document).ready(function() {
     } else {
       $('.navigate-arrows').fadeOut(350);
       $('#menu-logo').fadeIn(350);
+    }
+  })
+
+  // Reset the team graph when entering its slide
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if(nextIndex == 2) {
+      // Shuffle the nodes a bit
+      teamtree.layout.nodes().forEach(function (n) {
+        n.x = n.x + (Math.random() * 100 - 50)
+        n.y = n.y + (Math.random() * 80 - 40)
+      })
+      teamtree.layout.resume()
+    }
+  })
+
+  // Reset the cases graph when entering its slide
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if(nextIndex == 8) {
+      // Shuffle the nodes a bit
+      casestree.layout.nodes().forEach(function (n) {
+        n.x = n.x + (Math.random() * 150 - 75)
+        n.y = n.y + (Math.random() * 80 - 40)
+      })
+      casestree.layout.resume()
     }
   })
 
@@ -217,11 +243,11 @@ $(document).ready(function() {
 
   var moon = getMoon(50);
   var sun = getSun(55);
-  $('#decorationsSunMoon').append(moon);
-  $('#decorationsSunMoon').append(sun);
+  //$('#decorationsSunMoon').append(moon);
+  //$('#decorationsSunMoon').append(sun);
 
 
-  function movePlanet(planet, x, property) {
+  /*function movePlanet(planet, x, property) {
     if (x < 1.5) {
       // y is an inverted parabola
       // http://www.wolframalpha.com/input/?i=-%28x+-+0.5%29%5E2+*+400+%2B+100
@@ -237,6 +263,6 @@ $(document).ready(function() {
 
     movePlanet(moon, 0.5, 'right');
     movePlanet(sun, 0.5, 'left');
-  }
+  }*/
 });
 

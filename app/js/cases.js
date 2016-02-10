@@ -135,5 +135,5 @@ export function getCasesTree() {
         .attr('y2', function(d) { return d.target.y; });
   });
 
-  return svg.node();
+  return {"svg": svg.node(), "layout": force};
 }
