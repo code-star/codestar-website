@@ -630,11 +630,11 @@ ul.key_skills li {
   .map_container {
     will-change: left;
     left: 40%;
-    transition: left 2000ms ease;
   }
 
   .map_container.map_visible {
     left: 0;
+    transition: left 2000ms ease;
   }
 }
 
