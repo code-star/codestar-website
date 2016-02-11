@@ -1,8 +1,8 @@
 import { retinaCanvas } from './retinaCanvas';
 
-export function getMoon(radius) {
+export function getMoon(size, radius) {
 
-  let factor = 3.3
+  let factor = (size/radius)
   let center = radius * factor/2
 
   function lunarPhase() {

@@ -244,18 +244,19 @@ $(document).ready(function() {
   }
 
   // Initiate sun & moon
-  var moon = getMoon(50);
-  var sun = getSun(55);
+  let moonsunboxsize = 200
+  var moon = getMoon(moonsunboxsize,50);
+  var sun = getSun(moonsunboxsize,55);
   $('body').append(moon);
   $('body').append(sun);
 
   function sunPosition(slide) {
     let x = (slide-centerpage)
     return {
-      // Start at 0%, end at 30%
-      "left": (30/4) * x + 0,
-      // Start at -6%, end at 100%
-      "top": ((100+6)/4) * x - 6
+      // Start at -5%, end at 30%
+      "left": ((30+5)/4) * x -5,
+      // Start at -6%, end at 95%
+      "top": ((90+6)/4) * x - 6
     }
   }
   function moonPosition(slide) {
@@ -270,7 +271,7 @@ $(document).ready(function() {
 
   function setSunMoonCss(obj, pos) {
     $.each(pos, function(cssattr, v) {
-      obj.css(cssattr, "calc(" + v + "% - 155px)")
+      obj.css(cssattr, "calc(" + v + "% - " + (moonsunboxsize/2) + "px)")
     })
   }
 
@@ -278,22 +279,16 @@ $(document).ready(function() {
   let fadeSpeed = 350;
   fpOnLeave.push(function(index, nextIndex, direction) {
     var sun = $('#sun')
-    if(nextIndex > centerpage) {
-      sun.fadeIn(fadeSpeed)
-    } else {
-      sun.fadeOut(fadeSpeed)
-    }
+    let sunShow = (nextIndex > centerpage)
     let sunPos = sunPosition(Math.max(nextIndex,centerpage))
     setSunMoonCss(sun, sunPos)
+    sun.css("opacity", sunShow?"1.0":"0")
 
     var moon = $('#moon')
-    if(nextIndex < centerpage) {
-      moon.fadeIn(fadeSpeed)
-    } else {
-      moon.fadeOut(fadeSpeed)
-    }
+    let moonShow = (nextIndex < centerpage)
     let moonPos = moonPosition(Math.min(nextIndex,centerpage))
     setSunMoonCss(moon, moonPos)
+    moon.css("opacity", moonShow?"1.0":"0")
   })
 });
 

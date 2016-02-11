@@ -1,7 +1,7 @@
 import { retinaCanvas } from './retinaCanvas';
 
-export function getSun(r) {
-  let factor = 3;
+export function getSun(size, r) {
+  let factor = (size/r);
   var rc = retinaCanvas(r*factor, r*factor);
   var ctx = rc.ctx;
 
