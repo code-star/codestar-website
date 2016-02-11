@@ -71,6 +71,7 @@ $(document).ready(function() {
   let shown = false;
 
   var fpOnLeave = []
+  var fpAfterLoad = []
 
   // Initiate fullpage.js
   $('#fullpage').fullpage({
@@ -84,7 +85,10 @@ $(document).ready(function() {
         normalScrollElements: '.panel-container',
         onLeave: function(index, nextIndex, direction) {
             // Call all listeners
-            fpOnLeave.forEach((f) => f(index,nextIndex,direction))
+            fpOnLeave.forEach(f => f(index,nextIndex,direction))
+        },
+        afterLoad: (anchor, index) => {
+          fpAfterLoad.forEach(f => f(anchor, index))
         }
   });
   let centerpage = 5;
@@ -133,6 +137,15 @@ $(document).ready(function() {
         n.y = n.y + (Math.random() * 80 - 40)
       })
       casestree.layout.resume()
+    }
+  })
+
+  // Slide in/out the map
+  fpAfterLoad.push((anchor, index) => {
+    if(index == 9) {
+      $('.map_container').addClass('map_visible')
+    }else{
+      $('.map_container').removeClass('map_visible')
     }
   })
 

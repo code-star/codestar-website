@@ -625,6 +625,19 @@ ul.key_skills li {
   position: relative;
   height: 100%;
 }
+
+@media #{$large-up} {
+  .map_container {
+    will-change: left;
+    left: 40%;
+    transition: left 2000ms ease;
+  }
+
+  .map_container.map_visible {
+    left: 0;
+  }
+}
+
 #contact_form .row .columns {
   padding-right: 2px;
   padding-left: 0;
