@@ -35,6 +35,7 @@ import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
 import Foundation from './libs/foundation';
+import { getPixel } from './js/pixelbg';
 
 const CONTACT_EMAIL_ADDRESS = 'codestar@ordina.nl';
 
@@ -310,5 +311,25 @@ $(document).ready(function() {
   $('.navigate-down').click(() => {
     $.fn.fullpage.moveSectionDown()
   })
+
+  // "Pixel" backgrounds
+  var pixelBgInterval = null
+
+
+  // Set an interval for generating pixels
+  fpOnLeave.push((i,ni,dir) => {
+    if(ni == 4) {
+      pixelBgInterval = setInterval(() => {
+        // nonzero hance to generate a pixel
+        if(Math.random() < 0.7) {
+          $('body').append(getPixel())
+        }
+      }, 200)
+    } else {
+      if(pixelBgInterval !== null)
+        clearInterval(pixelBgInterval)
+    }
+  })
+
 });
 

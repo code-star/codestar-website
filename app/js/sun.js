@@ -37,7 +37,7 @@ export function getSun(size, r) {
   	ctx.stroke();
   }
 
-  var sunDiv = $('<div id="sun"/>');
+  var sunDiv = $('<div id="sun" class="noMouse"/>');
   sunDiv.append(rc.canvas);
 
   return sunDiv;

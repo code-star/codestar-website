@@ -237,7 +237,6 @@ dt {
   @include breakpoint(medium down) {
     display: none !important;
   }
-  pointer-events: none;
 }
 
 #sun {
@@ -254,7 +253,17 @@ dt {
   @include breakpoint(medium down) {
     display: none !important;
   }
-  pointer-events: none;
+}
+
+.bgPixel {
+  will-change: width, height;
+  position: fixed;
+  width: 0;
+  height: 0;
+  z-index: 0;
+  opacity: 0.5;
+  box-shadow: 0 0 5px;
+  //transition: width 100ms ease, height 100ms ease;
 }
 
 .fp-responsive #moon, .fp-responsive #sun {

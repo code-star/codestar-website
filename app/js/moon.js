@@ -86,7 +86,7 @@ export function getMoon(size, radius) {
   var rcMoon = retinaCanvas(factor * moonSettings.radius, factor * moonSettings.radius);
   drawMoon(rcMoon.ctx, moonSettings);
 
-  var moonDiv = $('<div id="moon"/>');
+  var moonDiv = $('<div id="moon" class="noMouse"/>');
   moonDiv.append(rcMoon.canvas);
 
   return moonDiv;
