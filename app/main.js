@@ -36,7 +36,7 @@ import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
 import Foundation from './libs/foundation';
 
-const CONTACT_EMAIL_ADDRESS = 'martin.weidner@ordina.nl';
+const CONTACT_EMAIL_ADDRESS = 'codestar@ordina.nl';
 
 $(document).ready(function() {
   let features = getFeatures();
