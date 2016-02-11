@@ -303,5 +303,12 @@ $(document).ready(function() {
     setSunMoonCss(moon, moonPos)
     moon.css("opacity", moonShow?"1.0":"0")
   })
+
+  $('.navigate-up').click(() => {
+    $.fn.fullpage.moveSectionUp()
+  })
+  $('.navigate-down').click(() => {
+    $.fn.fullpage.moveSectionDown()
+  })
 });
 
