@@ -75,7 +75,7 @@ $(document).ready(function() {
   // Initiate fullpage.js
   $('#fullpage').fullpage({
         menu: '.fixed-menu',
-        anchors:['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
+        anchors: ['join', 'team', 'why-work', 'attract', 'center', 'difference', 'features', 'cases', 'contact'],
         scrollingSpeed: 1100,
         responsiveWidth: 900,
         responsiveHeight: 700,
@@ -87,6 +87,7 @@ $(document).ready(function() {
             fpOnLeave.forEach((f) => f(index,nextIndex,direction))
         }
   });
+  let centerpage = 5;
 
   // Close menu on slide transition
   fpOnLeave.push(function(index, nextIndex, direction) {
@@ -102,7 +103,7 @@ $(document).ready(function() {
 
   // Hide menu logo on center page
   fpOnLeave.push(function(index, nextIndex, direction) {
-    if (nextIndex === 5) {
+    if (nextIndex === centerpage) {
       $('.navigate-arrows').fadeIn(350);
       $('#menu-logo').fadeOut(350);
     } else {
@@ -242,71 +243,57 @@ $(document).ready(function() {
     $('.debug').show()
   }
 
+  // Initiate sun & moon
   var moon = getMoon(50);
   var sun = getSun(55);
   $('body').append(moon);
   $('body').append(sun);
 
-  let sunPositions = {
-    5: {"left": "calc(0% - 155px)", "top": "calc(-6% - 3 * 55px)"},
-    6: {"left": "calc(10% - 155px)", "top" : "calc(20% - 3 * 55px)"},
-    7: {"left": "calc(16.6% - 155px)", "top": "calc(46.6% - 155px)"},
-    8: {"left": "calc(23.3% - 155px)", "top": "calc(73.3% - 155px)"},
-    9: {"left": "calc(30% - 155px)", "top": "calc(100% - 155px)"}
+  function sunPosition(slide) {
+    let x = (slide-centerpage)
+    return {
+      // Start at 0%, end at 30%
+      "left": (30/4) * x + 0,
+      // Start at -6%, end at 100%
+      "top": ((100+6)/4) * x - 6
+    }
+  }
+  function moonPosition(slide) {
+    let x = (centerpage-slide)
+    return {
+      // Start at 0%, end at 40%
+      "right": (40/4) * x + 0,
+      // Start at 5%, end at 85%
+      "bottom": ((85-5)/4) * x + 5
+    }
   }
 
-  let moonPositions = {
-    5: {"right": "calc(0% - 155px)", "bottom" : "calc(5% - 155px)"},
-    4: {"right": "calc(10% - 155px)", "bottom" : "calc(25% - 155px)"},
-    3: {"right": "calc(20% - 155px)", "bottom": "calc(45% - 155px)"},
-    2: {"right": "calc(30% - 155px)", "bottom": "calc(65% - 155px)"},
-    1: {"right": "calc(40% - 155px)", "bottom": "calc(85% - 155px)"}
+  function setSunMoonCss(obj, pos) {
+    $.each(pos, function(cssattr, v) {
+      obj.css(cssattr, "calc(" + v + "% - 155px)")
+    })
   }
 
   // Sun and moon control
+  let fadeSpeed = 350;
   fpOnLeave.push(function(index, nextIndex, direction) {
     var sun = $('#sun')
+    if(nextIndex > centerpage) {
+      sun.fadeIn(fadeSpeed)
+    } else {
+      sun.fadeOut(fadeSpeed)
+    }
+    let sunPos = sunPosition(Math.max(nextIndex,centerpage))
+    setSunMoonCss(sun, sunPos)
+
     var moon = $('#moon')
-    if(nextIndex > 5) {
-      sun.fadeIn(350)
-      $.each(sunPositions[nextIndex], function(k, v) {
-        sun.css(k, v)
-      })
-
+    if(nextIndex < centerpage) {
+      moon.fadeIn(fadeSpeed)
     } else {
-      sun.css("left", sunPositions[5].left)
-      sun.css("top", sunPositions[5].top)
-      sun.fadeOut(350)
+      moon.fadeOut(fadeSpeed)
     }
-    if(nextIndex < 5) {
-      moon.fadeIn(350)
-      $.each(moonPositions[nextIndex], function(k, v) {
-        moon.css(k, v)
-      })
-    } else {
-      moon.css("right", moonPositions[5].right)
-      moon.css("bottom", moonPositions[5].bottom)
-      moon.fadeOut(350)
-    }
+    let moonPos = moonPosition(Math.min(nextIndex,centerpage))
+    setSunMoonCss(moon, moonPos)
   })
-
-
-  /*function movePlanet(planet, x, property) {
-    if (x < 1.5) {
-      // y is an inverted parabola
-      // http://www.wolframalpha.com/input/?i=-%28x+-+0.5%29%5E2+*+400+%2B+100
-      var y = 100 - 400 * (x - 0.5) * (x - 0.5);
-      // opacity is a triangle function peaking at a=1.0 when x=0.5
-      var a = x > 0.5 ? 2 - 2*x : 2*x;
-      if (y > 0) {
-        planet.css('opacity', a);
-        planet.css('top', 10 +  0.9 * (100 - y) + '%');
-        planet.css(property, ((1 - x) * 480) + '%');
-      }
-    }
-
-    movePlanet(moon, 0.5, 'right');
-    movePlanet(sun, 0.5, 'left');
-  }*/
 });
 

@@ -217,16 +217,6 @@ dt {
   opacity: 0.05;
 }
 
-/*#decorationsSunMoon {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  @include breakpoint(medium down) {
-    display: none !important;
-  }
-}*/
-
 #moon {
   display: none;
   position: fixed;
