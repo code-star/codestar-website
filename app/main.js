@@ -326,8 +326,10 @@ $(document).ready(function() {
         }
       }, 200)
     } else {
-      if(pixelBgInterval !== null)
+      if(pixelBgInterval !== null) {
         clearInterval(pixelBgInterval)
+      }
+      $('.bgPixel').stop().fadeOut(300)
     }
   })
 
