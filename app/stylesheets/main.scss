@@ -263,6 +263,9 @@ dt {
   z-index: 0;
   opacity: 0.5;
   box-shadow: 0 0 5px;
+  @include breakpoint(medium down) {
+    display: none;
+  }
   //transition: width 100ms ease, height 100ms ease;
 }
 

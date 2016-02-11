@@ -32,7 +32,9 @@ export function getPixel() {
 
   let blinkspeed = blinkspeedBase*size
   let csssize = size + "vmin"
-  pixel.animate({"width": csssize, "height": csssize, "margin-left": 0, "margin-right": 0}, blinkspeed, function() {
+  // "Blink" the pixel by animating it's width and height
+  // "mar"
+  pixel.animate({"width": csssize, "height": csssize, "margin-left": 0, "margin-top": 0}, blinkspeed, function() {
     pixel.animate({"width": 0, "height": 0, "margin-left": size/2 + "vmin", "margin-top": size/2 + "vmin"}, blinkspeed, function() {
       pixel.remove()
     })
