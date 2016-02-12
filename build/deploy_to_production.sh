@@ -30,7 +30,7 @@ fi
 cd "$PRODUCTION_DIRNAME"
 
 # Remove old compiled app files
-git rm *
+git rm ./app.*
 # Copy new files
 cp -R ./dist/static/. .
 git add .

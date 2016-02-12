@@ -25,7 +25,7 @@ echo "Deploying $branch to gh-pages"
 npm run deploy
 git checkout gh-pages
 git pull origin gh-pages
-#git rm ./app.*
+git rm ./app.*
 
 # We move the dist to a temp folder because the files in the github page repo are all in root
 # and we do not want to pollute our own root
