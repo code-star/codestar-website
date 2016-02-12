@@ -4,8 +4,6 @@ set -e
 
 branch=$(git name-rev --name-only HEAD)
 
-#branch=${1:-$current}
-
 if [ "$branch" != "master" ] && [ "$branch" != "develop" ]; then
     echo "Deploying non-standard branch $branch, continue? (y/N)"
     read x
