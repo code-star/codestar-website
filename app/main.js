@@ -19,6 +19,16 @@ require('./img/Clouds/Cloud02.png');
 require('./img/Clouds/Cloud03Crop.png');
 require('./img/Clouds/Cloud04Crop.png');
 require('./img/Clouds/Cloud05.png');
+require('./img/Logos/akka.png');
+require('./img/Logos/scala.png');
+require('./img/Logos/spark.png');
+require('./img/Logos/spray.png');
+require('./img/Logos/typescript.png');
+require('./img/Logos/docker.png');
+require('./img/Logos/mesos.png');
+require('./img/Logos/aws.png');
+require('./img/Logos/cassandra.png');
+require('./img/Logos/kafka.png');
 require('./fonts/ConduitITCStd.otf');
 require('./fonts/ConduitITCStd-Bold.otf');
 require('./fonts/ConduitITCStd-BoldItalic.otf');
@@ -39,6 +49,18 @@ import { getPixel } from './js/pixelbg';
 import currentBrowser from './js/browserChecker';
 
 const CONTACT_EMAIL_ADDRESS = 'codestar@ordina.nl';
+
+// Queue CSS function to work with .delay().
+// Example: $('p').delay(500).qss({'color': 'red'})
+// Source: http://stackoverflow.com/a/35057342/572635
+$.fn.extend({
+  qcss: function(css) {
+    return $(this).queue(function(next) {
+      $(this).css(css);
+      next();
+    });
+  }
+});
 
 $(document).ready(function() {
   let features = getFeatures();
@@ -117,28 +139,63 @@ $(document).ready(function() {
       $('#menu-logo').fadeIn(350);
     }
   })
-  if(!currentBrowser.isSafari()) {
-    // Reset the team graph when entering its slide
-    fpOnLeave.push(function(index, nextIndex, direction) {
-      if(nextIndex == 2) {
-        // Shuffle the nodes a bit
-        teamtree.layout.nodes().forEach(function (n) {
-          n.x = n.x + (Math.random() * 100 - 50)
-          n.y = n.y + (Math.random() * 80 - 40)
-        })
-        teamtree.layout.resume()
-      }
-    })
 
-    // Reset the cases graph when entering its slide
-    fpOnLeave.push(function(index, nextIndex, direction) {
-      if(nextIndex == 8) {
-        // Shuffle the nodes a bit
-        casestree.layout.nodes().forEach(function (n) {
-          n.x = n.x + (Math.random() * 150 - 75)
-          n.y = n.y + (Math.random() * 80 - 40)
-        })
-        casestree.layout.resume()
+  // Reset the team graph when entering its slide
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if(nextIndex == 2) {
+      // Shuffle the nodes a bit
+      teamtree.layout.nodes().forEach(function (n) {
+        n.x = n.x + (Math.random() * 100 - 50)
+        n.y = n.y + (Math.random() * 80 - 40)
+      })
+      teamtree.layout.resume()
+    }
+  })
+
+  // Reset the cases graph when entering its slide
+  fpOnLeave.push(function(index, nextIndex, direction) {
+    if(nextIndex == 8) {
+      // Shuffle the nodes a bit
+      casestree.layout.nodes().forEach(function (n) {
+        n.x = n.x + (Math.random() * 150 - 75)
+        n.y = n.y + (Math.random() * 80 - 40)
+      })
+      casestree.layout.resume()
+    }
+  })
+
+  // On desktop safari, disable the trees when not on the slide itself because of performance problems
+  if(currentBrowser.isSafari() && !isMobile.iOS()){
+    let graphFadeSpeed = 350
+
+    // Warning: do not use display: none, because this removes the node images when setting display: block again
+    function hideGraph(id) {
+      let graph = $(id)
+      graph.delay(graphFadeSpeed).qcss({'visibility': 'hidden'})
+      graph.fadeTo(graphFadeSpeed, 0)
+    }
+    fpOnLeave.push((i, ni, dir) => {
+      if(i == 2) {
+        hideGraph('#teamTree')
+      }
+      if(i == 8) {
+        hideGraph('#casesTree')
+      }
+    });
+
+    hideGraph('#casesTree')
+    hideGraph('#teamTree')
+
+    fpAfterLoad.push((anchor, i) => {
+      switch(anchor) {
+        case "cases":
+          $('#casesTree').css('visibility', 'visible')
+          $('#casesTree').fadeTo(graphFadeSpeed, 1)
+          break;
+        case "team":
+          $('#teamTree').css('visibility', 'visible')
+          $('#teamTree').fadeTo(graphFadeSpeed, 1)
+          break;
       }
     })
   }

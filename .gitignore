@@ -6,6 +6,7 @@ dist
 npm-debug.log
 .DS_STORE
 .project
+build/production_repo
 =======
 dist
 node_modules/
