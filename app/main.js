@@ -36,6 +36,7 @@ import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
 import Foundation from './libs/foundation';
 import { getPixel } from './js/pixelbg';
+import currentBrowser from './js/browserChecker';
 
 const CONTACT_EMAIL_ADDRESS = 'codestar@ordina.nl';
 
@@ -116,39 +117,31 @@ $(document).ready(function() {
       $('#menu-logo').fadeIn(350);
     }
   })
+  if(!currentBrowser.isSafari()) {
+    // Reset the team graph when entering its slide
+    fpOnLeave.push(function(index, nextIndex, direction) {
+      if(nextIndex == 2) {
+        // Shuffle the nodes a bit
+        teamtree.layout.nodes().forEach(function (n) {
+          n.x = n.x + (Math.random() * 100 - 50)
+          n.y = n.y + (Math.random() * 80 - 40)
+        })
+        teamtree.layout.resume()
+      }
+    })
 
-  // Reset the team graph when entering its slide
-  fpOnLeave.push(function(index, nextIndex, direction) {
-    if(nextIndex == 2) {
-      // Shuffle the nodes a bit
-      teamtree.layout.nodes().forEach(function (n) {
-        n.x = n.x + (Math.random() * 100 - 50)
-        n.y = n.y + (Math.random() * 80 - 40)
-      })
-      teamtree.layout.resume()
-    }
-  })
-
-  // Reset the cases graph when entering its slide
-  fpOnLeave.push(function(index, nextIndex, direction) {
-    if(nextIndex == 8) {
-      // Shuffle the nodes a bit
-      casestree.layout.nodes().forEach(function (n) {
-        n.x = n.x + (Math.random() * 150 - 75)
-        n.y = n.y + (Math.random() * 80 - 40)
-      })
-      casestree.layout.resume()
-    }
-  })
-
-  // Slide in/out the map
-  fpAfterLoad.push((anchor, index) => {
-    if(index == 9) {
-      $('.map_container').addClass('map_visible')
-    }else{
-      $('.map_container').removeClass('map_visible')
-    }
-  })
+    // Reset the cases graph when entering its slide
+    fpOnLeave.push(function(index, nextIndex, direction) {
+      if(nextIndex == 8) {
+        // Shuffle the nodes a bit
+        casestree.layout.nodes().forEach(function (n) {
+          n.x = n.x + (Math.random() * 150 - 75)
+          n.y = n.y + (Math.random() * 80 - 40)
+        })
+        casestree.layout.resume()
+      }
+    })
+  }
 
   // Disable tabs when not on contact page because of fullpage.js bug: https://github.com/alvarotrigo/fullPage.js/issues/1237
   fpOnLeave.push(function(index, nextIndex, direction) {
@@ -258,52 +251,52 @@ $(document).ready(function() {
   }
 
   // Initiate sun & moon
-  let moonsunboxsize = 200
-  var moon = getMoon(moonsunboxsize,50);
-  var sun = getSun(moonsunboxsize,55);
-  $('body').append(moon);
-  $('body').append(sun);
-
-  function sunPosition(slide) {
-    let x = (slide-centerpage)
-    return {
-      // Start at -5%, end at 30%
-      "left": ((30+5)/4) * x -5,
-      // Start at -6%, end at 95%
-      "top": ((90+6)/4) * x - 6
-    }
-  }
-  function moonPosition(slide) {
-    let x = (centerpage-slide)
-    return {
-      // Start at 0%, end at 40%
-      "right": (40/4) * x + 0,
-      // Start at 5%, end at 85%
-      "bottom": ((85-5)/4) * x + 5
-    }
-  }
-
-  function setSunMoonCss(obj, pos) {
-    $.each(pos, function(cssattr, v) {
-      obj.css(cssattr, "calc(" + v + "% - " + (moonsunboxsize/2) + "px)")
-    })
-  }
-
-  // Sun and moon control
-  let fadeSpeed = 350;
-  fpOnLeave.push(function(index, nextIndex, direction) {
-    var sun = $('#sun')
-    let sunShow = (nextIndex > centerpage)
-    let sunPos = sunPosition(Math.max(nextIndex,centerpage))
-    setSunMoonCss(sun, sunPos)
-    sun.css("opacity", sunShow?"1.0":"0")
-
-    var moon = $('#moon')
-    let moonShow = (nextIndex < centerpage)
-    let moonPos = moonPosition(Math.min(nextIndex,centerpage))
-    setSunMoonCss(moon, moonPos)
-    moon.css("opacity", moonShow?"1.0":"0")
-  })
+  // let moonsunboxsize = 200
+  // var moon = getMoon(moonsunboxsize,50);
+  // var sun = getSun(moonsunboxsize,55);
+  // $('body').append(moon);
+  // $('body').append(sun);
+  //
+  // function sunPosition(slide) {
+  //   let x = (slide-centerpage)
+  //   return {
+  //     // Start at -5%, end at 30%
+  //     "left": ((30+5)/4) * x -5,
+  //     // Start at -6%, end at 95%
+  //     "top": ((90+6)/4) * x - 6
+  //   }
+  // }
+  // function moonPosition(slide) {
+  //   let x = (centerpage-slide)
+  //   return {
+  //     // Start at 0%, end at 40%
+  //     "right": (40/4) * x + 0,
+  //     // Start at 5%, end at 85%
+  //     "bottom": ((85-5)/4) * x + 5
+  //   }
+  // }
+  //
+  // function setSunMoonCss(obj, pos) {
+  //   $.each(pos, function(cssattr, v) {
+  //     obj.css(cssattr, "calc(" + v + "% - " + (moonsunboxsize/2) + "px)")
+  //   })
+  // }
+  //
+  // // Sun and moon control
+  // let fadeSpeed = 350;
+  // fpOnLeave.push(function(index, nextIndex, direction) {
+  //   var sun = $('#sun')
+  //   let sunShow = (nextIndex > centerpage)
+  //   let sunPos = sunPosition(Math.max(nextIndex,centerpage))
+  //   setSunMoonCss(sun, sunPos)
+  //   sun.css("opacity", sunShow?"1.0":"0")
+  //
+  //   var moon = $('#moon')
+  //   let moonShow = (nextIndex < centerpage)
+  //   let moonPos = moonPosition(Math.min(nextIndex,centerpage))
+  //   setSunMoonCss(moon, moonPos)
+  //   moon.css("opacity", moonShow?"1.0":"0")
+  // })
 
   $('.navigate-up').click(() => {
     $.fn.fullpage.moveSectionUp()
@@ -334,4 +327,3 @@ $(document).ready(function() {
   })
 
 });
-
