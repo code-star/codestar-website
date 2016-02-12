@@ -2,6 +2,21 @@
 # Abort on error
 set -e
 
+branch=$(git name-rev --name-only HEAD)
+
+#branch=${1:-$current}
+
+if [ "$branch" != "master" ] && [ "$branch" != "develop" ]; then
+    echo "Deploying non-standard branch $branch, continue? (y/N)"
+    read x
+    if [ "$x" != "y" ] &&  [ "$x" != "Y" ]; then
+        echo "stopping..."
+        exit 0
+    fi
+fi
+
+echo "Deploying $branch to gh-pages"
+
 npm run deploy
 git checkout gh-pages
 git pull origin gh-pages
@@ -22,4 +37,4 @@ then
   git commit -m "Updated website on: $now"
   git push origin gh-pages
 fi
-git checkout vertical
+git checkout "$branch"
