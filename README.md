@@ -8,6 +8,10 @@
 npm install
 npm run dev
 
+#Deploying
+
+To put the site live on http://codestar.nl make sure that the compiled website is pushed to https://github.com/OrdinaNederland/OrdinaNederland.github.io#master  .
+
 #Development
 We don't push to master, but let our 'highly intelligent' build script do that for us!
 Our base branch is develop, from there we create feature branches.
