@@ -7,7 +7,7 @@ PRODUCTION_DIRNAME="build/production_repo"
 
 pwd=$(pwd)
 
-if ! [ -f "README.md" ]; then
+if ! [ -f "package.json" ]; then
     echo "Run from repository root"
     exit -1
 fi
@@ -29,10 +29,12 @@ fi
 
 cd "$PRODUCTION_DIRNAME"
 
+git pull
 # Remove old compiled app files
-git rm ./app.*
+git rm -r .
 # Copy new files
-cp -R "$PWD/dist/static/." .
+cp -R "$pwd/dist/static/." .
+echo "www.codestar.nl" > CNAME
 git add .
 
 # Create commit
