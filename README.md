@@ -8,4 +8,11 @@
 npm install
 npm run dev
 
+#Development
+We don't push to master, but let our 'highly intelligent' build script do that for us!
+Our base branch is develop, from there we create feature branches.
+We create pull requests from these feature branches.
+
+For issues see: https://github.com/OrdinaNederland/codestar-website/issues
+
 # Website
