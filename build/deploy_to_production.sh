@@ -32,7 +32,7 @@ cd "$PRODUCTION_DIRNAME"
 # Remove old compiled app files
 git rm ./app.*
 # Copy new files
-cp -R ./dist/static/. .
+cp -R "$PWD/dist/static/." .
 git add .
 
 # Create commit
