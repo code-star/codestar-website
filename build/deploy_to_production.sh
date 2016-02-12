@@ -2,37 +2,50 @@
 # Abort on error
 set -e
 
+PRODUCTION_REPO="git@github.com:OrdinaNederland/OrdinaNederland.github.io.git"
+PRODUCTION_DIRNAME="build/production_repo"
+
+pwd=$(pwd)
+
+if ! [ -f "package.json" ]; then
+    echo "Run from repository root"
+    exit -1
+fi
+
+# Save branch and checkout master
 branch=$(git name-rev --name-only HEAD)
+git checkout master
 
-if [ "$branch" != "master" ] && [ "$branch" != "develop" ]; then
-    echo "Deploying non-standard branch $branch, continue? (y/N)"
-    read x
-    if [ "$x" != "y" ] &&  [ "$x" != "Y" ]; then
-        echo "stopping..."
-        exit 0
-    fi
-fi
+echo "Deploying master branch to production"
 
-echo "Deploying $branch to gh-pages"
-
+# Make the site files
 npm run deploy
-git checkout gh-pages
-git pull origin gh-pages
-git rm ./app.*
-mkdir tmp
-cp -R ./dist/static/. ./tmp
-git add ./tmp
-git mv -f ./tmp/* ./
-rm -rf tmp
 
-set +e
-
-GIT_STATUS=$(git status 2> /dev/null)
-echo $GIT_STATUS | grep "nothing to commit" > /dev/null 2>&1
-if [ "$?" -ne 0 ]
-then
-  now=$(date "+%d-%m-%Y %H:%M:%S")
-  git commit -m "Updated website on: $now"
-  git push origin gh-pages
+# cd into the production repo
+# Clone the production repository if it doesn't exist
+if ! [ -d "$PRODUCTION_DIRNAME" ]; then
+    git clone "$PRODUCTION_REPO" "$PRODUCTION_DIRNAME"
 fi
+
+cd "$PRODUCTION_DIRNAME"
+
+git pull
+# Remove old compiled app files
+git rm -r .
+# Copy new files
+cp -R "$pwd/dist/static/." .
+echo "www.codestar.nl" > CNAME
+git add .
+
+# Create commit
+now=$(date "+%d-%m-%Y %H:%M:%S")
+git commit -m "Updated website on: $now"
+
+# Push to production
+git push
+
+# Cleanup
+# Go back to original repo
+cd "$pwd"
+# Checkout original branch
 git checkout "$branch"
