@@ -380,6 +380,7 @@ dt {
   }
   height: 0.5em;
   overflow: hidden;
+  vertical-align: top;
 }
 
 #asterisk-image {
@@ -389,7 +390,7 @@ dt {
 
 #menu-logo {
   display: none;
-  height: 0.5em;
+  height: 0.4em;
   width: 2em;
   margin-left: 0.1em;
   //margin-top: -0.4em;
