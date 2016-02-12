@@ -31,6 +31,14 @@
       "description": "Innovatief project met als doel de realisatie van een pilot applicatie ter verificatie van een nieuw veelbelovend business-concept voor de gehele haven. En de gehele haven betekent ook de gehele haven. Dus veel stakeholders en het bijbehorende overleg.<br><br>Korte feedback-loops waren essentieel om de richting te bepalen voor de pilot. Het gebruik van een volledig cloud-gebaseerde ontwikkelstraat maakte het mogelijk om vanaf week één al functionaliteit in de productie-omgeving te tonen en zo inhoud te geven aan die korte feedback-loops. Dus geen vergaderingen over abstracte software diagrammen, maar over werkende software. Agile zoals agile bedoeld is.",
       "icon": "port_of_rotterdam.png",
       "background": ""
+    },
+    {
+      "id": "wehkamp",
+      "company": "Wehkamp",
+      "project": "TBD",
+      "description": "TBD",
+      "icon": "wehkamp.png",
+      "background": ""
     }
   ]
 }
