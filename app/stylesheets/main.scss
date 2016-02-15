@@ -368,12 +368,12 @@ dt {
   }
   height: 0.5em;
   overflow: hidden;
-  vertical-align: top;
 }
 
 #asterisk-image {
   height: 0.4em;
   width: 0.4em;
+  vertical-align: top;
 }
 
 #menu-logo {
@@ -381,6 +381,7 @@ dt {
   height: 0.4em;
   width: 2em;
   margin-left: 0.1em;
+  vertical-align: top;
   //margin-top: -0.4em;
   @extend .menu-shadow;
 }
