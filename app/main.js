@@ -379,7 +379,13 @@ $(document).ready(function() {
       if(pixelBgInterval !== null) {
         clearInterval(pixelBgInterval)
       }
-      $('.bgPixel').stop().fadeOut(300)
+      // Fadeout and remove all existing pixels
+      $('.bgPixel')
+        // Stop existing blinking
+        .stop()
+        .fadeOut(300,
+          function() { $(this).remove() }
+        )
     }
   })
 
