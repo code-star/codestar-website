@@ -29,5 +29,9 @@ script.
                 links[i].tabIndex = -1
             }
         })
+
+        google.maps.event.addDomListener(window, 'resize', function() {
+          map.setCenter(latLng)
+        })
       }
 script(src='https://maps.googleapis.com/maps/api/js?callback=initMap', async='', defer='')
