@@ -118,7 +118,7 @@ export function getTeamTree() {
         });
 
         n.attr('old_r', n.attr('r'));
-        n.attr('r', 60);
+        n.attr('r', 61);
 
         $('#teamName').html(d.name + '<span style="font-weight: normal"> - ' + d.job + '</span>');
         $('#teamTagline').html(d.tagline);
