@@ -35,6 +35,7 @@ require('./fonts/ConduitITCStd-BoldItalic.otf');
 require('./fonts/ConduitITCStd-Italic.otf');
 
 import d3 from 'd3';
+import PointerEventsPolyfill from './libs/pointer_events_polyfill'
 import isMobile from './js/mobileChecker';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
@@ -389,4 +390,11 @@ $(document).ready(function() {
     }
   })
 
+});
+
+// Initialize pointer events polyfill
+$(document).ready(function(){
+  PointerEventsPolyfill.initialize({
+    selector: '.noMouse, #map'
+  });
 });
