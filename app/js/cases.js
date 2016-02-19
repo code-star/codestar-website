@@ -110,7 +110,7 @@ export function getCasesTree() {
         });
 
         n.attr('old_r', n.attr('r'));
-        n.attr('r', 60);
+        n.attr('r', 61);
 
         $('#caseName').html(d.company + '<br><span style="font-weight: normal">' + d.project + '</span>');
         $('#caseDesc').html(d.description);
