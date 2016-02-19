@@ -211,37 +211,32 @@ dt {
   //backface-visibility: hidden;
 }
 
-#moon {
+.sunmoon {
   @extend .force-3d-accel;
-  will-change: bottom, right, opacity;
-  //display: none;
+  will-change: opacity, transform;
+  position: absolute;
   opacity: 0;
-  position: fixed;
-  bottom: calc(5% - 155px);
-  right: calc(0% - 155px);
-  opacity: 1.0;
-  z-index: 1;
-  transition: right 1100ms ease, bottom 1100ms ease, opacity 350ms ease;
+  z-index: -1;
+  transition: opacity 350ms ease, transform 1100ms ease;
   @include breakpoint(medium down) {
     display: none !important;
   }
 }
 
+#moon {
+  @extend .sunmoon;
+
+  right: 0;
+  bottom: 0;
+  //transform: translateY(calc(-406vh - 100px)) translateX(calc(-5vw - 100px))
+}
+
 #sun {
-  @extend .force-3d-accel;
-  will-change: top, left, opacity;
-  //display: none;
-  opacity: 0;
-  position: fixed;
-  top: calc(-6% - 3 * 55px);
-  left: calc(0% - 155px);
-  opacity: 1.0;
-  z-index: 1;
-  transition: left 1100ms ease, top 1100ms ease, opacity 350ms ease;
-  @include breakpoint(medium down) {
-    display: none !important;
-  }
-  //transform: translateY(-150vh)
+  @extend .sunmoon;
+
+  left: 0;
+  top: 0;
+  transform: translateY(calc(-406vh - 100px)) translateX(calc(-5vw - 100px))
 }
 
 .bgPixel {

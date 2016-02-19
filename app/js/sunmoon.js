@@ -140,45 +140,46 @@ export function initiateSunMoon(centerpage) {
    let moonsunboxsize = 200
    var moon = getMoon(moonsunboxsize,50);
    var sun = getSun(moonsunboxsize,55);
-   $('body').append(moon);
-   $('body').append(sun);
-  //$('#ninthPage').append(sun);
+   $('#fourthPage').append(moon);
+   $('#ninthPage').append(sun);
 
    function sunPosition(slide) {
-     let x = (slide-centerpage)
-     return {
-       // Start at -5%, end at 30%
-       "left": ((30+5)/4) * x -5,
+     let offset = (slide-centerpage)
+
+     // Start at -5%, end at 30%
+     let x = ((30+5)/4) * offset - 5
        // Start at -6%, end at 95%
-       "top": ((90+6)/4) * x - 6
-     }
+     let y = ((90+6)/4) * offset - 6
+     // Add -100vh per slide, sun starts at slide 4 from offset
+     let yPlusSlide = y - 100 * (4 - offset)
+     return {x: x, y: yPlusSlide}
    }
    function moonPosition(slide) {
-     let x = (centerpage-slide)
-     return {
-       // Start at 0%, end at 40%
-       "right": (40/4) * x + 0,
-       // Start at 5%, end at 85%
-       "bottom": ((85-5)/4) * x + 5
-     }
+     let offset = (slide-centerpage)
+     console.log(offset)
+     // Start at 0%, end at -40%
+     let x = (40/4) * offset + 0
+       // Start at -5%, end at -85%
+     let y = ((85-5)/4) * offset + 5
+     let yPlusSlide = -100 * (1-offset)
+     return {x: x, y: yPlusSlide}
    }
 
    function setSunMoonCss(obj, pos) {
-     $.each(pos, function(cssattr, v) {
-       obj.css(cssattr, "calc(" + v + "% - " + (moonsunboxsize/2) + "px)")
-     })
+     obj.css({transform: 'translateY(calc(' + pos.y + 'vh - ' + (moonsunboxsize/2) + 'px))'
+     + ' translateX(calc(' + pos.x + 'vw - ' + (moonsunboxsize/2) + 'px))'})
    }
 
    // Sun and moon control
    let fadeSpeed = 350;
    return {'fpOnLeave': function(index, nextIndex, direction) {
-     var sun = $('#sun')
+     let sun = $('#sun')
      let sunShow = (nextIndex > centerpage)
      let sunPos = sunPosition(Math.max(nextIndex,centerpage))
      setSunMoonCss(sun, sunPos)
      sun.css("opacity", sunShow?"1.0":"0")
 
-     var moon = $('#moon')
+     let moon = $('#moon')
      let moonShow = (nextIndex < centerpage)
      let moonPos = moonPosition(Math.min(nextIndex,centerpage))
      setSunMoonCss(moon, moonPos)
