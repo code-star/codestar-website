@@ -40,8 +40,7 @@ import isMobile from './js/mobileChecker';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
 import { getCasesTree } from './js/cases';
-import { getMoon } from './js/moon';
-import { getSun } from './js/sun';
+import { initiateSunMoon } from './js/sunmoon';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
@@ -308,54 +307,6 @@ $(document).ready(function() {
     $('.debug').show()
   }
 
-  // Initiate sun & moon
-  // let moonsunboxsize = 200
-  // var moon = getMoon(moonsunboxsize,50);
-  // var sun = getSun(moonsunboxsize,55);
-  // $('body').append(moon);
-  // $('body').append(sun);
-  //
-  // function sunPosition(slide) {
-  //   let x = (slide-centerpage)
-  //   return {
-  //     // Start at -5%, end at 30%
-  //     "left": ((30+5)/4) * x -5,
-  //     // Start at -6%, end at 95%
-  //     "top": ((90+6)/4) * x - 6
-  //   }
-  // }
-  // function moonPosition(slide) {
-  //   let x = (centerpage-slide)
-  //   return {
-  //     // Start at 0%, end at 40%
-  //     "right": (40/4) * x + 0,
-  //     // Start at 5%, end at 85%
-  //     "bottom": ((85-5)/4) * x + 5
-  //   }
-  // }
-  //
-  // function setSunMoonCss(obj, pos) {
-  //   $.each(pos, function(cssattr, v) {
-  //     obj.css(cssattr, "calc(" + v + "% - " + (moonsunboxsize/2) + "px)")
-  //   })
-  // }
-  //
-  // // Sun and moon control
-  // let fadeSpeed = 350;
-  // fpOnLeave.push(function(index, nextIndex, direction) {
-  //   var sun = $('#sun')
-  //   let sunShow = (nextIndex > centerpage)
-  //   let sunPos = sunPosition(Math.max(nextIndex,centerpage))
-  //   setSunMoonCss(sun, sunPos)
-  //   sun.css("opacity", sunShow?"1.0":"0")
-  //
-  //   var moon = $('#moon')
-  //   let moonShow = (nextIndex < centerpage)
-  //   let moonPos = moonPosition(Math.min(nextIndex,centerpage))
-  //   setSunMoonCss(moon, moonPos)
-  //   moon.css("opacity", moonShow?"1.0":"0")
-  // })
-
   $('.navigate-up').click(() => {
     $.fn.fullpage.moveSectionUp()
   })
@@ -389,6 +340,8 @@ $(document).ready(function() {
         )
     }
   })
+
+  fpOnLeave.push(initiateSunMoon(centerpage).fpOnLeave)
 
 });
 

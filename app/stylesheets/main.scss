@@ -241,6 +241,7 @@ dt {
   @include breakpoint(medium down) {
     display: none !important;
   }
+  //transform: translateY(-150vh)
 }
 
 .bgPixel {
