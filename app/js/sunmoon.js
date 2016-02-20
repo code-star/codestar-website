@@ -43,19 +43,19 @@ function getSun(size, r) {
   return sunDiv;
 }
 
+function lunarPhase() {
+  var lp = 2551443;
+  var now = new Date();
+  var new_moon = new Date(1970, 0, 7, 20, 35, 0);
+  var phase = ((now.getTime() - new_moon.getTime()) / 1000) % lp;
+  var day = Math.floor(phase / (24 * 3600)) + 1;
+  return (4 * day / 30) % 4 - 2;
+}
+
 function getMoon(size, radius) {
 
   let factor = (size/radius)
   let center = radius * factor/2
-
-  function lunarPhase() {
-    var lp = 2551443;
-    var now = new Date();
-    var new_moon = new Date(1970, 0, 7, 20, 35, 0);
-    var phase = ((now.getTime() - new_moon.getTime()) / 1000) % lp;
-    var day = Math.floor(phase / (24 * 3600)) + 1;
-    return (4 * day / 30) % 4 - 2;
-  }
 
   //var p = lunarPhase();
   var p = 0
@@ -135,54 +135,59 @@ function getMoon(size, radius) {
   return moonDiv;
 }
 
+// Gives a function that computes a line based on 2 points
+function line(p1, p2) {
+  // computer y = a * x + b
+  let dy = p2.y - p1.y
+  let dx = p2.x - p1.x
+  let a = dy/dx
+  let b = p1.y - (p1.x * a)
+  return (x) => a * x + b
+}
+
+// Returns a function that calculates body position based for any slide
+// domslide is the slide the body is in in the DOM, pos
+function celestialBodyPosition(domslide, slide1, slide2) {
+  let horpos = line({x: slide1.slide, y: slide1.x}, {x: slide2.slide, y: slide2.x})
+  let vertpos = line({x: slide1.slide, y: slide1.y}, {x: slide2.slide, y: slide2.y})
+  let vertoffset = function(slide) {
+    return -100 * (domslide - slide)
+  }
+
+  return (slide) => {return {x: horpos(slide), y: vertpos(slide)+vertoffset(slide)}}
+}
+
+function setCelestialBodyCss(obj, pos, boxsize) {
+  obj.css({transform: 'translateY(calc(' + pos.y + 'vh - ' + (boxsize/2) + 'px))'
+  + ' translateX(calc(' + pos.x + 'vw - ' + (boxsize/2) + 'px))'})
+}
+
 export function initiateSunMoon(centerpage) {
-   //Initiate sun & moon
    let moonsunboxsize = 200
+
    var moon = getMoon(moonsunboxsize,50);
    var sun = getSun(moonsunboxsize,55);
-   $('#fourthPage').append(moon);
+
+   $('#ninthPage').append(moon);
    $('#ninthPage').append(sun);
 
-   function sunPosition(slide) {
-     let offset = (slide-centerpage)
+   let sunPosition = celestialBodyPosition(9, {slide: 5, x: -5, y: -6}, {slide: 9, x: 30, y: 95})
+   let moonPosition = celestialBodyPosition(9, {slide: 6, x: 5, y: 5}, {slide: 1, x: -30, y: -50})
 
-     // Start at -5%, end at 30%
-     let x = ((30+5)/4) * offset - 5
-       // Start at -6%, end at 95%
-     let y = ((90+6)/4) * offset - 6
-     // Add -100vh per slide, sun starts at slide 4 from offset
-     let yPlusSlide = y - 100 * (4 - offset)
-     return {x: x, y: yPlusSlide}
-   }
-   function moonPosition(slide) {
-     let offset = (slide-centerpage)
-     console.log(offset)
-     // Start at 0%, end at -40%
-     let x = (40/4) * offset + 0
-       // Start at -5%, end at -85%
-     let y = ((85-5)/4) * offset + 5
-     let yPlusSlide = -100 * (1-offset)
-     return {x: x, y: yPlusSlide}
-   }
 
-   function setSunMoonCss(obj, pos) {
-     obj.css({transform: 'translateY(calc(' + pos.y + 'vh - ' + (moonsunboxsize/2) + 'px))'
-     + ' translateX(calc(' + pos.x + 'vw - ' + (moonsunboxsize/2) + 'px))'})
-   }
-
-   // Sun and moon control
-   let fadeSpeed = 350;
+   // return function that changes sun & moon position on slide change
    return {'fpOnLeave': function(index, nextIndex, direction) {
      let sun = $('#sun')
+     let sunPos = sunPosition(nextIndex)
+     setCelestialBodyCss(sun, sunPos, moonsunboxsize)
      let sunShow = (nextIndex > centerpage)
-     let sunPos = sunPosition(Math.max(nextIndex,centerpage))
-     setSunMoonCss(sun, sunPos)
      sun.css("opacity", sunShow?"1.0":"0")
 
      let moon = $('#moon')
+     let moonPos = moonPosition(nextIndex)
+     console.log(moonPos)
+     setCelestialBodyCss(moon, moonPos, moonsunboxsize)
      let moonShow = (nextIndex < centerpage)
-     let moonPos = moonPosition(Math.min(nextIndex,centerpage))
-     setSunMoonCss(moon, moonPos)
      moon.css("opacity", moonShow?"1.0":"0")
    }}
 }
