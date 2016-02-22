@@ -57,11 +57,23 @@
   margin-right: -0.05em;
 }
 
+@media only screen and (max-width: 1023px) {
+     h2 {
+       font-size: 1.4rem;
+     }
+
+     h3 {
+       font-size: 1.2rem;
+     }
+     p {
+       font-size: 0.8rem;
+     }
+}
+
 @media #{$medium-only} {
   body,html {
     // previously 4vmin, but that got too large
-    // font-size: 26px;
-    font-size: 4.5vmin;
+    font-size: 26px;
   }
   #logo {
     width: 70vmin;
@@ -373,15 +385,13 @@ dt {
 #asterisk-image {
   height: 0.4em;
   width: 0.4em;
-  vertical-align: top;
 }
 
 #menu-logo {
   display: none;
-  height: 0.4em;
+  height: 0.5em;
   width: 2em;
   margin-left: 0.1em;
-  vertical-align: top;
   //margin-top: -0.4em;
   @extend .menu-shadow;
 }
@@ -1045,10 +1055,7 @@ p a:active {
     display: block !important;
   }
 }
-
-.stack-logo {
-  width: 4em;
-  height: auto;
-  margin-right: 2em;
-  margin-bottom: 1em;
+.homePageLink {
+  cursor: pointer;
+  pointer-events: auto;
 }
