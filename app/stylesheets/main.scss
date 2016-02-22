@@ -1052,3 +1052,8 @@ p a:active {
   margin-right: 2em;
   margin-bottom: 1em;
 }
+
+.homePageLink {
+  cursor: pointer;
+  pointer-events: auto;
+}
