@@ -341,7 +341,21 @@ $(document).ready(function() {
     }
   })
 
-  fpOnLeave.push(initiateSunMoon(centerpage).fpOnLeave)
+  let slides = [
+    "",
+    "#firstPage",
+    '#secondPage',
+    '#thirdPage',
+    '#fourthPage',
+    '#fifthPage',
+    '#sixthPage',
+    '#sevenPage',
+    '#eightPage',
+    '#nightPage'
+  ]
+
+  let sunMoon = initiateSunMoon(centerpage, slides)
+  fpOnLeave.push(sunMoon.onSlideChange)
 
   PointerEventsPolyfill.initialize({
     selector: '.noMouse, #map'

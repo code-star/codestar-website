@@ -150,11 +150,11 @@ function line(p1, p2) {
 function celestialBodyPosition(domslide, slide1, slide2) {
   let horpos = line({x: slide1.slide, y: slide1.x}, {x: slide2.slide, y: slide2.x})
   let vertpos = line({x: slide1.slide, y: slide1.y}, {x: slide2.slide, y: slide2.y})
-  let vertoffset = function(slide) {
+  /*let vertoffset = function(slide) {
     return -100 * (domslide - slide)
-  }
+  }*/
 
-  return (slide) => {return {x: horpos(slide), y: vertpos(slide)+vertoffset(slide)}}
+  return (slide) => {return {x: horpos(slide), y: vertpos(slide)/*+vertoffset(slide)*/}}
 }
 
 function setCelestialBodyCss(obj, pos, boxsize) {
@@ -162,32 +162,39 @@ function setCelestialBodyCss(obj, pos, boxsize) {
   + ' translateX(calc(' + pos.x + 'vw - ' + (boxsize/2) + 'px))'})
 }
 
-export function initiateSunMoon(centerpage) {
+export function initiateSunMoon(centerpage, slides) {
    let moonsunboxsize = 200
 
-   var moon = getMoon(moonsunboxsize,50);
-   var sun = getSun(moonsunboxsize,55);
+   var moonDiv = getMoon(moonsunboxsize,50)
+   var sunDiv = getSun(moonsunboxsize,55)
 
-   $('#ninthPage').append(moon);
-   $('#ninthPage').append(sun);
+   //$('#ninthPage').append(moon);
+   //$('#ninthPage').append(sun);
 
    let sunPosition = celestialBodyPosition(9, {slide: 5, x: -5, y: -6}, {slide: 9, x: 30, y: 95})
    let moonPosition = celestialBodyPosition(9, {slide: 6, x: 5, y: 5}, {slide: 1, x: -30, y: -50})
 
 
    // return function that changes sun & moon position on slide change
-   return {'fpOnLeave': function(index, nextIndex, direction) {
-     let sun = $('#sun')
-     let sunPos = sunPosition(nextIndex)
-     setCelestialBodyCss(sun, sunPos, moonsunboxsize)
-     let sunShow = (nextIndex > centerpage)
-     sun.css("opacity", sunShow?"1.0":"0")
+   return {'onSlideChange': function(index, nextIndex, direction) {
 
+     let sunShow = (nextIndex > centerpage)
+     if (sunShow) {
+       //var currentCss = $('#sun').css('transform')
+       $('#sun').remove()
+       let sunPos = sunPosition(nextIndex)
+       let sun = $(getSun(moonsunboxsize,55))//$(sunDiv)
+       //  sun.css('transform', currentCss)
+       $(slides[nextIndex]).append($(sunDiv))
+       //setCelestialBodyCss($('#sun'), sunPos, moonsunboxsize)
+       //sun.css("opacity", sunShow?"1.0":"0")
+     }
+    /*
      let moon = $('#moon')
      let moonPos = moonPosition(nextIndex)
      console.log(moonPos)
      setCelestialBodyCss(moon, moonPos, moonsunboxsize)
      let moonShow = (nextIndex < centerpage)
-     moon.css("opacity", moonShow?"1.0":"0")
+     moon.css("opacity", moonShow?"1.0":"0")*/
    }}
 }

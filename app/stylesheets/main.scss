@@ -214,9 +214,9 @@ dt {
 .sunmoon {
   @extend .force-3d-accel;
   will-change: opacity, transform;
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
+  position: fixed;
+  //opacity: 0;
+  //z-index: -1;
   transition: opacity 350ms ease, transform 1100ms ease;
   @include breakpoint(medium down) {
     display: none !important;
@@ -236,7 +236,7 @@ dt {
 
   left: 0;
   top: 0;
-  transform: translateY(calc(-406vh - 100px)) translateX(calc(-5vw - 100px))
+  //transform: translateY(calc(-406vh - 100px)) translateX(calc(-5vw - 100px))
 }
 
 .bgPixel {
