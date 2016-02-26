@@ -349,9 +349,9 @@ $(document).ready(function() {
     '#fourthPage',
     '#fifthPage',
     '#sixthPage',
-    '#sevenPage',
+    '#seventhPage',
     '#eightPage',
-    '#nightPage'
+    '#ninthPage'
   ]
 
   let sunMoon = initiateSunMoon(centerpage, slides)

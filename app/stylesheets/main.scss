@@ -216,7 +216,7 @@ dt {
   will-change: opacity, transform;
   position: fixed;
   //opacity: 0;
-  //z-index: -1;
+  z-index: -1;
   transition: opacity 350ms ease, transform 1100ms ease;
   @include breakpoint(medium down) {
     display: none !important;

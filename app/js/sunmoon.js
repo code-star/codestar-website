@@ -162,39 +162,64 @@ function setCelestialBodyCss(obj, pos, boxsize) {
   + ' translateX(calc(' + pos.x + 'vw - ' + (boxsize/2) + 'px))'})
 }
 
+function addBodyToNewSlide(slideId, bodyId, body, pos, moonsunboxize) {
+  $(bodyId).remove()
+  $(slideId + ' .content').append(body)
+  setCelestialBodyCss($(bodyId), pos, moonsunboxize)
+}
+
+function moveCelestialBody(nextIndex, index, bodyPosition, slides, newBody, moonsunboxsize, centerpage, bodyId, showBody) {
+  // If going down, put the sun on the new slide and then animate it
+  // If going up, animate the sun and then put it on the new slide
+  // This is because content from "lower" slides is placed over content of "higher" slides
+  if (nextIndex > index) {
+    // Put sun back at previous position compensating for position difference between slides
+    let oldPos = bodyPosition(index)
+    oldPos.y -= 100 * (nextIndex - index)
+
+    addBodyToNewSlide(slides[nextIndex], bodyId, newBody, oldPos, moonsunboxsize)
+    if(!showBody) {
+      $(bodyId).css('opacity', 0)
+    }
+
+    // Settimeout to activate the css transform
+    setTimeout(() => {
+      setCelestialBodyCss($(bodyId), bodyPosition(nextIndex), moonsunboxsize)
+    }, 0)
+  } else {
+    let moveToPos = bodyPosition(nextIndex)
+    // Compensate for the number of slides in between by adding 100vh for every slide
+    moveToPos.y += 100 * (nextIndex - index)
+    setCelestialBodyCss($(bodyId), moveToPos, moonsunboxsize)
+    $(bodyId).css('opacity', 1)
+
+    if (showBody) {
+      setTimeout(() => {
+        addBodyToNewSlide(slides[nextIndex], bodyId, newBody, bodyPosition(nextIndex), moonsunboxsize)
+      }, 1100)
+    } else {
+      $(bodyId).css('opacity', 0)
+    }
+  }
+}
+
 export function initiateSunMoon(centerpage, slides) {
-   let moonsunboxsize = 200
+  let moonsunboxsize = 200
 
-   var moonDiv = getMoon(moonsunboxsize,50)
-   var sunDiv = getSun(moonsunboxsize,55)
+  let sunPosition = celestialBodyPosition(9, {slide: 5, x: -5, y: -6}, {slide: 9, x: 30, y: 95})
+  let moonPosition = celestialBodyPosition(9, {slide: 6, x: 15, y: 15}, {slide: 1, x: -20, y: -60})
 
-   //$('#ninthPage').append(moon);
-   //$('#ninthPage').append(sun);
+  // return function that changes sun & moon position on slide change
+  return {
+   'onSlideChange': function (index, nextIndex, direction) {
 
-   let sunPosition = celestialBodyPosition(9, {slide: 5, x: -5, y: -6}, {slide: 9, x: 30, y: 95})
-   let moonPosition = celestialBodyPosition(9, {slide: 6, x: 5, y: 5}, {slide: 1, x: -30, y: -50})
+     let newSun = $(getSun(moonsunboxsize, 55))
+     let showSun = (nextIndex > centerpage)
+     moveCelestialBody(nextIndex, index, sunPosition, slides, newSun, moonsunboxsize, centerpage, "#sun", showSun);
 
-
-   // return function that changes sun & moon position on slide change
-   return {'onSlideChange': function(index, nextIndex, direction) {
-
-     let sunShow = (nextIndex > centerpage)
-     if (sunShow) {
-       //var currentCss = $('#sun').css('transform')
-       $('#sun').remove()
-       let sunPos = sunPosition(nextIndex)
-       let sun = $(getSun(moonsunboxsize,55))//$(sunDiv)
-       //  sun.css('transform', currentCss)
-       $(slides[nextIndex]).append($(sunDiv))
-       //setCelestialBodyCss($('#sun'), sunPos, moonsunboxsize)
-       //sun.css("opacity", sunShow?"1.0":"0")
-     }
-    /*
-     let moon = $('#moon')
-     let moonPos = moonPosition(nextIndex)
-     console.log(moonPos)
-     setCelestialBodyCss(moon, moonPos, moonsunboxsize)
-     let moonShow = (nextIndex < centerpage)
-     moon.css("opacity", moonShow?"1.0":"0")*/
-   }}
+     let newMoon = $(getMoon(moonsunboxsize, 55))
+     let showMoon = (nextIndex < centerpage)
+     moveCelestialBody(nextIndex, index, moonPosition, slides, newMoon, moonsunboxsize, centerpage, "#moon", showMoon);
+   }
+  }
 }
