@@ -1,8 +1,6 @@
-require('../img/Features/Features_Aftercare.svg');
 require('../img/Features/Features_FastTimeMarket.svg');
-require('../img/Features/Features_HorizontallyScalable.svg');
 require('../img/Features/Features_Integrating.svg');
-require('../img/Features/Features_Partner.svg');
+require('../img/Features/Features_Partner.png');
 require('../img/Features/Features_ReduceCode.svg');
 require('../img/Features/Features_TheRightPeople.svg');
 

@@ -343,10 +343,6 @@ $(document).ready(function() {
 
   fpOnLeave.push(initiateSunMoon(centerpage).fpOnLeave)
 
-});
-
-// Initialize pointer events polyfill
-$(document).ready(function(){
   PointerEventsPolyfill.initialize({
     selector: '.noMouse, #map'
   });
