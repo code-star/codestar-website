@@ -1072,3 +1072,7 @@ p a:active {
   background-color: rgba(3,14,32,0.5);
   box-shadow: 0 0 50px 50px rgba(3,14,32,0.5);
 }
+.homePageLink {
+  cursor: pointer;
+  pointer-events: auto;
+}

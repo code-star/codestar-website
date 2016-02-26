@@ -390,11 +390,6 @@ $(document).ready(function() {
         )
     }
   })
-
-});
-
-// Initialize pointer events polyfill
-$(document).ready(function(){
   PointerEventsPolyfill.initialize({
     selector: '.noMouse, #map'
   });
