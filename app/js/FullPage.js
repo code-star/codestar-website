@@ -1,6 +1,7 @@
 require('fullpage.js/jquery.fullPage.scss');
 require('fullpage.js/jquery.fullPage');
 import { Decorations } from './Decorations';
+import { getPixel } from './pixelbg';
 
 export class FullPage {
   constructor() {

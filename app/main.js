@@ -14,7 +14,6 @@ import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
 import Foundation from './libs/foundation';
-import { getPixel } from './js/pixelbg';
 import currentBrowser from './js/browserChecker';
 import { JobList } from './js/JobList';
 import { FullPage } from './js/FullPage';
