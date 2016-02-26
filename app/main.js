@@ -8,6 +8,7 @@ require('./img/logo-zwart-notext.png')
 require('./img/asterisk.png')
 require('./img/logo.svg');
 require('./img/Mouse.svg');
+require('./img/jobs_background.svg')
 require('./img/Features/Features_Curved_Lines.svg');
 require('./img/Features/Features_SmallLines.svg');
 require('./img/Features/Features_BigLines.svg');
