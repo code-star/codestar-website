@@ -1,6 +1,3 @@
-//require("css!./unitegallery/package/unitegallery/css/unite-gallery.css");
-//require("css!./unite-customization.css");
-
 // Unite Gallery, Version: 1.7.7, released 05 Dec 2015
 
 /**
@@ -22451,6 +22448,7 @@ function UGLightbox(){
     var objItem = g_gallery.getItem(index);
 
     g_temp.isOpened = true;
+    $.fn.fullpage.setKeyboardScrolling(false);
 
     if(g_objSlider){
       g_objSlider.setItem(objItem, "lightbox_open");
@@ -22500,6 +22498,7 @@ function UGLightbox(){
   this.close = function(fromWhere){
 
     g_temp.isOpened = false;
+    $.fn.fullpage.setKeyboardScrolling(true);
 
     if(g_temp.isCompact == true)
       hideCompactElements();
