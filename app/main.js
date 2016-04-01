@@ -1,6 +1,8 @@
 require('./js/dynamicRequire');
 require('./stylesheets/main.scss');
 require('jquery');
+require('./vendor/unitegallery');
+
 
 import d3 from 'd3';
 import PointerEventsPolyfill from './libs/pointer_events_polyfill'
@@ -72,5 +74,9 @@ $(document).ready(function() {
 
   PointerEventsPolyfill.initialize({
     selector: '.noMouse, #map'
+  });
+
+  $("#gallery").unitegallery({
+    tiles_type:"nested"
   });
 });

@@ -13,7 +13,8 @@ module.exports = {
   },
   externals: {
     jQuery: 'jQuery',
-    foundation: 'Foundation'
+    foundation: 'Foundation',
+    unitegallery: ''
   },
   resolve: {
     extensions: ['', '.js',],
@@ -29,7 +30,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        exclude: /app\/vendor/,
       },
       { test: /\.jade$/, loader: 'jade' },
       { test: /\.json$/, loader: 'json' },
@@ -42,8 +44,11 @@ module.exports = {
         }
       },
       {
-            test:   /jquery\..*\.js/,
-            loader: "imports?$=jquery,jQuery=jquery,this=>window"
+         test:   /jquery\..*\.js/,
+         loader: "imports?$=jquery,jQuery=jquery,this=>window"
+      },
+      { test: /vendor\/.+\.(jsx|js)$/,
+        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
       },
       {
         test: /\.scss$/,
