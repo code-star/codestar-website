@@ -1,6 +1,8 @@
 @import "partials/settings";
 @import "~foundation-sites/scss/foundation";
 @import "partials/base";
+@import "../vendor/unitegallery/package/unitegallery/css/unite-gallery.css";
+@import "../vendor/unite-customization.css";
 @include foundation-everything($flex: true);
 
 @font-face {
@@ -1073,4 +1075,19 @@ p a:active {
 .homePageLink {
   cursor: pointer;
   pointer-events: auto;
+}
+
+.fp-controlArrow.fp-prev {
+  left: 50px;
+  border-width: 19.25px 17px 19.25px 0;
+  border-color: transparent rgba(255,255,255,0.5) transparent transparent;
+
+}
+.fp-controlArrow.fp-next {
+  right: 50px;
+  border-width: 19.25px 0 19.25px 17px;
+  border-color: transparent transparent transparent rgba(255,255,255,0.5);
+}
+.fp-controlArrow {
+  margin-top: -19px;
 }

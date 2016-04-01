@@ -1,4 +1,5 @@
-require("css!./unitegallery/package/unitegallery/css/unite-gallery.css");
+//require("css!./unitegallery/package/unitegallery/css/unite-gallery.css");
+//require("css!./unite-customization.css");
 
 // Unite Gallery, Version: 1.7.7, released 05 Dec 2015
 
