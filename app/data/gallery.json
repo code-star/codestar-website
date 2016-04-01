@@ -1,10 +1,18 @@
 [
   {
-    "img": "david.jpg",
-    "descr": "David"
+    "img": "jan_presenting.jpg",
+    "descr": "Jan explaining how to build a DSL"
   },
   {
-    "img": "hamza.png",
-    "descr": "Hamza"
+    "img": "launch_eggs.jpg",
+    "descr": "Codestar launch presents"
+  },
+  {
+    "img": "play_weekend.jpg",
+    "descr": "Play weekend Hackaton"
+  },
+  {
+    "img": "pim_presenting.jpg",
+    "descr": "Fast track to Scala for Java developers"
   }
 ]

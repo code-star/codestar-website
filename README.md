@@ -5,7 +5,11 @@
 ---
 
 # Howto
-npm install
+## Installing
+`brew install imagemagick`
+`npm install`
+
+## Developing
 npm run dev
 
 #Deploying
