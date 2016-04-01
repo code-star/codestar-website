@@ -1,7 +1,7 @@
 require('./js/dynamicRequire');
 require('./stylesheets/main.scss');
 require('jquery');
-require('./vendor/unitegallery');
+require('./vendor/unitegallery'); // Our "fork" contains both the united-gallery.js file and the theme appended
 
 
 import d3 from 'd3';
