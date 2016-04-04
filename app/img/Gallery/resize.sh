@@ -15,5 +15,5 @@ done
 
 # Convert too large jpeg's
 for f in *.jpg; do
-	convert $f -resize '1920@>' $f
+	convert $f -resize '1920x1080>' -quality 80 $f
 done
