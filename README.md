@@ -5,12 +5,16 @@
 ---
 
 # Howto
-## Installing
-`brew install imagemagick`
+## Installing / Upgrading
+
+`brew install imagemagick` (once per computer)
+
+`npm update`
+
 `npm install`
 
 ## Developing
-npm run dev
+`npm run dev`
 
 #Deploying
 
