@@ -68,6 +68,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
-    "node-thumbnail": "^0.6.5"
+    "node-thumbnail": "^0.6.5",
+    "rimraf": "^2.5.2"
   }
 }
