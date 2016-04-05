@@ -1,19 +1,17 @@
-#gallerycontainer {
-    /*margin-left: 5vw;
+.gallerycontainer {
+    margin-left: 5vw;
     margin-right: 5vw;
-    margin-top: 5vh;
-    margin-bottom: 5vh;*/
-    margin: 5vw;
+    margin-bottom: 5vh;
     max-height: calc(100vh - 10vw);
     overflow-y: scroll;
 }
 
-#gallerycontainer::-webkit-scrollbar, #gallerycontainer-launchevent::-webkit-scrollbar {
+.gallerycontainer::-webkit-scrollbar {
     background-color: transparent;
     width: 7px;
 }
 
-#gallerycontainer::-webkit-scrollbar-thumb, #gallerycontainer-launchevent::-webkit-scrollbar-thumb {
+.gallerycontainer::-webkit-scrollbar-thumb {
     background-color: rgba(255,255,255,0.3);
     border-radius: 7px;
 }

@@ -14,7 +14,11 @@ section#secondPage.special.section(data-scrollax-parent='true')
           .large-3.show-for-large
         a.scroll-button.button.codestar-button(href='#join') Jij?
   .slide
-      #gallerycontainer.normalscroll
+    .small-12.large-12.columns
+      center
+        header
+          h2 Onze Momenten
+      .gallerycontainer.normalscroll
         #gallery(style="display:none;")
           - var images = require('../data/gallery.json')
           each image in images
@@ -24,7 +28,7 @@ section#secondPage.special.section(data-scrollax-parent='true')
       center
         header
           h2 Launch Event
-      #gallerycontainer-launchevent.normalscroll
+      .gallerycontainer.normalscroll
         #gallery-launchevent(style="display:none;")
           - var images = require('../data/galleryLaunchEvent.json')
           each image in images
