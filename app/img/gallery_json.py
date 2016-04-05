@@ -2,13 +2,23 @@
 # -*- coding: utf-8 -*-
 
 from os import listdir
-from os.path import isfile, join
+from os.path import isfile, isdir, join
+import sys
+
+if len(sys.argv) == 1:
+  print "Usage: python gallery_json.py targetFolderName"
+  exit(-1)
+
+dir = sys.argv[1]
+
+if not isdir(dir):
+  print "Directory " + dir + " does not exist"
 
 import json
 
-gallery_json = "../../data/galleryLaunchEvent.json"
+gallery_json = "../data/" + dir + ".json"
 
-images = [f for f in listdir(".") if isfile(join(".", f)) and f.endswith(".jpg")]
+images = [f for f in listdir(dir) if isfile(join(dir, f)) and f.endswith(".jpg")]
 
 data = json.load(open(gallery_json, "rb"))
 
