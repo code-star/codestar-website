@@ -8,17 +8,17 @@
     overflow-y: scroll;
 }
 
-#gallerycontainer::-webkit-scrollbar {
+#gallerycontainer::-webkit-scrollbar, #gallerycontainer-launchevent::-webkit-scrollbar {
     background-color: transparent;
     width: 7px;
 }
 
-#gallerycontainer::-webkit-scrollbar-thumb {
+#gallerycontainer::-webkit-scrollbar-thumb, #gallerycontainer-launchevent::-webkit-scrollbar-thumb {
     background-color: rgba(255,255,255,0.3);
     border-radius: 7px;
 }
 
-#gallery {
+#gallery, #gallery-launchevent {
 }
 
 .ug-textpanel-title {

@@ -19,3 +19,13 @@ section#secondPage.special.section(data-scrollax-parent='true')
           - var images = require('../data/gallery.json')
           each image in images
             img(src="thumb_"+image.img,alt=image.descr,data-image=image.img,data-description=image.descr)
+  .slide
+    .small-12.large-12.columns
+      center
+        header
+          h2 Launch Event
+      #gallerycontainer-launchevent.normalscroll
+        #gallery-launchevent(style="display:none;")
+          - var images = require('../data/galleryLaunchEvent.json')
+          each image in images
+            img(src="thumb_"+image.img,alt=image.descr,data-image=image.img,data-description=image.descr)

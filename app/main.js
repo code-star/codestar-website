@@ -82,4 +82,7 @@ $(document).ready(function() {
   $("#gallery").unitegallery({
     tiles_type:"nested"
   });
+  $("#gallery-launchevent").unitegallery({
+    tiles_type:"nested"
+  });
 });
