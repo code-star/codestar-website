@@ -5,8 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "deploy": "rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
+    "dev": "build/make_thumbs.sh && node build/dev-server.js",
+    "deploy": "build/make_thumbs.sh && rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "test": "karma start build/karma.conf.js --single-run"
   },
   "repository": {
@@ -42,7 +42,7 @@
     "eslint-loader": "^1.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "foundation-sites": "^6.1.1",
+    "foundation-sites": "6.1.1",
     "fullpage.js": "^2.7.7",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.1.4",
@@ -66,5 +66,9 @@
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.6.0"
+  },
+  "dependencies": {
+    "node-thumbnail": "^0.6.5",
+    "rimraf": "^2.5.2"
   }
 }

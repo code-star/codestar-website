@@ -2,6 +2,11 @@ require('./js/dynamicRequire');
 require('./stylesheets/main.scss');
 require('jquery');
 
+// Our "fork" contains both the united-gallery.js file and the theme appended
+// Also do a diff when upgrading as we made some small changes in the non-theme code
+require('./vendor/unitegallery');
+
+
 import d3 from 'd3';
 import PointerEventsPolyfill from './libs/pointer_events_polyfill'
 import isMobile from './js/mobileChecker';
@@ -72,5 +77,12 @@ $(document).ready(function() {
 
   PointerEventsPolyfill.initialize({
     selector: '.noMouse, #map'
+  });
+
+  $("#gallery").unitegallery({
+    tiles_type:"nested"
+  });
+  $("#gallery-launchevent").unitegallery({
+    tiles_type:"nested"
   });
 });

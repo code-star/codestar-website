@@ -1,0 +1,24 @@
+.gallerycontainer {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+    max-height: calc(100vh - 10vw);
+    overflow-y: scroll;
+}
+
+.gallerycontainer::-webkit-scrollbar {
+    background-color: transparent;
+    width: 7px;
+}
+
+.gallerycontainer::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 7px;
+}
+
+#gallery, #gallery-launchevent {
+}
+
+.ug-textpanel-title {
+    text-align: center !important;
+}

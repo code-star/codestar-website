@@ -23,7 +23,7 @@ export class FullPage {
           responsiveHeight: 700,
           recordHistory: false,
           navigation: true,
-          normalScrollElements: '.panel-container',
+          normalScrollElements: '.normalscroll',
           onLeave: function(index, nextIndex, direction) {
             // Call all listeners
             that.fpOnLeave.forEach(f => f(index,nextIndex,direction))
