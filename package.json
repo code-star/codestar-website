@@ -5,8 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "dev": "thumb -w 400 -p thumb_ -s '' app/img/Gallery/ app/img/Gallery/thumbs && thumb -w 400 -p thumb_ -s '' app/img/GalleryLaunchEvent/ app/img/GalleryLaunchEvent/thumbs && node build/dev-server.js",
-    "deploy": "thumb -w 400 -p thumb_ -s '' app/img/Gallery/ app/img/Gallery/thumbs && thumb -w 400 -p thumb_ -s '' app/img/GalleryLaunchEvent/ app/img/GalleryLaunchEvent/thumbs && rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
+    "dev": "thumb -w 400 -p thumb_ -s '' app/img/gallery/ app/img/gallery/thumbs && thumb -w 400 -p thumb_ -s '' app/img/galleryLaunchEvent/ app/img/galleryLaunchEvent/thumbs && node build/dev-server.js",
+    "deploy": "thumb -w 400 -p thumb_ -s '' app/img/gallery/ app/img/gallery/thumbs && thumb -w 400 -p thumb_ -s '' app/img/galleryLaunchEvent/ app/img/galleryLaunchEvent/thumbs && rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "test": "karma start build/karma.conf.js --single-run"
   },
   "repository": {
