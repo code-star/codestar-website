@@ -20,10 +20,13 @@ export class JobList {
       $('.job_content').hide()
       $('#' + jobName + '_content').show()
 
-      if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active')) {
-        element.removeClass('is-visible');
+      if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active') || isMobile.any()) {
         $('.job_openings').removeClass('hide-on-mobile');
-        $('.job_list_items li').removeAttr('style');
+        $('.job_openings').removeClass('slide-in');
+        $('.job_openings').css('opacity', '1');
+        $('.job_openings .panel-container').css('transform', 'initial');
+        $('.job_openings .panel-container').css('-webkit-transform', 'initial');
+        $('.job-text').css('display', 'none')
       }
       else {
         element.addClass('is-visible');
