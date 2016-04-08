@@ -2,7 +2,7 @@
 @import "~foundation-sites/scss/foundation";
 @import "partials/base";
 @import "../vendor/unitegallery/package/unitegallery/css/unite-gallery.css";
-@import "../vendor/unite-customization.css";
+@import "2_team";
 @include foundation-everything($flex: true);
 
 @font-face {
@@ -134,7 +134,7 @@ dt {
 
 }
 
-.content {
+.content, .slide {
   z-index: 1;
   width: 100vw;
   height: 100vh;

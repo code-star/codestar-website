@@ -23,6 +23,9 @@ export class FullPage {
           responsiveHeight: 700,
           recordHistory: false,
           navigation: true,
+          loopHorizontal: false,
+          recordHistory: false,
+          animateAnchor: false,
           normalScrollElements: '.normalscroll',
           onLeave: function(index, nextIndex, direction) {
             // Call all listeners

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "<span style='font-family: monospace;'>/* COMMENT BLOCKS */</span>",
+    "link": "http://tenchi.team2xh.net/",
+    "image": "hamzablog.png",
+    "tagline": "Blog of our developer Hamza"
+  },
+  {
+    "title": "<img src='logo-simple.svg' class='inline-logo' /> on GitHub",
+    "link": "https://github.com/code-star",
+    "image": "github.svg",
+    "tagline": "Our code and training materials"
+  },
+  {
+    "title": "TR OUWENS",
+    "link": "http://jqno.nl/",
+    "image": "jan.jpg",
+    "tagline": "Blog of our developer Jan"
+  },
+  {
+    "title": "Elucidator",
+    "link": "https://www.elucidator.nl/",
+    "image": "elucidator.jpg",
+    "tagline": "Ramblings of our developer Pieter"
+  }
+]
