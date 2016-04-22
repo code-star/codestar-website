@@ -2,6 +2,7 @@
 @import "~foundation-sites/scss/foundation";
 @import "partials/base";
 @import "../vendor/unitegallery/package/unitegallery/css/unite-gallery.css";
+@import "../vendor/unitegallery/source/unitegallery/themes/video/skin-right-no-thumb.css";
 @import "2_team";
 @include foundation-everything($flex: true);
 

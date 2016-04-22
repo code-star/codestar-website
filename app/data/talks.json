@@ -1,0 +1,33 @@
+{
+  "upcomming" : [
+    {
+      "title" : "GraphQL",
+      "by" : "Adil",
+      "date" : "17-08-2016",
+      "place" : "Ordina A11.01"
+    },
+    {
+      "title" : "Test2",
+      "by" : "Jan",
+      "date" : "20-08-2016",
+      "place" : "Ordina A11.01"
+    }
+  ],
+  "videos" : [
+    {
+      "id": "gmCQS72yFTg",
+      "title": "Growing a DSL at Rabobank",
+      "description": "Codestar Launchevent: Talk 1: Jan Ouwens"
+    },
+    {
+      "id": "wKnhmXteDqE",
+      "title": "What if the user was a function?",
+      "description": "Codestar Launchevent: Talk 2: Andre Stalz"
+    },
+    {
+      "id": "POKZ1TRJ4G4",
+      "title": "Microservices without the migraine",
+      "description": "CodeStar Launchevent: Talk 3: Markus Eisele"
+    }
+  ]
+}

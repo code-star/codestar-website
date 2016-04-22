@@ -85,6 +85,10 @@ $(document).ready(function() {
   $("#gallery-launchevent").unitegallery({
     tiles_type:"nested"
   });
+  $("#gallery-video").unitegallery({
+	  gallery_theme: "video",
+      theme_skin: "right-no-thumb"
+  });
 
   // Put the default slides right and move to the center slide
   var hash = window.location.hash.replace("#", "").split("/")
