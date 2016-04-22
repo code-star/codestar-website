@@ -1,15 +1,27 @@
 {
-  "upcomming" : [
+  "upcoming" : [
+    {
+      "title" : "NS Hackathon",
+      "by" : "Caspar",
+      "date" : "15-04-2016",
+      "place" : "Ordina A12"
+    },
+    {
+      "title" : "Markdown slides",
+      "by" : "Hamza",
+      "date" : "15-04-2016",
+      "place" : "Ordina A12"
+    },
     {
       "title" : "GraphQL",
-      "by" : "Adil",
-      "date" : "17-08-2016",
+      "by" : "Ishan",
+      "date" : "22-04-2016",
       "place" : "Ordina A11.01"
     },
     {
-      "title" : "Test2",
-      "by" : "Jan",
-      "date" : "20-08-2016",
+      "title" : "???",
+      "by" : "???",
+      "date" : "29-04-2016",
       "place" : "Ordina A11.01"
     }
   ],
