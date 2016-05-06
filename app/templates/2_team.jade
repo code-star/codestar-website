@@ -6,12 +6,12 @@ section#secondPage.special.section(data-scrollax-parent='true')
           - var talks = require('../data/talks.json')
           div(style="width:100%")
             center
-              h3 Video's
+              h3 Videos
             #gallery-video(style="display:none;")
               each video in talks.videos
                 div(data-type="youtube",data-videoid=video.id,data-title=video.title,data-description=video.description)
       .small-12.large-4
-          div.talks(style="margin-left:2vw;margin-right:4vw")
+          div.talks(style="margin-left:2vw;margin-right:4vw").gallerycontainer.normalscroll
             center
               h3 Talks
             table(style="color:black;font-size:90%;width:100%")
