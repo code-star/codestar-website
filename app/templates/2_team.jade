@@ -1,6 +1,7 @@
 section#secondPage.special.section(data-scrollax-parent='true')
   .slide(data-anchor="ourstuff")
     .row
+      .small-12.large-2
       .small-12.large-8
         .talkscontainer.normalscroll(style="margin-left:4vw")
           - var talks = require('../data/talks.json')
@@ -10,28 +11,7 @@ section#secondPage.special.section(data-scrollax-parent='true')
             #gallery-video(style="display:none;")
               each video in talks.videos
                 div(data-type="youtube",data-videoid=video.id,data-title=video.title,data-description=video.description)
-      .small-12.large-4
-          div.talks(style="margin-left:2vw;margin-right:4vw").gallerycontainer.normalscroll
-            center
-              h3 Talks
-            table(style="color:black;font-size:90%;width:100%")
-              thead
-                tr
-                  th Theme
-                  th Presenter
-                  th Date
-                  th Location
-              tbody
-                each post, i in talks.upcoming
-                  tr
-                    if post.link 
-                      td
-                        a(href="#{post.link}") #{post.title}
-                    else
-                      td #{post.title}
-                    td #{post.by}
-                    td #{post.date}
-                    td #{post.place}
+      .small-12.large-2
   .slide(data-anchor="ourstuff")
     .small-12.large-12
       center
