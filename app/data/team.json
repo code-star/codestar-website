@@ -97,6 +97,27 @@
       "tagline": "“You must be the change you wish to see in the world.”",
       "bio": "",
       "image": "donovan.jpg"
+    },
+    {
+      "name": "Samuel",
+      "job": "Programmeur",
+      "tagline": "Give them something to miss.",
+      "bio": "",
+      "image": "samuel.png"
+    },
+    {
+      "name": "Nora",
+      "job": "Programmeur",
+      "tagline": "Active Code.",
+      "bio": "Because nobody likes to be idle.",
+      "image": "nora.jpg"
+    },
+    {
+      "name": "Jeffrey",
+      "job": "Programmeur",
+      "tagline": "Coding gives you power to create the stuff that people want/need/have to use. I have that power.",
+      "bio": "",
+      "image": "jeffrey.jpg"
     }
   ]
 }
