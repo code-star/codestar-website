@@ -85,14 +85,19 @@ $(document).ready(function() {
   $("#gallery-launchevent").unitegallery({
     tiles_type:"nested"
   });
+
   $("#gallery-video").unitegallery({
 	  gallery_theme: "video",
       theme_skin: "right-no-thumb"
   });
 
+  $("#gallery-akkathon").unitegallery({
+		tiles_type: "nested"
+  });
+
   // Put the default slides right and move to the center slide
-  var hash = window.location.hash.replace("#", "").split("/")
-  var section = (hash[0] === "" || typeof hash[0] == "undefined") ? "center" : hash[0]
+  var hash = window.location.hash.replace("#", "").split("/");
+  var section = (hash[0] === "" || typeof hash[0] == "undefined") ? "center" : hash[0];
   var slide = hash[1];
 
   // Put the correct starting slides. If we do this with slide sets there seems to be a Fullpage bug which doesn't let it move
