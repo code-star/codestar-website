@@ -35,6 +35,26 @@
   ],
   "videos" : [
     {
+      "id": "71qRBO7kxLg",
+      "title": "Brown Bag Session Joy of Coding",
+      "description": "Joy of coding redelivery"
+    },
+    {
+      "id": "MDE4n3-0wTw",
+      "title": "Brown Bag Session Image recognition",
+      "description": "Image recognition at ProRail"
+    },
+    {
+      "id": "Rmqhjh0GQD8",
+      "title": "Brown Bag Session Curry On",
+      "description": "Redelivery of the Curry On conference"
+    },
+    {
+      "id": "l4xWwcnyiR0",
+      "title": "Brown Bag Session Multiformat audio plugin",
+      "description": "Brown Bag Session Building a multiformat audio plugin with JUCE library*​ (C++)"
+    },
+    {
       "id": "gmCQS72yFTg",
       "title": "Growing a DSL at Rabobank",
       "description": "Codestar Launchevent: Talk 1: Jan Ouwens"
