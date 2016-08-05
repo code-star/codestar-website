@@ -106,20 +106,6 @@
       "image": "samuel.png"
     },
     {
-      "name": "Nora",
-      "job": "Programmeur",
-      "tagline": "Active Code.",
-      "bio": "Because nobody likes to be idle.",
-      "image": "nora.jpg"
-    },
-    {
-      "name": "Jeffrey",
-      "job": "Programmeur",
-      "tagline": "Coding gives you power to create the stuff that people want/need/have to use. I have that power.",
-      "bio": "",
-      "image": "jeffrey.jpg"
-    },
-    {
       "name": "Maurits",
       "job": "Programmeur",
       "tagline": "The truth is in the code",
