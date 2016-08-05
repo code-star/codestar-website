@@ -1,5 +1,17 @@
 section#secondPage.special.section(data-scrollax-parent='true')
   .slide(data-anchor="ourstuff")
+    .small-12.large-12
+      center
+        header
+          h2 Our Stuff
+      .blogcontainer.normalscroll
+        - var blogs = require('../data/blogs.json')
+        each blog in blogs
+          a.blogref(href=blog.link)
+            h5 !{blog.title}
+            div.blogimg(style="background-image: url('" + blog.image + "')")
+            p !{blog.tagline}
+  .slide(data-anchor="ourstuff")
     .row
       .small-12.large-2
       .small-12.large-8
@@ -12,18 +24,6 @@ section#secondPage.special.section(data-scrollax-parent='true')
               each video in talks.videos
                 div(data-type="youtube",data-videoid=video.id,data-title=video.title,data-description=video.description)
       .small-12.large-2
-  .slide(data-anchor="ourstuff")
-    .small-12.large-12
-      center
-        header
-          h2 Our Stuff
-      .blogcontainer.normalscroll
-        - var blogs = require('../data/blogs.json')
-        each blog in blogs
-          a.blogref(href=blog.link)
-            h5 !{blog.title}
-            div.blogimg(style="background-image: url('" + blog.image + "')")
-            p !{blog.tagline}
   .slide.row.align-middle(data-anchor="teamGraph",data-scrollax="properties: { 'translateX': '-20%' }")
     .small-12.large-12.columns
       center
