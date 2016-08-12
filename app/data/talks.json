@@ -35,6 +35,11 @@
   ],
   "videos" : [
     {
+      "id": "W37Mp3mBYLw",
+      "title": "Growing a DSL for financial calculations",
+      "description": "Typelevel Summit Oslo, May 2016"
+    },
+    {
       "id": "MDE4n3-0wTw",
       "title": "Brown Bag Session Image recognition",
       "description": "Image recognition at ProRail"
