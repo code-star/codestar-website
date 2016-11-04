@@ -30,8 +30,8 @@ This script compiles your current branch and commits that to the `gh-pages` bran
 
 #Development
 
-Our base branch is develop, from there we create feature branches.
-We create pull requests from these feature branches.
+Our base branch is develop, from there we create feature branches.  
+We create pull requests from these feature branches.  
 The master branch represents the stable version deployed to http://www.codestar.nl
 
 For issues see: https://github.com/OrdinaNederland/codestar-website/issues
