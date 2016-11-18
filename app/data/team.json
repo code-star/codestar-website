@@ -99,20 +99,6 @@
       "image": "donovan.jpg"
     },
     {
-      "name": "Samuel",
-      "job": "Programmeur",
-      "tagline": "Give them something to miss.",
-      "bio": "",
-      "image": "samuel.png"
-    },
-    {
-      "name": "Maurits",
-      "job": "Programmeur",
-      "tagline": "The truth is in the code",
-      "bio": "",
-      "image": "maurits.jpg"
-    },
-    {
       "name": "Steven",
       "job": "Software Craftsman",
       "tagline": "The devil is in the details",
