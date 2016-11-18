@@ -1,5 +1,5 @@
 {
-  "nodes":[
+  "nodes": [
     {
       "name": "Hamza",
       "job": "Programmeur",
@@ -43,13 +43,6 @@
       "image": "martin.png"
     },
     {
-      "name": "Remko",
-      "job": "Programmeur",
-      "tagline": "“10: PRINT \"HI!\"<br/> 20: GOTO 10”",
-      "bio": "",
-      "image": "remko.png"
-    },
-    {
       "name": "Ishan",
       "job": "Programmeur",
       "tagline": "“Talk is cheap, show me the code”",
@@ -64,17 +57,10 @@
       "image": "martijn.jpg"
     },
     {
-      "name": "Adil",
-      "job": "Software Craftsman",
-      "tagline": "“Walking along the line is living, the rest are waiting.”",
-      "bio": "",
-      "image": "adil.jpg"
-    },
-    {
       "name": "Pieter",
       "job": "BigData Hacker",
       "tagline": "“De Watersportjunk”",
-      "bio": "Goede code leest als een boek, je kijkt altijd weer met verlangen uit naar het vervolg. Als de code geschreven is en het leest als een gedicht ben ik altijd weer blij dat ik z'n mooi vak heb.",
+      "bio": "Goede code leest als een boek, je kijkt altijd weer met verlangen uit naar het vervolg. Als de code geschreven is en het leest als een gedicht ben ik altijd weer blij dat ik zo'n mooi vak heb.",
       "image": "pieter.jpg"
     },
     {
@@ -111,6 +97,20 @@
       "tagline": "The truth is in the code",
       "bio": "",
       "image": "maurits.jpg"
+    },
+    {
+      "name": "Steven",
+      "job": "Software Craftsman",
+      "tagline": "The devil is in the details",
+      "bio": "Het beheersen van complexiteit is de grootste uitdaging bij het ontwikkelen van grote software-systemen, van het grote geheel tot de kleinste bouwstenen. In teamverband komt daar ook nog eens menselijke complexiteit bij. Op het raakvlak van deze twee aspecten ligt de mogelijkheid om iets moois te bereiken.",
+      "image": "steven.jpg"
+    },
+    {
+      "name": "Alexandru",
+      "job": "Programmer",
+      "tagline": "The good life is one inspired by love and guided by knowledge",
+      "bio": "I started programming when I was 7, in BASIC. Since then, the computer was my playground, seeking to maximize pleasure and minimize pain through technology.",
+      "image": "alexandru.png"
     }
   ]
 }
