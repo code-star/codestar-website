@@ -43,13 +43,6 @@
       "image": "martin.png"
     },
     {
-      "name": "Remko",
-      "job": "Programmeur",
-      "tagline": "“10: PRINT \"HI!\"<br/> 20: GOTO 10”",
-      "bio": "",
-      "image": "remko.png"
-    },
-    {
       "name": "Ishan",
       "job": "Programmeur",
       "tagline": "“Talk is cheap, show me the code”",
@@ -62,13 +55,6 @@
       "tagline": "“The serious guy”",
       "bio": "Mooie dingen maken die ook werken als het moeilijk wordt, dat geeft een kick. Wanneer je dit samen doet met een team programmeurs met dezelfde passie, voelt het eigenlijk niet als werk :-)",
       "image": "martijn.jpg"
-    },
-    {
-      "name": "Adil",
-      "job": "Software Craftsman",
-      "tagline": "“Walking along the line is living, the rest are waiting.”",
-      "bio": "",
-      "image": "adil.jpg"
     },
     {
       "name": "Pieter",
