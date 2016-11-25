@@ -111,6 +111,13 @@
       "tagline": "The good life is one inspired by love and guided by knowledge",
       "bio": "I started programming when I was 7, in BASIC. Since then, the computer was my playground, seeking to maximize pleasure and minimize pain through technology.",
       "image": "alexandru.png"
+    },
+    {
+      "name": "Martin",
+      "job": "Programmeur",
+      "tagline": "That's not a bug, that's a feature!",
+      "bio": "Altijd nieuwsgierig naar nieuwe technieken, programmeertalen, frameworks, gadgets en andere innovaties!",
+      "image": "martinvandam.jpg"
     }
   ]
 }
