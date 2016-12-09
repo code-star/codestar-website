@@ -1,3 +1,18 @@
+machine:
+  environment:
+    YARN_VERSION: 0.17.8
+    PATH: "${PATH}:${HOME}/.yarn/bin"
+
+dependencies:
+  pre:
+    - |
+      if [[ ! -e ~/.yarn/bin/yarn || $(yarn --version) != "${YARN_VERSION}" ]]; then
+        curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+      fi
+  cache_directories:
+    - ~/.yarn
+    - ~/.yarn-cache
+
 general:
   branches:
     ignore:
@@ -11,4 +26,5 @@ deployment:
   staging:
     branch: upgraded_version
     commands:
+      - npm run deploy
       - ./build/deploy-ghpages.sh dist 
