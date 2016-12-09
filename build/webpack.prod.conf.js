@@ -39,7 +39,7 @@ config.plugins = (config.plugins || []).concat([
   // see https://github.com/ampedandwired/html-webpack-plugin
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.jade',
+    template: 'app/index.pug',
     inject: 'body'
   }),
   new BowerWebpackPlugin({

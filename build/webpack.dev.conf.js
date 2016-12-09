@@ -26,7 +26,7 @@ config.plugins = (config.plugins || []).concat([
    }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.jade',
+    template: 'app/index.pug',
     inject: 'body'
   }),
   new webpack.ProvidePlugin({

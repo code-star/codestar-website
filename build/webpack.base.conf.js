@@ -33,7 +33,7 @@ module.exports = {
         exclude: /node_modules/,
         exclude: /app\/vendor/,
       },
-      { test: /\.jade$/, loader: 'jade' },
+      { test: /\.pug$/, loader: 'pug' },
       { test: /\.json$/, loader: 'json' },
       {
         test: /\.(png|jpg|jpeg|gif|svg|otf|woff(2)?|eot|ttf)$/,
