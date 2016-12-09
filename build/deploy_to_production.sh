@@ -2,7 +2,7 @@
 # Abort on error
 set -e
 
-PRODUCTION_REPO="git@github.com:OrdinaNederland/OrdinaNederland.github.io.git"
+PRODUCTION_REPO="git@github.com:code-star/code-star.github.io.git"
 PRODUCTION_DIRNAME="build/production_repo"
 
 pwd=$(pwd)
