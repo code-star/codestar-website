@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "build/make_thumbs.sh && node build/dev-server.js",
     "deploy": "build/make_thumbs.sh && rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
-    "test": "karma start build/karma.conf.js --single-run"
+    "test": "karma start build/karma.conf.js --single-run",
+    "lint": "./node_modules/.bin/eslint ./app/js/*"
   },
   "repository": {
     "type": "git",
