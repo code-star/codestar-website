@@ -9,6 +9,6 @@ test:
 
 deployment:
   staging:
-    branch: master
+    branch: upgraded_version
     commands:
       - ./build/deploy-ghpages.sh dist 
