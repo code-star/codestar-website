@@ -8,13 +8,6 @@
       "image": "hamza.png"
     },
     {
-      "name": "Maik",
-      "job": "Programmeur",
-      "tagline": "“Move fast, break nothing”",
-      "bio": "De frontend wereld is continu in beweging. In deze dynamische omgeving voel ik me op mijn best en haal ik energie uit het onderzoeken en toepassen van bleeding edge technologieën. De opgedane kennis overdragen en mensen versteld doen staan van de mogelijkheden maken dat ik nooit uitgekeken raak op deze geweldige wereld.",
-      "image": "maik.jpg"
-    },
-    {
       "name": "Pim",
       "job": "Programmeur",
       "tagline": "“I love to learn new stuff”",
@@ -104,13 +97,6 @@
       "tagline": "The devil is in the details",
       "bio": "Het beheersen van complexiteit is de grootste uitdaging bij het ontwikkelen van grote software-systemen, van het grote geheel tot de kleinste bouwstenen. In teamverband komt daar ook nog eens menselijke complexiteit bij. Op het raakvlak van deze twee aspecten ligt de mogelijkheid om iets moois te bereiken.",
       "image": "steven.jpg"
-    },
-    {
-      "name": "Alexandru",
-      "job": "Programmer",
-      "tagline": "The good life is one inspired by love and guided by knowledge",
-      "bio": "I started programming when I was 7, in BASIC. Since then, the computer was my playground, seeking to maximize pleasure and minimize pain through technology.",
-      "image": "alexandru.png"
     },
     {
       "name": "Martin",
