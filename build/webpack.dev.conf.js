@@ -29,6 +29,10 @@ config.plugins = (config.plugins || []).concat([
     template: 'app/index.jade',
     inject: 'body'
   }),
+  new HtmlWebpackPlugin({
+    filename: 'redirect_confluent_training.html',
+    template: 'app/redirect_confluent_training.jade'
+  }),
   new webpack.ProvidePlugin({
     $:      "jquery",
     jQuery: "jquery"
