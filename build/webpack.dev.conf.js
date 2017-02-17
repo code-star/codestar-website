@@ -30,8 +30,8 @@ config.plugins = (config.plugins || []).concat([
     inject: 'body'
   }),
   new HtmlWebpackPlugin({
-    filename: 'redirect_confluent_training.html',
-    template: 'app/redirect_confluent_training.jade'
+    filename: 'kafka_training.html',
+    template: 'app/kafka_training.jade'
   }),
   new webpack.ProvidePlugin({
     $:      "jquery",
