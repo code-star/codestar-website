@@ -104,6 +104,13 @@
       "tagline": "That's not a bug, that's a feature!",
       "bio": "Altijd nieuwsgierig naar nieuwe technieken, programmeertalen, frameworks, gadgets en andere innovaties!",
       "image": "martinvandam.jpg"
+    },
+    {
+      "name": "Werner",
+      "job": "Programmeur",
+      "tagline": "Don’t be clever, be clear!",
+      "bio": "Code not only tells the computer what to do, but it is also telling another human being what you want the computer to do. There are many ways of telling the computer to do something; how you do it matters. I believe that the code you write should reflect how you think about the problem you are trying to solve, so that others can follow along and understand your thought process when reading your code. This way, we can leave clients with a codebase they are proud of and are happy to work on.",
+      "image": "werner.jpg"
     }
   ]
 }
