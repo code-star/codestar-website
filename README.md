@@ -21,7 +21,7 @@
 ## Production
 `build/deploy_to_production.sh` deploys the `master` branch to http://www.codestar.nl.
 
-This script pushes the compiled website to [this repository](https://github.com/OrdinaNederland/OrdinaNederland.github.io#master), make sure you have write access to it.
+This script pushes the compiled website to [this repository](https://github.com/code-star/code-star.github.io#master), make sure you have write access to it.
 
 ## Test
 `build/deploy_to_test.sh` deploys your current branch to http://www.codestar.nl/codestar-website
@@ -34,6 +34,6 @@ Our base branch is develop, from there we create feature branches.
 We create pull requests from these feature branches.  
 The master branch represents the stable version deployed to http://www.codestar.nl
 
-For issues see: https://github.com/OrdinaNederland/codestar-website/issues
+For issues see: https://github.com/code-star/codestar-website/issues
 
 # Website
