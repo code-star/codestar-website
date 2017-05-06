@@ -16,7 +16,7 @@
 ## Developing
 `npm run dev`
 
-#Deploying
+# Deploying
 
 ## Production
 `build/deploy_to_production.sh` deploys the `master` branch to http://www.codestar.nl.
@@ -28,7 +28,7 @@ This script pushes the compiled website to [this repository](https://github.com/
 
 This script compiles your current branch and commits that to the `gh-pages` branch of this repository.
 
-#Development
+# Development
 
 Our base branch is develop, from there we create feature branches.  
 We create pull requests from these feature branches.  
