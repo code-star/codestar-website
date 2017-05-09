@@ -11,7 +11,7 @@ module.exports = function(config) {
         ],
         browsers: ['PhantomJS'],
         singleRun: true,
-        reporters: ['progress', 'coverage'],
+        reporters: ['progress'],
         preprocessors: {
             'test/*.spec.js': ['webpack']
         },
