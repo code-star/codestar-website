@@ -42,6 +42,16 @@ Our base branch is develop, from there we create feature branches.
 We create pull requests from these feature branches.  
 The master branch represents the stable version deployed to http://www.codestar.nl
 
+To make changes:
+
+1. Checkout develop branch
+2. Create new feature branch
+3. Make changes, test locally and commit
+4. Push feature branch and create pull request
+5. After merge, deploy develop branch to [test](#test).
+6. Create merge request from develop to master.
+7. After merge, deploy master branch to [production](#production).
+
 For issues see: https://github.com/code-star/codestar-website/issues
 
 # Deploying
