@@ -5,28 +5,36 @@
 ---
 
 # Howto
+
 ## Installing / Upgrading
 
 `brew install imagemagick` (once per computer)
+
+Install node 7.10.0 and npm 4.2.0
 
 `npm update`
 
 `npm install`
 
 ## Developing
+
 `npm run dev`
 
-# Deploying
+## Add a team member
 
-## Production
-`build/deploy_to_production.sh` deploys the `master` branch to http://www.codestar.nl.
+Keep in mind the way of working around branching.
 
-This script pushes the compiled website to [this repository](https://github.com/code-star/code-star.github.io#master), make sure you have write access to it.
-
-## Test
-`build/deploy_to_test.sh` deploys your current branch to http://www.codestar.nl/codestar-website
-
-This script compiles your current branch and commits that to the `gh-pages` branch of this repository.
+* Add an object to the array in app/data/team.json with these properties:
+```JavaScript
+{
+    "name": "FirstName",
+    "job": "Front-end Developer",
+    "tagline": "“A tagline”",
+    "bio": "A bio",
+    "image": "image_name.jpg"
+}
+```
+* Add an image with the name specified in the object under app/img/Team. At least JPEG and PNG work. A resolution of 144 x 144px is adequate.
 
 # Development
 
@@ -36,4 +44,19 @@ The master branch represents the stable version deployed to http://www.codestar.
 
 For issues see: https://github.com/code-star/codestar-website/issues
 
-# Website
+# Deploying
+
+## Test
+`build/deploy_to_test.sh` deploys your current branch to http://www.codestar.nl/codestar-website
+
+This script compiles your current branch and commits that to the `gh-pages` branch of this repository.
+
+## Production
+
+`build/deploy_to_production.sh` deploys the `master` branch to http://www.codestar.nl.
+
+This script pushes the compiled website to [this repository](https://github.com/code-star/code-star.github.io#master), make sure you have write access to it.
+
+## Continuous Deployment
+
+Builds are run on https://circleci.com/gh/code-star/codestar-website for changes on the master branch and merge requests. Log in with your GitHub account. The build code is not yet automatically deployed.
