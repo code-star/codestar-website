@@ -33,8 +33,8 @@ config.plugins = (config.plugins || []).concat([
     template: 'app/kafka_training.jade'
   }),
   new webpack.ProvidePlugin({
-    $:      "jquery",
-    jQuery: "jquery"
+    $:      'jquery',
+    jQuery: 'jquery'
   })
 ])
 

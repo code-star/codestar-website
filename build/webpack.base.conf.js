@@ -79,7 +79,8 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
-  plugins: [
+  /*plugins: [
     new ThumbnailWebpackPlugin(thumbnailConfigs)
-  ]
+  ]*/
+  thumbnailConfigs
 };
