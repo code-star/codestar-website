@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node build/make_thumbs.js && node build/dev-server.js",
-    "deploy": "node build/make_thumbs.js && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
+    "deploy": "npm run test && node build/make_thumbs.js && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "test": "karma start build/karma.conf.js --single-run"
   },
   "repository": {
