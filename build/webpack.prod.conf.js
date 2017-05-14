@@ -3,6 +3,9 @@ var config = require('./webpack.base.conf')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var BowerWebpackPlugin = require('bower-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
+
 // naming output files with hashes for better caching.
 // dist/index.html will be auto-generated with correct URLs.
 config.output.filename = '[name].[chunkhash].js'
@@ -21,6 +24,7 @@ function generateExtractLoaders (loaders) {
   }).join('!')
 }
 config.plugins = (config.plugins || []).concat([
+  new CleanWebpackPlugin(['dist'], {root: path.dirname(__dirname, '/../dist')}),
   new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: '"production"'

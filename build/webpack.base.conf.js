@@ -1,6 +1,25 @@
-var path = require('path')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var autoprefixer = require('autoprefixer');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const ThumbnailWebpackPlugin = require('thumbnail-webpack-plugin');
+
+function getThumbnailConfigs(srcPath) {
+  return {
+    source: srcPath,
+    destination: srcPath + '/thumbs',
+    prefix: 'thumb_',
+    suffix: '',
+    width: '400',
+    ignore: true // ignore unsupported files, e.g. .gitignore
+  };
+}
+
+const thumbnailConfigs = [
+    './app/img/gallery',
+    './app/img/galleryLaunchEvent',
+    './app/img/galleryAkkathon'
+  ]
+  .map(getThumbnailConfigs);
 
 module.exports = {
   entry: {
@@ -45,7 +64,7 @@ module.exports = {
       },
       {
          test:   /jquery\..*\.js/,
-         loader: "imports?$=jquery,jQuery=jquery,this=>window"
+         loader: 'imports?$=jquery,jQuery=jquery,this=>window'
       },
       { test: /vendor\/.+\.(jsx|js)$/,
         loader: 'imports?jQuery=jquery,$=jquery,this=>window'
@@ -59,5 +78,8 @@ module.exports = {
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   eslint: {
     formatter: require('eslint-friendly-formatter')
-  }
-}
+  },
+  plugins: [
+    new ThumbnailWebpackPlugin(thumbnailConfigs)
+  ]
+};

@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/codestar/codestar-website.svg?branch=master)
+
 <img align=center src=https://cloud.githubusercontent.com/assets/4116708/12473911/e67fdd44-c016-11e5-9c21-5714e07549fe.png width=450 />
 
 *Passionate programmers standing to make a change*
@@ -8,7 +10,24 @@
 
 ## Installing / Upgrading
 
-`brew install imagemagick` (once per computer)
+`brew install imagemagick` (once per computer) -> is this even needed? uses thumb which comes from node-thumbnail. node-thumbnail
+needs to be upgraded and then the shell script make_thumbs.sh can be replaced by make_thumbs.js
+// TODO https://github.com/johnagan/clean-webpack-plugin
+// TODO https://github.com/mdvanes/thumbnail-webpack-plugin
+`
+var thumb = require('node-thumbnail').thumb;
+ 
+// thumb(options, callback); 
+ 
+thumb({
+  source: 'source/path', // could be a filename: dest/path/image.jpg 
+  destination: 'dest/path',
+  concurrency: 4
+}, function(files, err, stdout, stderr) {
+  console.log('All done!');
+});
+`
+
 
 Install node 7.10.0 and npm 4.2.0
 
