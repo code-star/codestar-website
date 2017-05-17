@@ -75,7 +75,6 @@ module.exports = {
       }
     ]
   },
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
