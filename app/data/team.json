@@ -111,6 +111,13 @@
       "tagline": "“Runs in strict mode”",
       "bio": "As an experienced front-end developer you'll be at home at Codestar. Working with a modern stack (e.g. functional reactive JavaScript), surrounded by colleagues who are as passionate as you are, and in a friendly and open environment.",
       "image": "martinve.jpg"
+    },
+    {
+      "name": "Eelco",
+      "job": "Software Developer",
+      "tagline": "“Als je het eenmaal snapt, is het makkelijk”",
+      "bio": "Ik probeer vaak te begrijpen hoe dingen in elkaar zitten. Hoe de wereld werkt. Het tofste aan maatwerksoftware is dat het alle vrijheid geeft om een model te maken van de werkelijkheid van gebruikers en opdrachtgevers. Wanneer dat model de goede balans heeft tussen eenvoud en complexiteit is dat prachtig. De code is begrijpelijk en de functionaliteit sluit aan bij de behoefte.",
+      "image": "eelco.jpg"
     }
   ]
 }
