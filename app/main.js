@@ -7,7 +7,7 @@ require('jquery');
 require('./vendor/unitegallery');
 
 
-import * as d3 from './libs/d3';
+import * as d3 from './vendor/d3';
 import PointerEventsPolyfill from './libs/pointer_events_polyfill';
 import isMobile from './js/mobileChecker';
 import { getSunburst } from './js/sunburst';
@@ -18,7 +18,7 @@ import { getSun } from './js/sun';
 import { getArray } from './js/solararray';
 import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
-import Foundation from './libs/foundation';
+import './libs/foundation';
 import currentBrowser from './js/browserChecker';
 import { JobList } from './js/JobList';
 import { FullPage } from './js/FullPage';

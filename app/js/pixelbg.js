@@ -4,7 +4,7 @@ function getRandomDouble(min, max) {
 
 // Keep the middle clear
 function getPixelPos() {
-  var pos = {"left": -1, "top": -1}
+  var pos = {'left': -1, 'top': -1}
   do {
     pos.left = getRandomDouble(0, 95)
     pos.top = getRandomDouble(5, 95)
@@ -25,17 +25,17 @@ export function getPixel() {
   let color = colors[Math.floor(Math.random() * colors.length)]
 
   var pixel = $('<div class="bgPixel">')
-    .css("left", pos.left + "%")
-    .css("top", pos.top + "%")
-    .css("background-color", color)
-    .css("color", color)
+    .css('left', pos.left + '%')
+    .css('top', pos.top + '%')
+    .css('background-color', color)
+    .css('color', color)
 
   let blinkspeed = blinkspeedBase*size
-  let csssize = size + "vmin"
+  let csssize = size + 'vmin'
   // "Blink" the pixel by animating it's width and height
   // "mar"
-  pixel.animate({"width": csssize, "height": csssize, "margin-left": 0, "margin-top": 0}, blinkspeed, function() {
-    pixel.animate({"width": 0, "height": 0, "margin-left": size/2 + "vmin", "margin-top": size/2 + "vmin"}, blinkspeed, function() {
+  pixel.animate({'width': csssize, 'height': csssize, 'margin-left': 0, 'margin-top': 0}, blinkspeed, function() {
+    pixel.animate({'width': 0, 'height': 0, 'margin-left': size/2 + 'vmin', 'margin-top': size/2 + 'vmin'}, blinkspeed, function() {
       pixel.remove()
     })
   })

@@ -55,7 +55,7 @@ export function getCasesTree() {
           .attr('width', 120)
           .attr('height', 120)
           /* IE 10 Doesn't support SVG filters and breaks the graphic if used. Curiously this doesn't happen in IE9 */
-          .style('filter', (navigator.appVersion.indexOf("MSIE 10") === -1)?'url(#desaturate)':'');
+          .style('filter', (navigator.appVersion.indexOf('MSIE 10') === -1)?'url(#desaturate)':'');
 
   var link = svg.selectAll('.link')
       .data(links)
@@ -135,5 +135,5 @@ export function getCasesTree() {
         .attr('y2', function(d) { return d.target.y; });
   });
 
-  return {"svg": svg.node(), "layout": force};
+  return {'svg': svg.node(), 'layout': force};
 }

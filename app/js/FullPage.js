@@ -138,11 +138,11 @@ export class FullPage {
 
     this.fpAfterLoad.push((anchor, i) => {
       switch(anchor) {
-        case "cases":
+        case 'cases':
           $('#casesTree').css('visibility', 'visible')
           $('#casesTree').fadeTo(that.graphFadeSpeed, 1)
           break;
-        case "team":
+        case 'team':
           $('#teamTree').css('visibility', 'visible')
           $('#teamTree').fadeTo(that.graphFadeSpeed, 1)
           break;

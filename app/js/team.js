@@ -42,7 +42,7 @@ export function getTeamTree() {
       .attr('id','desaturate')
       .append('feColorMatrix')
       .attr('type','matrix')
-      .attr('values',"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0");
+      .attr('values','0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0');
 
   svg
   .append('defs')
@@ -62,7 +62,7 @@ export function getTeamTree() {
           .attr('width', 120)
           .attr('height', 120)
           /* IE 10 Doesn't support SVG filters and breaks the graphic if used. Curiously this doesn't happen in IE9 */
-          .style('filter', (navigator.appVersion.indexOf("MSIE 10") === -1)?'url(#desaturate)':'');
+          .style('filter', (navigator.appVersion.indexOf('MSIE 10') === -1)?'url(#desaturate)':'');
   
   var link = svg.selectAll('.link')
       .data(links)

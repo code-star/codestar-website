@@ -26,9 +26,22 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader?compact=false',
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {
+              compact: false
+            }
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              formatter: require('eslint-friendly-formatter')
+            }
+          }
+        ],
         exclude: /node_modules/,
-        exclude: /app\/vendor/,
+        exclude: /app\/vendor/
       },
       { test: /\.pug$/, loader: 'pug-loader' },
       { test: /\.json$/, loader: 'json-loader' },
@@ -59,9 +72,6 @@ module.exports = {
       }
     ]
   },
-  // eslint: { // TODO place this configuration somewhere else? -> add , 'eslint-loader'?
-  //   formatter: require('eslint-friendly-formatter')
-  // },
   /*plugins: [
     new ThumbnailWebpackPlugin(thumbnailConfigs)
   ]*/
