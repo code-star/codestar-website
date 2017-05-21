@@ -5,7 +5,7 @@
 
 // Re-using config from webpack.base.conf.js as long as thumbnail-webpack-plugin has bugs
 
-const config = require('./webpack.base.conf');
+const config = require('./thumbnail.conf');
 const thumb = require('node-thumbnail').thumb;
 
 const thumbPromises = config.thumbnailConfigs.map(config => thumb(config));
