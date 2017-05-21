@@ -1,3 +1,4 @@
+// Based on https://gist.github.com/mbostock/4348373
 var tree = {
   'name': 'flare',
   'children': [{

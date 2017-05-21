@@ -4,7 +4,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-
 export function getTeamTree() {
   var svg = d3.select('body').append('svg').remove();
 
@@ -145,5 +144,5 @@ export function getTeamTree() {
         .attr('y2', function(d) { return d.target.y; });
   });
 
-  return {"svg": svg.node(), "layout": force};
+  return {'svg': svg.node(), 'layout': force};
 }
