@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var config = require('./webpack.base.conf');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const config = require('./webpack.base.conf');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // eval-source-map is faster for development
 config.devtool = 'cheap-module-eval-source-map';
@@ -16,16 +16,16 @@ config.entry.app = [
 config.output.publicPath = '/';
 
 config.plugins = (config.plugins || []).concat([
-  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin(),
-  new ExtractTextPlugin(
-    'style.css', {
-      allChunks: true
-   }),
+  new webpack.NoEmitOnErrorsPlugin(),
+  new ExtractTextPlugin({
+    filename: 'style.css',
+    allChunks: true
+  }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.jade',
+    template: 'app/index.pug',
     inject: 'body'
   }),
   new HtmlWebpackPlugin({
@@ -33,9 +33,9 @@ config.plugins = (config.plugins || []).concat([
     template: 'app/kafka_training.jade'
   }),
   new webpack.ProvidePlugin({
-    $:      'jquery',
+    $: 'jquery',
     jQuery: 'jquery'
   })
-])
+]);
 
-module.exports = config
+module.exports = config;

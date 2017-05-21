@@ -1,8 +1,8 @@
-var webpack = require('webpack')
-var config = require('./webpack.base.conf')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var BowerWebpackPlugin = require('bower-webpack-plugin');
+const webpack = require('webpack');
+const config = require('./webpack.base.conf');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BowerWebpackPlugin = require('bower-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -13,7 +13,7 @@ config.output.chunkFilename = '[id].[chunkhash].js'
 
 // whether to generate source map for production files.
 // disabling this can speed up the build.
-var SOURCE_MAP = true
+const SOURCE_MAP = true;
 
 config.devtool = SOURCE_MAP ? 'source-map' : false
 
@@ -43,7 +43,7 @@ config.plugins = (config.plugins || []).concat([
   // see https://github.com/ampedandwired/html-webpack-plugin
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.jade',
+    template: 'app/index.pug',
     inject: 'body'
   }),
   new HtmlWebpackPlugin({
@@ -54,9 +54,9 @@ config.plugins = (config.plugins || []).concat([
     excludes: /.*\.less/
   }),
   new webpack.ProvidePlugin({
-    $:      "jquery",
-    jQuery: "jquery"
+    $:      'jquery',
+    jQuery: 'jquery'
   })
-])
+]);
 
-module.exports = config
+module.exports = config;
