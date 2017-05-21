@@ -7,8 +7,8 @@ require('jquery');
 require('./vendor/unitegallery');
 
 
-import d3 from 'd3';
-import PointerEventsPolyfill from './libs/pointer_events_polyfill'
+import * as d3 from './libs/d3';
+import PointerEventsPolyfill from './libs/pointer_events_polyfill';
 import isMobile from './js/mobileChecker';
 import { getSunburst } from './js/sunburst';
 import { getTeamTree } from './js/team';
@@ -72,37 +72,37 @@ $(document).ready(function() {
 
   // Expand rabobank case
   d3.select('#caserabobank').each(function(d,i) {
-    d3.select(this).on("click").apply(this, [d,i])
+    d3.select(this).on('click').apply(this, [d,i])
   });
 
   PointerEventsPolyfill.initialize({
     selector: '.noMouse, #map'
   });
 
-  $("#gallery").unitegallery({
-    tiles_type:"nested"
+  $('#gallery').unitegallery({
+    tiles_type:'nested'
   });
-  $("#gallery-launchevent").unitegallery({
-    tiles_type:"nested"
-  });
-
-  $("#gallery-video").unitegallery({
-	  gallery_theme: "video",
-      theme_skin: "right-no-thumb"
+  $('#gallery-launchevent').unitegallery({
+    tiles_type:'nested'
   });
 
-  $("#gallery-akkathon").unitegallery({
-		tiles_type: "nested"
+  $('#gallery-video').unitegallery({
+	  gallery_theme: 'video',
+      theme_skin: 'right-no-thumb'
+  });
+
+  $('#gallery-akkathon').unitegallery({
+		tiles_type: 'nested'
   });
 
   // Put the default slides right and move to the center slide
-  var hash = window.location.hash.replace("#", "").split("/");
-  var section = (hash[0] === "" || typeof hash[0] == "undefined") ? "center" : hash[0];
+  var hash = window.location.hash.replace('#', '').split('/');
+  var section = (hash[0] === '' || typeof hash[0] == 'undefined') ? 'center' : hash[0];
   var slide = hash[1];
 
   // Put the correct starting slides. If we do this with slide sets there seems to be a Fullpage bug which doesn't let it move
-  if(section !== "team") {
-    $.fn.fullpage.silentMoveTo(2, "teamGraph");
+  if(section !== 'team') {
+    $.fn.fullpage.silentMoveTo(2, 'teamGraph');
   }
 
   $.fn.fullpage.silentMoveTo(section, slide);
