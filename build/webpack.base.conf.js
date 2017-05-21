@@ -3,24 +3,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ThumbnailWebpackPlugin = require('thumbnail-webpack-plugin');
 
-function getThumbnailConfigs(srcPath) {
-  return {
-    source: srcPath,
-    destination: srcPath + '/thumbs',
-    prefix: 'thumb_',
-    suffix: '',
-    width: '400',
-    ignore: true // ignore unsupported files, e.g. .gitignore
-  };
-}
-
-const thumbnailConfigs = [
-    './app/img/gallery',
-    './app/img/galleryLaunchEvent',
-    './app/img/galleryAkkathon'
-  ]
-  .map(getThumbnailConfigs);
-
 module.exports = {
   entry: {
     app: './app/main.js',
@@ -36,27 +18,23 @@ module.exports = {
     unitegallery: ''
   },
   resolve: {
-    extensions: ['', '.js',],
     alias: {
       'app': path.resolve(__dirname, '../app')
     }
   },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
-  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader?compact=false',
         exclude: /node_modules/,
         exclude: /app\/vendor/,
       },
-      { test: /\.jade$/, loader: 'jade' },
-      { test: /\.json$/, loader: 'json' },
+      { test: /\.pug$/, loader: 'pug-loader' },
+      { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.(png|jpg|jpeg|gif|svg|otf|woff(2)?|eot|ttf)$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 100,
           name: '[name].[ext]?[hash]'
@@ -64,22 +42,27 @@ module.exports = {
       },
       {
          test:   /jquery\..*\.js/,
-         loader: 'imports?$=jquery,jQuery=jquery,this=>window'
+         loader: 'imports-loader?$=jquery,jQuery=jquery,this=>window'
       },
       { test: /vendor\/.+\.(jsx|js)$/,
-        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+        loader: 'imports-loader?jQuery=jquery,$=jquery,this=>window'
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!postcss-loader!sass')
+        loader: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+          ]
+        })
       }
     ]
   },
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
-  },
+  // eslint: { // TODO place this configuration somewhere else? -> add , 'eslint-loader'?
+  //   formatter: require('eslint-friendly-formatter')
+  // },
   /*plugins: [
     new ThumbnailWebpackPlugin(thumbnailConfigs)
   ]*/
-  thumbnailConfigs
 };
