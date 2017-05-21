@@ -2,6 +2,9 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const ThumbnailWebpackPlugin = require('thumbnail-webpack-plugin');
+const BannerWebpackPlugin = require('banner-webpack-plugin');
+
+const pkg = require('../package.json');
 
 module.exports = {
   entry: {
@@ -72,7 +75,14 @@ module.exports = {
       }
     ]
   },
-  /*plugins: [
-    new ThumbnailWebpackPlugin(thumbnailConfigs)
-  ]*/
+  plugins: [
+    //new ThumbnailWebpackPlugin(thumbnailConfigs),
+    new BannerWebpackPlugin({
+      chunks: {
+        'app': {
+          beforeContent: `/* version ${pkg.version} */`
+        }
+      }
+    })
+  ]
 };
