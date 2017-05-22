@@ -118,6 +118,13 @@
       "tagline": "“Als je het eenmaal snapt, is het makkelijk”",
       "bio": "Ik probeer vaak te begrijpen hoe dingen in elkaar zitten. Hoe de wereld werkt. Het tofste aan maatwerksoftware is dat het alle vrijheid geeft om een model te maken van de werkelijkheid van gebruikers en opdrachtgevers. Wanneer dat model de goede balans heeft tussen eenvoud en complexiteit is dat prachtig. De code is begrijpelijk en de functionaliteit sluit aan bij de behoefte.",
       "image": "eelco.jpg"
+    },
+    {
+      "name": "Pavels",
+      "job": "Programmeur",
+      "tagline": "“A programmer is not a human but the new creature”",
+      "bio": "",
+      "image": "pavels.jpg"
     }
   ]
 }
