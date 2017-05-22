@@ -30,7 +30,7 @@ config.plugins = (config.plugins || []).concat([
   }),
   new HtmlWebpackPlugin({
     filename: 'kafka_training.html',
-    template: 'app/kafka_training.jade'
+    template: 'app/kafka_training.pug'
   }),
   new webpack.ProvidePlugin({
     $: 'jquery',

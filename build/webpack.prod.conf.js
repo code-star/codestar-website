@@ -47,7 +47,7 @@ config.plugins = (config.plugins || []).concat([
   }),
   new HtmlWebpackPlugin({
     filename: 'kafka_training.html',
-    template: 'app/kafka_training.jade'
+    template: 'app/kafka_training.pug'
   }),
   // BowerWebpackPlugin does not work with Webpack 2. This needs to be done with resolving options: https://github.com/lpiepiora/bower-webpack-plugin/issues/39
   // new BowerWebpackPlugin({
