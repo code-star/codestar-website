@@ -1,32 +1,31 @@
-var webpack = require('webpack')
-var config = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var BowerWebpackPlugin = require('bower-webpack-plugin');
+const webpack = require('webpack');
+const config = require('./webpack.base.conf');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // eval-source-map is faster for development
-config.devtool = 'cheap-module-eval-source-map'
+config.devtool = 'cheap-module-eval-source-map';
 // add hot-reload related code to entry chunk
 config.entry.app = [
   config.entry.app,
   'webpack-hot-middleware/client'
-]
+];
 
 // necessary for the html plugin to work properly
 // when serving the html from in-memory
 config.output.publicPath = '/';
 
 config.plugins = (config.plugins || []).concat([
-  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin(),
-  new ExtractTextPlugin(
-    'style.css', {
-      allChunks: true
-   }),
+  new webpack.NoEmitOnErrorsPlugin(),
+  new ExtractTextPlugin({
+    filename: 'style.css',
+    allChunks: true
+  }),
   new HtmlWebpackPlugin({
     filename: 'index.html',
-    template: 'app/index.jade',
+    template: 'app/index.pug',
     inject: 'body'
   }),
   new HtmlWebpackPlugin({
@@ -34,9 +33,9 @@ config.plugins = (config.plugins || []).concat([
     template: 'app/kafka_training.jade'
   }),
   new webpack.ProvidePlugin({
-    $:      "jquery",
-    jQuery: "jquery"
+    $: 'jquery',
+    jQuery: 'jquery'
   })
-])
+]);
 
-module.exports = config
+module.exports = config;

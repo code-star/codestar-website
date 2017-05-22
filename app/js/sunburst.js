@@ -1,3 +1,4 @@
+// Based on https://gist.github.com/mbostock/4348373
 var tree = {
   'name': 'flare',
   'children': [{
@@ -787,8 +788,8 @@ export function getSunburst(alternative) {
         .range(['rgba(255, 255, 255, 0.0)']);
 
   var innerNode = svg
-    .attr("preserveAspectRatio", "xMinYMin meet")
-    .attr("viewBox", "0 0 " + width + " " + height)
+    .attr('preserveAspectRatio', 'xMinYMin meet')
+    .attr('viewBox', '0 0 ' + width + ' ' + height)
     .append('g')
     .attr('transform', 'translate(' + width / 2 + ',' + (height / 2 + 10) + ')');
 

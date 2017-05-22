@@ -1,6 +1,10 @@
-var path = require('path')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var autoprefixer = require('autoprefixer');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const ThumbnailWebpackPlugin = require('thumbnail-webpack-plugin');
+const BannerWebpackPlugin = require('banner-webpack-plugin');
+
+const pkg = require('../package.json');
 
 module.exports = {
   entry: {
@@ -17,27 +21,36 @@ module.exports = {
     unitegallery: ''
   },
   resolve: {
-    extensions: ['', '.js',],
     alias: {
       'app': path.resolve(__dirname, '../app')
     }
   },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
-  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {
+              compact: false
+            }
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              formatter: require('eslint-friendly-formatter')
+            }
+          }
+        ],
         exclude: /node_modules/,
-        exclude: /app\/vendor/,
+        exclude: /app\/vendor/
       },
-      { test: /\.jade$/, loader: 'jade' },
-      { test: /\.json$/, loader: 'json' },
+      { test: /\.pug$/, loader: 'pug-loader' },
+      { test: /\.json$/, loader: 'json-loader' },
       {
         test: /\.(png|jpg|jpeg|gif|svg|otf|woff(2)?|eot|ttf)$/,
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 100,
           name: '[name].[ext]?[hash]'
@@ -45,19 +58,31 @@ module.exports = {
       },
       {
          test:   /jquery\..*\.js/,
-         loader: "imports?$=jquery,jQuery=jquery,this=>window"
+         loader: 'imports-loader?$=jquery,jQuery=jquery,this=>window'
       },
       { test: /vendor\/.+\.(jsx|js)$/,
-        loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+        loader: 'imports-loader?jQuery=jquery,$=jquery,this=>window'
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!postcss-loader!sass')
+        loader: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+          ]
+        })
       }
     ]
   },
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
-  eslint: {
-    formatter: require('eslint-friendly-formatter')
-  }
-}
+  plugins: [
+    //new ThumbnailWebpackPlugin(thumbnailConfigs),
+    new BannerWebpackPlugin({
+      chunks: {
+        'app': {
+          beforeContent: `/* version ${pkg.version} */`
+        }
+      }
+    })
+  ]
+};

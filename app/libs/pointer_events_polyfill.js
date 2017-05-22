@@ -43,7 +43,7 @@ PointerEventsPolyfill.initialize = function(options){
 // handle mouse events w/ support for pointer-events: none
 PointerEventsPolyfill.prototype.register_mouse_events = function(){
     // register on all elements (and all future elements) matching the selector
-    $(document).on(this.options.mouseEvents.join(" "), this.options.selector, function(e){
+    $(document).on(this.options.mouseEvents.join(' '), this.options.selector, function(e){
        if($(this).css('pointer-events') == 'none'){
 
              // peak at the element below

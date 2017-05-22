@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/codestar/codestar-website.svg?branch=master)
+
 <img align=center src=https://cloud.githubusercontent.com/assets/4116708/12473911/e67fdd44-c016-11e5-9c21-5714e07549fe.png width=450 />
 
 *Passionate programmers standing to make a change*
@@ -8,7 +10,10 @@
 
 ## Installing / Upgrading
 
-`brew install imagemagick` (once per computer)
+// TODO
+* update outdated npm packages
+* karma via webpack?
+
 
 Install node 7.10.0 and npm 4.2.0
 
@@ -57,9 +62,11 @@ For issues see: https://github.com/code-star/codestar-website/issues
 # Deploying
 
 ## Test
-`build/deploy_to_test.sh` deploys your current branch to http://www.codestar.nl/codestar-website
 
-This script compiles your current branch and commits that to the `gh-pages` branch of this repository.
+Merge a feature branch to the `develop` branch. Travis CI ([task](https://travis-ci.org/code-star/codestar-website/)) 
+will automatically build and deploy to the `gh-pages` branch. This can be tested on http://www.codestar.nl/codestar-website/ 
+
+The `build/deploy_to_test.sh` script is deprecated, it deploys your current branch.
 
 ## Production
 
@@ -69,4 +76,7 @@ This script pushes the compiled website to [this repository](https://github.com/
 
 ## Continuous Deployment
 
-Builds are run on https://circleci.com/gh/code-star/codestar-website for changes on the master branch and merge requests. Log in with your GitHub account. The build code is not yet automatically deployed.
+The use of Circle CI is deprecated, see [test](#test) for information on Travis CI.
+
+Builds are run on https://circleci.com/gh/code-star/codestar-website for changes on the master branch and merge requests. 
+Log in with your GitHub account. The build code is not yet automatically deployed.
