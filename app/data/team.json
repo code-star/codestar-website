@@ -111,6 +111,13 @@
       "tagline": "“Runs in strict mode”",
       "bio": "As an experienced front-end developer you'll be at home at Codestar. Working with a modern stack (e.g. functional reactive JavaScript), surrounded by colleagues who are as passionate as you are, and in a friendly and open environment.",
       "image": "martinve.jpg"
+    },
+    {
+      "name": "Pavels",
+      "job": "Programmeur",
+      "tagline": "“A programmer is not a human but the new creature”",
+      "bio": "",
+      "image": "pavels.jpg"
     }
   ]
 }
