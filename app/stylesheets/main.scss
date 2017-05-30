@@ -84,6 +84,7 @@
   max-width: 100%;
 }
 body {
+  background: #0f569a;
   font-family: Conduit;
   color: white;
   white-space: normal;
@@ -309,6 +310,7 @@ dt {
 }
 
 #fixed-menu .menu {
+  display: none;
   margin-top: 0.2em;
   clear: both;
   float: left;
