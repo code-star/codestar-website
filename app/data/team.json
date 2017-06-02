@@ -125,6 +125,13 @@
       "tagline": "“A programmer is not a human but the new creature”",
       "bio": "",
       "image": "pavels.jpg"
+    },
+    {
+      "name": "Bjorn",
+      "job": "Front-end Developer",
+      "tagline": "",
+      "bio": "",
+      "image": "bjorn.jpg"
     }
   ]
 }
