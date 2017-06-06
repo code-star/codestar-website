@@ -20,7 +20,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 // compilation error display
 app.use(require('webpack-hot-middleware')(compiler))
 
-app.listen(8080, 'localhost', function(err) {
+app.listen(80, 'localhost', function(err) {
   if (err) {
     console.log(err);
     return;
