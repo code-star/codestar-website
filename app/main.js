@@ -24,6 +24,7 @@ import { JobList } from './js/JobList';
 import { FullPage } from './js/FullPage';
 import { Decorations } from './js/Decorations';
 import { ContactForm } from './js/ContactForm';
+import { trackUser } from './js/google.analytics';
 
 let jobList = new JobList();
 let contactForm = new ContactForm();
@@ -106,4 +107,6 @@ $(document).ready(function() {
   }
 
   $.fn.fullpage.silentMoveTo(section, slide);
+
+  trackUser();
 });
