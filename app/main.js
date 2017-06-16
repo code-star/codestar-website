@@ -25,16 +25,16 @@ import { FullPage } from './js/FullPage';
 import { Decorations } from './js/Decorations';
 import { ContactForm } from './js/ContactForm';
 
-let jobList = new JobList();
-let contactForm = new ContactForm();
-let decorations = new Decorations();
-let fullPage = new FullPage();
-let features = getFeatures();
-let teamtree = getTeamTree();
-let casestree = getCasesTree();
-let gradients = getGradients();
-let backgrounds = gradients.backgrounds;
-let filters = gradients.filters;
+const jobList = new JobList();
+const contactForm = new ContactForm();
+const decorations = new Decorations();
+const fullPage = new FullPage();
+const features = getFeatures();
+const teamtree = getTeamTree();
+const casestree = getCasesTree();
+const gradients = getGradients();
+const backgrounds = gradients.backgrounds;
+const filters = gradients.filters;
 
 $(document).ready(function() {
   $('#featureList').append(features);
@@ -67,9 +67,6 @@ $(document).ready(function() {
   contactForm.bindValidationToForm();
   contactForm.addClickListeners();
 
-  jobList.addJobListItemsClickEvent();
-  jobList.showCorrectCloseButton();
-
   // Expand rabobank case
   d3.select('#caserabobank').each(function(d,i) {
     d3.select(this).on('click').apply(this, [d,i])
@@ -96,9 +93,9 @@ $(document).ready(function() {
   });
 
   // Put the default slides right and move to the center slide
-  var hash = window.location.hash.replace('#', '').split('/');
-  var section = (hash[0] === '' || typeof hash[0] == 'undefined') ? 'center' : hash[0];
-  var slide = hash[1];
+  const hash = window.location.hash.replace('#', '').split('/');
+  const section = (hash[0] === '' || typeof hash[0] == 'undefined') ? 'center' : hash[0];
+  const slide = hash[1];
 
   // Put the correct starting slides. If we do this with slide sets there seems to be a Fullpage bug which doesn't let it move
   if(section !== 'team') {
