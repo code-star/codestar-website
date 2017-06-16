@@ -132,6 +132,13 @@
       "tagline": "",
       "bio": "",
       "image": "bjorn.jpg"
+    },
+    {
+      "name": "Asif",
+      "job": "Scala Enthusiast",
+      "tagline": "Scala is the way to go",
+      "bio": "",
+      "image": "asif.jpg"
     }
   ]
 }
