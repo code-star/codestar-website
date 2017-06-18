@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OrdinaNederland/codestar-website.git"
+    "url": "git+https://github.com/code-star/codestar-website.git"
   },
   "keywords": [
     "code",
@@ -23,9 +23,9 @@
   "author": "Ordina",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OrdinaNederland/codestar-website/issues"
+    "url": "https://github.com/code-star/codestar-website/issues"
   },
-  "homepage": "https://github.com/OrdinaNederland/codestar-website#readme",
+  "homepage": "https://github.com/code-star/codestar-website#readme",
   "devDependencies": {
     "autoprefixer": "^6.3.1",
     "babel-core": "^6.4.5",
