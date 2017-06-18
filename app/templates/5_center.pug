@@ -8,7 +8,8 @@ section#fifthPage.special.section.active(data-scrollax-parent='true')
     .large-3.show-for-large.columns
     .large-6.columns
       center
-        object#logo(data='logo.svg', width='300', type='image/svg+xml')
+        // img with width and height so alt text will show when the image is still loading (only works in some browsers)
+        img#logo(src='logo.svg', width='300', height='82', type='image/svg+xml', alt='CODE.STAR', title='CODE.STAR')
         p
           | De mogelijkheden in de digitale wereld zijn eindeloos. Uitdagingen vaak complex. Wij ontwikkelen moderne software die simpel te gebruiken is. Agile en productief, met gebruik van de nieuwste technieken. Wij programmeren. Met ons hoofd én met ons hart. Voor organisaties die de volgende stap willen zetten.
         p
