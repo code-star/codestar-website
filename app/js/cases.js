@@ -6,12 +6,16 @@ function getRandomInt(min, max) {
 
 class CasesTree {
   constructor() {
-    var svg = d3.select('body').append('svg').remove();
+    this.$caseName =$('#caseName');
+    this.$caseDesc = $('#caseDesc');
+    this.$caseInfo = $('#caseInfo');
 
-    var width = 800,
-      height = 300;
+    const svg = d3.select('body').append('svg').remove();
 
-    var force = d3.layout.force()
+    const width = 800;
+    const height = 300;
+
+    const force = d3.layout.force()
       .charge(-1000)
       .linkDistance(() => getRandomInt(200, 300))
       .size([width, height]);
@@ -20,18 +24,7 @@ class CasesTree {
       .attr('width', width)
       .attr('height', height);
 
-    var size = cases.nodes.length;
-    var links = [];
-    for (var i = 0; i < size; ++i) {
-      var n_links = getRandomInt(1, 2);
-      for (var j = 0; j < n_links; ++j) {
-        var target = getRandomInt(0, size);
-        while (target === i) {
-          target = getRandomInt(0, size);
-        }
-        links.push({'source': i, 'target': target});
-      }
-    }
+    const links = this.getLinks();
 
     force
       .nodes(cases.nodes)
@@ -58,12 +51,12 @@ class CasesTree {
       /* IE 10 Doesn't support SVG filters and breaks the graphic if used. Curiously this doesn't happen in IE9 */
       .style('filter', (navigator.appVersion.indexOf('MSIE 10') === -1)?'url(#desaturate)':'');
 
-    var link = svg.selectAll('.link')
+    const link = svg.selectAll('.link')
       .data(links)
       .enter().append('line')
       .attr('class', 'case-link');
 
-    var node = svg.selectAll('.node')
+    const node = svg.selectAll('.node')
       .data(cases.nodes)
       .enter().append('circle')
       .attr('class', 'case-node')
@@ -131,6 +124,22 @@ class CasesTree {
     }
   }
 
+  getLinks() {
+    const size = cases.nodes.length;
+    const links = [];
+    for (let i = 0; i < size; ++i) {
+      const n_links = getRandomInt(1, 2);
+      for (let j = 0; j < n_links; ++j) {
+        let target = getRandomInt(0, size);
+        while (target === i) {
+          target = getRandomInt(0, size);
+        }
+        links.push({'source': i, 'target': target});
+      }
+    }
+    return links;
+  }
+
   openCaseInfo(node, n, clickedNode) {
     node.each(function() {
       var m = d3.select(this);
@@ -145,17 +154,17 @@ class CasesTree {
     n.attr('old_r', n.attr('r'));
     n.attr('r', 61);
 
-    $('#caseName').html(clickedNode.company + '<br><span style="font-weight: normal">' + clickedNode.project + '</span>');
-    $('#caseDesc').html(clickedNode.description);
+    this.$caseName.html(clickedNode.company + '<br><span style="font-weight: normal">' + clickedNode.project + '</span>');
+    this.$caseDesc.html(clickedNode.description);
 
-    $('#caseInfo').slideDown(400)
+    this.$caseInfo.slideDown(400)
   }
 
   closeCaseInfo(n) {
     n.attr('r', n.attr('old_r'));
     n.attr('old_r', null);
 
-    $('#caseInfo').slideUp(400);
+    this.$caseInfo.slideUp(400);
   }
 
 }
