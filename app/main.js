@@ -97,9 +97,12 @@ $(document).ready(function() {
   });
 
   // Put the default slides right and move to the center slide
-  var hash = window.location.hash.replace('#', '').split('/');
-  var section = (hash[0] === '' || typeof hash[0] == 'undefined') ? 'center' : hash[0];
-  var slide = hash[1];
+  const hash = window.location.hash.replace('#', '').split('/');
+  const section = (hash[0] === '' || typeof hash[0] == 'undefined') ? 'center' : hash[0];
+  const slide = hash[1];
+
+  // Hide the sections, except the center section, until all sections are loaded
+  $('.fullpage-wrapper > section.special').show();
 
   // Put the correct starting slides. If we do this with slide sets there seems to be a Fullpage bug which doesn't let it move
   if(section !== 'team') {
