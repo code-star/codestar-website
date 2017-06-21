@@ -4,6 +4,7 @@
 @import "../vendor/unitegallery/package/unitegallery/css/unite-gallery.css";
 @import "../vendor/unitegallery/source/unitegallery/themes/video/skin-right-no-thumb.css";
 @import "2_team";
+@import 'partials/slideOutArticle';
 @include foundation-everything($flex: true);
 
 @font-face {

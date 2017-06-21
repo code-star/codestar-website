@@ -1,3 +1,5 @@
+import SlideOutArticle from './SlideOutArticle';
+
 const cases = require('../data/cases.json');
 
 function getRandomInt(min, max) {
@@ -9,6 +11,8 @@ class CasesTree {
     this.$caseName =$('#caseName');
     this.$caseDesc = $('#caseDesc');
     this.$caseInfo = $('#caseInfo');
+    this.slideOutArticle = new SlideOutArticle($('#caseName').closest('section').find('.row').first());
+    $('#caseDesc').on('click', '.toggleSlideOutArticle', ev => this.slideOutArticle.toggle());
 
     const svg = d3.select('body').append('svg').remove();
 
@@ -77,10 +81,10 @@ class CasesTree {
 
     const self = this;
     node.on('click', function(d) {
-      var n = d3.select(this);
+      let n = d3.select(this);
 
       // Check if the user is clicking or moving the node
-      let tolerance = 20
+      let tolerance = 20;
       if(Math.abs(n.attr('cx')- n.attr('data-startcx')) > tolerance ||
         Math.abs(n.attr('cy')- n.attr('data-startcy')) > tolerance) {
         // User is probably moving, do nothing
@@ -92,7 +96,7 @@ class CasesTree {
       n.attr('data-clickedon', 'true')
       setTimeout(function() {
         n.attr('data-clickedon', null)
-      }, 200)
+      }, 200);
 
       // Toggle the node
       if (!n.attr('old_r')) {
@@ -142,9 +146,9 @@ class CasesTree {
 
   openCaseInfo(node, n, clickedNode) {
     node.each(function() {
-      var m = d3.select(this);
+      let m = d3.select(this);
 
-      var old_r = m.attr('old_r');
+      let old_r = m.attr('old_r');
       if (old_r) {
         m.attr('r', old_r);
       }
