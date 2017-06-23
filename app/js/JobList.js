@@ -4,74 +4,74 @@ const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === '
 
 export class JobList {
   constructor() {
-    JobList.initEvents()
+    JobList.initEvents();
   }
 
   static initEvents() {
-    const jobItemNodes = $('ul.job_list_items a')
-    const closeButtonNode = $('.job_openings .close-button')
+    const jobItemNodes = $('ul.job_list_items a');
+    const closeButtonNode = $('.job_openings .close-button');
 
-    jobItemNodes.click(JobList.jobItemClicked)
-    closeButtonNode.click(JobList.hideJobOfferPanel)
+    jobItemNodes.click(JobList.jobItemClicked);
+    closeButtonNode.click(JobList.hideJobOfferPanel);
   }
 
   static jobItemClicked(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const jobName = $(event.currentTarget).attr('name')
+    const jobName = $(event.currentTarget).attr('name');
 
-    JobList.showJobOfferPanel(jobName)
-    JobList.deselectJobItems()
-    JobList.selectJobItem(jobName)
+    JobList.showJobOfferPanel(jobName);
+    JobList.deselectJobItems();
+    JobList.selectJobItem(jobName);
   }
 
   static showJobOfferPanel(name) {
     if (smallScreen()) {
-      $('#fixed-menu').hide()
-      $('.job-text').hide()
+      $('#fixed-menu').hide();
+      $('.job-text').hide();
     }
 
-    const jobOpeningsNode = $('.job_openings')
-    const jobPanelNode = $('.job_openings .panel-container')
+    const jobOpeningsNode = $('.job_openings');
+    const jobPanelNode = $('.job_openings .panel-container');
 
-    jobOpeningsNode.show()
-    jobOpeningsNode.removeClass('hide-on-mobile slide-in')
-    jobOpeningsNode.css('opacity', '1')
+    jobOpeningsNode.show();
+    jobOpeningsNode.removeClass('hide-on-mobile slide-in');
+    jobOpeningsNode.css('opacity', '1');
 
-    jobPanelNode.css('transform', 'initial')
-    jobPanelNode.css('-webkit-transform', 'initial')
+    jobPanelNode.css('transform', 'initial');
+    jobPanelNode.css('-webkit-transform', 'initial');
 
-    JobList.hideJobOffersContent()
-    JobList.showJobOfferContent(name)
+    JobList.hideJobOffersContent();
+    JobList.showJobOfferContent(name);
 
     // after panel is fully visible show close button
     setTimeout(()=> {
-      $('.job_openings .close-button').fadeIn()
+      $('.job_openings .close-button').fadeIn();
     }, 800)
   }
 
   static hideJobOfferPanel() {
     if (smallScreen()) {
-      $('#fixed-menu').show()
-      $('.job_openings').addClass('hide-on-mobile slide-in')
+      $('#fixed-menu').show();
+      $('.job_openings').addClass('hide-on-mobile slide-in');
     }
 
-    $('.job_content').hide()
-    $('.job-text, .job_openings, .job_openings .panel-container, #fixed-menu, .job_openings .close-button').removeAttr('style')
+    $('.job_content').hide();
+    $('.job-text, .job_openings, .job_openings .panel-container, #fixed-menu, .job_openings .close-button').removeAttr('style');
 
-    JobList.deselectJobItems()
+    JobList.deselectJobItems();
   }
 
   static showJobOfferContent(name) {
-    $(`#${name}_content`).show()
+    $(`#${name}_content`).show();
   }
 
   static hideJobOffersContent() {
-    $('.job_content').hide()
+    $('.job_content').hide();
   }
 
   static selectJobItem(name) {
-    $(`ul.job_list_items a[name=${name}]`).parent().addClass('active')
+    $(`ul.job_list_items a[name=${name}]`).parent().addClass('active');
   }
 
   static deselectJobItems() {
