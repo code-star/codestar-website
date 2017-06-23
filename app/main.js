@@ -26,16 +26,16 @@ import { Decorations } from './js/Decorations';
 import { ContactForm } from './js/ContactForm';
 import { trackUser } from './js/google.analytics';
 
-let jobList = new JobList();
-let contactForm = new ContactForm();
-let decorations = new Decorations();
-let fullPage = new FullPage();
-let features = getFeatures();
-let teamtree = getTeamTree();
-let casestree = getCasesTree();
-let gradients = getGradients();
-let backgrounds = gradients.backgrounds;
-let filters = gradients.filters;
+const jobList = new JobList();
+const contactForm = new ContactForm();
+const decorations = new Decorations();
+const fullPage = new FullPage();
+const features = getFeatures();
+const teamtree = getTeamTree();
+const casestree = getCasesTree();
+const gradients = getGradients();
+const backgrounds = gradients.backgrounds;
+const filters = gradients.filters;
 
 $(document).ready(function() {
   $('#featureList').append(features);
@@ -67,9 +67,6 @@ $(document).ready(function() {
 
   contactForm.bindValidationToForm();
   contactForm.addClickListeners();
-
-  jobList.addJobListItemsClickEvent();
-  jobList.showCorrectCloseButton();
 
   // Expand rabobank case
   d3.select('#caserabobank').each(function(d,i) {

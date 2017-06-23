@@ -43,6 +43,33 @@
   #logo {
     width: 70vmin;
   }
+
+  #firstPage .job_openings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .profile {
+    margin-left: 0;
+  }
+
+  .job_openings .panel-container .close-button {
+    position: absolute;
+    right: 0;
+    left: auto;
+    background: #757C87;
+    width: 2rem;
+    height: 1.75rem;
+    text-align: center;
+    line-height: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    top: 0;
+    display: block;
+  }
 }
 .inline-logo {
   height: 1em;
@@ -69,14 +96,38 @@
   #logo {
     width: 70vmin;
   }
+
+  #firstPage .job_openings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .profile {
+    margin-left: 0;
+  }
+
+  .job_openings .panel-container .close-button {
+    position: absolute;
+    right: 0;
+    left: auto;
+    background: #757C87;
+    width: 2rem;
+    height: 1.75rem;
+    text-align: center;
+    line-height: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    top: 0;
+    display: block;
+  }
 }
 
 @media #{$large-up} {
   ul.job_list_items li a {
     font-size: 1.3em;
-  }
-  .close-button-mobile {
-    display: hidden;
   }
 }
 
@@ -411,6 +462,10 @@ ul.job_list_items li {
   margin-right: 0 !important;
 }
 
+ul.job_list_items li:hover {
+  opacity: .8;
+}
+
 
 ul.job_list_items li a {
   // height: 50px;
@@ -420,6 +475,8 @@ ul.job_list_items li a {
   font-weight: 400;
   font-size: 1.5em;
   padding: 0.7rem 1rem !important;/* !important because this gets overwritten by .menu.simple a*/
+  outline: none;
+
 }
 
 .menu.simple li {
@@ -448,7 +505,7 @@ ul.job_list_items li a {
 }
 .panel-container .close-button {
   position: absolute;
-  left: -3rem;
+  left: -2.1rem;
   background: #757C87;
   width: 3rem;
   height: 2.75rem;
@@ -458,27 +515,11 @@ ul.job_list_items li a {
   color: #fff;
   font-size: 2.75rem;
   top: 0;
+  display: none;
 }
 
-.panel-container .close-button-mobile {
-  position: absolute;
-  right: 0;
-  background: #757C87;
-  width: 2rem;
-  height: 1.75rem;
-  text-align: center;
-  line-height: 1.75rem;
-  font-weight: bold;
-  color: #fff;
-  font-size: 2rem;
-  top: 0;
-  display: block;
-}
-
-@media #{$medium-only} {
-  .profile {
-    margin-left: 3rem;
-  }
+.panel-container .close-button:hover {
+  opacity: .8;
 }
 
 // Slider
