@@ -24,6 +24,7 @@ import { JobList } from './js/JobList';
 import { FullPage } from './js/FullPage';
 import { Decorations } from './js/Decorations';
 import { ContactForm } from './js/ContactForm';
+import { trackUser } from './js/google.analytics';
 
 const jobList = new JobList();
 const contactForm = new ContactForm();
@@ -97,10 +98,15 @@ $(document).ready(function() {
   const section = (hash[0] === '' || typeof hash[0] == 'undefined') ? 'center' : hash[0];
   const slide = hash[1];
 
+  // Hide the sections, except the center section, until all sections are loaded
+  $('.fullpage-wrapper > section.special').show();
+
   // Put the correct starting slides. If we do this with slide sets there seems to be a Fullpage bug which doesn't let it move
   if(section !== 'team') {
     $.fn.fullpage.silentMoveTo(2, 'teamGraph');
   }
 
   $.fn.fullpage.silentMoveTo(section, slide);
+
+  trackUser();
 });

@@ -125,6 +125,20 @@
       "tagline": "“A programmer is not a human but the new creature”",
       "bio": "",
       "image": "pavels.jpg"
+    },
+    {
+      "name": "Bjorn",
+      "job": "Front-end Developer",
+      "tagline": "",
+      "bio": "",
+      "image": "bjorn.jpg"
+    },
+    {
+      "name": "Asif",
+      "job": "Scala Enthusiast",
+      "tagline": "Scala is the way to go",
+      "bio": "",
+      "image": "asif.jpg"
     }
   ]
 }
