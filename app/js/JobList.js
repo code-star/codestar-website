@@ -1,54 +1,80 @@
-import isMobile from './mobileChecker';
+import isMobile from './mobileChecker'
+
+const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === 'small' || Foundation.MediaQuery.current === 'medium'
+
 export class JobList {
-  addJobListItemsClickEvent() {
-    $('.job_list_items li a').click((event) => {
-      event.preventDefault();
-      let element = $('.profile');
-      let elementVisibility = element.css('visibility');
-      let arrow = $('.arrow-left');
-      let parentOfClickedElement = $(event.currentTarget).parent();
-      let positionOfClickedElement = $(event.currentTarget).position().top;
-      let job_list_items = $('.job_list_items');
-      let jobName = $(event.currentTarget).attr('name');
-
-      if(job_list_items.find('.active').length > 0) {
-        job_list_items.find('li').removeClass('active');
-      }
-
-      arrow.css('top', positionOfClickedElement + 5);
-
-      $('.job_content').hide()
-      $('#' + jobName + '_content').show()
-
-      if(elementVisibility === 'visible' && parentOfClickedElement.hasClass('active') || isMobile.any()) {
-        $('.job_openings').removeClass('hide-on-mobile');
-        $('.job_openings').removeClass('slide-in');
-        $('.job_openings').css('opacity', '1');
-        $('.job_openings .panel-container').css('transform', 'initial');
-        $('.job_openings .panel-container').css('-webkit-transform', 'initial');
-        $('.job-text').css('display', 'none')
-      }
-      else {
-        element.addClass('is-visible');
-        $('.job_openings').addClass('hide-on-mobile');
-        parentOfClickedElement.addClass('active');
-        $('.job_list_items li').removeAttr('style');
-        parentOfClickedElement.css('background', 'rgba(59, 78, 110, 0.6)');
-      }
-    });
-    $('.close-button, .close-button-mobile').click(() => {
-      $('.profile').removeClass('is-visible');
-      $('.job_openings').removeClass('hide-on-mobile');
-      $('.job_list_items li').removeAttr('style');
-    });
+  constructor() {
+    JobList.initEvents();
   }
 
-  showCorrectCloseButton() {
-    if(Foundation.MediaQuery.atLeast('medium') && !isMobile.any()) {
-      $('.close-button-mobile').hide();
+  static initEvents() {
+    const jobItemNodes = $('ul.job_list_items a');
+    const closeButtonNode = $('.job_openings .close-button');
+
+    jobItemNodes.click(JobList.jobItemClicked);
+    closeButtonNode.click(JobList.hideJobOfferPanel);
+  }
+
+  static jobItemClicked(event) {
+    event.preventDefault();
+
+    const jobName = $(event.currentTarget).attr('name');
+
+    JobList.showJobOfferPanel(jobName);
+    JobList.deselectJobItems();
+    JobList.selectJobItem(jobName);
+  }
+
+  static showJobOfferPanel(name) {
+    if (smallScreen()) {
+      $('#fixed-menu').hide();
+      $('.job-text').hide();
     }
-    if(Foundation.MediaQuery.current === 'small' || isMobile.any()) {
-      $('.close-button-mobile').show();
+
+    const jobOpeningsNode = $('.job_openings');
+    const jobPanelNode = $('.job_openings .panel-container');
+
+    jobOpeningsNode.show();
+    jobOpeningsNode.removeClass('hide-on-mobile slide-in');
+    jobOpeningsNode.css('opacity', '1');
+
+    jobPanelNode.css('transform', 'initial');
+    jobPanelNode.css('-webkit-transform', 'initial');
+
+    JobList.hideJobOffersContent();
+    JobList.showJobOfferContent(name);
+
+    // after panel is fully visible show close button
+    setTimeout(()=> {
+      $('.job_openings .close-button').fadeIn();
+    }, 800)
+  }
+
+  static hideJobOfferPanel() {
+    if (smallScreen()) {
+      $('#fixed-menu').show();
+      $('.job_openings').addClass('hide-on-mobile slide-in');
     }
+
+    $('.job_content').hide();
+    $('.job-text, .job_openings, .job_openings .panel-container, #fixed-menu, .job_openings .close-button').removeAttr('style');
+
+    JobList.deselectJobItems();
+  }
+
+  static showJobOfferContent(name) {
+    $(`#${name}_content`).show();
+  }
+
+  static hideJobOffersContent() {
+    $('.job_content').hide();
+  }
+
+  static selectJobItem(name) {
+    $(`ul.job_list_items a[name=${name}]`).parent().addClass('active');
+  }
+
+  static deselectJobItems() {
+    $('ul.job_list_items .active').removeClass('active')
   }
 }

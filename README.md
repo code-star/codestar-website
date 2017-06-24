@@ -25,6 +25,8 @@ Install node 7.10.0 and npm 4.2.0
 
 `npm run dev`
 
+After running this command the website is running locally at `http://localhost:8080`.
+
 ## Add a team member
 
 Keep in mind the way of working around branching.
