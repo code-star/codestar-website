@@ -4,8 +4,8 @@ const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === '
 
 export default class SlidePanel {
 
-  constructor(onCloseCallback) {
-    this.$panelWrapper = $('.panel-wrapper');
+  constructor($context, onCloseCallback) {
+    this.$panelWrapper = $context.find('.panel-wrapper');
     this.$closeButton = this.$panelWrapper.find('.close-button');
     this.$closeButton.click(() => {
       this.hidePanel();
@@ -13,21 +13,27 @@ export default class SlidePanel {
     });
   }
 
+  // TODO find all occurrences of .job-text and extract
+  // TODO try on another page (cases)
+  // TODO extract template
+  // TODO test on mobile/small screen
+
   showPanel(contentItemId) {
     if (smallScreen()) {
-      $('#fixed-menu').hide();
+      $('#fixed-menu').hide(); // TODO convert to $fixedMenu, but not relative to $context
       $('.job-text').hide();
     }
 
-    // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
-    const $panelContainer = $('.panel-wrapper .panel-container');
+    // TODO if the other things can be done with CSS, remove this
+    // Must be relative to $context
+    const $panelContainer = this.$panelWrapper.find('.panel-container');
 
     this.$panelWrapper
       .show()
       .removeClass('hide-on-mobile slide-in')
       .css('opacity', '1'); // TODO do with CSS
 
-    // TODO do with CSS
+    // TODO do with CSS, .panel-container is relative to $panelWrapper, so no JS needed
     $panelContainer.css('transform', 'initial');
     $panelContainer.css('-webkit-transform', 'initial');
 
@@ -36,7 +42,7 @@ export default class SlidePanel {
     // TODO do with CSS
     // after panel is fully visible show close button
     setTimeout(()=> {
-      $('.panel-wrapper .close-button').fadeIn();
+      this.$panelWrapper.find('.close-button').fadeIn();
     }, 800)
   }
 
@@ -47,7 +53,7 @@ export default class SlidePanel {
 
   hidePanel() {
     if (smallScreen()) {
-      $('#fixed-menu').show(); // TODO how to make this abstract?
+      $('#fixed-menu').show();
       this.$panelWrapper.addClass('hide-on-mobile slide-in');
     }
 
