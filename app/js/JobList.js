@@ -1,19 +1,20 @@
 import SlidePanel from './SlidePanel';
 
+// TODO the arrow pointing at the selected job is missing. Was there in the version of beginning of june
+
 export class JobList {
   constructor() {
     JobList.initEvents();
+    function onCloseCallback() {
+      JobList.deselectJobItems();
+    }
+    JobList.slidePanel = new SlidePanel(onCloseCallback);
   }
 
   static initEvents() {
-    const jobItemNodes = $('ul.job_list_items a');
-    const closeButtonNode = $('.job_openings .close-button');
+    const $jobItem = $('ul.job_list_items a');
 
-    jobItemNodes.click(JobList.jobItemClicked);
-    closeButtonNode.click(() => {
-      SlidePanel.hideJobOfferPanel();
-      JobList.deselectJobItems();
-    });
+    $jobItem.click(JobList.jobItemClicked);
   }
 
   static jobItemClicked(event) {
@@ -21,13 +22,14 @@ export class JobList {
 
     const jobName = $(event.currentTarget).attr('name');
 
-    SlidePanel.showJobOfferPanel(jobName);
+    JobList.slidePanel.showJobOfferPanel(jobName);
     JobList.deselectJobItems();
     JobList.selectJobItem(jobName);
   }
 
   static selectJobItem(name) {
-    $(`ul.job_list_items a[name=${name}]`).parent().addClass('active');
+    $(`ul.job_list_items a[name=${name}]`)
+      .parent().addClass('active');
   }
 
   static deselectJobItems() {
