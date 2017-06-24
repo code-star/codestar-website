@@ -8,13 +8,12 @@ export default class SlidePanel {
     this.$panelWrapper = $('.panel-wrapper');
     this.$closeButton = this.$panelWrapper.find('.close-button');
     this.$closeButton.click(() => {
-      this.hideJobOfferPanel();
+      this.hidePanel();
       onCloseCallback();
     });
   }
 
-  // TODO rename to showPanel
-  showJobOfferPanel(name) {
+  showPanel(contentItemId) {
     if (smallScreen()) {
       $('#fixed-menu').hide();
       $('.job-text').hide();
@@ -32,7 +31,7 @@ export default class SlidePanel {
     $panelContainer.css('transform', 'initial');
     $panelContainer.css('-webkit-transform', 'initial');
 
-    this.showJobOfferContent(name);
+    this.loadContent(contentItemId);
 
     // TODO do with CSS
     // after panel is fully visible show close button
@@ -41,14 +40,12 @@ export default class SlidePanel {
     }, 800)
   }
 
-  // TODO rename to showContent (or better loadContent, see TODO below)
-  showJobOfferContent(name) {
+  loadContent(contentItemId) {
     this.$panelWrapper.find('.panel-content-item').hide();
-    // TODO always first hide other JobOfferContents, removing the need for hideJobOfferContent
-    $(`#${name}_content`).show();
+    $(`#${contentItemId}_content`).show();
   }
 
-  hideJobOfferPanel() {
+  hidePanel() {
     if (smallScreen()) {
       $('#fixed-menu').show(); // TODO how to make this abstract?
       this.$panelWrapper.addClass('hide-on-mobile slide-in');

@@ -22,7 +22,7 @@ export class JobList {
 
     const jobName = $(event.currentTarget).attr('name');
 
-    JobList.slidePanel.showJobOfferPanel(jobName);
+    JobList.slidePanel.showPanel(jobName);
     JobList.deselectJobItems();
     JobList.selectJobItem(jobName);
   }
