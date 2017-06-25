@@ -1,19 +1,19 @@
-#firstPage .panel-wrapper {
+.panel-wrapper {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   max-height: 100vh;
   z-index: 10;
+
+  &.columns {
+    padding-right: 0;
+  }
 }
 
 @media #{$small-only} {
 
-  #firstPage .panel-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  .panel-wrapper {
     margin-left: 0;
   }
 
@@ -33,15 +33,10 @@
     display: block;
   }
 }
-
 
 @media #{$medium-only} {
 
-  #firstPage .panel-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  .panel-wrapper {
     margin-left: 0;
   }
 
@@ -63,9 +58,6 @@
 }
 
 
-#firstPage .panel-wrapper {
-  padding-right: 0;
-}
 
 .panel-content-item {
   margin-right: 3em;
