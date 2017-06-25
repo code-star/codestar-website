@@ -2,22 +2,24 @@ import isMobile from './mobileChecker';
 
 const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === 'small' || Foundation.MediaQuery.current === 'medium';
 
-/*
-example for cases:
-
- cases.js
- // this.slideOutArticle = new SlideOutArticle($('#caseName').closest('section').find('.row').first());
- // $('#caseDesc').on('click', '.toggleSlideOutArticle', ev => this.slideOutArticle.toggle());
-
- cases.json
- <button class=\"toggleSlideOutArticle scroll-button button codestar-button\">Test</button>",
-*/
-
 /**
- * TODO documentation
- * //  * expects: ? with .slide-out-article-offset
- //  * ? is giving as $domContext to the constructor
- //  * expects button in ?? to which you should manually bind .toggle, e.g. with $('#caseDesc').on('click', '.toggleSlideOutArticle', ev => this.slideOutArticle.toggle());
+ * SlidePanel
+ * @description Will slide in larger texts on a panel from the right.
+ * @example
+ *  CasesTree.slidePanel = new SlidePanel($('.cases-page'), ()=>{});
+ *   $('.cases-page').on('click', '.open-panel', () => {
+ *     CasesTree.slidePanel.showPanel('test');
+ *   });
+ *  Requires:
+ *  * Something to open the panel (in the example above, something with class open-panel)
+ *  * The pug template should have a last column like:
+ *        .small-12.large-5.columns.slide-in.panel-wrapper.hide-on-mobile
+ *          .panel-container.normalscroll
+ *           .panel-content
+ *             .close-button x
+ *             #test_content.panel-content-item
+ *               include:markdown-it cases/test.md
+ *  * The SlidePanel constructor should be called with a class on the top level of the page.
  */
 export default class SlidePanel {
 
@@ -32,9 +34,6 @@ export default class SlidePanel {
       onCloseCallback();
     });
   }
-
-  // TODO test on mobile/small screen
-  // TODO extract template
 
   showPanel(contentItemId) {
     if (smallScreen()) {
