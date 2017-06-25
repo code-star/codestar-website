@@ -1,5 +1,3 @@
-import SlideOutArticle from './SlideOutArticle';
-
 const cases = require('../data/cases.json');
 
 function getRandomInt(min, max) {
@@ -11,8 +9,6 @@ class CasesTree {
     this.$caseName =$('#caseName');
     this.$caseDesc = $('#caseDesc');
     this.$caseInfo = $('#caseInfo');
-    this.slideOutArticle = new SlideOutArticle($('#caseName').closest('section').find('.row').first());
-    $('#caseDesc').on('click', '.toggleSlideOutArticle', ev => this.slideOutArticle.toggle());
 
     const svg = d3.select('body').append('svg').remove();
 
