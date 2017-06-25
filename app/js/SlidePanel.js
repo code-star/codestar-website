@@ -85,7 +85,11 @@ export default class SlidePanel {
 
     // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
     const $panelContainer = this.$panelWrapper.find('.panel-container');
-    $panelContainer.removeAttr('style');
+    $panelContainer
+      .hide();
+    setTimeout(() => {
+      $panelContainer.removeAttr('style');
+    }, 500);
   }
 
 }
