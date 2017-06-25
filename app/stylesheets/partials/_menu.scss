@@ -78,6 +78,9 @@
   /* sublist */
   ul {
     list-style-type: none;
+    @include breakpoint(medium down) {
+      display: none;
+    }
   }
 
 }
