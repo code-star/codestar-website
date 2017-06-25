@@ -6,6 +6,7 @@
 @import "partials/team";
 @import "partials/jobs";
 @import "partials/slide-panel";
+@import "partials/menu";
 @include foundation-everything($flex: true);
 
 @font-face {
@@ -272,87 +273,6 @@ dt {
 .menu-shadow {
   text-shadow: 0px 0px 2px rgba(12, 77, 120, 0.7);
 }
-
-#fixed-menu {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  padding: 20px;
-  height: auto;
-  z-index: 3;
-  @include breakpoint(medium down) {
-    width: 100%;
-  }
-}
-
-#fixed-menu ul {
-  @include breakpoint(medium down) {
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    padding-top: 2.1em;
-    padding-bottom: 0.8em;
-    position: absolute;
-    margin-left: 0 !important;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-}
-
-#fixed-menu .menu {
-  display: none;
-  margin-top: 0.2em;
-  clear: both;
-  float: left;
-  margin-left: 1.7em;
-}
-
-#fixed-menu .menu li {
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 3px;
-  @extend .menu-shadow;
-}
-
-#fixed-menu .menu li.menu_divider {
-  border-bottom: none;
-  height: 1em;
-  @include breakpoint(medium down) {
-    height: 1.5em;
-  }
-}
-
-#fixed-menu .menu li.menu_divider::after {
-  background: none;
-}
-
-#fixed-menu .menu li a {
-  color: #fff;
-  padding: 0.3rem 0;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  @include breakpoint(medium down) {
-    font-size: 1.4em;
-  }
-}
-
-#fixed-menu .menu li:last-child::after {
-  background: none;
-}
-
-#fixed-menu .menu li::after{
-  content: "";
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  background: #444;
-  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  @include breakpoint(medium down) {
-    height: 2px;
-  }
- }
 
 .asterisk {
   font-size: 3.2rem;
