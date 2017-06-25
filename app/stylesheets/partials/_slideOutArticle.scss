@@ -1,0 +1,28 @@
+.slide-out-article-main {
+  margin-left: 0;
+  margin-right: 0;
+  transition: 1s margin-left, 1s margin-right;
+
+  &.slide-out-article-offset {
+    margin-left: 30vw;
+    margin-right: 30vw;
+    transition: 1s 1s margin-left, 1s 1s margin-right;
+  }
+}
+
+// TODO example of flexbox slide animations: http://jsfiddle.net/MadLittleMods/EM4xL/
+.slide-out-article-side {
+  background-color: #ccc;
+  height: 100vh;
+  color: black;
+  //width: 0;
+  overflow: hidden;
+  flex: 0;
+  transition: 1s flex;
+
+  &.slide-out-article-open {
+    //width: 400px;
+    flex: 50%;
+    transition: 1s 0.1s flex;
+  }
+}

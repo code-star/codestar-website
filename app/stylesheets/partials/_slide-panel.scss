@@ -1,0 +1,138 @@
+.panel-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 100vh;
+  z-index: 10;
+
+  &.columns {
+    padding-right: 0;
+  }
+
+  .panel-container .close-button {
+    position: absolute;
+    left: -2.1rem;
+    background: #757C87;
+    width: 3rem;
+    height: 2.75rem;
+    text-align: center;
+    line-height: 2.75rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 2.75rem;
+    top: 0;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+}
+
+
+// TODO conditions for small-only and medium-only are identical, so make those the defaults
+// and only add overrides for @media #{$large-up}
+@media #{$small-only} {
+
+  .panel-wrapper {
+    margin-left: 0;
+
+    .panel-container .close-button {
+      right: 0;
+      left: auto;
+      width: 2rem;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      font-size: 2rem;
+      display: block;
+    }
+  }
+}
+
+@media #{$medium-only} {
+
+  .panel-wrapper {
+    margin-left: 0;
+
+    .panel-container .close-button {
+      right: 0;
+      left: auto;
+      width: 2rem;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      font-size: 2rem;
+      display: block;
+    }
+  }
+}
+
+// Must override small/medium overrides
+@media #{$large-up} {
+  .panel-wrapper .panel-container .close-button {
+    display: none;
+  }
+}
+
+.panel-content-item {
+  margin-right: 3em;
+}
+
+// Slider
+.slide-in {
+  visibility: hidden;
+  transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+  padding-left: 0;
+}
+
+.slide-in.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s 0s;
+  transition: opacity 0.3s ease-in;
+}
+
+.slide-in-header {
+  position: absolute;
+  top: -50px;
+  width: 90%;
+  height: 50px;
+  transition: top 0.3s 0s;
+}
+
+.hide-on-mobile.is-visible {
+  margin-left: 0;
+}
+
+.hide-on-mobile {
+  // breakpoint mixin comes from /node_modules/foundation-sites/scss/util/_breakpoint.scss
+  @include breakpoint(medium down) {
+    display: none;
+  }
+}
+
+.is-visible .slide-in-header {
+  top: 0;
+  transition: top 0.3s 0.3s;
+}
+
+.panel-container {
+  background: #fff;
+  color: #3B4E6E;
+  height: 100vh;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+  transform: translate3d(100%, 0, 0);
+}
+
+.is-visible .panel-container {
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0s;
+}
+
+.panel-content {
+  padding: 20px;
+  height: 100vh;
+  overflow-y: scroll;
+}
