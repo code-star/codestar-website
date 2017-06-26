@@ -34,6 +34,7 @@ export default class SlidePanel {
   }
 
   // TODO test on mobile/small screen
+  // TODO try on another page (cases)
   // TODO extract template
 
   showPanel(contentItemId) {
