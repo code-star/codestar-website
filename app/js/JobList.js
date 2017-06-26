@@ -8,7 +8,7 @@ export class JobList {
     function onCloseCallback() {
       JobList.deselectJobItems();
     }
-    JobList.slidePanel = new SlidePanel($('.job-list'), onCloseCallback);
+    JobList.slidePanel = new SlidePanel(onCloseCallback);
   }
 
   static initEvents() {
