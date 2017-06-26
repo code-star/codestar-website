@@ -41,12 +41,6 @@ export default class SlidePanel {
     if (smallScreen()) {
       this.$fixedMenu.hide(); // TODO could be done by setting the fixedMenu behind the panel with CSS
       this.$xorPanelMobile.hide();
-    } else {
-      // TODO do with CSS
-      // after panel is fully visible show close button
-      setTimeout(()=> {
-        this.$closeButton.fadeIn();
-      }, 800)
     }
 
     this.$panelWrapper
@@ -61,6 +55,12 @@ export default class SlidePanel {
     $panelContainer.css('-webkit-transform', 'initial');
 
     this.loadContent(contentItemId);
+
+    // TODO do with CSS
+    // after panel is fully visible show close button
+    setTimeout(()=> {
+      this.$closeButton.fadeIn();
+    }, 800)
   }
 
   loadContent(contentItemId) {
@@ -73,8 +73,6 @@ export default class SlidePanel {
       this.$fixedMenu.show();
       this.$xorPanelMobile.show();
       this.$panelWrapper.addClass('hide-on-mobile slide-in');
-    } else {
-      this.$closeButton.hide();
     }
 
     this.$panelWrapper.find('.panel-content-item').hide();
@@ -87,6 +85,8 @@ export default class SlidePanel {
     // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
     const $panelContainer = this.$panelWrapper.find('.panel-container');
     $panelContainer.removeAttr('style');
+
+    this.$closeButton.hide();
   }
 
 }

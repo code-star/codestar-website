@@ -9,44 +9,28 @@
   &.columns {
     padding-right: 0;
   }
-
-  .panel-container .close-button {
-    position: absolute;
-    left: -2.1rem;
-    background: #757C87;
-    width: 3rem;
-    height: 2.75rem;
-    text-align: center;
-    line-height: 2.75rem;
-    font-weight: bold;
-    color: #fff;
-    font-size: 2.75rem;
-    top: 0;
-
-    &:hover {
-      opacity: .8;
-    }
-  }
-
 }
 
-
-// TODO conditions for small-only and medium-only are identical, so make those the defaults
-// and only add overrides for @media #{$large-up}
 @media #{$small-only} {
 
   .panel-wrapper {
     margin-left: 0;
+  }
 
-    .panel-container .close-button {
-      right: 0;
-      left: auto;
-      width: 2rem;
-      height: 1.75rem;
-      line-height: 1.75rem;
-      font-size: 2rem;
-      display: block;
-    }
+  .panel-wrapper .panel-container .close-button {
+    position: absolute;
+    right: 0;
+    left: auto;
+    background: #757C87;
+    width: 2rem;
+    height: 1.75rem;
+    text-align: center;
+    line-height: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    top: 0;
+    display: block;
   }
 }
 
@@ -54,29 +38,51 @@
 
   .panel-wrapper {
     margin-left: 0;
-
-    .panel-container .close-button {
-      right: 0;
-      left: auto;
-      width: 2rem;
-      height: 1.75rem;
-      line-height: 1.75rem;
-      font-size: 2rem;
-      display: block;
-    }
   }
-}
 
-// Must override small/medium overrides
-@media #{$large-up} {
   .panel-wrapper .panel-container .close-button {
-    display: none;
+    position: absolute;
+    right: 0;
+    left: auto;
+    background: #757C87;
+    width: 2rem;
+    height: 1.75rem;
+    text-align: center;
+    line-height: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    top: 0;
+    display: block;
   }
 }
+
+
 
 .panel-content-item {
   margin-right: 3em;
 }
+
+
+.panel-container .close-button {
+  position: absolute;
+  left: -2.1rem;
+  background: #757C87;
+  width: 3rem;
+  height: 2.75rem;
+  text-align: center;
+  line-height: 2.75rem;
+  font-weight: bold;
+  color: #fff;
+  font-size: 2.75rem;
+  top: 0;
+  display: none;
+}
+
+.panel-container .close-button:hover {
+  opacity: .8;
+}
+
 
 // Slider
 .slide-in {
@@ -105,7 +111,6 @@
 }
 
 .hide-on-mobile {
-  // breakpoint mixin comes from /node_modules/foundation-sites/scss/util/_breakpoint.scss
   @include breakpoint(medium down) {
     display: none;
   }
