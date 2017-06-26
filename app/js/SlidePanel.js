@@ -4,72 +4,48 @@ const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === '
 
 export default class SlidePanel {
 
-  constructor(onCloseCallback) {
-    this.$panelWrapper = $('.panel-wrapper');
-    this.$closeButton = this.$panelWrapper.find('.close-button');
-    this.$closeButton.click(() => {
-      this.hideJobOfferPanel();
-      onCloseCallback();
-    });
-  }
-
-  // TODO rename to showPanel
-  showJobOfferPanel(name) {
+  static showJobOfferPanel(name) {
     if (smallScreen()) {
       $('#fixed-menu').hide();
       $('.job-text').hide();
     }
 
-    // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
-    const $panelContainer = $('.panel-wrapper .panel-container');
+    const jobOpeningsNode = $('.job_openings');
+    const jobPanelNode = $('.job_openings .panel-container');
 
-    this.$panelWrapper
-      .show()
-      .removeClass('hide-on-mobile slide-in')
-      .css('opacity', '1'); // TODO do with CSS
+    jobOpeningsNode.show();
+    jobOpeningsNode.removeClass('hide-on-mobile slide-in');
+    jobOpeningsNode.css('opacity', '1');
 
-    // TODO do with CSS
-    $panelContainer.css('transform', 'initial');
-    $panelContainer.css('-webkit-transform', 'initial');
+    jobPanelNode.css('transform', 'initial');
+    jobPanelNode.css('-webkit-transform', 'initial');
 
-    this.hideJobOffersContent();
-    this.showJobOfferContent(name);
+    SlidePanel.hideJobOffersContent();
+    SlidePanel.showJobOfferContent(name);
 
-    // TODO do with CSS
     // after panel is fully visible show close button
     setTimeout(()=> {
-      $('.panel-wrapper .close-button').fadeIn();
+      $('.job_openings .close-button').fadeIn();
     }, 800)
   }
 
-  // TODO rename to showContent (or better loadContent, see TODO below)
-  showJobOfferContent(name) {
-    // TODO always first hide other JobOfferContents, removing the need for hideJobOfferContent
+  static hideJobOfferPanel() {
+    if (smallScreen()) {
+      $('#fixed-menu').show();
+      $('.job_openings').addClass('hide-on-mobile slide-in');
+    }
+
+    $('.job_content').hide();
+    $('.job-text, .job_openings, .job_openings .panel-container, #fixed-menu, .job_openings .close-button').removeAttr('style');
+
+    //JobList.deselectJobItems();
+  }
+
+  static showJobOfferContent(name) {
     $(`#${name}_content`).show();
   }
 
-  hideJobOfferPanel() {
-    if (smallScreen()) {
-      $('#fixed-menu').show(); // TODO how to make this abstract?
-      this.$panelWrapper.addClass('hide-on-mobile slide-in');
-    }
-
-    $('.job_content').hide(); // TODO rename to generic name panel-content-item?
-    this.$panelWrapper
-      .hide()
-      .addClass('hide-on-mobile slide-in')
-      .removeAttr('style');
-
-    // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
-    const $panelContainer = $('.panel-wrapper .panel-container');
-    $panelContainer.removeAttr('style');
-
-    this.$closeButton.removeAttr('style');
-
-    $('.job-text, #fixed-menu').removeAttr('style');
-  }
-
-  hideJobOffersContent() {
+  static hideJobOffersContent() {
     $('.job_content').hide();
   }
 
