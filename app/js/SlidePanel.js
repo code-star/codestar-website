@@ -2,23 +2,6 @@ import isMobile from './mobileChecker';
 
 const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === 'small' || Foundation.MediaQuery.current === 'medium';
 
-/*
-example for cases:
-
- cases.js
- // this.slideOutArticle = new SlideOutArticle($('#caseName').closest('section').find('.row').first());
- // $('#caseDesc').on('click', '.toggleSlideOutArticle', ev => this.slideOutArticle.toggle());
-
- cases.json
- <button class=\"toggleSlideOutArticle scroll-button button codestar-button\">Test</button>",
-*/
-
-/**
- * TODO documentation
- * //  * expects: ? with .slide-out-article-offset
- //  * ? is giving as $domContext to the constructor
- //  * expects button in ?? to which you should manually bind .toggle, e.g. with $('#caseDesc').on('click', '.toggleSlideOutArticle', ev => this.slideOutArticle.toggle());
- */
 export default class SlidePanel {
 
   constructor($context, onCloseCallback) {
@@ -39,7 +22,7 @@ export default class SlidePanel {
 
   showPanel(contentItemId) {
     if (smallScreen()) {
-      this.$fixedMenu.hide(); // TODO could be done by setting the fixedMenu behind the panel with CSS
+      this.$fixedMenu.hide();
       this.$xorPanelMobile.hide();
     }
 
