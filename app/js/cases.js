@@ -1,4 +1,3 @@
-import SlidePanel from './SlidePanel';
 const cases = require('../data/cases.json');
 
 function getRandomInt(min, max) {
@@ -10,11 +9,6 @@ class CasesTree {
     this.$caseName =$('#caseName');
     this.$caseDesc = $('#caseDesc');
     this.$caseInfo = $('#caseInfo');
-
-    CasesTree.slidePanel = new SlidePanel($('.cases-page'), ()=>{});
-    $('.cases-page').on('click', '.open-panel', () => {
-      CasesTree.slidePanel.showPanel('test');
-    });
 
     const svg = d3.select('body').append('svg').remove();
 
