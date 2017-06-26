@@ -3,9 +3,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  max-height: 100vh;
-  z-index: 10;
 }
+
 
 @media #{$small-only} {
 
@@ -14,7 +13,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-    margin-left: 0;
   }
 
   .panel-wrapper .panel-container .close-button {
@@ -42,7 +40,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-    margin-left: 0;
   }
 
   .panel-wrapper .panel-container .close-button {
