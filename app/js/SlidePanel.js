@@ -32,6 +32,7 @@ export default class SlidePanel {
     $panelContainer.css('transform', 'initial');
     $panelContainer.css('-webkit-transform', 'initial');
 
+    this.hideJobOffersContent();
     this.showJobOfferContent(name);
 
     // TODO do with CSS
@@ -43,7 +44,6 @@ export default class SlidePanel {
 
   // TODO rename to showContent (or better loadContent, see TODO below)
   showJobOfferContent(name) {
-    this.$panelWrapper.find('.panel-content-item').hide();
     // TODO always first hide other JobOfferContents, removing the need for hideJobOfferContent
     $(`#${name}_content`).show();
   }
@@ -54,8 +54,7 @@ export default class SlidePanel {
       this.$panelWrapper.addClass('hide-on-mobile slide-in');
     }
 
-    this.$panelWrapper.find('.panel-content-item').hide();
-
+    $('.job_content').hide(); // TODO rename to generic name panel-content-item?
     this.$panelWrapper
       .hide()
       .addClass('hide-on-mobile slide-in')
@@ -68,6 +67,10 @@ export default class SlidePanel {
     this.$closeButton.removeAttr('style');
 
     $('.job-text, #fixed-menu').removeAttr('style');
+  }
+
+  hideJobOffersContent() {
+    $('.job_content').hide();
   }
 
 }
