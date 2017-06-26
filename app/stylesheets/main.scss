@@ -4,7 +4,6 @@
 @import "../vendor/unitegallery/package/unitegallery/css/unite-gallery.css";
 @import "../vendor/unitegallery/source/unitegallery/themes/video/skin-right-no-thumb.css";
 @import "2_team";
-@import 'partials/slideOutArticle';
 @include foundation-everything($flex: true);
 
 @font-face {
@@ -44,33 +43,6 @@
   #logo {
     width: 70vmin;
   }
-
-  #firstPage .job_openings {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .profile {
-    margin-left: 0;
-  }
-
-  .job_openings .panel-container .close-button {
-    position: absolute;
-    right: 0;
-    left: auto;
-    background: #757C87;
-    width: 2rem;
-    height: 1.75rem;
-    text-align: center;
-    line-height: 1.75rem;
-    font-weight: bold;
-    color: #fff;
-    font-size: 2rem;
-    top: 0;
-    display: block;
-  }
 }
 .inline-logo {
   height: 1em;
@@ -97,38 +69,14 @@
   #logo {
     width: 70vmin;
   }
-
-  #firstPage .job_openings {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .profile {
-    margin-left: 0;
-  }
-
-  .job_openings .panel-container .close-button {
-    position: absolute;
-    right: 0;
-    left: auto;
-    background: #757C87;
-    width: 2rem;
-    height: 1.75rem;
-    text-align: center;
-    line-height: 1.75rem;
-    font-weight: bold;
-    color: #fff;
-    font-size: 2rem;
-    top: 0;
-    display: block;
-  }
 }
 
 @media #{$large-up} {
   ul.job_list_items li a {
     font-size: 1.3em;
+  }
+  .close-button-mobile {
+    display: hidden;
   }
 }
 
@@ -167,8 +115,8 @@ section {
 }
 
 section {
-    min-height: 700px;
-  }
+  min-height: 700px;
+}
 
 .work-arguments li, dd {
   white-space: normal;
@@ -412,7 +360,7 @@ dt {
   @include breakpoint(medium down) {
     height: 2px;
   }
- }
+}
 
 .asterisk {
   font-size: 3.2rem;
@@ -463,10 +411,6 @@ ul.job_list_items li {
   margin-right: 0 !important;
 }
 
-ul.job_list_items li:hover {
-  opacity: .8;
-}
-
 
 ul.job_list_items li a {
   // height: 50px;
@@ -476,8 +420,6 @@ ul.job_list_items li a {
   font-weight: 400;
   font-size: 1.5em;
   padding: 0.7rem 1rem !important;/* !important because this gets overwritten by .menu.simple a*/
-  outline: none;
-
 }
 
 .menu.simple li {
@@ -506,7 +448,7 @@ ul.job_list_items li a {
 }
 .panel-container .close-button {
   position: absolute;
-  left: -2.1rem;
+  left: -3rem;
   background: #757C87;
   width: 3rem;
   height: 2.75rem;
@@ -516,33 +458,49 @@ ul.job_list_items li a {
   color: #fff;
   font-size: 2.75rem;
   top: 0;
-  display: none;
 }
 
-.panel-container .close-button:hover {
-  opacity: .8;
+.panel-container .close-button-mobile {
+  position: absolute;
+  right: 0;
+  background: #757C87;
+  width: 2rem;
+  height: 1.75rem;
+  text-align: center;
+  line-height: 1.75rem;
+  font-weight: bold;
+  color: #fff;
+  font-size: 2rem;
+  top: 0;
+  display: block;
+}
+
+@media #{$medium-only} {
+  .profile {
+    margin-left: 3rem;
+  }
 }
 
 // Slider
 .slide-in {
-	visibility: hidden;
-	transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+  visibility: hidden;
+  transition:visibility 0s linear 0.2s,opacity 0.2s linear;
   padding-left: 0;
 }
 
 .slide-in.is-visible {
-	visibility: visible;
+  visibility: visible;
   opacity: 1;
-	transition: visibility 0s 0s;
+  transition: visibility 0s 0s;
   transition: opacity 0.3s ease-in;
 }
 
 .slide-in-header {
-	position: absolute;
-	top: -50px;
-	width: 90%;
-	height: 50px;
-	transition: top 0.3s 0s;
+  position: absolute;
+  top: -50px;
+  width: 90%;
+  height: 50px;
+  transition: top 0.3s 0s;
 }
 
 .hide-on-mobile.is-visible {
@@ -563,14 +521,14 @@ ul.job_list_items li a {
 
 
 .is-visible .slide-in-header {
-	top: 0;
-	transition: top 0.3s 0.3s;
+  top: 0;
+  transition: top 0.3s 0.3s;
 }
 .arrow-left {
-	width: 0;
-	height: 0;
-	border-top: 20px solid transparent;
-	border-bottom: 20px solid transparent;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
   border-right:20px solid #fff;
   position: absolute;
   left: -15px;
@@ -580,15 +538,15 @@ ul.job_list_items li a {
   background: #fff;
   color: #3B4E6E;
   height: 100vh;
-	transition-property: transform;
-	transition-duration: 0.3s;
-	transition-delay: 0.3s;
- 	transform: translate3d(100%, 0, 0);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+  transform: translate3d(100%, 0, 0);
 }
 
 .is-visible .panel-container {
-	transform: translate3d(0, 0, 0);
-	transition-delay: 0s;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0s;
 }
 .panel-content {
   padding: 20px;
@@ -737,30 +695,30 @@ ul.key_skills li {
 }
 
 #curved-lines {
-    position: absolute;
-    max-width: none;
-    width: 100vw;
-    height: 200vw;
-    top: -100vw;
-    transform: translateY(-50vh);
+  position: absolute;
+  max-width: none;
+  width: 100vw;
+  height: 200vw;
+  top: -100vw;
+  transform: translateY(-50vh);
 }
 #big-lines {
-    position: absolute;
-    max-width: none;
-    height: 100vh;
-    width: 13.73vh;
-    top: -100vh;
-    left: -6.866vh;
-    transform: translateX(50vw);
+  position: absolute;
+  max-width: none;
+  height: 100vh;
+  width: 13.73vh;
+  top: -100vh;
+  left: -6.866vh;
+  transform: translateX(50vw);
 }
 #small-lines {
-    position: absolute;
-    max-width: none;
-    height: 100vh;
-    width: 13.73vh;
-    top: -100vh;
-    left: -6.866vh;
-    transform: translateX(50vw);
+  position: absolute;
+  max-width: none;
+  height: 100vh;
+  width: 13.73vh;
+  top: -100vh;
+  left: -6.866vh;
+  transform: translateX(50vw);
 }
 
 .featureTitle {
@@ -982,20 +940,20 @@ p a {
 }
 
 p a:link {
-    color: #2199e8;
+  color: #2199e8;
 }
 
 p a:visited {
-    color: #2199e8;
+  color: #2199e8;
 }
 
 p a:hover {
-    color: #2199e8;
-    opacity: 0.8;
+  color: #2199e8;
+  opacity: 0.8;
 }
 
 p a:active {
-    color: #2199e8;
+  color: #2199e8;
 }
 
 .navigate-arrows {
