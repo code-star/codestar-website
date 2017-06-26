@@ -5,10 +5,7 @@ const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === '
 export default class SlidePanel {
 
   constructor($context, onCloseCallback) {
-    this.$fixedMenu = $('#fixed-menu');
     this.$panelWrapper = $context.find('.panel-wrapper');
-    // If the panel is open, hide this element on mobile. Usually the main content of the page
-    this.$xorPanelMobile = $context.find('.xor-panel-mobile');
     this.$closeButton = this.$panelWrapper.find('.close-button');
     this.$closeButton.click(() => {
       this.hidePanel();
@@ -16,15 +13,20 @@ export default class SlidePanel {
     });
   }
 
-  // TODO test on mobile/small screen
+  // TODO find all occurrences of .job-text and extract
   // TODO try on another page (cases)
   // TODO extract template
+  // TODO test on mobile/small screen
 
   showPanel(contentItemId) {
     if (smallScreen()) {
-      this.$fixedMenu.hide();
-      this.$xorPanelMobile.hide();
+      $('#fixed-menu').hide(); // TODO convert to $fixedMenu, but not relative to $context
+      $('.job-text').hide();
     }
+
+    // TODO if the other things can be done with CSS, remove this
+    // Must be relative to $context
+    const $panelContainer = this.$panelWrapper.find('.panel-container');
 
     this.$panelWrapper
       .show()
@@ -32,8 +34,6 @@ export default class SlidePanel {
       .css('opacity', '1'); // TODO do with CSS
 
     // TODO do with CSS, .panel-container is relative to $panelWrapper, so no JS needed
-    // Must be relative to $context
-    const $panelContainer = this.$panelWrapper.find('.panel-container');
     $panelContainer.css('transform', 'initial');
     $panelContainer.css('-webkit-transform', 'initial');
 
@@ -42,19 +42,18 @@ export default class SlidePanel {
     // TODO do with CSS
     // after panel is fully visible show close button
     setTimeout(()=> {
-      this.$closeButton.fadeIn();
+      this.$panelWrapper.find('.close-button').fadeIn();
     }, 800)
   }
 
   loadContent(contentItemId) {
     this.$panelWrapper.find('.panel-content-item').hide();
-    this.$panelWrapper.find(`#${contentItemId}_content`).show();
+    $(`#${contentItemId}_content`).show();
   }
 
   hidePanel() {
     if (smallScreen()) {
-      this.$fixedMenu.show();
-      this.$xorPanelMobile.show();
+      $('#fixed-menu').show();
       this.$panelWrapper.addClass('hide-on-mobile slide-in');
     }
 
@@ -66,10 +65,12 @@ export default class SlidePanel {
       .removeAttr('style');
 
     // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
-    const $panelContainer = this.$panelWrapper.find('.panel-container');
+    const $panelContainer = $('.panel-wrapper .panel-container');
     $panelContainer.removeAttr('style');
 
-    this.$closeButton.hide();
+    this.$closeButton.removeAttr('style');
+
+    $('.job-text, #fixed-menu').removeAttr('style');
   }
 
 }
