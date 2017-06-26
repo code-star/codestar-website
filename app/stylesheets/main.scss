@@ -166,8 +166,8 @@ section {
 }
 
 section {
-    min-height: 700px;
-  }
+  min-height: 700px;
+}
 
 .work-arguments li, dd {
   white-space: normal;
@@ -411,7 +411,7 @@ dt {
   @include breakpoint(medium down) {
     height: 2px;
   }
- }
+}
 
 .asterisk {
   font-size: 3.2rem;
@@ -524,24 +524,24 @@ ul.job_list_items li a {
 
 // Slider
 .slide-in {
-	visibility: hidden;
-	transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+  visibility: hidden;
+  transition:visibility 0s linear 0.2s,opacity 0.2s linear;
   padding-left: 0;
 }
 
 .slide-in.is-visible {
-	visibility: visible;
+  visibility: visible;
   opacity: 1;
-	transition: visibility 0s 0s;
+  transition: visibility 0s 0s;
   transition: opacity 0.3s ease-in;
 }
 
 .slide-in-header {
-	position: absolute;
-	top: -50px;
-	width: 90%;
-	height: 50px;
-	transition: top 0.3s 0s;
+  position: absolute;
+  top: -50px;
+  width: 90%;
+  height: 50px;
+  transition: top 0.3s 0s;
 }
 
 .hide-on-mobile.is-visible {
@@ -562,14 +562,14 @@ ul.job_list_items li a {
 
 
 .is-visible .slide-in-header {
-	top: 0;
-	transition: top 0.3s 0.3s;
+  top: 0;
+  transition: top 0.3s 0.3s;
 }
 .arrow-left {
-	width: 0;
-	height: 0;
-	border-top: 20px solid transparent;
-	border-bottom: 20px solid transparent;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
   border-right:20px solid #fff;
   position: absolute;
   left: -15px;
@@ -579,15 +579,15 @@ ul.job_list_items li a {
   background: #fff;
   color: #3B4E6E;
   height: 100vh;
-	transition-property: transform;
-	transition-duration: 0.3s;
-	transition-delay: 0.3s;
- 	transform: translate3d(100%, 0, 0);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s;
+  transform: translate3d(100%, 0, 0);
 }
 
 .is-visible .panel-container {
-	transform: translate3d(0, 0, 0);
-	transition-delay: 0s;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0s;
 }
 .panel-content {
   padding: 20px;
@@ -736,30 +736,30 @@ ul.key_skills li {
 }
 
 #curved-lines {
-    position: absolute;
-    max-width: none;
-    width: 100vw;
-    height: 200vw;
-    top: -100vw;
-    transform: translateY(-50vh);
+  position: absolute;
+  max-width: none;
+  width: 100vw;
+  height: 200vw;
+  top: -100vw;
+  transform: translateY(-50vh);
 }
 #big-lines {
-    position: absolute;
-    max-width: none;
-    height: 100vh;
-    width: 13.73vh;
-    top: -100vh;
-    left: -6.866vh;
-    transform: translateX(50vw);
+  position: absolute;
+  max-width: none;
+  height: 100vh;
+  width: 13.73vh;
+  top: -100vh;
+  left: -6.866vh;
+  transform: translateX(50vw);
 }
 #small-lines {
-    position: absolute;
-    max-width: none;
-    height: 100vh;
-    width: 13.73vh;
-    top: -100vh;
-    left: -6.866vh;
-    transform: translateX(50vw);
+  position: absolute;
+  max-width: none;
+  height: 100vh;
+  width: 13.73vh;
+  top: -100vh;
+  left: -6.866vh;
+  transform: translateX(50vw);
 }
 
 .featureTitle {
@@ -981,20 +981,20 @@ p a {
 }
 
 p a:link {
-    color: #2199e8;
+  color: #2199e8;
 }
 
 p a:visited {
-    color: #2199e8;
+  color: #2199e8;
 }
 
 p a:hover {
-    color: #2199e8;
-    opacity: 0.8;
+  color: #2199e8;
+  opacity: 0.8;
 }
 
 p a:active {
-    color: #2199e8;
+  color: #2199e8;
 }
 
 .navigate-arrows {
