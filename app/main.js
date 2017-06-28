@@ -24,6 +24,7 @@ import { JobList } from './js/JobList';
 import { FullPage } from './js/FullPage';
 import { Decorations } from './js/Decorations';
 import { ContactForm } from './js/ContactForm';
+import Menu from './js/Menu';
 import { trackUser } from './js/google.analytics';
 
 const jobList = new JobList();
@@ -36,6 +37,7 @@ const casestree = getCasesTree();
 const gradients = getGradients();
 const backgrounds = gradients.backgrounds;
 const filters = gradients.filters;
+const menu = new Menu($('.asterisk'));
 
 $(document).ready(function() {
   $('#featureList').append(features);
@@ -44,14 +46,14 @@ $(document).ready(function() {
   $('#casesTree').append(casestree.svg);
   $('#sunburst').append(getSunburst());
 
-  decorations.closeMenuIfOpen();
+  menu.closeMenuIfOpen();
   decorations.applyWhiteLineFix(backgrounds);
   decorations.addQueueExtension();
   decorations.addCallToActionClickListeners();
-  decorations.addMenuClickListener();
+  menu.addMenuClickListener();
   decorations.removeTabIndexFromPage();
   if(isMobile.any()) {
-      decorations.closeMenuIfOpen();
+    menu.closeMenuIfOpen();
   }
 
   fullPage.initialize();

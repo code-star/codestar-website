@@ -1,7 +1,7 @@
 require('fullpage.js/jquery.fullPage.scss');
 require('fullpage.js/jquery.fullPage');
-import { Decorations } from './Decorations';
 import { getPixel } from './pixelbg';
+import Menu from './Menu';
 
 export class FullPage {
   constructor() {
@@ -41,15 +41,15 @@ export class FullPage {
     let that = this;
 
     this.fpOnLeave.push(function(index, nextIndex, direction) {
-      new Decorations().closeMenuIfOpen();
-    })
+      new Menu().closeMenuIfOpen();
+    });
 
     this.fpOnLeave.push(function(index, nextIndex, direction) {
       if (!that.shown && nextIndex == 7) {
         that.shown = true;
         setTimeout(() => $('.featureIcon:first').trigger('click'), 1000);
       }
-    })
+    });
 
     // Hide menu logo on center page
     this.fpOnLeave.push(function(index, nextIndex, direction) {
