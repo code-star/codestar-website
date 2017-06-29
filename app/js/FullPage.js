@@ -53,14 +53,14 @@ export class FullPage {
 
     // Hide menu logo on center page
     this.fpOnLeave.push(function(index, nextIndex, direction) {
-      if (nextIndex === that.centerpage) {
+      if (nextIndex === that.centerPage) {
         $('.navigate-arrows').fadeIn(350);
         $('#menu-logo').fadeOut(350);
       } else {
         $('.navigate-arrows').fadeOut(350);
         $('#menu-logo').fadeIn(350);
       }
-    })
+    });
 
     // Reset the team graph when entering its slide
     this.fpOnLeave.push(function(index, nextIndex, direction) {
