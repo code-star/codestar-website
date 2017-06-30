@@ -56,10 +56,12 @@ $hamburger-hover-filter: opacity(50%) !default;
 }
 
 .hamburger-box {
-  width: $hamburger-layer-width;
-  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
   display: inline-block;
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+  margin-top: 2px;
   position: relative;
+  vertical-align: top;
+  width: $hamburger-layer-width;
 }
 
 .hamburger-inner {
@@ -124,6 +126,10 @@ $hamburger-hover-filter: opacity(50%) !default;
 &.is-active {
     $height: 5px;
     $border-radius: 2px;
+
+  .hamburger-box {
+    margin-top: 1px;
+  }  
 
   .hamburger-inner {
       height: $height;
