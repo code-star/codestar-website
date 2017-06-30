@@ -1,25 +1,23 @@
 import { CONTACT_EMAIL_ADDRESS } from './constants';
 export class ContactForm {
+
   constructor() {
     $('#contact_form').foundation();
   }
 
   bindValidationToForm() {
+    var that = this; // No this context within the $() context.
     $('#contact_form')
-    .bind('submit', function(e) {
-      e.preventDefault();
-    })
-    .bind('formvalid.zf.abide', function(e,$form) {
-      let serializedForm = $form.serializeArray();
-      let messageData = {};
-      serializedForm.map(field => {
-        messageData[field.name] = field.value;
-      });
-
-      that.submitForm();
-    });
+      .on('submit', function(e) {
+        e.preventDefault();
+      })
+      .on('formvalid.zf.abide', (e,$form) => {
+        e.preventDefault();
+        this.submitForm(createMessageData($form));
+      })
   }
-  submitForm() {
+
+  submitForm(messageData) {
     $.ajax({
       url: '//formspree.io/'+CONTACT_EMAIL_ADDRESS,
       method: 'POST',
@@ -32,6 +30,7 @@ export class ContactForm {
       $('.email-fail').toggle('slow');
     });
   }
+
   addClickListeners() {
     $('.email-success .close-button').click(() => {
       $('.email-success').toggle('slow');
@@ -41,3 +40,10 @@ export class ContactForm {
     });
   }
 }
+
+function createMessageData($form) {
+  let messageData = {};
+  return $form.serializeArray().map(field => {
+    messageData[field.name] = field.value;
+  });
+ }
