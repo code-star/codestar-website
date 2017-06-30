@@ -16,13 +16,10 @@ section#secondPage.special.section(data-scrollax-parent='true', style='display:n
       .small-12.large-2
       .small-12.large-8
         .talkscontainer.normalscroll(style="margin-left:4vw")
-          - var talks = require('../data/talks.json')
           div(style="width:100%")
             center
               h3 Videos
             #gallery-video(style="display:none;")
-              each video in talks.videos
-                div(data-type="youtube",data-videoid=video.id,data-title=video.title,data-description=video.description)
       .small-12.large-2
   .slide.row.align-middle(data-anchor="teamGraph",data-scrollax="properties: { 'translateX': '-20%' }")
     .small-12.large-12.columns
