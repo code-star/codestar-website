@@ -6,6 +6,11 @@
 
 ---
 
+# Github and branches
+
+**Pay attention!** The default branch is `develop` on Github. This is mainly to prevent default Pull Requests directly mutating our `master` branch, which reflects the production environment.
+Read more about developing under `Development` in this Readme.
+
 # Howto
 
 ## Installing / Upgrading
