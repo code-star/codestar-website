@@ -27,7 +27,7 @@ export default class VideoPlayer {
   }
 
   static fetchVideos(apiKey, playlistId, fallbackValue) {
-    const requestUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&key=${apiKey}&playlistId=${playlistId}`;
+    const requestUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&key=${apiKey}&playlistId=${playlistId}&maxResults=50`;
 
     return new Promise(resolve => {
       fetch(requestUrl)
