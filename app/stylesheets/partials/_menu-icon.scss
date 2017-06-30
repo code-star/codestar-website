@@ -10,11 +10,11 @@
 // ==================================================
 $hamburger-padding-x: 0 !default;
 $hamburger-padding-y: 0 !default;
-$hamburger-layer-width: 20px !default;
-$hamburger-layer-height: 3px !default;
-$hamburger-layer-spacing: 4px !default;
+$hamburger-layer-width: 0.4em !default;
+$hamburger-layer-height: 0.06em !default;
+$hamburger-layer-spacing: 0.08em !default;
 $hamburger-layer-color: #fff !default;
-$hamburger-layer-border-radius: 2px !default;
+$hamburger-layer-border-radius: 0.04em !default;
 $hamburger-hover-opacity: 0.7 !default;
 $hamburger-hover-transition-duration: 0.15s !default;
 $hamburger-hover-transition-timing-function: linear !default;
@@ -45,11 +45,11 @@ $hamburger-hover-filter: opacity(50%) !default;
   margin: 0;
   overflow: visible;
 
-&:hover {
-  @if $hamburger-hover-use-filter == true {
+  &:hover {
+    @if $hamburger-hover-use-filter == true {
       filter: $hamburger-hover-filter;
     }
-  @else {
+    @else {
       opacity: $hamburger-hover-opacity;
     }
   }
@@ -69,7 +69,7 @@ $hamburger-hover-filter: opacity(50%) !default;
   top: 50%;
   margin-top: $hamburger-layer-height / -2;
 
-&, &::before, &::after {
+  &, &::before, &::after {
     width: $hamburger-layer-width;
     height: $hamburger-layer-height;
     background-color: $hamburger-layer-color;
@@ -80,16 +80,16 @@ $hamburger-hover-filter: opacity(50%) !default;
     transition-timing-function: ease;
   }
 
-&::before, &::after {
+  &::before, &::after {
     content: "";
     display: block;
   }
 
-&::before {
+  &::before {
     top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
   }
 
-&::after {
+  &::after {
     bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
   }
 }
@@ -104,53 +104,51 @@ $hamburger-hover-filter: opacity(50%) !default;
  * Vortex
  */
 .hamburger--vortex {
-.hamburger-inner {
+  .hamburger-inner {
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
-  &::before, &::after {
+    &::before, &::after {
       transition-duration: 0s;
       transition-delay: 0.1s;
       transition-timing-function: linear;
     }
 
-  &::before {
+    &::before {
       transition-property: top, opacity;
     }
 
-  &::after {
+    &::after {
       transition-property: bottom, transform;
     }
   }
 
-&.is-active {
-    $height: 5px;
-    $border-radius: 2px;
+  &.is-active {
+    $height: 0.1em;
+    $border-radius: 0.04em;
 
-  .hamburger-box {
-    margin-top: 1px;
-  }  
+    .hamburger-box {
+      margin-top: 1px;
+    }
 
-  .hamburger-inner {
+    .hamburger-inner {
       height: $height;
       transform: rotate(750deg);
       transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
       border-radius: $border-radius;
-      //background-color: red;
 
-    &::before, &::after {
+      &::before, &::after {
         transition-delay: 0s;
         height: $height;
         border-radius: $border-radius;
       }
 
-    &::before {
+      &::before {
         top: 0;
         transform: rotate(240deg);
-        //background-color: blue;
       }
 
-    &::after {
+      &::after {
         bottom: 0;
         transform: rotate(115deg);
       }
