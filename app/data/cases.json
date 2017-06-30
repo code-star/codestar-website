@@ -4,7 +4,7 @@
       "id": "case42education",
       "company": "42 Education",
       "project": "Met code een lean startup een kickstart geven",
-      "description": "Een startup als klant. Dat betekent een grote tijdsdruk, enorme flexibiliteit en supersnel schakelen in een informele sfeer. Door voor moderne Continuous Delivery en Cloud technieken te kiezen waren we vanaf dag één productief.<br><br>Het doel was kinderen te laten leren door te gamen met vrienden. Realtime met grote hoeveelheden events. De bijbehorende software architectuur zetten wij daarom geheel reactive op. We maakten gebruik van real-time event notificatie op basis van reactive streams, en horizontaal schalende event persistentie op basis van event sourcing met Cassandra.<br><br><a class=\"scroll-button button codestar-button\" href=\"http://42education.com\" target=\"_blank\">Reference</a>",
+      "description": "Een startup als klant. Dat betekent een grote tijdsdruk, enorme flexibiliteit en supersnel schakelen in een informele sfeer. Door voor moderne Continuous Delivery en Cloud technieken te kiezen waren we vanaf dag één productief.<br><br>Het doel was kinderen te laten leren door te gamen met vrienden. Realtime met grote hoeveelheden events. De bijbehorende software architectuur zetten wij daarom geheel reactive op. We maakten gebruik van real-time event notificatie op basis van reactive streams, en horizontaal schalende event persistentie op basis van event sourcing met Cassandra.<br><br><a class=\"scroll-button button codestar-button\" href=\"http://42education.com\" target=\"_blank\">Lees meer</a>",
       "icon": "42_education.png",
       "background": ""
     },
@@ -12,7 +12,7 @@
       "id": "caserabobank",
       "company": "Rabobank",
       "project": "Ontwikkelaars en bankiers weer dezelfde taal laten spreken",
-      "description": "<button class=\"button open-panel\" style=\"display: none;\">test</button>Voor het Rabobank Hypotheekdossier hebben we de wijze van het berekenen van de hypotheken aangepakt. De bestaande Java-code was in de loop der tijd dermate complex geworden, dat deze zowel moeilijk te begrijpen als te testen was. Ontwikkelaars en bankiers spraken niet meer dezelfde taal.<br><br>Door een DSL te ontwikkelen in Scala hebben we de code eenvoudig, leesbaar en testbaar gemaakt. Niet alleen voor programmeurs, maar ook voor de business. En dat in een fractie van de hoeveelheid code die nodig was voor de oude implementatie in Java. Uiteindelijk was de business niet alleen in staat om de code te lezen, maar hebben ze zelfs berekeningen zelf geïmplementeerd. De business die de taal van de programmeur spreekt. Doel gehaald.",
+      "description": "Voor het Rabobank Hypotheekdossier hebben we de wijze van het berekenen van de hypotheken aangepakt. De bestaande Java-code was in de loop der tijd dermate complex geworden, dat deze zowel moeilijk te begrijpen als te testen was. Ontwikkelaars en bankiers spraken niet meer dezelfde taal.<br><br>Door een DSL te ontwikkelen in Scala hebben we de code eenvoudig, leesbaar en testbaar gemaakt. Niet alleen voor programmeurs, maar ook voor de business. En dat in een fractie van de hoeveelheid code die nodig was voor de oude implementatie in Java. Uiteindelijk was de business niet alleen in staat om de code te lezen, maar hebben ze zelfs berekeningen zelf geïmplementeerd. De business die de taal van de programmeur spreekt. Doel gehaald.",
       "icon": "rabobank.png",
       "background": ""
     },
@@ -20,7 +20,7 @@
       "id": "caseSKG",
       "company": "SKG",
       "project": "Niet optimaliseren, maar compleet vernieuwen",
-      "description": "Een klassiek voorbeeld van een klant met een applicatie die niet meer voldoet aan de moderne eisen. De klant zoekt een nieuw betaalplatform dat apps en moderne devices ondersteunt, snelle live gang van features mogelijk maakt en minder beheerlast met zich meebrengt. Het huidige verouderde platform is geheel, inclusief hosting en fysieke servers, in house en volledig op maat gemaakt voor SKG. Wij bouwen een nieuw reactive platform dat schaalt, onderhoudbaar is, gebruikmakend van moderne technieken en methodologieën als Microservices, Platform as a Service en Continuous Delivery.",
+      "description": "Een klassiek voorbeeld van een klant met een applicatie die niet meer voldoet aan de moderne eisen. De klant zoekt een nieuw betaalplatform dat apps en moderne devices ondersteunt, snelle live gang van features mogelijk maakt en minder beheerlast met zich meebrengt. Het huidige verouderde platform is geheel, inclusief hosting en fysieke servers, in house en volledig op maat gemaakt voor SKG. Wij bouwen een nieuw reactive platform dat schaalt, onderhoudbaar is, gebruikmakend van moderne technieken en methodologieën als Microservices, Platform as a Service en Continuous Delivery.<br><br><button class=\"scroll-button button codestar-button open-panel\">Lees meer</button>",
       "icon": "skg.png",
       "background": ""
     },

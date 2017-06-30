@@ -13,7 +13,7 @@ class CasesTree {
 
     CasesTree.slidePanel = new SlidePanel($('.cases-page'), ()=>{});
     $('.cases-page').on('click', '.open-panel', () => {
-      CasesTree.slidePanel.showPanel('test');
+      CasesTree.slidePanel.showPanel('skg');
     });
 
     const svg = d3.select('body').append('svg').remove();
