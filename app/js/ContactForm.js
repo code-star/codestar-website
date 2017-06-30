@@ -42,10 +42,8 @@ export class ContactForm {
 }
 
 function createMessageData($form) {
-  let serializedForm = $form.serializeArray();
   let messageData = {};
-  serializedForm.map(field => {
+  return $form.serializeArray().map(field => {
     messageData[field.name] = field.value;
   });
-  return messageData;
-}
+ }
