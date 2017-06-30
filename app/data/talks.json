@@ -35,6 +35,11 @@
   ],
   "videos" : [
     {
+      "id": "NH9W5_kIE7w",
+      "title": "Command line curiosities",
+      "description": "Who needs a graphical interface anyway? - Ordina Code&Comedy"
+    },
+    {
       "id": "W37Mp3mBYLw",
       "title": "Growing a DSL for financial calculations",
       "description": "Typelevel Summit Oslo, May 2016"
