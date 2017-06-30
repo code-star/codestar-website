@@ -3,17 +3,12 @@ export class ContactForm {
 
   constructor() {
     $('#contact_form').foundation();
-    console.log(this);
   }
 
   bindValidationToForm() {
-    console.log($().jquery);
-    console.log('We gaan enorm binden.');
-    console.log(this);
-    var that = this;
+    var that = this; // No this context within the $() context.
     $('#contact_form')
       .on('submit', function(e) {
-        console.log(e);
         e.preventDefault();
       })
       .on('formvalid.zf.abide', function(e,$form) {
@@ -22,8 +17,6 @@ export class ContactForm {
         that.submitForm(messageData);
       })
       .on('forminvalid.zf.abide', function(e, $form) {
-        console.log(e);
-        console.log($form);
         let messageData = this.createMessageData($form)
       });
   }
