@@ -11,14 +11,10 @@ export class ContactForm {
       .on('submit', function(e) {
         e.preventDefault();
       })
-      .on('formvalid.zf.abide', function(e,$form) {
+      .on('formvalid.zf.abide', (e,$form) => {
         e.preventDefault();
-        let messageData = that.createMessageData($form)
-        that.submitForm(messageData);
+        this.submitForm(createMessageData($form));
       })
-      .on('forminvalid.zf.abide', function(e, $form) {
-        let messageData = this.createMessageData($form)
-      });
   }
 
   submitForm(messageData) {
@@ -43,13 +39,13 @@ export class ContactForm {
       $('.email-fail').toggle('slow');
     });
   }
+}
 
-  createMessageData($form) {
-    let serializedForm = $form.serializeArray();
-    let messageData = {};
-    serializedForm.map(field => {
-      messageData[field.name] = field.value;
-    });
-    return messageData;
-  }
+function createMessageData($form) {
+  let serializedForm = $form.serializeArray();
+  let messageData = {};
+  serializedForm.map(field => {
+    messageData[field.name] = field.value;
+  });
+  return messageData;
 }
