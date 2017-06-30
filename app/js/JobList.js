@@ -2,7 +2,7 @@ import SlidePanel from './SlidePanel';
 
 // TODO the arrow pointing at the selected job is missing. Was there in the version of beginning of june
 
-export class JobList {
+export default class JobList {
   constructor() {
     JobList.initEvents();
     function onCloseCallback() {
