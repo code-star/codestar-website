@@ -1,5 +1,4 @@
-import {MAX_VIDEO_DESCRIPTION_LENGTH} from './constants';
-const FALLBACK_VIDEOS = require('../data/talks.json').videos;
+import {FALLBACK_VIDEOS, MAX_VIDEO_DESCRIPTION_LENGTH} from './constants';
 
 export default class VideoPlayer {
   constructor(containerId, apiKey, playlistId) {
@@ -55,12 +54,10 @@ export default class VideoPlayer {
   }
 
   static toVideoItem(ytVideoItem) {
-    const description = ytVideoItem.snippet.description;
-
     return {
       id: ytVideoItem.contentDetails.videoId,
       title: ytVideoItem.snippet.title,
-      description: VideoPlayer.limitText(description, MAX_VIDEO_DESCRIPTION_LENGTH)
+      description: VideoPlayer.limitText(ytVideoItem.snippet.description, MAX_VIDEO_DESCRIPTION_LENGTH)
     }
   }
 
