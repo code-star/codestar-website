@@ -43,6 +43,7 @@ config.plugins = (config.plugins || []).concat([
   new HtmlWebpackPlugin({
     filename: 'index.html',
     template: 'app/index.pug',
+    favicon: 'app/img/favicon.ico',
     inject: 'body'
   }),
   new HtmlWebpackPlugin({

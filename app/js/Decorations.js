@@ -1,9 +1,5 @@
 export class Decorations {
-  closeMenuIfOpen() {
-    if ($('.fixed-menu .menu').css('display') !== 'none') {
-      $('.fixed-menu .menu').fadeOut(350);
-    }
-  }
+
   applyWhiteLineFix(backgrounds) {
     $('.special').each((i, element) => {
       for (var j = 0; j < backgrounds.length; ++j) {
@@ -40,9 +36,6 @@ export class Decorations {
     })
   }
 
-  addMenuClickListener() {
-    $('.asterisk').click(() => $('.fixed-menu .menu').fadeToggle(350));
-  }
   removeTabIndexFromPage() {
     $('input, select, textarea, button, a').prop('tabIndex', -1);
   }
