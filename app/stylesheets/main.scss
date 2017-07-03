@@ -137,6 +137,12 @@ dt {
   position: relative;
 }
 
+.content {
+  @include breakpoint(medium down) {
+    height: 100%;
+  }
+}
+
 .decorations {
   width: 100%;
 }
