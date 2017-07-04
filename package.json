@@ -1,6 +1,6 @@
 {
   "name": "codestar-website",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "The website for code.star",
   "private": true,
   "main": "index.js",
@@ -20,7 +20,7 @@
     "responsive",
     "ordina"
   ],
-  "author": "Ordina",
+  "author": "Codestar",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/code-star/codestar-website/issues"
