@@ -1,6 +1,6 @@
 /* eslint-env jasmine */
 
-import { JobList } from '../app/js/JobList';
+import JobList from '../app/js/JobList';
 
 describe('JobList', function() {
 

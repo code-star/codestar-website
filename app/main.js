@@ -8,6 +8,7 @@ require('./vendor/unitegallery');
 
 
 import * as d3 from './vendor/d3';
+import {GOOGLE_API_KEY, YOUTUBE_PLAYLIST_ID} from './js/constants';
 import PointerEventsPolyfill from './libs/pointer_events_polyfill';
 import isMobile from './js/mobileChecker';
 import { getSunburst } from './js/sunburst';
@@ -20,13 +21,16 @@ import { getFeatures } from './js/features';
 import { getGradients } from './js/backgrounds';
 import './libs/foundation';
 import currentBrowser from './js/browserChecker';
-import { JobList } from './js/JobList';
+import JobList from './js/JobList';
+import VideoPlayer from './js/VideoPlayer';
 import { FullPage } from './js/FullPage';
 import { Decorations } from './js/Decorations';
 import { ContactForm } from './js/ContactForm';
+import Menu from './js/Menu';
 import { trackUser } from './js/google.analytics';
 
 const jobList = new JobList();
+const videoPlayer = new VideoPlayer('#gallery-video', GOOGLE_API_KEY, YOUTUBE_PLAYLIST_ID);
 const contactForm = new ContactForm();
 const decorations = new Decorations();
 const fullPage = new FullPage();
@@ -36,6 +40,7 @@ const casestree = getCasesTree();
 const gradients = getGradients();
 const backgrounds = gradients.backgrounds;
 const filters = gradients.filters;
+const menu = new Menu($('.asterisk'));
 
 $(document).ready(function() {
   $('#featureList').append(features);
@@ -44,14 +49,14 @@ $(document).ready(function() {
   $('#casesTree').append(casestree.svg);
   $('#sunburst').append(getSunburst());
 
-  decorations.closeMenuIfOpen();
+  menu.closeMenuIfOpen();
   decorations.applyWhiteLineFix(backgrounds);
   decorations.addQueueExtension();
   decorations.addCallToActionClickListeners();
-  decorations.addMenuClickListener();
+  menu.addMenuClickListener();
   decorations.removeTabIndexFromPage();
   if(isMobile.any()) {
-      decorations.closeMenuIfOpen();
+    menu.closeMenuIfOpen();
   }
 
   fullPage.initialize();
@@ -82,11 +87,6 @@ $(document).ready(function() {
   });
   $('#gallery-launchevent').unitegallery({
     tiles_type:'nested'
-  });
-
-  $('#gallery-video').unitegallery({
-	  gallery_theme: 'video',
-      theme_skin: 'right-no-thumb'
   });
 
   $('#gallery-akkathon').unitegallery({

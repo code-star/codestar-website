@@ -1,10 +1,15 @@
-![Build Status](https://travis-ci.org/codestar/codestar-website.svg?branch=master)
+[![Build Status](https://travis-ci.org/code-star/codestar-website.svg?branch=develop)](https://travis-ci.org/code-star/codestar-website)
 
 <img align=center src=https://cloud.githubusercontent.com/assets/4116708/12473911/e67fdd44-c016-11e5-9c21-5714e07549fe.png width=450 />
 
 *Passionate programmers standing to make a change*
 
 ---
+
+# Github and branches
+
+**Pay attention!** The default branch is `develop` on Github. This is mainly to prevent default Pull Requests directly mutating our `master` branch, which reflects the production environment.
+Read more about developing under `Development` in this Readme.
 
 # Howto
 

@@ -51,11 +51,6 @@ ul.job_list_items li a {
   white-space: normal;
 }
 
-.content {
-  @include breakpoint(medium down) {
-    height: 100%;
-  }
-}
 
 .arrow-left {
   width: 0;

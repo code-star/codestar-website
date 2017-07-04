@@ -7,6 +7,7 @@
 @import "partials/jobs";
 @import "partials/slide-panel";
 @import "partials/menu";
+@import "partials/menu-icon";
 @include foundation-everything($flex: true);
 
 @font-face {
@@ -134,6 +135,12 @@ dt {
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+
+.content {
+  @include breakpoint(medium down) {
+    height: 100%;
+  }
 }
 
 .decorations {
