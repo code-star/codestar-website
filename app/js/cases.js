@@ -33,12 +33,12 @@ class CasesTree {
     const links = this.getLinks();
 
     force
-      .nodes(cases.nodes)
-      .links(links)
-      .start();
+    .nodes(cases.nodes)
+    .links(links)
+    .start();
 
-    svg
-      .append('defs')
+  svg
+  .append('defs')
       .selectAll('.node')
       .data(cases.nodes).enter()
       .append('pattern')
@@ -48,31 +48,31 @@ class CasesTree {
       .attr('height', '100%')
       .attr('width', '100%')
       .attr('viewBox', '0 0 120 120')
-      .append('image')
-      .attr('xlink:href', function(c) {return require('../img/Cases/' + c.icon)})
-      .attr('x', 0)
-      .attr('y', 0)
-      .attr('width', 120)
-      .attr('height', 120)
-      /* IE 10 Doesn't support SVG filters and breaks the graphic if used. Curiously this doesn't happen in IE9 */
-      .style('filter', (navigator.appVersion.indexOf('MSIE 10') === -1)?'url(#desaturate)':'');
+          .append('image')
+          .attr('xlink:href', function(c) {return require('../img/Cases/' + c.icon)})
+          .attr('x', 0)
+          .attr('y', 0)
+          .attr('width', 120)
+          .attr('height', 120)
+          /* IE 10 Doesn't support SVG filters and breaks the graphic if used. Curiously this doesn't happen in IE9 */
+          .style('filter', (navigator.appVersion.indexOf('MSIE 10') === -1)?'url(#desaturate)':'');
 
     const link = svg.selectAll('.link')
-      .data(links)
-      .enter().append('line')
-      .attr('class', 'case-link');
+    .data(links)
+    .enter().append('line')
+    .attr('class', 'case-link');
 
     const node = svg.selectAll('.node')
-      .data(cases.nodes)
-      .enter().append('circle')
-      .attr('class', 'case-node')
-      .attr('r', () => getRandomInt(40, 45))
-      .attr('id', function(c) {return c.id })
-      .style('fill', function(c) {return 'url(#icon' + c.icon + ')'})
-      .call(force.drag);
+    .data(cases.nodes)
+    .enter().append('circle')
+    .attr('class', 'case-node')
+    .attr('r', () => getRandomInt(40, 45))
+    .attr('id', function(c) {return c.id })
+    .style('fill', function(c) {return 'url(#icon' + c.icon + ')'})
+    .call(force.drag);
 
     node.append('title')
-      .text(function(d) { return d.company; });
+    .text(function(d) { return d.company; });
 
     node.on('mousedown', function(d) {
       var n = d3.select(this);
@@ -81,28 +81,29 @@ class CasesTree {
       n.attr('data-startcy', n.attr('cy'))
     })
 
-    const self = this;
-    node.on('click', function(d) {
+  const self = this;node.on('click', function(d) {
       let n = d3.select(this);
 
-      // Check if the user is clicking or moving the node
-      let tolerance = 20;
-      if(Math.abs(n.attr('cx')- n.attr('data-startcx')) > tolerance ||
-        Math.abs(n.attr('cy')- n.attr('data-startcy')) > tolerance) {
-        // User is probably moving, do nothing
-        return;
-      }
+    // Check if the user is clicking or moving the node
+    let tolerance = 20;
+    if(Math.abs(n.attr('cx')- n.attr('data-startcx')) > tolerance ||
+      Math.abs(n.attr('cy')- n.attr('data-startcy')) > tolerance) {
+      // User is probably moving, do nothing
+      return;
+    }
 
-      // Prevent double-clicking from executing this function twice
-      if(n.attr('data-clickedon')) return;
-      n.attr('data-clickedon', 'true')
-      setTimeout(function() {
-        n.attr('data-clickedon', null)
-      }, 200);
+    // Prevent double-clicking from executing this function twice
+    if(n.attr('data-clickedon')) return;
+    n.attr('data-clickedon', 'true')
+    setTimeout(function() {
+      n.attr('data-clickedon', null)
+    }, 200);
 
       // Toggle the node
       if (!n.attr('old_r')) {
-        self.openCaseInfo(node, n, d)
+        self.openCaseInfo(node,
+
+        n,d)
       } else {
         self.closeCaseInfo(n);
       }
@@ -111,12 +112,12 @@ class CasesTree {
 
     force.on('tick', function() {
       node.attr('cx', function(d) { return d.x = Math.max(60, Math.min(width - 60, d.x)); })
-        .attr('cy', function(d) { return d.y = Math.max(60, Math.min(height - 60, d.y)); });
+      .attr('cy', function(d) { return d.y = Math.max(60, Math.min(height - 60, d.y)); });
 
       link.attr('x1', function(d) { return d.source.x; })
-        .attr('y1', function(d) { return d.source.y; })
-        .attr('x2', function(d) { return d.target.x; })
-        .attr('y2', function(d) { return d.target.y; });
+      .attr('y1', function(d) { return d.source.y; })
+      .attr('x2', function(d) { return d.target.x; })
+      .attr('y2', function(d) { return d.target.y; });
     });
 
     this.svg = svg;

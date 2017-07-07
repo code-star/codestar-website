@@ -1,5 +1,5 @@
 ### Over SKG
-SKG, Stichting Kerkelijk Geldbeheer, biedt financiële diensten toegespitst op kerken en kerkelijke instellingen. Met SKG Online bieden ze een unieke internetbankieren-omgeving voor kerken en kerkelijke instellingen, toegespitst op de takenverdeling en werkwijze binnen zulke organisaties. SKG Online biedt functionaliteit die klanten verwachten, zoals incasso’s, betalen en sparen. Daarnaast kunnen organisaties precies aangeven welke handelingen hun medewerkers wel en niet mogen verrichten binnen het systeem, tot op rekeningniveau. Zo is het mogelijk dat voor grote bedragen een extra digitale handtekening nodig is.
+SKG, Stichting Kerkelijk Geldbeheer, biedt financiële diensten toegespitst op kerken en kerkelijke instellingen. Met SKG Online bieden ze een unieke financiële applicatie voor kerken en kerkelijke instellingen, toegespitst op de taakverdeling en werkwijze binnen zulke organisaties. SKG Online biedt functionaliteit die klanten verwachten, zoals incasso’s, betalen en sparen. Daarnaast kunnen organisaties precies aangeven welke handelingen hun medewerkers wel en niet mogen verrichten binnen het systeem, tot op rekeningniveau. Zo is het mogelijk dat voor grote bedragen een extra digitale handtekening nodig is.
 
 Het huidige verouderde platform is geheel, inclusief hosting en fysieke servers, in house en volledig op maat gemaakt voor SKG. SKG zoekt een nieuw betaalplatform dat apps en moderne devices ondersteunt, snelle livegang van features mogelijk maakt en minder beheerlast met zich meebrengt. CodeStar bouwt voor SKG een nieuw reactive platform dat schaalt en onderhoudbaar is. Het platform is toekomstbestendig dankzij technieken als Microservices, Platform as a Service en Continuous Delivery.
 
@@ -11,12 +11,12 @@ In de frontend behalen we dankzij TypeScript dezelfde voordelen voor robuustheid
 Met continuous delivery en de nieuwste container-technieken kunnen we gestroomlijnd, snel en consistent nieuwe functionaliteit opleveren. Zonder enige downtime. Zo kan SKG in de toekomst snel inspelen op verandering.
 
 ### Technology stack
-Play!
-Slick
-Akka
-Postgres
-Angular 2
-TypeScript
-Docker
-DCOS
-Circle CI
+* Play!
+* Slick
+* Akka
+* Postgres
+* Angular 2
+* TypeScript
+* Docker
+* DCOS
+* Circle CI
