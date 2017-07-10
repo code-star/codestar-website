@@ -72,6 +72,7 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "jstransformer-marked": "^1.0.2",
     "jstransformer-markdown-it": "^2.0.0"
   }
 }
