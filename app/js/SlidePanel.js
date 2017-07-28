@@ -68,6 +68,7 @@ export default class SlidePanel {
       console.error(`No content found with id ${contentItemId}_content`);
     }
     $content.show();
+    $content.scrollTop(0);
   }
 
   hidePanel() {
