@@ -44,3 +44,11 @@ script.
       ga('send', 'pageview');
             
 script(src='https://maps.googleapis.com/maps/api/js?callback=initMap', async='', defer='')
+
+script.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('sw.js')
+      .then(function () {
+      });
+  }

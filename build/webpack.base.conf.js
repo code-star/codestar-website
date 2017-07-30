@@ -9,6 +9,7 @@ const pkg = require('../package.json');
 module.exports = {
   entry: {
     app: './app/main.js',
+    sw: './app/sw.js'
   },
   output: {
     path: path.resolve(__dirname, '../dist/static'),
