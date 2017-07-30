@@ -63,8 +63,12 @@ export default class SlidePanel {
 
   loadContent(contentItemId) {
     this.$panelWrapper.find('.panel-content-item').hide();
-    this.$panelWrapper.find(`#${contentItemId}_content`).show();
-    this.$panelWrapper.find('.panel-content').scrollTop(0);
+    const $content = this.$panelWrapper.find(`#${contentItemId}_content`);
+    if($content.length < 1) {
+      console.error(`No content found with id ${contentItemId}_content`);
+    }
+    $content.show();
+    $content.scrollTop(0);
   }
 
   hidePanel() {

@@ -11,9 +11,9 @@ class CasesTree {
     this.$caseDesc = $('#caseDesc');
     this.$caseInfo = $('#caseInfo');
 
-  CasesTree.slidePanel = new SlidePanel($('.cases-page'),()=>{});
-      $('.cases-page').on('click', '.open-panel', () => {
-      CasesTree.slidePanel.showPanel('test');
+    CasesTree.slidePanel = new SlidePanel($('.cases-page'), ()=>{});
+    $('.cases-page').on('click', '.open-panel', function() {
+      CasesTree.slidePanel.showPanel($(this).data('panel'));
     });
 
     const svg = d3.select('body').append('svg').remove();
