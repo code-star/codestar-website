@@ -12,7 +12,7 @@ export default class JobList {
   }
 
   static initEvents() {
-    const $jobItem = $('ul.job_list_items a');
+    const $jobItem = $('ul.job_list_items a, a.job-item-link');
 
     $jobItem.click(JobList.jobItemClicked);
   }
@@ -21,6 +21,7 @@ export default class JobList {
     event.preventDefault();
 
     const jobName = $(event.currentTarget).attr('name');
+    console.log('jobName');
 
     JobList.slidePanel.showPanel(jobName);
     JobList.deselectJobItems();

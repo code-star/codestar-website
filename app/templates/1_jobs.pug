@@ -18,17 +18,21 @@ section#firstPage.special.job-list.section(data-scrollax-parent='true', style='d
           | Functional. Reactive. Full Stack.
         ul.menu.simple.vertical.job_list_items
           li
-            a(href='#', name='job_1') Ik.code("Scala")
+            a(href='#', name='scala') Ik.code("Scala")
           li
-            a(href='#', name='job_2') Ik.code("Frontend")
+            a(href='#', name='scala-jr') Ik.start("Scala")
+          li
+            a(href='#', name='frontend') Ik.code("Frontend")
     .small-12.large-4.columns.slide-in.panel-wrapper.hide-on-mobile
       .panel-container.normalscroll
         .panel-content
           .close-button x
           //.arrow-left
-          #job_1_content.panel-content-item
-            include jobs/job_1
-          #job_2_content.panel-content-item
-            include:marked jobs/job_2.md
+          #scala_content.panel-content-item
+            include jobs/job_scala
+          #scala-jr_content.panel-content-item
+            include jobs/job_scala-jr
+          #frontend_content.panel-content-item
+            include:marked jobs/job_frontend.md
     #jobs_background
       img('src=jobs_background.svg')
