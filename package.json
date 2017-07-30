@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node build/make_thumbs.js && node build/dev-server.js",
     "deploy": "npm run test && node build/make_thumbs.js && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
-    "test": "karma start build/karma.conf.js --single-run"
+    "test": "karma start build/karma.conf.js --single-run",
+    "prettier": "prettier --single-quote --write \"app/js/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "eslint": "^3.19.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
+    "eslint-plugin-prettier": "^2.1.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "foundation-sites": "6.2.4",
@@ -58,6 +60,7 @@
     "lodash": "^4.0.0",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.5",
+    "prettier": "^1.5.3",
     "pug": "^2.0.0-rc.1",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.5",

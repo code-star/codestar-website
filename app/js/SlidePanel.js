@@ -1,6 +1,9 @@
 import isMobile from './mobileChecker';
 
-const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === 'small' || Foundation.MediaQuery.current === 'medium';
+const smallScreen = () =>
+  isMobile.any() ||
+  Foundation.MediaQuery.current === 'small' ||
+  Foundation.MediaQuery.current === 'medium';
 
 /**
  * SlidePanel
@@ -22,7 +25,6 @@ const smallScreen = () =>  isMobile.any() || Foundation.MediaQuery.current === '
  *  * The SlidePanel constructor should be called with a class on the top level of the page.
  */
 export default class SlidePanel {
-
   constructor($context, onCloseCallback) {
     this.$fixedMenu = $('#fixed-menu');
     this.$panelWrapper = $context.find('.panel-wrapper');
@@ -42,9 +44,9 @@ export default class SlidePanel {
     } else {
       // TODO do with CSS
       // after panel is fully visible show close button
-      setTimeout(()=> {
+      setTimeout(() => {
         this.$closeButton.fadeIn();
-      }, 800)
+      }, 800);
     }
 
     this.$panelWrapper
@@ -63,8 +65,12 @@ export default class SlidePanel {
 
   loadContent(contentItemId) {
     this.$panelWrapper.find('.panel-content-item').hide();
-    this.$panelWrapper.find(`#${contentItemId}_content`).show();
-    this.$panelWrapper.find('.panel-content').scrollTop(0);
+    const $content = this.$panelWrapper.find(`#${contentItemId}_content`);
+    if ($content.length < 1) {
+      console.error(`No content found with id ${contentItemId}_content`);
+    }
+    $content.show();
+    $content.scrollTop(0);
   }
 
   hidePanel() {
@@ -85,11 +91,9 @@ export default class SlidePanel {
 
     // TODO if the other things can be done with CSS, remove this, else use $panelWrapperElem.find('x')
     const $panelContainer = this.$panelWrapper.find('.panel-container');
-    $panelContainer
-      .hide();
+    $panelContainer.hide();
     setTimeout(() => {
       $panelContainer.removeAttr('style');
     }, 500);
   }
-
 }
