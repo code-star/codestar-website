@@ -830,6 +830,12 @@ p a:active {
   pointer-events: auto;
 }
 
+.high-contrast-link,
+.high-contrast-link:link,
+.high-contrast-link:visited {
+  color: rgb(4, 27, 54);
+}
+
 .fp-controlArrow.fp-prev {
   left: 3vw;
   border-width: 19.25px 17px 19.25px 0;
