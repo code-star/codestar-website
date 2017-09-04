@@ -132,6 +132,13 @@
       "tagline": "Scala is the way to go",
       "bio": "",
       "image": "asif.jpg"
+    },
+    {
+      "name": "Nathan",
+      "job": "Programmeur",
+      "tagline": "“Learn as if you were to live forever.”",
+      "bio": "I always want to know how things work and why they work the way they do. What better way to know, than building it yourself?",
+      "image": "nathan.jpg"
     }
   ]
 }
