@@ -20,7 +20,7 @@ Read more about developing under `Development` in this Readme.
 * karma via webpack?
 
 
-Install node 7.10.0 and npm 4.2.0
+Install node 8.2.1 and npm 5.3.0
 
 `npm update`
 
