@@ -1,8 +1,8 @@
 # Big Data Engineer
 
 ## Programmeer met hart en hoofd 
-  
-   
+
+
 **Klantcase:** Pyeongchang, Zuid-Korea - 2018. De wereld volgt de Olympische Winterspelen. 
 Skiën, schaatsen en bobsleeën; alles wordt online gestreamd. Ook door een groot 
 Amerikaans tv-netwerk. Gracenote- en Codestar-engineers bouwen aan het nieuwe platform 
@@ -31,8 +31,8 @@ ambitie hebben om samen met collega’s een real-time datawereld te creëren waa
 maatschappij écht iets aan heeft. Fast. Reactive. Stream processing.
 
 * Hbo-/wo-denkniveau 
-* Trackrecord in Scala (pré) en Java  
-* Kennis van Spark, Kafka, Hadoop, Cassandra, SQL, ElasticSearch 
+* Polyglot programmeur (Scala, Java, Python, ...)
+* Kennis van Spark, Kafka, Hadoop, Cassandra, SQL, ElasticSearch, Airflow 
 * Ervaring met gedistribueerde systemen, microservices, databases en NoSQL technologieën
 
 
@@ -48,7 +48,7 @@ kunt worden in jouw vakgebied.
 * **2 Codecamps per jaar met toptrainers;** in de woonkamer van een vakantiewoning, omdat we dan zelf bepalen wanneer de cursusdag is afgelopen en de strand-BBQ daarna meteen kan beginnen. 
 * **Vast contract:** ons commitment voor jouw groei naar master. 
 
- 
+
 ### #MeerWeten? 
 
 Meer weten over Codestar? Dat vertellen we graag persoonlijk. Dus als je er voor open staat 
