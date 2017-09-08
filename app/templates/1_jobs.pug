@@ -23,6 +23,8 @@ section#firstPage.special.job-list.section(data-scrollax-parent='true', style='d
             a(href='#', name='scala-jr') Ik.start("Scala")
           li
             a(href='#', name='frontend') Ik.code("Frontend")
+          li
+            a(href='#', name='bigdata') Ik.code("BigData")
     .small-12.large-4.columns.slide-in.panel-wrapper.hide-on-mobile
       .panel-container.normalscroll
         .panel-content
@@ -34,5 +36,7 @@ section#firstPage.special.job-list.section(data-scrollax-parent='true', style='d
             include jobs/job_scala-jr
           #frontend_content.panel-content-item
             include:marked jobs/job_frontend.md
+          #bigdata_content.panel-content-item
+            include:marked jobs/job_bigdata.md
     #jobs_background
       img('src=jobs_background.svg')
