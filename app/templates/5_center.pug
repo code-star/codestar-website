@@ -10,10 +10,14 @@ section#fifthPage.special.section.active(data-scrollax-parent='true')
       center
         // img with width and height so alt text will show when the image is still loading (only works in some browsers)
         img#logo(src='logo.svg', width='300', height='82', type='image/svg+xml', alt='CODE.STAR', title='CODE.STAR')
-        p
-          | De mogelijkheden in de digitale wereld zijn eindeloos. Uitdagingen vaak complex. Wij ontwikkelen moderne software die simpel te gebruiken is. Agile en productief, met gebruik van de nieuwste technieken. Wij programmeren. Met ons hoofd én met ons hart. Voor organisaties die de volgende stap willen zetten.
-        p
-          | Wij zijn de #1 partner voor Full Stack Scala en Big Data oplossingen in Nederland. Wij zijn Codestar.
+        // Not allowed by pug: include ../content/#{config.locale}/center.pug
+        // Not allowed by pug: include #{config.paths.center}
+        case config.locale
+          when 'en'
+            include ../content/en/center.pug
+          default
+            include ../content/nl/center.pug
+        // TODO use a mixin for these links
         p
           a.homePageLink.high-contrast-link(href='https://goo.gl/8XNtUP', target='_blank') Meetup: Functional and reactive programming with André Staltz (28 September)
           br

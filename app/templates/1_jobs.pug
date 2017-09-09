@@ -33,10 +33,10 @@ section#firstPage.special.job-list.section(data-scrollax-parent='true', style='d
           #scala-jr_content.panel-content-item
             include jobs/job_scala-jr
           #frontend_content.panel-content-item
-            case website_locale
+            case config.locale
               when 'en'
-                include:marked jobs/job_frontend_en.md
+                include:marked ../content/en/jobs/job_frontend.md
               default
-                include:marked jobs/job_frontend.md
+                include:marked ../content/nl/jobs/job_frontend.md
     #jobs_background
       img('src=jobs_background.svg')
