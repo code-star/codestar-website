@@ -12,11 +12,12 @@ section#fifthPage.special.section.active(data-scrollax-parent='true')
         img#logo(src='logo.svg', width='300', height='82', type='image/svg+xml', alt='CODE.STAR', title='CODE.STAR')
         // Not allowed by pug: include ../content/#{config.locale}/center.pug
         // Not allowed by pug: include #{config.paths.center}
+        // TODO this should work instead of the block below, but it just breaks config.tokens: +include_center_main
         case config.locale
           when 'en'
-            include ../content/en/center.pug
+            include ../translations/en/center
           default
-            include ../content/nl/center.pug
+            include ../translations/nl/center
         // TODO use a mixin for these links
         p
           a.homePageLink.high-contrast-link(href='https://goo.gl/8XNtUP', target='_blank') Meetup: Functional and reactive programming with André Staltz (28 September)
