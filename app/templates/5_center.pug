@@ -13,7 +13,7 @@ section#fifthPage.special.section.active(data-scrollax-parent='true')
         // Not allowed by pug: include ../content/#{config.locale}/center.pug
         // Not allowed by pug: include #{config.paths.center}
         // TODO this should work instead of the block below, but it just breaks config.tokens:
-        +include_center_main
+        +include_center_main()
         //case config.locale
         //  when 'en'
         //    include ../translations/en/center
@@ -42,6 +42,7 @@ section#fifthPage.special.section.active(data-scrollax-parent='true')
     #sunburstContainer.row.align-middle
       center.large-12.columns.no-padding
         #sunburst
+  // TODO re-enable tokens
   //p.navigate-arrows.navigate-up #{config.tokens.I_WANT_TO_PROGRAM}
   //p.navigate-arrows.navigate-down #{config.tokens.I_WANT_TO_TAKE_THE_NEXT_STEP}
   // <div id="sunburst3" data-scrollax="properties: { 'translateX': '20%' }">
