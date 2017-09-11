@@ -3,3 +3,15 @@ mixin include_jobs_job_frontend
 
 mixin include_center_main
   include translations/nl/center
+
+mixin announcement_frp
+  +announcement('https://goo.gl/8XNtUP', 'Meetup: Functional and reactive programming met André Staltz (28 September)')
+    span.show-for-large Codestar nodigt je uit voor een avond met André Staltz, een bekende expert in reactive programming en auteur/contributor van frameworks zoals Cycle.js en RxJS.
+
+mixin announcement_rxjs
+  +announcement('https://goo.gl/bJdhos', 'Training: Advanced RxJs with André Staltz (29 September)')
+    span.show-for-large Join us for an advanced course on RxJS by core contributor André Staltz. This will not be an introduction to RxJS, but instead André will go deep into the basics, making sure those are well covered so that people can learn how to code simple and small code, instead of over-engineering.
+
+mixin announcement_akka
+  +announcement('http://go.ordina.nl/l/83122/2017-09-04/841t88', 'Training: Lightbend Akka for Scala - Professional (16-17 November)')(class='show-for-large')
+    span In this two-day course you will learn to develop reactive applications with the Akka toolkit and runtime. The combination of theory and hands-on exercises provide the perfect environment to best learn to use Akka with Scala.

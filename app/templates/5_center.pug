@@ -12,13 +12,10 @@ section#fifthPage.special.section.active(data-scrollax-parent='true')
         img#logo(src='logo.svg', width='300', height='82', type='image/svg+xml', alt='CODE.STAR', title='CODE.STAR')
         // Not allowed by pug: include ../content/#{config.locale}/center.pug
         // Not allowed by pug: include #{config.paths.center}
-        +include_center_main()
-        +announcement('https://goo.gl/8XNtUP', 'Meetup: Functional and reactive programming with André Staltz (28 September)')
-          span.show-for-large Codestar invites you to an evening with André Staltz, a renowned expert on reactive programming and author/contributor to frameworks like Cycle.js and RxJS.
-        +announcement('https://goo.gl/bJdhos', 'Training: Advanced RxJs with André Staltz (29 September)')
-          span.show-for-large Join us for an advanced course on RxJS by core contributor André Staltz. This will not be an introduction to RxJS, but instead André will go deep into the basics, making sure those are well covered so that people can learn how to code simple and small code, instead of over-engineering.
-        +announcement('http://go.ordina.nl/l/83122/2017-09-04/841t88', 'Training: Lightbend Akka for Scala - Professional (16-17 November)')(class='show-for-large')
-          span In this two-day course you will learn to develop reactive applications with the Akka toolkit and runtime. The combination of theory and hands-on exercises provide the perfect environment to best learn to use Akka with Scala.
+        +include_center_main
+        +announcement_frp
+        +announcement_rxjs
+        +announcement_akka
   .large-3.show-for-large.columns
   .decorations
     #sunburstContainer.row.align-middle
