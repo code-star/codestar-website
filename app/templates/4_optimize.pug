@@ -4,11 +4,7 @@ section#fourthPage.special.section(data-scrollax-parent='true',style='display:no
     .large-3.show-for-large.columns
     .large-6.columns
       header
-        h2
-          | Wij programmeren
-      p
-        | Wij houden van ons vak: programmeren. Aan het einde van de dag telt alleen de code. Wij schrijven die code. Schone code. Code die werkt. Wij programmeren Scala, maar ook TypeScript. JavaScript en soms Haskell. Wij zijn meertalig en niet bang om nieuwe talen te leren.
-      h2 Onze keuze
+        +include_attract
       p
         img(src='scala.png').stack-logo
         img(src='akka.png').stack-logo
@@ -21,5 +17,5 @@ section#fourthPage.special.section(data-scrollax-parent='true',style='display:no
         img(src='aws.png').stack-logo
         img(src='cassandra.png').stack-logo
         img(src='kafka.png').stack-logo
-      a.scroll-button.button.codestar-button(href='#why-work') Hierom wil jij voor ons werken
+      a.scroll-button.button.codestar-button(href='#why-work') #{locals.config.tokens.WHY_YOU_WOULD_WORK_FOR_US}
     .large-3.show-for-large.columns

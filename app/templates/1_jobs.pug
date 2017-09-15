@@ -22,17 +22,12 @@ section#firstPage.special.job-list.section(data-scrollax-parent='true', style='d
           .close-button x
           //.arrow-left
           #scala_content.panel-content-item
-            include jobs/job_scala
+            +include_jobs_job_scala
           #scala-jr_content.panel-content-item
-            include jobs/job_scala-jr
+            +include_jobs_job_scala_jr
           #frontend_content.panel-content-item
-            //case config.locale
-            //  when 'en'
-            //    include:marked ../content/en/jobs/job_frontend.md
-            //  default
-            //    include:marked ../content/nl/jobs/job_frontend.md
             +include_jobs_job_frontend
           #bigdata_content.panel-content-item
-            include:marked jobs/job_bigdata.md
+            +include_jobs_job_bigdata
     #jobs_background
       img('src=jobs_background.svg')

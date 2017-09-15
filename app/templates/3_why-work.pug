@@ -2,16 +2,8 @@ section#thirdPage.special.section(data-scrollax-parent='true', style='display:no
   .content.row.align-middle(data-scrollax="properties: { 'translateX': '-20%' }")
     .large-4.show-for-large.columns
     .small-12.large-4.columns
-      header
-        h2 Hierom wil jij voor ons programmeren
-      ul.why
-        li Wij durven het hardop te zeggen: wij zijn heel, heel goed
-        li Hoe we werken, bepalen we zelf
-        li Wij zijn nooit uitgeleerd
-        li Wij kennen de onderliggende principes van functioneel programmeren
-        li Wij kennen de onderliggende principes van object geörienteerd programmeren
-        li Wij delen onze passie op evenementen en internationale conferenties
-      a.scroll-button.button.codestar-button(href='#team') Wij
+      +include_why_work
+      a.scroll-button.button.codestar-button(href='#team') #{locals.config.tokens.WE}
     .large-4.show-for-large.columns
   center
     #solararrayContainer.noMouse
