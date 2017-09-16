@@ -32,6 +32,12 @@ export default class JobList {
     JobList.slidePanel.showPanel(jobName);
     JobList.deselectJobItems();
     JobList.selectJobItem(jobName);
+    JobList.updateHash(jobName);
+  }
+
+  static updateHash(jobName) {
+    const [prefix] = location.hash.split('/');
+    location.hash = `${prefix}/${jobName}`;
   }
 
   static selectJobItem(name) {
