@@ -1,8 +1,5 @@
 export default class Menu {
 
-  constructor($wrapper) {
-  }
-
   closeMenuIfOpen() {
     if ($('.fixed-menu .menu').css('display') !== 'none') {
       $('.fixed-menu .menu').fadeOut(350);
