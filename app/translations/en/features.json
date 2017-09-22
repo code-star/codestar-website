@@ -1,0 +1,10 @@
+
+{
+  "features": [
+    {"img": "Features_TheRightPeople.svg", "name": "The right people", "text": "<b>We geven je de allerbeste programmeurs</b>. Mensen met passie voor hun vak die resultaten boeken. Geen wollig verhaal, maar werkende en eenvoudig te onderhouden code."},
+    {"img": "Features_FastTimeMarket.svg", "name": "De juiste werkwijze", "text": "<b>We werken Agile, DevOps en Full Stack, van Backend tot Frontend</b>. Met moderne methodologieën als Continuous Integration en Continuous Delivery volg je vanaf dag één zelf live de resultaten."},
+    {"img": "Features_ReduceCode.svg", "name": "De juiste technieken", "text": "<b>We kiezen voor responsiveness, schaalbaarheid en resilience</b>. Daarom kiezen wij voor moderne technieken als Scala, Akka, React, Docker, Typescript, Spark, Kafka en Samza. En deze technieken werken. Het is ons gelukt om de bestaande code bij een klant met 75% te verminderen. Dat is 75% minder kans op fouten."},
+    {"img": "Features_Partner.png", "name": "De juiste partners", "text": "<b>We zijn Lightbend gecertificeerd</b> voor consulting en trainingen en gebruiken hét platform onder de moderne platforms: het <a href=\"http://www.lightbend.com/products/lightbend-reactive-platform\" target=\"_blank\">Lightbend Reactive Platform</a>. Dit is ontworpen om te schalen. Ook wanneer je alleen piekuren of piekdagen hebt."},
+    {"img": "Features_Integrating.svg", "name": "De juiste integratie", "text": "<b>We integreren naadloos met je huidige Java landschap, want Scala spreekt Java</b>. Niet alles hoeft dus opnieuw, wij hergebruiken je oude Java software waar nodig. En onze hulp houdt niet op bij het afronden van een project. Wij zijn er voor de lange termijn, dus ook voor het beheer."}
+  ]
+}
