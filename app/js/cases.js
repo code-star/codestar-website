@@ -1,5 +1,5 @@
 import SlidePanel from './SlidePanel';
-import getLanguage from './utlis';
+import getLanguage from './utils';
 
 const cases = getLanguage() === 'nl'
   ? require('../translations/nl/cases.json')
