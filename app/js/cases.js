@@ -1,5 +1,9 @@
 import SlidePanel from './SlidePanel';
-const cases = require('../data/cases.json');
+import getLanguage from './utlis';
+
+const cases = getLanguage() === 'nl'
+  ? require('../translations/nl/cases.json')
+  : require('../translations/en/cases.json');
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);

@@ -1,0 +1,36 @@
+{
+  "nodes":[
+    {
+      "id": "case42education",
+      "company": "42 Education",
+      "project": "Using code to kick-start a lean start-up",
+      "description": "Having a start-up as a client means major time constraints, requires enormous flexibility and the ability to switch at lightning speed in an informal environment. We were productive from day one thanks to our choice of the latest Continuous Delivery and Cloud technologies.<br><br>The goal was to let children learn by playing games with friends, real-time with an enormous number of events. With this in mind, we made the software architecture completely reactive. We used real-time event notification based on reactive streams and horizontally scaling event persistence based on event sourcing with Cassandra.<br><br><a class=\"scroll-button button codestar-button\" href=\"http://42education.com\" target=\"_blank\">Read more</a>",
+      "icon": "42_education.png",
+      "background": ""
+    },
+    {
+      "id": "caserabobank",
+      "company": "Rabobank",
+      "project": "Helping developers and bankers to speak the same language again",
+      "description": "We tackled the method for calculating mortgages for Rabobank’s Dutch mortgage business (Rabobank Hyptheekdossier). The existing Java code had, over time, become so complex that it was difficult to understand and test. Developers and bankers were no longer speaking the same language.<br><br>We made the code simple, readable and testable by developing a DSL in Scala. Not just for programmers, but for the business too. And we did all that with a fraction of the amount of code needed for the old implementation in Java. Eventually, not only was the business able to read the code, they were also able to implement calculations themselves. The business that speaks the language of the programmer. Goal achieved.",
+      "icon": "rabobank.png",
+      "background": ""
+    },
+    {
+      "id": "caseSKG",
+      "company": "SKG",
+      "project": "Not an optimisation, but a complete renewal",
+      "description": "A classic example of a client with an application that fails to meet modern demands. The client needs a new payment platform that supports apps and modern devices, enables them to go live quickly with new features and is easier to manage. The current outdated platform was completely custom developed in-house for SKG, including hosting and physical servers. We are building a new reactive platform that scales, is easy to maintain, uses the latest technologies and methodologies, such as Microservices, Platform as a Service and Continuous Delivery.<br><br><button class=\"scroll-button button codestar-button open-panel\" data-panel=\"skg\">Read more</button>",
+      "icon": "skg.png",
+      "background": ""
+    },
+    {
+      "id": "casehaven",
+      "company": "Port of Rotterdam",
+      "project": "Rediscovering the port together",
+      "description": "An innovative project that aims to realise a pilot application for the verification of an extremely promising new business concept for the entire port. And the entire port really does mean the entire port. So involving a lot of stakeholders, which in turn involves a lot of discussion.<br><br>Short feedback loops were essential for deciding the direction of the pilot. Using a fully cloud-based development route made it possible to demonstrate functionality in the product environment from week one, and give shape to the short feedback loops. So no meetings about abstract software diagrams, but about working software. Agile, as agile is meant to be.<br><br><button class=\"scroll-button button codestar-button open-panel\" data-panel=\"rll\">Read more</button>",
+      "icon": "port_of_rotterdam.png",
+      "background": ""
+    }
+  ]
+}
