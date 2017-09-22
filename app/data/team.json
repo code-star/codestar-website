@@ -2,23 +2,23 @@
   "nodes": [
     {
       "name": "Hamza",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“OCD — Obsessive Coding Disorder”",
       "bio": "Can you think about it? Then I will probably try to code it! Computers are these incredible things that, through code, you can completely control, directly transferring your ideas from your brain to the CPU, translating your imagination into intricate works of precision and efficiency. And that's what I love doing.",
       "image": "hamza.png"
     },
     {
       "name": "Pim",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“I love to learn new stuff”",
-      "bio": "Mijn hele leven heb ik al van puzzels gehouden, van kruiswoordpuzzels tot schaakopgaven. Toen ik voor het eerst met programmeren in aanraking kwam, was het dan ook liefde op het eerste gezicht. Ik hou ervan om in een team te werken waar iedereen het beste uit zichzelf kan halen en ben altijd bereid om iemand te helpen.",
+      "bio": "I’ve loved puzzles my whole life, from crosswords to chess challenges. When I first encountered programming, it was love at first sight. I love working in a team where everyone can get the best out of themselves, and I’m always willing to help someone.",
       "image": "pim.jpg"
     },
     {
       "name": "Jan",
-      "job": "Programmeur",
-      "tagline": "“heeft programmeren geleerd van zijn oma”",
-      "bio": "Programmeren combineert drie van mijn favoriete dingen: puzzels oplossen, creatief bezig zijn, en mensen helpen om dingen voor elkaar te krijgen. Dat laatste kun je, volgens mij, het beste doen door te streven naar kwaliteit en door oog te hebben voor detail.",
+      "job": "Programmer",
+      "tagline": "“Taught to program by his grandmother”",
+      "bio": "Programming combines three of my favourite things: solving puzzles, working creatively and helping people get things done. The last part is best done, in my opinion, by striving for quality and having an eye for detail.",
       "image": "jan.jpg"
     },
     {
@@ -32,47 +32,47 @@
       "name": "Martin",
       "job": "Der Alte",
       "tagline": "“Kapitän van die Mannschaft”",
-      "bio": "Ik zie programmeren als kunst. En net zoals een kunstenaar moet een programmeur passie hebben om uitstekende resultaten te bereiken. Ik heb deze passie nodig in mijn omgeving. Daarom ben ik blij om met Codestar een plek te creëren, waar programmeurs met passie zich thuis kunnen voelen.",
+      "bio": "I see programming as an art, and just like an artist a programmer needs passion to achieve exceptional results. I need that passion around me. That’s why I’m glad to be creating a place with Codestar where programmers with passion can feel at home.",
       "image": "martin.png"
     },
     {
       "name": "Ishan",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“Talk is cheap, show me the code”",
-      "bio": "Hoewel alles rondom technologie mij fascineert, haal ik meeste genot uit het maken van technologie. Voor elk probleem dat opgelost moet worden is mijn standaard vraag: “Where is the code, Ishan?”. Let’s go!",
+      "bio": "While I’m fascinated by all things technological, what I enjoy the most is creating technology. My standard question for every problem that needs solving is “Where is the code, Ishan?” Let’s go!",
       "image": "ishan.jpg"
     },
     {
       "name": "Martijn",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“The serious guy”",
-      "bio": "Mooie dingen maken die ook werken als het moeilijk wordt, dat geeft een kick. Wanneer je dit samen doet met een team programmeurs met dezelfde passie, voelt het eigenlijk niet als werk :-)",
+      "bio": "I get a kick out of making beautiful things that also work under pressure. When you’re doing that with a team of programmers with the same passion, it doesn’t really feel like work.",
       "image": "martijn.jpg"
     },
     {
       "name": "Casper",
       "job": "BigData Hacker",
       "tagline": "“That’s Numberwang!”",
-      "bio": "Getallen zijn niets meer dan een concept in de menselijke gedachte. Toch vormen zij de basis voor de eindeloze stroom aan data die ons leven dagelijks beïnvloedt. Het is fascinered wat je kunt bereiken met het analyseren van deze stroom van menselijke gedachten.",
+      "bio": "Numbers are nothing more than a concept in the human mind. They still form the basis for the endless stream of data that influences our daily lives. It’s fascinating what you can achieve by analysing this stream of human thoughts.",
       "image": "casper.jpg"
     },
     {
       "name": "David",
-      "job": "Programmeur",
-      "tagline": "“Gaan we regelen”",
-      "bio": "Niets is voor mij mooier dan software die goed in elkaar zit en waar gebruikers volledig tevreden over zijn. Bij Codestar kan ik ervoor zorgen dat elk stukje software dit doel bereikt.",
+      "job": "Programmer",
+      "tagline": "“We’ll get it done”",
+      "bio": "To me, nothing is more wonderful than software that’s well put together and users are fully satisfied with. At Codestar, I can make sure every piece of software achieves this goal.",
       "image": "david.jpg"
     },
     {
       "name": "Donovan",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“You must be the change you wish to see in the world.”",
       "bio": "",
       "image": "donovan.jpg"
     },
     {
       "name": "Maurits",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "The truth is in the code",
       "bio": "",
       "image": "maurits.jpg"
@@ -81,19 +81,19 @@
       "name": "Steven",
       "job": "Software Craftsman",
       "tagline": "The devil is in the details",
-      "bio": "Het beheersen van complexiteit is de grootste uitdaging bij het ontwikkelen van grote software-systemen, van het grote geheel tot de kleinste bouwstenen. In teamverband komt daar ook nog eens menselijke complexiteit bij. Op het raakvlak van deze twee aspecten ligt de mogelijkheid om iets moois te bereiken.",
+      "bio": "Mastering complexity is the biggest challenge when developing large software systems, from the system as a whole to the smallest building blocks. When you work in a team, human complexity is added to the equation. The potential to create something truly beautiful lies at the intersection of these two aspects.",
       "image": "steven.jpg"
     },
     {
       "name": "Martin",
-      "job": "Programmeur",
+      "job": "Front-end Developer",
       "tagline": "That's not a bug, that's a feature!",
-      "bio": "Altijd nieuwsgierig naar nieuwe technieken, programmeertalen, frameworks, gadgets en andere innovaties!",
+      "bio": "Always curious about new technologies, programming languages, frameworks, gadgets and other innovations.",
       "image": "martinvandam.jpg"
     },
     {
       "name": "Werner",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "Don’t be clever, be clear!",
       "bio": "Code not only tells the computer what to do, but it is also telling another human being what you want the computer to do. There are many ways of telling the computer to do something; how you do it matters. I believe that the code you write should reflect how you think about the problem you are trying to solve, so that others can follow along and understand your thought process when reading your code. This way, we can leave clients with a codebase they are proud of and are happy to work on.",
       "image": "werner.jpg"
@@ -108,13 +108,13 @@
     {
       "name": "Eelco",
       "job": "Software Developer",
-      "tagline": "“Als je het eenmaal snapt, is het makkelijk”",
-      "bio": "Ik probeer vaak te begrijpen hoe dingen in elkaar zitten. Hoe de wereld werkt. Het tofste aan maatwerksoftware is dat het alle vrijheid geeft om een model te maken van de werkelijkheid van gebruikers en opdrachtgevers. Wanneer dat model de goede balans heeft tussen eenvoud en complexiteit is dat prachtig. De code is begrijpelijk en de functionaliteit sluit aan bij de behoefte.",
+      "tagline": "“Once you understand it, it’s easy”",
+      "bio": "I often try to understand how things are put together. How the world works. The best part of custom-made software is that it gives you all the freedom to make a model of the reality of users and clients. Once that model has the right balance between simplicity and complexity, it’s wonderful. The code is understandable and the functionality is aligned with the needs.",
       "image": "eelco.jpg"
     },
     {
       "name": "Pavels",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“A programmer is not a human but the new creature”",
       "bio": "",
       "image": "pavels.jpg"
@@ -135,7 +135,7 @@
     },
     {
       "name": "Nathan",
-      "job": "Programmeur",
+      "job": "Programmer",
       "tagline": "“Learn as if you were to live forever.”",
       "bio": "I always want to know how things work and why they work the way they do. What better way to know, than building it yourself?",
       "image": "nathan.jpg"
