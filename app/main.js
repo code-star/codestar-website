@@ -66,8 +66,8 @@ $(document).ready(function() {
   // On desktop safari, disable the trees when not on the slide itself because of performance problems
   if(currentBrowser.isSafari() && !isMobile.iOS()){
     fullPage.hideGraphsOnSafari();
-    fullPage.hideGraph('#casesTree')
-    fullPage.hideGraph('#teamTree')
+    fullPage.hideGraph('#casesTree');
+    fullPage.hideGraph('#teamTree');
   }
 
   contactForm.bindValidationToForm();
@@ -107,6 +107,13 @@ $(document).ready(function() {
   }
 
   $.fn.fullpage.silentMoveTo(section, slide);
+
+  if(section && section === 'join' && slide && JobList.isValidJobName(slide)) {
+    const jobName = slide; // a[name]
+    JobList.slidePanel.showPanel(jobName);
+    JobList.deselectJobItems();
+    JobList.selectJobItem(jobName);
+  }
 
   trackUser();
 });

@@ -17,15 +17,27 @@ export default class JobList {
     $jobItem.click(JobList.jobItemClicked);
   }
 
+  // Checks if the job name exists, for use in main.js
+  static isValidJobName(jobName) {
+    // Array.from would be better, but not certain if this is supported
+    const jobNames = Array.prototype.slice.call(document.querySelectorAll('ul.job_list_items a')).map(i => i.name);
+    return jobNames && jobNames.indexOf(jobName) > -1;
+  }
+
   static jobItemClicked(event) {
     event.preventDefault();
 
     const jobName = $(event.currentTarget).attr('name');
-    console.log('jobName');
 
     JobList.slidePanel.showPanel(jobName);
     JobList.deselectJobItems();
     JobList.selectJobItem(jobName);
+    JobList.updateHash(jobName);
+  }
+
+  static updateHash(jobName) {
+    const [prefix] = location.hash.split('/');
+    location.hash = `${prefix}/${jobName}`;
   }
 
   static selectJobItem(name) {
