@@ -1,4 +1,4 @@
-import getLanguage from './utlis';
+import getLanguage from './utils';
 
 require('../img/Features/Features_FastTimeMarket.svg');
 require('../img/Features/Features_Integrating.svg');
