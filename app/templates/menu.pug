@@ -4,7 +4,7 @@
         div.hamburger-box
           div.hamburger-inner
       img#menu-logo(src='logo-simple-menu.svg')
-    a(style='font-variant:small-caps;background-color:rgba(255,255,255,0.5);display:inline-block;padding:2px;color:#030815;',href=locals.config.switch.link) #{locals.config.switch.label.toUpperCase()}
+    a.high-contrast-link(style='font-variant:small-caps; padding: 4px 4px 2px 4px; border-radius: 0.25em; background-color: white;',href=locals.config.switch.link) #{locals.config.switch.label.toUpperCase()}
     ul.menu.vertical
         li
             a.scroll-button(href='#join') #{locals.config.tokens.menu.YOU}?
