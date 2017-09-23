@@ -1,0 +1,6 @@
+mixin announcement(url, label)
+  p(class!=attributes.class)
+    a.homePageLink.high-contrast-link(href=url, target='_blank') #{label}
+    br
+    if block
+      block

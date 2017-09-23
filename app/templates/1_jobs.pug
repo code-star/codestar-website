@@ -4,39 +4,30 @@ section#firstPage.special.job-list.section(data-scrollax-parent='true', style='d
     .small-12.large-4.columns.description.xor-panel-mobile
       header
         h3
-          | JIJ&quest;
+          | #{locals.config.tokens.menu.YOU.toUpperCase()}&quest;
         p.jobs_inset_shadow
-          | Wij zoeken teamspelers.
-          | Gepassioneerd en leergierig.
-          | Programmeurs die programmeren.
-          | Hackers.
-          | Ook in hun vrije tijd.
-          | Omdat ze dat leuk vinden.
-          | Maar ook mensen die het verschil willen en kunnen maken.
-          | Vaklui die gaan voor resultaat, maar niet ten koste van kwaliteit.
-          | Pioniers die uit hun comfort zone durven te stappen om nieuwe wegen in te slaan.
-          | Functional. Reactive. Full Stack.
+          | #{locals.config.tokens.jobs._INFO}
         ul.menu.simple.vertical.job_list_items
           li
-            a(href='#', name='scala') Ik.code("Scala")
+            a(href='#', name='scala') #{locals.config.tokens.jobs.I}.code("Scala")
           li
-            a(href='#', name='scala-jr') Ik.start("Scala")
+            a(href='#', name='scala-jr') #{locals.config.tokens.jobs.I}.start("Scala")
           li
-            a(href='#', name='frontend') Ik.code("Frontend")
+            a(href='#', name='frontend') #{locals.config.tokens.jobs.I}.code("Frontend")
           li
-            a(href='#', name='bigdata') Ik.code("BigData")
+            a(href='#', name='bigdata') #{locals.config.tokens.jobs.I}.code("BigData")
     .small-12.large-4.columns.slide-in.panel-wrapper.hide-on-mobile
       .panel-container.normalscroll
         .panel-content
           .close-button x
           //.arrow-left
           #scala_content.panel-content-item
-            include jobs/job_scala
+            +include_jobs_job_scala
           #scala-jr_content.panel-content-item
-            include jobs/job_scala-jr
+            +include_jobs_job_scala_jr
           #frontend_content.panel-content-item
-            include:marked jobs/job_frontend.md
+            +include_jobs_job_frontend
           #bigdata_content.panel-content-item
-            include:marked jobs/job_bigdata.md
+            +include_jobs_job_bigdata
     #jobs_background
       img('src=jobs_background.svg')

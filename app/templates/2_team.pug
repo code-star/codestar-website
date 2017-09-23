@@ -25,7 +25,7 @@ section#secondPage.special.section(data-scrollax-parent='true', style='display:n
     .small-12.large-12.columns
       center
         header
-          h2 Wij
+          h2 #{locals.config.tokens.menu.WE}
         #teamTree
         #teamInfo.row
           .large-3.show-for-large
@@ -34,12 +34,12 @@ section#secondPage.special.section(data-scrollax-parent='true', style='display:n
             p#teamTagline
             p#teamDesc
           .large-3.show-for-large
-        a.scroll-button.button.codestar-button(href='#join') Jij?
+        a.scroll-button.button.codestar-button(href='#join') #{locals.config.tokens.menu.YOU}
   .slide(data-anchor="galleryA")
     .small-12.large-12.columns
       center
         header
-          h2 Onze Momenten
+          h2 #{locals.config.tokens.menu.OUR_MOMENTS}
       .gallerycontainer.normalscroll
         #gallery(style="display:none;")
           - var images = require('../data/gallery.json')

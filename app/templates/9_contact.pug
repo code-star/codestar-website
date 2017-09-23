@@ -3,50 +3,47 @@ section#ninthPage.special.section(data-scrollax-parent='true', style='display:no
     .large-2.show-for-large.columns
     .small-12.large-4.columns.contact_form_container
       .success.callout.email-success(data-closable='slide-out-right')
-        h5 Je e-mail is succesvol verstuurd!
-        p We proberen je zo snel mogelijk te antwoorden, maar geef ons even de tijd om er ook een nuttig antwoord van te maken.
+        +include_contact_success
         button.close-button(aria-label='Dismiss alert', type='button', data-close='')
           span(aria-hidden='true') ×
       .alert.callout.email-fail(data-closable='slide-out-right')
-        h5 Er is iets misgegaan bij het versturen van je e-mail.
-        p Soms heeft het universum gewoon een nare bui, maar misschien zijn er bepaalde velden niet goed ingevuld?
+        +include_contact_error
         button.close-button(aria-label='Sluiten', type='button', data-close='')
           span(aria-hidden='true') ×
       header
         h2 Contact
-      p
-        | Op zoek naar de beste programmeurs? Tijd om de volgende stap te zetten? Je bent op de contactpagina, dus je zou ons moeten kunnen vinden.
+      +include_contact
       form#contact_form(data-abide, novalidate, method="POST", action="javascript:void(0);")
         .row
           .small-6.medium-6.columns
             span
-              input.form-input(type='text', placeholder='Voornaam', name='Voornaam', required='', pattern='[a-zA-Z]+')
+              input.form-input(type='text', placeholder=locals.config.tokens.contact.placeholders.firstName, name='Voornaam', required='', pattern='[a-zA-Z]+')
               span.form-error
-                | Vul je voornaam in.
+                | #{locals.config.tokens.contact.validation.firstName}
           .small-6.medium-6.columns
             span
-              input.form-input(type='text', placeholder='Achternaam', name='Achternaam', required='', pattern='[a-zA-Z]+')
+              input.form-input(type='text', placeholder=locals.config.tokens.contact.placeholders.lastName, name='Achternaam', required='', pattern='[a-zA-Z]+')
               span.form-error
-                | Vul je achternaam in.
+                | #{locals.config.tokens.contact.validation.lastName}
           .small-6.medium-6.columns
             span
-              input.form-input(type='text', placeholder='Bedrijfsnaam', name='Bedrijfsnaam')
+              input.form-input(type='text', placeholder=locals.config.tokens.contact.placeholders.company, name='Bedrijfsnaam')
           .small-6.medium-6.columns
             span
-              input.form-input(type='text', placeholder='Telefoonnummer', name='Telefoonnummer', pattern='number')
+              input.form-input(type='text', placeholder=locals.config.tokens.contact.placeholders.phone, name='Telefoonnummer', pattern='number')
               span.form-error
-                | Vul een geldig telefoonnummer in. Liefst eentje waarop jij bereikbaar bent.
+                | #{locals.config.tokens.contact.validation.phone}
           .small-12.medium-12.columns.columns-space
-            input.form-input(type='email', placeholder='E-mailadres', required='', name='E-mailadres', pattern='email')
+            input.form-input(type='email', placeholder=locals.config.tokens.contact.placeholders.email, required='', name='E-mailadres', pattern='email')
             span.form-error
-              | Vul een geldig e-mailadres in. Liefst eentje via welke jij bereikbaar bent.
+              | #{locals.config.tokens.contact.validation.email}
           .small-12.medium-12.columns.columns-space
-            textarea#bericht.form-input(placeholder='Bericht', required='', name='Bericht')
+            textarea#bericht.form-input(placeholder=locals.config.tokens.contact.placeholders.message, required='', name='Bericht')
             span.form-error
-              | We waarderen het dat je de moeite neemt om al je gegevens in te vullen, maar we nemen aan dat je ons ook iets wilt vertellen of vragen?
+              | #{locals.config.tokens.contact.validation.message}
         #form-buttons
-          button.button.codestar-button(type='reset', value='Alles Wissen') Alles Wissen
-          input.button.codestar-button(type='submit', value='Verstuur Bericht')
+          button.button.codestar-button(type='reset', value=locals.config.tokens.contact.buttons.reset) #{locals.config.tokens.contact.buttons.reset}
+          input.button.codestar-button(type='submit', value=locals.config.tokens.contact.buttons.submit)
     .large-2.show-for-large.columns
     .small-12.large-4.columns.map_container
       #map
@@ -62,16 +59,16 @@ section#ninthPage.special.section(data-scrollax-parent='true', style='display:no
                 img(src='Contact_MailIcon.svg', width='35')
               td.contact_info CODESTAR@ORDINA.NL
               td.contact_button
-                a.button.codestar-button(href='mailto:codestar@ordina.nl') Stuur een mail
+                a.button.codestar-button(href='mailto:codestar@ordina.nl') #{locals.config.tokens.contact.buttons.sendEmail}
             tr
               td.contact_icon
                 img(src='Contact_PhoneIcon.svg', width='35')
               td.contact_info +31 30 6637000
               td.contact_button
-                a.button.codestar-button(href='tel:0031306637000') Bel ons
+                a.button.codestar-button(href='tel:0031306637000') #{locals.config.tokens.contact.buttons.callUs}
             tr
               td.contact_icon
                 img(src='Contact_LocationIcon.svg', width='30')
               td.contact_info RINGWADE 1, 3439 LM NIEUWEGEIN
               td.contact_button
-                a.button.codestar-button(href='https://goo.gl/maps/4g4TKbZ2LfF2', target='_blank') Bezoek ons
+                a.button.codestar-button(href='https://goo.gl/maps/4g4TKbZ2LfF2', target='_blank') #{locals.config.tokens.contact.buttons.visitUs}

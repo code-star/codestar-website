@@ -1,0 +1,10 @@
+
+{
+  "features": [
+    {"img": "Features_TheRightPeople.svg", "name": "THE RIGHT PEOPLE", "text": "<b>We offer you the best programmers.</b> People who are passionate about their job and get results. No vague tales, but functional and easy to maintain code."},
+    {"img": "Features_FastTimeMarket.svg", "name": "THE RIGHT METHOD", "text": "<b>We work with Agile, DevOps and Full Stack, from Back-end to Front-end.</b> Using the latest methodologies, such as Continuous Integration and Continuous Delivery, you can follow the results live from day one."},
+    {"img": "Features_ReduceCode.svg", "name": "THE RIGHT TECHNOLOGIES", "text": "<b>We opt for responsiveness, scalability and resilience.</b> That’s why we choose the latest technologies, such as Scala, Akka, React, Docker, Typescript, Spark, Kafka and Samza, and these technologies work. We have successfully reduced the existing code at a client by 75%. That’s 75% less chance for errors."},
+    {"img": "Features_Partner.png", "name": "THE RIGHT PARTNERS", "text": "<b>We are Lightbend certified</b> for consulting and training and use the platform of modern platforms: the <a href=\"http://www.lightbend.com/products/lightbend-reactive-platform\" target=\"_blank\">Lightbend Reactive Platform.</a> This platform was developed to scale, even when you only ever have peak hours or peak days."},
+    {"img": "Features_Integrating.svg", "name": "THE RIGHT INTEGRATION", "text": "<b>We integrate seamlessly with your current Java landscape, because Scala speaks Java.</b> This means you don’t have to start from the beginning, as we reuse your old Java software where necessary. Nor does our help end when a project ends. We’re in it for the long run, so also on the maintenance front."}
+  ]
+}
