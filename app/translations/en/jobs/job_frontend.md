@@ -28,4 +28,5 @@ We will do everything we can to optimise your growth. So you can become a master
 ### #FindOutMore
 Want to know more about our Scala home? We’d like to tell you in person. So if you want to get to know us a bit better, join one of our training sessions or events. We organise these on a regular basis and they’re open for everyone, for free. Or just make an appointment. Feel free to send our business unit manager an email: [martin.weidner@ordina.nl](mailto:martin.weidner@ordina.nl).
 
+<small>**We are only interested in candidates that are currently living in the Netherlands.**</small>   
 <small>**Acquisition on the basis of this vacancy is not appreciated.**</small>
