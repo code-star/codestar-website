@@ -31,6 +31,14 @@
       "description": "An innovative project that aims to realise a pilot application for the verification of an extremely promising new business concept for the entire port. And the entire port really does mean the entire port. So involving a lot of stakeholders, which in turn involves a lot of discussion.<br><br>Short feedback loops were essential for deciding the direction of the pilot. Using a fully cloud-based development route made it possible to demonstrate functionality in the product environment from week one, and give shape to the short feedback loops. So no meetings about abstract software diagrams, but about working software. Agile, as agile is meant to be.<br><br><button class=\"scroll-button button codestar-button open-panel\" data-panel=\"rll\">Read more</button>",
       "icon": "port_of_rotterdam.png",
       "background": ""
+    },
+    {
+      "id": "caseING",
+      "company": "ING",
+      "project": "Innovate in fintech",
+      "description": "A demanding client where Codestar contributes to innovation on the project for straight-through appointment scheduling.<br><br><button class=\"scroll-button button codestar-button open-panel\" data-panel=\"ing\">Read more</button>",
+      "icon": "ing.png",
+      "background": ""
     }
   ]
 }
