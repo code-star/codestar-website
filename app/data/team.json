@@ -146,6 +146,13 @@
       "tagline": "“If it doesn't challenge you it won't change you”",
       "bio": "",
       "image": "mozart.jpg"
+    },
+    {
+      "name": "Nick",
+      "job": "Programmer",
+      "tagline": "let types = your guide in software",
+      "bio": "Types are the best kind of documentation. If you can understand a system just by looking at its types, you have a well designed system.",
+      "image": "nick.png"
     }
   ]
 }
