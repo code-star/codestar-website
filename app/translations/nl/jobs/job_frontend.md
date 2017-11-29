@@ -47,6 +47,6 @@ kunt worden in jouw vakgebied.
 Meer weten over Codestar? Dat vertellen we graag persoonlijk. Dus als je er voor open staat 
 om ons beter te leren kennen, neem dan deel aan een van onze trainingen of evenementen. Die 
 organiseren we regelmatig en zijn voor iedereen kosteloos toegankelijk. Of maak gewoon een 
-afspraak. Mail gerust onze business unit manager: [martin.weidner@ordina.nl](mailto:martin.weidner@ordina.nl)
+afspraak. Mail gerust onze business unit manager: [codestar@ordina.nl](mailto:codestar@ordina.nl)
 
 <small>**Acquisitie naar aanleiding van deze vacature wordt niet op prijs gesteld.**</small>
