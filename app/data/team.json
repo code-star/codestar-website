@@ -146,6 +146,13 @@
       "tagline": "let types = your guide in software",
       "bio": "Types are the best kind of documentation. If you can understand a system just by looking at its types, you have a well designed system.",
       "image": "nick.png"
+    },
+    {
+      "name": "David",
+      "job": "Information Engineer",
+      "tagline": "“No Super-Chickens!”",
+      "bio": "I enjoy helping businesses improve their communication and business understanding by developing successful data-driven solutions.",
+      "image": "davidlp.jpg"
     }
   ]
 }
