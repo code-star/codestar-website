@@ -1,4 +1,5 @@
-var webpackConfig = require('./webpack.dev.conf');
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+const webpackConfig = require('./webpack.dev.conf');
 
 module.exports = function(config) {
     'use strict';
@@ -9,7 +10,7 @@ module.exports = function(config) {
         files: [
             {pattern: 'test/*.spec.js', watched: false}
         ],
-        browsers: ['PhantomJS'],
+        browsers: ['ChromeHeadless'],
         singleRun: true,
         reporters: ['progress'],
         preprocessors: {
