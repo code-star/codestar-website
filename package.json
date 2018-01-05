@@ -53,6 +53,7 @@
     "jquery-mousewheel": "^3.1.13",
     "jquery-smooth-scroll": "^1.7.1",
     "json-loader": "^0.5.4",
+    "jstransformer-marked": "^1.0.3",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
@@ -76,7 +77,6 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
-    "jstransformer-marked": "^1.0.2",
     "jstransformer-markdown-it": "^2.0.0"
   }
 }
