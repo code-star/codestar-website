@@ -146,6 +146,13 @@
       "tagline": "“No Super-Chickens!”",
       "bio": "I enjoy helping businesses improve their communication and business understanding by developing successful data-driven solutions.",
       "image": "davidlp.jpg"
+    },
+    {
+      "name": "Mikel",
+      "job": "Frontend Developer",
+      "tagline": "Pixel perfect",
+      "bio": "",
+      "image": "mikel.jpg"
     }
   ]
 }
