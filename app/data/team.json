@@ -29,13 +29,6 @@
       "image": "joost.jpg"
     },
     {
-      "name": "Martin",
-      "job": "Der Alte",
-      "tagline": "“Kapitän van die Mannschaft”",
-      "bio": "I see programming as an art, and just like an artist a programmer needs passion to achieve exceptional results. I need that passion around me. That’s why I’m glad to be creating a place with Codestar where programmers with passion can feel at home.",
-      "image": "martin.png"
-    },
-    {
       "name": "Ishan",
       "job": "Programmer",
       "tagline": "“Talk is cheap, show me the code”",
@@ -69,13 +62,6 @@
       "tagline": "“You must be the change you wish to see in the world.”",
       "bio": "",
       "image": "donovan.jpg"
-    },
-    {
-      "name": "Maurits",
-      "job": "Programmer",
-      "tagline": "The truth is in the code",
-      "bio": "",
-      "image": "maurits.jpg"
     },
     {
       "name": "Steven",
@@ -146,6 +132,27 @@
       "tagline": "“If it doesn't challenge you it won't change you”",
       "bio": "",
       "image": "mozart.jpg"
+    },
+    {
+      "name": "Nick",
+      "job": "Programmer",
+      "tagline": "let types = your guide in software",
+      "bio": "Types are the best kind of documentation. If you can understand a system just by looking at its types, you have a well designed system.",
+      "image": "nick.png"
+    },
+    {
+      "name": "David",
+      "job": "Information Engineer",
+      "tagline": "“No Super-Chickens!”",
+      "bio": "I enjoy helping businesses improve their communication and business understanding by developing successful data-driven solutions.",
+      "image": "davidlp.jpg"
+    },
+    {
+      "name": "Mikel",
+      "job": "Frontend Developer",
+      "tagline": "Pixel perfect",
+      "bio": "",
+      "image": "mikel.jpg"
     }
   ]
 }
