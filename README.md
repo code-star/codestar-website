@@ -1,6 +1,6 @@
 # ⛔️ DEPRECATED - we are now using https://github.com/code-star/codestar-website-react
 
-[![Build Status](https://travis-ci.org/code-star/codestar-website.svg?branch=develop)](https://travis-ci.org/code-star/codestar-website)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 <img align=center src=https://cloud.githubusercontent.com/assets/4116708/12473911/e67fdd44-c016-11e5-9c21-5714e07549fe.png width=450 />
 
